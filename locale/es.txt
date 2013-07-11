@@ -1,0 +1,52 @@
+# Translation by kaeza
+
+[moreblocks] loaded. = [moreblocks] cargado.
+
+Jungle Wooden Planks = Tablones de madera de jungla
+Empty Bookshelf = Estante para libros vacío
+Clean Glass = Cristal Limpio
+Plankstone = Tablones de piedra
+Wooden Tile = Parquet
+Full Wooden Tile = Parquet Completo
+Centered Wooden Tile = Parquet Centrado
+Up Wooden Tile = Parquet Superior
+Down Wooden Tile = Parquet Inferior
+Left Wooden Tile = Parquet Izquierdo
+Right Wooden Tile = Parquet Derecho
+Circle Stone Bricks = Bloques de Piedra Circulares
+Stone Tile = Baldosa de Piedra
+Split Stone Tile = Baldosas de Piedra Partida
+Glow Glass = Cristal Brillante
+Super Glow Glass = Cristal Súper Brillante
+Coal Glass = Cristal con Carbón
+Iron Glass = Cristal con Hierro
+Coal Checker = Cuadros de Carbón
+Iron Checker = Cuadros de Hierro
+Trap Stone = Piedra Trampa
+Trap Glass = Cristal Trampa
+Coal Stone = Carbón y Piedra
+Iron Stone = Hierro y Piedra
+Cactus Checker = Cuadros de Cactus
+Cactus Brick = Ladrillos de Cactus
+Sweeper = Limpiador
+Jungle Stick = Varita de Madera de Jungla
+Horizontal Tree = Tronco de árbol horizontal
+Horizontal Jungle Tree = Tronco de árbol de la jungla horizontal
+Rope = Soga
+All-faces Tree = Tronco de Árbol
+
+%s Stairs = Escalera de %s
+%s Slab = Losa de %s
+%s Panel = Panel de %s
+%s Microblock = Microbloque de %s
+
+Wooden = Madera
+Papyrus = Papiro
+Dry Shrub = Arbusto Desértico
+Sapling = Brote de Árbol
+Wooden Planks = Tablones de Madera
+Ladder = Escalera de Mano
+Glass = Cristal
+
+%s Pane = Panel de %s
+%s Fence = Valla de %s
