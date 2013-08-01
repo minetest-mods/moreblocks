@@ -178,7 +178,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "moreblocks:iron_stone_bricks 1",
 	type = "shapeless",
-	recipe = {"default:steel_ingot", "default:stone_brick"},
+	recipe = {"default:steel_ingot", "default:stonebrick"},
 })
 
 minetest.register_craft({
