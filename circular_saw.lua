@@ -136,7 +136,7 @@ end
 -- The amount of items offered per shape can be configured
 circular_saw.on_receive_fields = function(pos, formname, fields, sender)
 	local meta = minetest.env:get_meta(pos);
-	if(fields.max_offered  and tonumber(fields.max_offered) > 0 and tonumber(fields.max_offered) < 99) then
+	if tonumber(fields.max_offered) and tonumber(fields.max_offered) > 0 and tonumber(fields.max_offered) < 99 then
 		meta:set_string("max_offered",  fields.max_offered);
 		circular_saw.update_inventory(pos, 0); -- update to show the correct number of items
 	end

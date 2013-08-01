@@ -22,8 +22,6 @@ dofile(minetest.get_modpath("moreblocks").."/stairsplus/aliases.lua")
 dofile(minetest.get_modpath("moreblocks").."/stairsplus.lua")
 dofile(minetest.get_modpath("moreblocks").."/circular_saw.lua")
 
-print(S("[moreblocks] loaded."))
-
 --[[
 ****
 More Blocks
@@ -356,3 +354,5 @@ minetest.register_craftitem("moreblocks:nothing", {
 	inventory_image = "invisible.png",
 	on_use = minetest.item_eat(0),
 })
+
+print(S("[moreblocks] loaded."))
