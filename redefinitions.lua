@@ -285,3 +285,63 @@ minetest.register_node(":default:junglesapling", {
 	groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1},
 	sounds = default.node_sound_defaults(),
 })
+
+minetest.register_node(":default:grass_1", {
+	description = "Grass",
+	drawtype = "plantlike",
+	tiles = {"default_grass_1.png"},
+	-- use a bigger inventory image
+	inventory_image = "default_grass_3.png",
+	wield_image = "default_grass_3.png",
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	buildable_to = true,
+	drop = {
+		max_items = 1,
+		items = {
+			{items = {'farming:seed_wheat'},rarity = 5},
+			{items = {'default:grass_1'}},
+		}
+	},
+	groups = {snappy=3,flammable=3,flora=1,attached_node=1},
+	sounds = default.node_sound_leaves_defaults(),
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -5/16, 0.5},
+	},
+	on_place = function(itemstack, placer, pointed_thing)
+		-- place a random grass node
+		local stack = ItemStack("default:grass_"..math.random(1,5))
+		local ret = minetest.item_place(stack, placer, pointed_thing)
+		return ItemStack("default:grass_1 "..itemstack:get_count()-(1-ret:get_count()))
+	end,
+})
+
+for i=2,5 do
+	minetest.register_node(":default:grass_"..i, {
+		description = "Grass",
+		drawtype = "plantlike",
+		tiles = {"default_grass_"..i..".png"},
+		inventory_image = "default_grass_"..i..".png",
+		wield_image = "default_grass_"..i..".png",
+		paramtype = "light",
+		sunlight_propagates = true,
+		walkable = false,
+		buildable_to = true,
+		is_ground_content = true,
+		drop = {
+			max_items = 1,
+			items = {
+				{items = {'farming:seed_wheat'},rarity = 5},
+				{items = {'default:grass_1'}},
+			}
+		},
+		groups = {snappy=3,flammable=3,flora=1,attached_node=1,not_in_creative_inventory=1},
+		sounds = default.node_sound_leaves_defaults(),
+		selection_box = {
+			type = "fixed",
+			fixed = {-0.5, -0.5, -0.5, 0.5, -5/16, 0.5},
+		},
+	})
+end
