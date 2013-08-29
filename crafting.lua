@@ -274,9 +274,23 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = "moreblocks:trap_glow_glass 1",
+	type = "shapeless",
+	walkable = false,
+	recipe = {"default:mese_crystal", "default:glass", "default:torch"},
+})
+
+minetest.register_craft({
 	output = "moreblocks:super_glow_glass 1",
 	type = "shapeless",
 	recipe = {"default:torch", "default:torch", "default:glass"},
+})
+
+minetest.register_craft({
+	output = "moreblocks:trap_super_glow_glass 1",
+	type = "shapeless",
+	walkable = false,
+	recipe = {"default:mese_crystal", "default:glass", "default:torch", "default:torch"},
 })
 
 minetest.register_craft({
