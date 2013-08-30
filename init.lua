@@ -308,6 +308,18 @@ minetest.register_node("moreblocks:glow_glass", {
 	groups = {snappy=2,cracky=3,oddly_breakable_by_hand=3},
 	sounds = default.node_sound_glass_defaults(),
 })
+minetest.register_node("moreblocks:trap_glow_glass", {
+	description = S("Trap Glow Glass"),
+	drawtype = "glasslike",
+	tiles = {"moreblocks_glow_glass.png"},
+	inventory_image = minetest.inventorycube("moreblocks_glow_glass.png"),
+	paramtype = "light",
+	sunlight_propagates = true,
+	light_source = 11,
+	walkable = false,
+	groups = {snappy=2,cracky=3,oddly_breakable_by_hand=3},
+	sounds = default.node_sound_glass_defaults(),
+})
 
 minetest.register_node("moreblocks:super_glow_glass", {
 	description = S("Super Glow Glass"),
@@ -317,6 +329,19 @@ minetest.register_node("moreblocks:super_glow_glass", {
 	paramtype = "light",
 	sunlight_propagates = true,
 	light_source = 15,
+	groups = {snappy=2,cracky=3,oddly_breakable_by_hand=3},
+	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_node("moreblocks:trap_super_glow_glass", {
+	description = S("Trap Super Glow Glass"),
+	drawtype = "glasslike",
+	tiles = {"moreblocks_glow_glass.png"},
+	inventory_image = minetest.inventorycube("moreblocks_glow_glass.png"),
+	paramtype = "light",
+	sunlight_propagates = true,
+	light_source = 11,
+	walkable = false,
 	groups = {snappy=2,cracky=3,oddly_breakable_by_hand=3},
 	sounds = default.node_sound_glass_defaults(),
 })
