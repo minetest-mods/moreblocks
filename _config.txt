@@ -9,3 +9,6 @@
 
 -- Whether to direct wood based on player yaw when placing the block
 wood_facedir = true
+
+-- Allow stair/slab crafting without a circular saw or not
+allow_stair_slab_crafting = true

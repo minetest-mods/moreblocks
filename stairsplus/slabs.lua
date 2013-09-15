@@ -115,13 +115,16 @@ function register_slab(modname, subname, recipeitem, groups, images, description
 		end
 	})
 
-	-- Unregister default recipes
+	-- Unregister default recipes, optional, see _config.txt
 
+if allow_stair_slab_crafting == false
+then
 	minetest.register_craft({
 		output = "moreblocks:nothing 1",
 		recipe = {
 			{recipeitem, recipeitem, recipeitem},
 		},
 	})
+end
 end
 
