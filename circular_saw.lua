@@ -195,6 +195,14 @@ circular_saw.on_metadata_inventory_put = function(pos, listname, index, stack, p
 	-- Putting something into the input slot is only possible if that had been empty before or did contain something of the same material
 	if(    listname=="input") then
 
+		if( not( inv:is_empty("input"))) then
+
+			local old_stack = inv:get_stack("input", 1 );
+			if( old_stack:get_name() ~= stack:get_name() ) then
+				return 0;
+			end
+		end
+
 		-- Each new block is worth 8 microblocks
 		circular_saw.update_inventory(pos, 8 * stack:get_count());
 		
