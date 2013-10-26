@@ -55,17 +55,22 @@ circular_saw.get_stair_output_inv = function(modname, material, anz, max)
 	end
 
 	return { 
+	modname .. ":micro_" .. material .. "_bottom "                 .. math.min(math.floor(anz/1), max_offered),
+	modname .. ":panel_" .. material .. "_bottom "                 .. math.min(math.floor(anz/2), max_offered),
+	modname .. ":stair_" .. material .. "_half "                   .. math.min(math.floor(anz/3), max_offered),
+	modname .. ":stair_" .. material .. "_alt "                    .. math.min(math.floor(anz/4), max_offered),
+	modname .. ":stair_" .. material .. "_outer "                  .. math.min(math.floor(anz/5), max_offered),
 	modname .. ":stair_" .. material .. " "                        .. math.min(math.floor(anz/6), max_offered),
 	modname .. ":stair_" .. material .. "_inner "                  .. math.min(math.floor(anz/7), max_offered),
-	modname .. ":stair_" .. material .. "_outer "                  .. math.min(math.floor(anz/5), max_offered),
-	modname .. ":stair_" .. material .. "_half "                   .. math.min(math.floor(anz/3), max_offered),
+	
+	modname .. ":slab_"  .. material .. "_1 "                      .. math.min(math.floor(anz/1), max_offered),
+	modname .. ":slab_"  .. material .. "_2 "                      .. math.min(math.floor(anz/1), max_offered),
 	modname .. ":slab_"  .. material .. "_quarter "                .. math.min(math.floor(anz/2), max_offered),
 	modname .. ":slab_"  .. material .. " "                        .. math.min(math.floor(anz/4), max_offered),
 	modname .. ":slab_"  .. material .. "_three_quarter "          .. math.min(math.floor(anz/6), max_offered),
-	
-	modname .. ":panel_" .. material .. "_bottom "                 .. math.min(math.floor(anz/2), max_offered),
-	modname .. ":micro_" .. material .. "_bottom "                 .. math.min(math.floor(anz/1), max_offered),
-	modname .. ":stair_" .. material .. "_alt "                    .. math.min(math.floor(anz/4), max_offered),
+	modname .. ":slab_"  .. material .. "_14 "                     .. math.min(math.floor(anz/7), max_offered),
+	modname .. ":slab_"  .. material .. "_15 "                     .. math.min(math.floor(anz/8), max_offered),
+
 	"", 
 	}
 end
