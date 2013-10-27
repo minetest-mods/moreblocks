@@ -115,23 +115,23 @@ function register_slab(modname, subname, recipeitem, groups, images, description
 		end
 	})
 	
-	minetest.register_node(":"..modname .. ":slab_" .. subname .. "_2", {
+	minetest.register_node(":"..modname .. ":slab_" .. subname .. "_1", {
 		description = S("%s Slab"):format(S(description)),
 		drawtype = "nodebox",
 		tiles = images,
 		light_source = light,
-		drop = modname .. ":slab_" .. drop .. "_quarter",
+		drop = modname .. ":slab_" .. drop .. "_1",
 		paramtype = "light",
 		paramtype2 = "facedir",
 		sunlight_propagates = true,
 		groups = groups,
 		node_box = {
 			type = "fixed",
-			fixed = {-0.5, -0.5, -0.5, 0.5, -0.375, 0.5},
+			fixed = {-0.5, -0.5, -0.5, 0.5, -0.4375, 0.5},
 		},
 		selection_box = {
 			type = "fixed",
-			fixed = {-0.5, -0.5, -0.5, 0.5, -0.375, 0.5},
+			fixed = {-0.5, -0.5, -0.5, 0.5, -0.4375, 0.5},
 		},
 		sounds = default.node_sound_stone_defaults(),
 		on_place = function(itemstack, placer, pointed_thing)
@@ -141,23 +141,23 @@ function register_slab(modname, subname, recipeitem, groups, images, description
 		end
 	})
 	
-	minetest.register_node(":"..modname .. ":slab_" .. subname .. "_1", {
+	minetest.register_node(":"..modname .. ":slab_" .. subname .. "_2", {
 		description = S("%s Slab"):format(S(description)),
 		drawtype = "nodebox",
 		tiles = images,
 		light_source = light,
-		drop = modname .. ":slab_" .. drop .. "_quarter",
+		drop = modname .. ":slab_" .. drop .. "_2",
 		paramtype = "light",
 		paramtype2 = "facedir",
 		sunlight_propagates = true,
 		groups = groups,
 		node_box = {
 			type = "fixed",
-			fixed = {-0.5, -0.5, -0.5, 0.5, -0.4375, 0.5},
+			fixed = {-0.5, -0.5, -0.5, 0.5, -0.375, 0.5},
 		},
 		selection_box = {
 			type = "fixed",
-			fixed = {-0.5, -0.5, -0.5, 0.5, -0.4375, 0.5},
+			fixed = {-0.5, -0.5, -0.5, 0.5, -0.375, 0.5},
 		},
 		sounds = default.node_sound_stone_defaults(),
 		on_place = function(itemstack, placer, pointed_thing)
@@ -172,7 +172,7 @@ function register_slab(modname, subname, recipeitem, groups, images, description
 		drawtype = "nodebox",
 		tiles = images,
 		light_source = light,
-		drop = modname .. ":slab_" .. drop .. "_quarter",
+		drop = modname .. ":slab_" .. drop .. "_14",
 		paramtype = "light",
 		paramtype2 = "facedir",
 		sunlight_propagates = true,
@@ -198,7 +198,7 @@ function register_slab(modname, subname, recipeitem, groups, images, description
 		drawtype = "nodebox",
 		tiles = images,
 		light_source = light,
-		drop = modname .. ":slab_" .. drop .. "_quarter",
+		drop = modname .. ":slab_" .. drop .. "_15",
 		paramtype = "light",
 		paramtype2 = "facedir",
 		sunlight_propagates = true,
