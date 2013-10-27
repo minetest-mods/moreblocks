@@ -29,10 +29,10 @@ end
 
 	
 -- How many microblocks does this shape at the output inventory cost?
-circular_saw.cost_in_microblocks = { 6, 7, 5, 3, 2, 4, 6,
-								 2, 1, 4, 0, 0, 0, 0,
-								 0, 0, 0, 0, 0, 0, 0,
-								 0, 0, 0, 0, 0, 0, 0 };
+circular_saw.cost_in_microblocks = { 1, 1, 1, 1, 1, 1, 1, 2,
+									 2, 3, 2, 4, 2, 4, 5, 6,
+									 7, 1, 1, 2, 4, 6, 7, 8,
+									 3, 4, 0, 0, 0, 0, 0, 0, };
 
 -- anz: amount of input material in microblocks
 circular_saw.get_stair_output_inv = function(modname, material, anz, max)
@@ -55,14 +55,26 @@ circular_saw.get_stair_output_inv = function(modname, material, anz, max)
 	end
 
 	return { 
-	modname .. ":micro_" .. material .. "_bottom "                 .. math.min(math.floor(anz/1), max_offered),
-	modname .. ":panel_" .. material .. "_bottom "                 .. math.min(math.floor(anz/2), max_offered),
-	modname .. ":stair_" .. material .. "_half "                   .. math.min(math.floor(anz/3), max_offered),
-	modname .. ":stair_" .. material .. "_alt "                    .. math.min(math.floor(anz/4), max_offered),
+
+	modname .. ":micro_" .. material .. "_1 "                      .. math.min(math.floor(anz/1), max_offered),
+	modname .. ":panel_" .. material .. "_1 "                      .. math.min(math.floor(anz/1), max_offered),
+	modname .. ":micro_" .. material .. "_2 "                      .. math.min(math.floor(anz/1), max_offered),
+	modname .. ":panel_" .. material .. "_2 "                      .. math.min(math.floor(anz/1), max_offered),
+	modname .. ":micro_" .. material .. "_4 "                      .. math.min(math.floor(anz/1), max_offered),
+	modname .. ":panel_" .. material .. "_4 "                      .. math.min(math.floor(anz/1), max_offered),
+	modname .. ":micro_" .. material .. " "                        .. math.min(math.floor(anz/1), max_offered),
+	modname .. ":panel_" .. material .. " "                        .. math.min(math.floor(anz/2), max_offered),
+
+	modname .. ":micro_" .. material .. "_12 "                     .. math.min(math.floor(anz/2), max_offered),
+	modname .. ":panel_" .. material .. "_12 "                     .. math.min(math.floor(anz/3), max_offered),
+	modname .. ":micro_" .. material .. "_14 "                     .. math.min(math.floor(anz/2), max_offered),
+	modname .. ":panel_" .. material .. "_14 "                     .. math.min(math.floor(anz/4), max_offered),
+	modname .. ":micro_" .. material .. "_15 "                     .. math.min(math.floor(anz/2), max_offered),
+	modname .. ":panel_" .. material .. "_15 "                     .. math.min(math.floor(anz/4), max_offered),
 	modname .. ":stair_" .. material .. "_outer "                  .. math.min(math.floor(anz/5), max_offered),
 	modname .. ":stair_" .. material .. " "                        .. math.min(math.floor(anz/6), max_offered),
+
 	modname .. ":stair_" .. material .. "_inner "                  .. math.min(math.floor(anz/7), max_offered),
-	
 	modname .. ":slab_"  .. material .. "_1 "                      .. math.min(math.floor(anz/1), max_offered),
 	modname .. ":slab_"  .. material .. "_2 "                      .. math.min(math.floor(anz/1), max_offered),
 	modname .. ":slab_"  .. material .. "_quarter "                .. math.min(math.floor(anz/2), max_offered),
@@ -70,6 +82,9 @@ circular_saw.get_stair_output_inv = function(modname, material, anz, max)
 	modname .. ":slab_"  .. material .. "_three_quarter "          .. math.min(math.floor(anz/6), max_offered),
 	modname .. ":slab_"  .. material .. "_14 "                     .. math.min(math.floor(anz/7), max_offered),
 	modname .. ":slab_"  .. material .. "_15 "                     .. math.min(math.floor(anz/8), max_offered),
+
+	modname .. ":stair_" .. material .. "_half "                   .. math.min(math.floor(anz/3), max_offered),
+	modname .. ":stair_" .. material .. "_alt "                    .. math.min(math.floor(anz/4), max_offered),
 
 	"", 
 	}
@@ -267,7 +282,7 @@ circular_saw.on_construct_init = function(pos, formspec)
 	inv:set_size("input",      1)  -- Input slot for full blocks of material x
 	inv:set_size("micro",      1)  -- Storage for 1-7 surplus microblocks
 	inv:set_size("recycle",    1)  -- Surplus partial blocks can be placed here
-	inv:set_size("output",    28) -- 4*7 versions of stair-parts of material x
+	inv:set_size("output",    32) -- 4*7 versions of stair-parts of material x
 
 	circular_saw.reset_circular_saw(pos);
 end
@@ -305,19 +320,6 @@ minetest.register_node("moreblocks:circular_saw",  {
 				{-0.25, -0.0625, -0.25, 0.25, 0.25, 0.25}, -- Motor case
 			},
 		},
-		selection_box = {
-			type = "fixed", 
-			fixed = {
-				{-0.4, -0.5, -0.4, -0.25, 0.25, -0.25}, -- Leg
-				{0.25, -0.5, 0.25, 0.4, 0.25, 0.4}, -- Leg
-				{-0.4, -0.5, 0.25, -0.25, 0.25, 0.4}, -- Leg 
-				{0.25, -0.5, -0.4, 0.4, 0.25, -0.25}, -- Leg
-				{-0.5, 0.25, -0.5, 0.5, 0.375, 0.5}, -- Tabletop
-				{-0.01, 0.4375, -0.125, 0.01, 0.5, 0.125}, -- Saw blade (top)
-				{-0.01, 0.375, -0.1875, 0.01, 0.4375, 0.1875}, -- Saw blade (bottom)
-				{-0.25, -0.0625, -0.25, 0.25, 0.25, 0.25}, -- Motor case
-			},
-		},
 		tiles = {"moreblocks_circular_saw_top.png",  "moreblocks_circular_saw_bottom.png",  "moreblocks_circular_saw_side.png"},
 		paramtype = "light", 
 		sunlight_propagates = true,
@@ -334,7 +336,7 @@ minetest.register_node("moreblocks:circular_saw",  {
 					 "button[1,2;1,1;Set;Set]" ..
 					 "list[current_name;recycle;0,3;1,1;]" ..
 					"label[0,3;Recycle output]" ..
-					 "list[current_name;output;2,0;7,4;]" ..
+					 "list[current_name;output;2,0;8,4;]" ..
 					 "list[current_player;main;1,5;8,4;]");
 		end,
 

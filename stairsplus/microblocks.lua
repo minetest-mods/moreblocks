@@ -37,6 +37,162 @@ function register_micro(modname, subname, recipeitem, groups, images, descriptio
 			return itemstack
 		end
 	})
+	
+	minetest.register_node(":"..modname .. ":micro_" .. subname .. "_1", {
+		description = S("%s Microblock"):format(S(description)),
+		drawtype = "nodebox",
+		tiles = images,
+		light_source = light,
+		drop = modname .. ":micro_" .. drop,
+		paramtype = "light",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		groups = groups,
+		node_box = {
+			type = "fixed",
+			fixed = {-0.5, -0.5, 0, 0, -0.4375, 0.5},
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {-0.5, -0.5, 0, 0, -0.4375, 0.5},
+		},
+		sounds = default.node_sound_stone_defaults(),
+		on_place = function(itemstack, placer, pointed_thing)
+			local keys=placer:get_player_control()
+			stairsplus_rotate_and_place(itemstack, placer, pointed_thing, keys["sneak"])
+			return itemstack
+		end
+	})
+	
+	minetest.register_node(":"..modname .. ":micro_" .. subname .. "_2", {
+		description = S("%s Microblock"):format(S(description)),
+		drawtype = "nodebox",
+		tiles = images,
+		light_source = light,
+		drop = modname .. ":micro_" .. drop,
+		paramtype = "light",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		groups = groups,
+		node_box = {
+			type = "fixed",
+			fixed = {-0.5, -0.5, 0, 0, -0.375, 0.5},
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {-0.5, -0.5, 0, 0, -0.375, 0.5},
+		},
+		sounds = default.node_sound_stone_defaults(),
+		on_place = function(itemstack, placer, pointed_thing)
+			local keys=placer:get_player_control()
+			stairsplus_rotate_and_place(itemstack, placer, pointed_thing, keys["sneak"])
+			return itemstack
+		end
+	})
+	
+	minetest.register_node(":"..modname .. ":micro_" .. subname .. "_4", {
+		description = S("%s Microblock"):format(S(description)),
+		drawtype = "nodebox",
+		tiles = images,
+		light_source = light,
+		drop = modname .. ":micro_" .. drop,
+		paramtype = "light",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		groups = groups,
+		node_box = {
+			type = "fixed",
+			fixed = {-0.5, -0.5, 0, 0, -0.25, 0.5},
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {-0.5, -0.5, 0, 0, -0.25, 0.5},
+		},
+		sounds = default.node_sound_stone_defaults(),
+		on_place = function(itemstack, placer, pointed_thing)
+			local keys=placer:get_player_control()
+			stairsplus_rotate_and_place(itemstack, placer, pointed_thing, keys["sneak"])
+			return itemstack
+		end
+	})
+	
+	minetest.register_node(":"..modname .. ":micro_" .. subname .. "_12", {
+		description = S("%s Microblock"):format(S(description)),
+		drawtype = "nodebox",
+		tiles = images,
+		light_source = light,
+		drop = modname .. ":micro_" .. drop,
+		paramtype = "light",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		groups = groups,
+		node_box = {
+			type = "fixed",
+			fixed = {-0.5, -0.5, 0, 0, 0.25, 0.5},
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {-0.5, -0.5, 0, 0, 0.25, 0.5},
+		},
+		sounds = default.node_sound_stone_defaults(),
+		on_place = function(itemstack, placer, pointed_thing)
+			local keys=placer:get_player_control()
+			stairsplus_rotate_and_place(itemstack, placer, pointed_thing, keys["sneak"])
+			return itemstack
+		end
+	})
+	
+	minetest.register_node(":"..modname .. ":micro_" .. subname .. "_14", {
+		description = S("%s Microblock"):format(S(description)),
+		drawtype = "nodebox",
+		tiles = images,
+		light_source = light,
+		drop = modname .. ":micro_" .. drop,
+		paramtype = "light",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		groups = groups,
+		node_box = {
+			type = "fixed",
+			fixed = {-0.5, -0.5, 0, 0, 0.375, 0.5},
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {-0.5, -0.5, 0, 0, 0.375, 0.5},
+		},
+		sounds = default.node_sound_stone_defaults(),
+		on_place = function(itemstack, placer, pointed_thing)
+			local keys=placer:get_player_control()
+			stairsplus_rotate_and_place(itemstack, placer, pointed_thing, keys["sneak"])
+			return itemstack
+		end
+	})
+	
+	minetest.register_node(":"..modname .. ":micro_" .. subname .. "_15", {
+		description = S("%s Microblock"):format(S(description)),
+		drawtype = "nodebox",
+		tiles = images,
+		light_source = light,
+		drop = modname .. ":micro_" .. drop,
+		paramtype = "light",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		groups = groups,
+		node_box = {
+			type = "fixed",
+			fixed = {-0.5, -0.5, 0, 0, 0.4375, 0.5},
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {-0.5, -0.5, 0, 0, 0.4375, 0.5},
+		},
+		sounds = default.node_sound_stone_defaults(),
+		on_place = function(itemstack, placer, pointed_thing)
+			local keys=placer:get_player_control()
+			stairsplus_rotate_and_place(itemstack, placer, pointed_thing, keys["sneak"])
+			return itemstack
+		end
+	})
 
 	minetest.register_alias(modname..":micro_"..subname.."_bottom", modname..":micro_"..subname)
 end
