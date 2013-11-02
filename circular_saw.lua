@@ -22,8 +22,8 @@ for i,v in ipairs({"default:wood", "default:stone", "default:cobble", "default:m
 				"moreblocks:coal_stone", "moreblocks:iron_stone", "moreblocks:coal_checker", "moreblocks:iron_checker",
 				"moreblocks:cactus_checker", "moreblocks:coal_glass", "moreblocks:iron_glass", "moreblocks:glow_glass",
 				"moreblocks:super_glow_glass", "moreblocks:wooden_tile", "moreblocks:stone_tile", "moreblocks:split_stone_tile",
-				"moreblocks:iron_stone_bricks", "moreblocks:circle_stone_bricks", "moreblocks:wood_tile_centered", 
-				"moreblocks:wood_tile_full", "moreblocks:plank_stone"}) do
+				"moreblocks:coal_stone_bricks","moreblocks:iron_stone_bricks", "moreblocks:circle_stone_bricks",
+				"moreblocks:wood_tile_centered", "moreblocks:wood_tile_full", "moreblocks:plank_stone"}) do
 	table.insert(circular_saw.known_stairs, v);
 end
 

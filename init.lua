@@ -108,6 +108,13 @@ minetest.register_node("moreblocks:circle_stone_bricks", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
+minetest.register_node("moreblocks:coal_stone_bricks", {
+	description = S("Coal Stone Bricks"),
+	tiles = {"moreblocks_coal_stone_bricks.png"},
+	groups = {cracky=3},
+	sounds = default.node_sound_stone_defaults(),
+})
+
 minetest.register_node("moreblocks:iron_stone_bricks", {
 	description = S("Iron Stone Bricks"),
 	tiles = {"moreblocks_iron_stone_bricks.png"},
