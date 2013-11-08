@@ -1,3 +1,13 @@
+--[[
+****
+More Blocks
+by Calinou
+Licensed under the zlib/libpng license for code and CC BY-SA for textures, see LICENSE.txt for info.
+****
+--]]
+
+moreblocks = {}
+
 -- Load translation library if intllib is installed
 
 local S
@@ -7,9 +17,11 @@ if (minetest.get_modpath("intllib")) then
 	else
 	S = function ( s ) return s end
 end
+moreblocks.gettext = S
 
 dofile(minetest.get_modpath("moreblocks").."/_config.txt")
 
+dofile(minetest.get_modpath("moreblocks").."/ownership.lua")
 dofile(minetest.get_modpath("moreblocks").."/redefinitions.lua")
 dofile(minetest.get_modpath("moreblocks").."/crafting.lua")
 dofile(minetest.get_modpath("moreblocks").."/aliases.lua")
@@ -21,14 +33,6 @@ dofile(minetest.get_modpath("moreblocks").."/stairsplus/microblocks.lua")
 dofile(minetest.get_modpath("moreblocks").."/stairsplus/aliases.lua")
 dofile(minetest.get_modpath("moreblocks").."/stairsplus.lua")
 dofile(minetest.get_modpath("moreblocks").."/circular_saw.lua")
-
---[[
-****
-More Blocks
-by Calinou
-Licensed under the zlib/libpng license for code and CC BY-SA for textures, see LICENSE.txt for info.
-****
---]]
 
 -- Blocks
 
