@@ -40,7 +40,7 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "moreblocks:woodtile 9",
+	output = "moreblocks:wood_tile 9",
 	recipe = {
 		{"default:wood", "default:wood", "default:wood"},
 		{"default:wood", "default:wood", "default:wood"},
@@ -49,56 +49,56 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "moreblocks:woodtile_flipped 1",
+	output = "moreblocks:wood_tile_flipped 1",
 	recipe = {
-		{"moreblocks:woodtile"},
+		{"moreblocks:wood_tile"},
 	}
 })
 
 minetest.register_craft({
-	output = "moreblocks:woodtile_center 9",
+	output = "moreblocks:wood_tile_center 9",
 	recipe = {
 		{"default:wood", "default:wood", "default:wood"},
-		{"default:wood", "moreblocks:woodtile", "default:wood"},
+		{"default:wood", "moreblocks:wood_tile", "default:wood"},
 		{"default:wood", "default:wood", "default:wood"},
 	}
 })
 
 minetest.register_craft({
-	output = "moreblocks:woodtile_full 4",
+	output = "moreblocks:wood_tile_full 4",
 	recipe = {
-		{"moreblocks:woodtile", "moreblocks:woodtile"},
-		{"moreblocks:woodtile", "moreblocks:woodtile"},
+		{"moreblocks:wood_tile", "moreblocks:wood_tile"},
+		{"moreblocks:wood_tile", "moreblocks:wood_tile"},
 	}
 })
 
 minetest.register_craft({
-	output = "moreblocks:woodtile_up 1",
+	output = "moreblocks:wood_tile_up 1",
 	recipe = {
 		{"default:stick"},
-		{"moreblocks:woodtile_center"},
+		{"moreblocks:wood_tile_center"},
 	}
 })
 
 minetest.register_craft({
-	output = "moreblocks:woodtile_down 1",
+	output = "moreblocks:wood_tile_down 1",
 	recipe = {
-		{"moreblocks:woodtile_center"},
+		{"moreblocks:wood_tile_center"},
 		{"default:stick"},
 	}
 })
 
 minetest.register_craft({
-	output = "moreblocks:woodtile_left 1",
+	output = "moreblocks:wood_tile_left 1",
 	recipe = {
-		{"default:stick", "moreblocks:woodtile_center"},
+		{"default:stick", "moreblocks:wood_tile_center"},
 	}
 })
 
 minetest.register_craft({
-	output = "moreblocks:woodtile_right 1",
+	output = "moreblocks:wood_tile_right 1",
 	recipe = {
-		{"moreblocks:woodtile_center", "default:stick"},
+		{"moreblocks:wood_tile_center", "default:stick"},
 	}
 })
 
