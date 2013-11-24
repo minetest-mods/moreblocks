@@ -267,6 +267,13 @@ register_stair_slab_panel_micro("moreblocks", "circle_stone_bricks", "moreblocks
 	"circle_stone_bricks",
 	0)
 	
+register_stair_slab_panel_micro("moreblocks", "coal_stone_bricks", "moreblocks:coal_stone_bricks",
+	{cracky=3},
+	{"moreblocks_coal_stone_bricks.png"},
+	"Coal Stone Bricks",
+	"Coal_stone_bricks",
+	0)
+	
 register_stair_slab_panel_micro("moreblocks", "iron_stone_bricks", "moreblocks:iron_stone_bricks",
 	{cracky=3},
 	{"moreblocks_iron_stone_bricks.png"},
