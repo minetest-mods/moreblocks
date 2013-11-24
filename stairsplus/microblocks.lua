@@ -31,11 +31,7 @@ function register_micro(modname, subname, recipeitem, groups, images, descriptio
 			fixed = {-0.5, -0.5, 0, 0, 0, 0.5},
 		},
 		sounds = default.node_sound_stone_defaults(),
-		on_place = function(itemstack, placer, pointed_thing)
-			local keys=placer:get_player_control()
-			stairsplus_rotate_and_place(itemstack, placer, pointed_thing, keys["sneak"])
-			return itemstack
-		end
+		on_place = stairsplus_rotate_and_place
 	})
 	
 	minetest.register_node(":"..modname .. ":micro_" .. subname .. "_1", {
@@ -57,11 +53,7 @@ function register_micro(modname, subname, recipeitem, groups, images, descriptio
 			fixed = {-0.5, -0.5, 0, 0, -0.4375, 0.5},
 		},
 		sounds = default.node_sound_stone_defaults(),
-		on_place = function(itemstack, placer, pointed_thing)
-			local keys=placer:get_player_control()
-			stairsplus_rotate_and_place(itemstack, placer, pointed_thing, keys["sneak"])
-			return itemstack
-		end
+		on_place = stairsplus_rotate_and_place
 	})
 	
 	minetest.register_node(":"..modname .. ":micro_" .. subname .. "_2", {
@@ -83,11 +75,7 @@ function register_micro(modname, subname, recipeitem, groups, images, descriptio
 			fixed = {-0.5, -0.5, 0, 0, -0.375, 0.5},
 		},
 		sounds = default.node_sound_stone_defaults(),
-		on_place = function(itemstack, placer, pointed_thing)
-			local keys=placer:get_player_control()
-			stairsplus_rotate_and_place(itemstack, placer, pointed_thing, keys["sneak"])
-			return itemstack
-		end
+		on_place = stairsplus_rotate_and_place
 	})
 	
 	minetest.register_node(":"..modname .. ":micro_" .. subname .. "_4", {
@@ -109,11 +97,7 @@ function register_micro(modname, subname, recipeitem, groups, images, descriptio
 			fixed = {-0.5, -0.5, 0, 0, -0.25, 0.5},
 		},
 		sounds = default.node_sound_stone_defaults(),
-		on_place = function(itemstack, placer, pointed_thing)
-			local keys=placer:get_player_control()
-			stairsplus_rotate_and_place(itemstack, placer, pointed_thing, keys["sneak"])
-			return itemstack
-		end
+		on_place = stairsplus_rotate_and_place
 	})
 	
 	minetest.register_node(":"..modname .. ":micro_" .. subname .. "_12", {
@@ -135,11 +119,7 @@ function register_micro(modname, subname, recipeitem, groups, images, descriptio
 			fixed = {-0.5, -0.5, 0, 0, 0.25, 0.5},
 		},
 		sounds = default.node_sound_stone_defaults(),
-		on_place = function(itemstack, placer, pointed_thing)
-			local keys=placer:get_player_control()
-			stairsplus_rotate_and_place(itemstack, placer, pointed_thing, keys["sneak"])
-			return itemstack
-		end
+		on_place = stairsplus_rotate_and_place
 	})
 	
 	minetest.register_node(":"..modname .. ":micro_" .. subname .. "_14", {
@@ -161,11 +141,7 @@ function register_micro(modname, subname, recipeitem, groups, images, descriptio
 			fixed = {-0.5, -0.5, 0, 0, 0.375, 0.5},
 		},
 		sounds = default.node_sound_stone_defaults(),
-		on_place = function(itemstack, placer, pointed_thing)
-			local keys=placer:get_player_control()
-			stairsplus_rotate_and_place(itemstack, placer, pointed_thing, keys["sneak"])
-			return itemstack
-		end
+		on_place = stairsplus_rotate_and_place
 	})
 	
 	minetest.register_node(":"..modname .. ":micro_" .. subname .. "_15", {
@@ -187,11 +163,7 @@ function register_micro(modname, subname, recipeitem, groups, images, descriptio
 			fixed = {-0.5, -0.5, 0, 0, 0.4375, 0.5},
 		},
 		sounds = default.node_sound_stone_defaults(),
-		on_place = function(itemstack, placer, pointed_thing)
-			local keys=placer:get_player_control()
-			stairsplus_rotate_and_place(itemstack, placer, pointed_thing, keys["sneak"])
-			return itemstack
-		end
+		on_place = stairsplus_rotate_and_place
 	})
 
 	minetest.register_alias(modname..":micro_"..subname.."_bottom", modname..":micro_"..subname)

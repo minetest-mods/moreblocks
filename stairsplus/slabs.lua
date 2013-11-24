@@ -31,11 +31,7 @@ function register_slab(modname, subname, recipeitem, groups, images, description
 			fixed = {-0.5, -0.5, -0.5, 0.5, 0, 0.5},
 		},
 		sounds = default.node_sound_stone_defaults(),
-		on_place = function(itemstack, placer, pointed_thing)
-			local keys=placer:get_player_control()
-			stairsplus_rotate_and_place(itemstack, placer, pointed_thing, keys["sneak"])
-			return itemstack
-		end
+		on_place = stairsplus_rotate_and_place
 	})
 
 	minetest.register_node(":stairs:slab_" .. subname, {
@@ -56,11 +52,7 @@ function register_slab(modname, subname, recipeitem, groups, images, description
 			fixed = {-0.5, -0.5, -0.5, 0.5, 0, 0.5},
 		},
 		sounds = default.node_sound_stone_defaults(),
-		on_place = function(itemstack, placer, pointed_thing)
-			local keys=placer:get_player_control()
-			stairsplus_rotate_and_place(itemstack, placer, pointed_thing, keys["sneak"])
-			return itemstack
-		end
+		on_place = stairsplus_rotate_and_place
 	})
 
 	minetest.register_node(":"..modname .. ":slab_" .. subname .. "_quarter", {
@@ -82,11 +74,7 @@ function register_slab(modname, subname, recipeitem, groups, images, description
 			fixed = {-0.5, -0.5, -0.5, 0.5, -0.25, 0.5},
 		},
 		sounds = default.node_sound_stone_defaults(),
-		on_place = function(itemstack, placer, pointed_thing)
-			local keys=placer:get_player_control()
-			stairsplus_rotate_and_place(itemstack, placer, pointed_thing, keys["sneak"])
-			return itemstack
-		end
+		on_place = stairsplus_rotate_and_place
 	})
 
 	minetest.register_node(":"..modname .. ":slab_" .. subname .. "_three_quarter", {
@@ -108,11 +96,7 @@ function register_slab(modname, subname, recipeitem, groups, images, description
 			fixed = {-0.5, -0.5, -0.5, 0.5, 0.25, 0.5},
 		},
 		sounds = default.node_sound_stone_defaults(),
-		on_place = function(itemstack, placer, pointed_thing)
-			local keys=placer:get_player_control()
-			stairsplus_rotate_and_place(itemstack, placer, pointed_thing, keys["sneak"])
-			return itemstack
-		end
+		on_place = stairsplus_rotate_and_place
 	})
 	
 	minetest.register_node(":"..modname .. ":slab_" .. subname .. "_1", {
@@ -134,11 +118,7 @@ function register_slab(modname, subname, recipeitem, groups, images, description
 			fixed = {-0.5, -0.5, -0.5, 0.5, -0.4375, 0.5},
 		},
 		sounds = default.node_sound_stone_defaults(),
-		on_place = function(itemstack, placer, pointed_thing)
-			local keys=placer:get_player_control()
-			stairsplus_rotate_and_place(itemstack, placer, pointed_thing, keys["sneak"])
-			return itemstack
-		end
+		on_place = stairsplus_rotate_and_place
 	})
 	
 	minetest.register_node(":"..modname .. ":slab_" .. subname .. "_2", {
@@ -160,11 +140,7 @@ function register_slab(modname, subname, recipeitem, groups, images, description
 			fixed = {-0.5, -0.5, -0.5, 0.5, -0.375, 0.5},
 		},
 		sounds = default.node_sound_stone_defaults(),
-		on_place = function(itemstack, placer, pointed_thing)
-			local keys=placer:get_player_control()
-			stairsplus_rotate_and_place(itemstack, placer, pointed_thing, keys["sneak"])
-			return itemstack
-		end
+		on_place = stairsplus_rotate_and_place
 	})
 	
 	minetest.register_node(":"..modname .. ":slab_" .. subname .. "_14", {
@@ -186,11 +162,7 @@ function register_slab(modname, subname, recipeitem, groups, images, description
 			fixed = {-0.5, -0.5, -0.5, 0.5, 0.375, 0.5},
 		},
 		sounds = default.node_sound_stone_defaults(),
-		on_place = function(itemstack, placer, pointed_thing)
-			local keys=placer:get_player_control()
-			stairsplus_rotate_and_place(itemstack, placer, pointed_thing, keys["sneak"])
-			return itemstack
-		end
+		on_place = stairsplus_rotate_and_place
 	})
 	
 	minetest.register_node(":"..modname .. ":slab_" .. subname .. "_15", {
@@ -212,11 +184,7 @@ function register_slab(modname, subname, recipeitem, groups, images, description
 			fixed = {-0.5, -0.5, -0.5, 0.5, 0.4375, 0.5},
 		},
 		sounds = default.node_sound_stone_defaults(),
-		on_place = function(itemstack, placer, pointed_thing)
-			local keys=placer:get_player_control()
-			stairsplus_rotate_and_place(itemstack, placer, pointed_thing, keys["sneak"])
-			return itemstack
-		end
+		on_place = stairsplus_rotate_and_place
 	})
 
 	-- Unregister default recipes, optional, see _config.txt
