@@ -1,0 +1,70 @@
+###init.lua###
+[moreblocks] loaded. = 
+
+Jungle Wooden Planks = 
+Empty Bookshelf = 
+Clean Glass = 
+Plankstone = 
+Wooden Tile = 
+Full Wooden Tile = 
+Centered Wooden Tile = 
+Up Wooden Tile = 
+Down Wooden Tile = 
+Left Wooden Tile = 
+Right Wooden Tile = 
+Circle Stone Bricks = 
+Stone Tile = 
+Split Stone Tile = 
+Glow Glass = 
+Super Glow Glass = 
+Coal Glass = 
+Iron Glass = 
+Coal Checker = 
+Iron Checker = 
+Trap Stone = 
+Trap Glass = 
+Trap Glow Glass = 
+Trap Super Glow Glass = 
+Coal Stone = 
+Iron Stone = 
+Coal Stone Bricks = 
+Iron Stone Bricks = 
+Cactus Checker = 
+Cactus Brick = 
+Sweeper = 
+Jungle Stick = 
+Horizontal Tree = 
+Horizontal Jungle Tree = 
+Rope = 
+All-faces Tree = 
+
+###redefinition.lua###
+Wooden = 
+Papyrus = 
+Dry Shrub = 
+Sapling = 
+Wooden Planks = 
+Ladder = 
+Glass = 
+
+###circular_saw.lua###
+Circular Saw = 
+Circular saw, empty (owned by %s) = 
+Circular saw, working with %s (owned by %s) = 
+Circular saw, empty = 
+Circular saw is empty (owned by %s) = 
+
+Input material = 
+Rest/microblocks = 
+Max: =
+Set =
+Recycle output =
+
+###./stairsplus/*###
+%s Stairs = 
+%s Slab = 
+%s Panel = 
+%s Microblock = 
+
+%s Pane = 
+%s Fence = 
