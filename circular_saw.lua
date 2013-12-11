@@ -22,8 +22,8 @@ for i,v in ipairs({"default:wood", "default:stone", "default:cobble", "default:m
 				"moreblocks:coal_stone", "moreblocks:iron_stone", "moreblocks:coal_checker", "moreblocks:iron_checker",
 				"moreblocks:cactus_checker", "moreblocks:coal_glass", "moreblocks:iron_glass", "moreblocks:glow_glass",
 				"moreblocks:super_glow_glass", "moreblocks:wooden_tile", "moreblocks:stone_tile", "moreblocks:split_stone_tile",
-				"moreblocks:iron_stone_bricks", "moreblocks:circle_stone_bricks", "moreblocks:wood_tile_centered", 
-				"moreblocks:wood_tile_full", "moreblocks:plank_stone"}) do
+				"moreblocks:coal_stone_bricks","moreblocks:iron_stone_bricks", "moreblocks:circle_stone_bricks",
+				"moreblocks:wood_tile_centered", "moreblocks:wood_tile_full", "moreblocks:plank_stone"}) do
 	table.insert(circular_saw.known_stairs, v);
 end
 
@@ -101,7 +101,7 @@ circular_saw.reset_circular_saw = function(pos)
 	inv:set_list("output",  circular_saw.get_stair_output_inv("",  "",  0, meta:get_string("max_offered")));
 	meta:set_int("anz",  0);
 
-	meta:set_string("infotext",  "Circular saw, empty (owned by " .. (meta:get_string("owner") or "") .. ")");
+	meta:set_string("infotext", S("Circular saw, empty (owned by %s)"):format((meta:get_string("owner") or "")));
 end
 
 
@@ -149,7 +149,7 @@ circular_saw.update_inventory = function(pos, amount)
 	-- Store how many microblocks are available
 	meta:set_int("anz",  (akt+amount));
 
-	meta:set_string("infotext",  "Circular saw, working with " ..material.. " (owned by " .. (meta:get_string("owner") or "") .. ")");
+	meta:set_string("infotext",  S("Circular saw, working with %s (owned by %s)"):format(material,(meta:get_string("owner") or "")));
 end
 
 
@@ -276,7 +276,7 @@ circular_saw.on_construct_init = function(pos, formspec)
 
 	meta:set_int(   "anz",          0); -- No microblocks inside yet
 	meta:set_string("max_offered",  99); -- How many items of this kind are offered by default?
-	meta:set_string("infotext",     "Circular saw, empty")
+	meta:set_string("infotext",     S("Circular saw, empty"))
 
 	local inv = meta:get_inventory()
 	inv:set_size("input",      1)  -- Input slot for full blocks of material x
@@ -329,13 +329,13 @@ minetest.register_node("moreblocks:circular_saw",  {
 			return circular_saw.on_construct_init(pos,
 					 "size[10,9]" ..
 					 "list[current_name;input;0,0;1,1;]" ..
-					"label[0,0;Input material]" ..
+					"label[0,0;"..S("Input material").."]" ..
 					 "list[current_name;micro;0,1;1,1;]" ..
-					"label[0,1;Rest/microblocks]" ..
-					 "field[0.3,2.5;1,1;max_offered;Max:;${max_offered}]" ..
-					 "button[1,2;1,1;Set;Set]" ..
+					"label[0,1;"..S("Rest/microblocks").."]" ..
+					 "field[0.3,2.5;1,1;max_offered;"..S("Max:")..";${max_offered}]" ..
+					 "button[1,2;1,1;Set;"..S("Set").."]" ..
 					 "list[current_name;recycle;0,3;1,1;]" ..
-					"label[0,3;Recycle output]" ..
+					"label[0,3;"..S("Recycle output").."]" ..
 					 "list[current_name;output;2,0;8,4;]" ..
 					 "list[current_player;main;1,5;8,4;]");
 		end,
@@ -349,7 +349,7 @@ minetest.register_node("moreblocks:circular_saw",  {
 			local meta = minetest.env:get_meta(pos);
 			
 			meta:set_string("owner",  (placer:get_player_name() or ""));
-			meta:set_string("infotext",  "Circular saw is empty (owned by " .. (placer:get_player_name() or "") .. ")");
+			meta:set_string("infotext",  S("Circular saw is empty (owned by %s)"):format((placer:get_player_name() or "")));
 		end,
 
 		-- The amount of items offered per shape can be configured
