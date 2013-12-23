@@ -254,7 +254,7 @@ circular_saw.on_metadata_inventory_take = function(pos, listname, index, stack, 
 
 		circular_saw.update_inventory(pos, -1 * cost);
 
-	elseif(listname=="mikro") then
+	elseif(listname=="micro") then
 
 		-- Each microblock costs 1 microblock
 		circular_saw.update_inventory(pos, -1 * 1 * stack:get_count());
