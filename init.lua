@@ -388,7 +388,6 @@ minetest.register_craftitem("moreblocks:jungle_stick", {
 })
 
 minetest.register_craftitem("moreblocks:nothing", {
-	inventory_image = "invisible.png",
 	on_use = minetest.item_eat(0),
 })
 
