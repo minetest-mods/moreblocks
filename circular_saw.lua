@@ -13,7 +13,7 @@ circular_saw = {};
 circular_saw.known_stairs = {}
 
 
--- Register known moreblocks stairs
+-- Register known moreblocks stairs.
 for i,v in ipairs({"default:wood", "default:stone", "default:cobble", "default:mossycobble", "default:brick", "default:sandstone",
 				"default:steelblock", "default:desert_stone", "default:glass", "default:tree", "default:jungletree", "default:stonebrick",
 				"default:obsidian", "default:obsidian_glass", "default:stone_bricks", "default:junglewood", "default:goldblock",
@@ -32,9 +32,9 @@ end
 circular_saw.cost_in_microblocks = { 1, 1, 1, 1, 1, 1, 1, 2,
 									 2, 3, 2, 4, 2, 4, 5, 6,
 									 7, 1, 1, 2, 4, 6, 7, 8,
-									 3, 4, 0, 0, 0, 0, 0, 0, };
+									 3, 1, 1, 2, 4, 0, 0, 0, };
 
--- anz: amount of input material in microblocks
+-- anz: amount of input material in microblocks.
 circular_saw.get_stair_output_inv = function(modname, material, anz, max)
 
 	local max_offered = 99;
@@ -46,7 +46,7 @@ circular_saw.get_stair_output_inv = function(modname, material, anz, max)
 	end
 	
 
-	-- If there is nothing inside display empty inventory
+	-- If there is nothing inside display empty inventory.
 	if(anz < 1) then
 		return { "",  "",  "",  "",  "",  "",  "", 
 				"",  "",  "",  "",  "",  "",  "", 
@@ -84,6 +84,9 @@ circular_saw.get_stair_output_inv = function(modname, material, anz, max)
 	modname .. ":slab_"  .. material .. "_15 "                     .. math.min(math.floor(anz/8), max_offered),
 
 	modname .. ":stair_" .. material .. "_half "                   .. math.min(math.floor(anz/3), max_offered),
+	modname .. ":stair_" .. material .. "_alt_1 "                  .. math.min(math.floor(anz/1), max_offered),
+	modname .. ":stair_" .. material .. "_alt_2 "                  .. math.min(math.floor(anz/1), max_offered),
+	modname .. ":stair_" .. material .. "_alt_4 "                  .. math.min(math.floor(anz/2), max_offered),
 	modname .. ":stair_" .. material .. "_alt "                    .. math.min(math.floor(anz/4), max_offered),
 
 	"", 
@@ -91,7 +94,7 @@ circular_saw.get_stair_output_inv = function(modname, material, anz, max)
 end
 
 
--- Reset empty circular_saw after last full block has been taken out (or the circular_saw has been placed the first tiem); note: max_offered is not reset
+-- Reset empty circular_saw after last full block has been taken out (or the circular_saw has been placed the first tiem); note: max_offered is not reset.
 circular_saw.reset_circular_saw = function(pos)
 	local meta = minetest.env:get_meta(pos);
 	local inv  = meta:get_inventory();
@@ -105,7 +108,7 @@ circular_saw.reset_circular_saw = function(pos)
 end
 
 
--- Player has taken something out of the box or placed something inside; that amounts to count microblocks
+-- Player has taken something out of the box or placed something inside; that amounts to count microblocks.
 circular_saw.update_inventory = function(pos, amount)
 	local meta = minetest.env:get_meta(pos);
 	local inv  = meta:get_inventory();
@@ -122,10 +125,10 @@ circular_saw.update_inventory = function(pos, amount)
 	end
  
 	local stack = inv:get_stack("input",  1);
-	-- At least one "normal" block is necessary to see what kind of stairs are requested
+	-- At least one "normal" block is necessary to see what kind of stairs are requested.
 	if(stack:is_empty()) then
 
-		-- Any microblocks not taken out yet are now lost (covers material loss in the machine)
+		-- Any microblocks not taken out yet are now lost (covers material loss in the machine).
 		circular_saw.reset_circular_saw(pos);
 		return;
 
@@ -135,45 +138,45 @@ circular_saw.update_inventory = function(pos, amount)
 	local modname  = liste[1];
 	local material = liste[2];
 	
-	-- Display as many full blocks as possible
+	-- Display as many full blocks as possible.
 	inv:set_list("input",   { modname.. ":" .. material .. " " .. math.floor(   (akt + amount) / 8) });
 
 	-- The stairnodes made of default nodes use moreblocks namespace, other mods keep own.
 	if(modname == "default") then modname = "moreblocks"; end
 	--print("circular_saw set to " ..modname.. " : " ..material.. " with " .. (akt+amount) .. " microblocks.");
 
-	-- 0-7 microblocks may remain as a rest
+	-- 0-7 microblocks may remain as a rest.
 	inv:set_list("micro",   { modname.. ":micro_" .. material .. "_bottom " .. ((akt + amount) % 8) });
-	-- Display 
+	-- Display.
 	inv:set_list("output",  circular_saw.get_stair_output_inv(modname, material,  (akt + amount), meta:get_string("max_offered")));
-	-- Store how many microblocks are available
+	-- Store how many microblocks are available.
 	meta:set_int("anz",  (akt+amount));
 
 	meta:set_string("infotext",  S("Circular saw, working with %s (owned by %s)"):format(material,(meta:get_string("owner") or "")));
 end
 
 
--- The amount of items offered per shape can be configured
+-- The amount of items offered per shape can be configured.
 circular_saw.on_receive_fields = function(pos, formname, fields, sender)
 	local meta = minetest.env:get_meta(pos);
 	if tonumber(fields.max_offered) and tonumber(fields.max_offered) > 0 and tonumber(fields.max_offered) < 99 then
 		meta:set_string("max_offered",  fields.max_offered);
-		circular_saw.update_inventory(pos, 0); -- update to show the correct number of items
+		circular_saw.update_inventory(pos, 0); -- Update to show the correct number of items.
 	end
 end
 
 
--- Moving the inventory of the circular_saw around is not allowed because it is a fictional inventory
+-- Moving the inventory of the circular_saw around is not allowed because it is a fictional inventory.
 circular_saw.allow_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
-	-- Moving inventory around would be rather immpractical and make things more difficult to calculate
+	-- Moving inventory around would be rather immpractical and make things more difficult to calculate.
 	return 0;
 end
 
 
--- Only input- and recycle-slot are intended as input slots
+-- Only input- and recycle-slot are intended as input slots.
 circular_saw.allow_metadata_inventory_put = function(pos, listname, index, stack, player)
  
-	-- The player is not allowed to put something in there
+	-- The player is not allowed to put something in there.
 	if(listname == "output" or listname == "micro") then
 		return 0;
 	end
@@ -181,12 +184,12 @@ circular_saw.allow_metadata_inventory_put = function(pos, listname, index, stack
 	local meta = minetest.env:get_meta(pos);
 	local inv  = meta:get_inventory();
 			
-	-- Only alow those items that are offered in the output inventory to be recycled
+	-- Only alow those items that are offered in the output inventory to be recycled.
 	if(listname == "recycle" and not(inv:contains_item("output",  stack:get_name()))) then
 		return 0;
 	end
 
-	-- Only accept certain blocks as input which are known to be craftable into stairs
+	-- Only accept certain blocks as input which are known to be craftable into stairs.
 	if(listname == "input") then
 	 
 		for i,v in ipairs(circular_saw.known_stairs) do
@@ -203,16 +206,16 @@ circular_saw.allow_metadata_inventory_put = function(pos, listname, index, stack
 	return stack:get_count()
 end
 
--- Taking is allowed from all slots (even the internal microblock slot)
+-- Taking is allowed from all slots (even the internal microblock slot).
 
--- Putting something in is slightly more complicated than taking anything because we have to make sure it is of a suitable material
+-- Putting something in is slightly more complicated than taking anything because we have to make sure it is of a suitable material.
 circular_saw.on_metadata_inventory_put = function(pos, listname, index, stack, player)
 
-	-- We need to find out if the circular_saw is already set to a specific material or not
+	-- We need to find out if the circular_saw is already set to a specific material or not.
 	local meta = minetest.env:get_meta(pos);
 	local inv  = meta:get_inventory();
 
-	-- Putting something into the input slot is only possible if that had been empty before or did contain something of the same material
+	-- Putting something into the input slot is only possible if that had been empty before or did contain something of the same material.
 	if(    listname=="input") then
 
 		if( not( inv:is_empty("input"))) then
@@ -223,12 +226,12 @@ circular_saw.on_metadata_inventory_put = function(pos, listname, index, stack, p
 			end
 		end
 
-		-- Each new block is worth 8 microblocks
+		-- Each new block is worth 8 microblocks.
 		circular_saw.update_inventory(pos, 8 * stack:get_count());
 		
 	elseif(listname=="recycle") then
  
-		-- Lets look which shape this represents
+		-- Lets look which shape this represents.
 		for i,v in ipairs(inv:get_list("output")) do
 				
 		 if(v:get_name() == stack:get_name()) then
@@ -236,36 +239,36 @@ circular_saw.on_metadata_inventory_put = function(pos, listname, index, stack, p
 			local value = circular_saw.cost_in_microblocks[ i ] * stack:get_count();
 			--print("\nRecycling " .. (v:get_name()) .. " into " ..value.. " microblocks.");
 
-			-- We get value microblocks back
+			-- We get value microblocks back.
 			circular_saw.update_inventory(pos, value);
 		 end
 		end
 	end
 end
 
--- The player takes something
+-- The player takes something.
 circular_saw.on_metadata_inventory_take = function(pos, listname, index, stack, player)
 			
-	-- If it is one of the offered stairs: find out how many microblocks have to be substracted
-	if(listname=="output") then
+	-- If it is one of the offered stairs: find out how many microblocks have to be substracted.
+	if (listname=="output") then
 
-		-- We do know how much each block at each position costs
+		-- We do know how much each block at each position costs.
 		local cost = circular_saw.cost_in_microblocks[ index ] * stack:get_count();
 
 		circular_saw.update_inventory(pos, -1 * cost);
 
-	elseif(listname=="micro") then
+	elseif (listname=="micro") then
 
-		-- Each microblock costs 1 microblock
+		-- Each microblock costs 1 microblock.
 		circular_saw.update_inventory(pos, -1 * 1 * stack:get_count());
 
-	elseif(listname=="input") then
+	elseif (listname=="input") then
 	
-		-- Each normal (= full) block taken costs 8 microblocks
+		-- Each normal (= full) block taken costs 8 microblocks.
 		circular_saw.update_inventory(pos, -1 * 8 * stack:get_count());
 
 	end
-	-- The recycle field plays no role here since it is processed immediately
+	-- The recycle field plays no role here since it is processed immediately.
 end
 
 
@@ -274,7 +277,7 @@ circular_saw.on_construct_init = function(pos, formspec)
 	local meta = minetest.env:get_meta(pos)
 	meta:set_string("formspec",  formspec); 
 
-	meta:set_int(   "anz",          0); -- No microblocks inside yet
+	meta:set_int(   "anz",          0); -- No microblocks inside yet.
 	meta:set_string("max_offered",  99); -- How many items of this kind are offered by default?
 	meta:set_string("infotext",     S("Circular saw, empty"))
 
@@ -310,14 +313,14 @@ minetest.register_node("moreblocks:circular_saw",  {
 		node_box = {
 			type = "fixed", 
 			fixed = {
-				{-0.4, -0.5, -0.4, -0.25, 0.25, -0.25}, -- Leg
-				{0.25, -0.5, 0.25, 0.4, 0.25, 0.4}, -- Leg
-				{-0.4, -0.5, 0.25, -0.25, 0.25, 0.4}, -- Leg 
-				{0.25, -0.5, -0.4, 0.4, 0.25, -0.25}, -- Leg
-				{-0.5, 0.25, -0.5, 0.5, 0.375, 0.5}, -- Tabletop
-				{-0.01, 0.4375, -0.125, 0.01, 0.5, 0.125}, -- Saw blade (top)
-				{-0.01, 0.375, -0.1875, 0.01, 0.4375, 0.1875}, -- Saw blade (bottom)
-				{-0.25, -0.0625, -0.25, 0.25, 0.25, 0.25}, -- Motor case
+				{-0.4, -0.5, -0.4, -0.25, 0.25, -0.25}, -- leg
+				{0.25, -0.5, 0.25, 0.4, 0.25, 0.4}, -- leg
+				{-0.4, -0.5, 0.25, -0.25, 0.25, 0.4}, -- leg 
+				{0.25, -0.5, -0.4, 0.4, 0.25, -0.25}, -- leg
+				{-0.5, 0.25, -0.5, 0.5, 0.375, 0.5}, -- tabletop
+				{-0.01, 0.4375, -0.125, 0.01, 0.5, 0.125}, -- saw blade (top)
+				{-0.01, 0.375, -0.1875, 0.01, 0.4375, 0.1875}, -- saw blade (bottom)
+				{-0.25, -0.0625, -0.25, 0.25, 0.25, 0.25}, -- motor case
 			},
 		},
 		tiles = {"moreblocks_circular_saw_top.png",  "moreblocks_circular_saw_bottom.png",  "moreblocks_circular_saw_side.png"},
@@ -344,7 +347,7 @@ minetest.register_node("moreblocks:circular_saw",  {
 			return circular_saw.can_dig(pos, player);
 		end,
 
-		-- Set owner of this circular saw
+		-- Set owner of this circular saw.
 		after_place_node = function(pos, placer)
 			local meta = minetest.env:get_meta(pos);
 			
@@ -352,7 +355,7 @@ minetest.register_node("moreblocks:circular_saw",  {
 			meta:set_string("infotext",  S("Circular saw is empty (owned by %s)"):format((placer:get_player_name() or "")));
 		end,
 
-		-- The amount of items offered per shape can be configured
+		-- The amount of items offered per shape can be configured.
 		on_receive_fields = function(pos, formname, fields, sender)
 			return circular_saw.on_receive_fields(pos, formname, fields, sender);
 		end,
@@ -361,14 +364,14 @@ minetest.register_node("moreblocks:circular_saw",  {
 			return circular_saw.allow_metadata_inventory_move(pos, from_list, from_index, to_list, to_index, count, player);     
 		end,
 
-		-- Only input- and recycle-slot are intended as input slots
+		-- Only input- and recycle-slot are intended as input slots.
 		allow_metadata_inventory_put = function(pos, listname, index, stack, player)
 			return circular_saw.allow_metadata_inventory_put(pos, listname, index, stack, player); 
 		end,
 
-		-- Taking is allowed from all slots (even the internal microblock slot); moving is forbidden
+		-- Taking is allowed from all slots (even the internal microblock slot); moving is forbidden.
 
-		-- Putting something in is slightly more complicated than taking anything because we have to make sure it is of a suitable material
+		-- Putting something in is slightly more complicated than taking anything because we have to make sure it is of a suitable material.
 		on_metadata_inventory_put = function(pos, listname, index, stack, player)
 			return circular_saw.on_metadata_inventory_put(pos, listname, index, stack, player);
 		end,

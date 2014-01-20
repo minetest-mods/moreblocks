@@ -28,13 +28,6 @@ function register_stair(modname, subname, recipeitem, groups, images, descriptio
 				{-0.5, 0, 0, 0.5, 0.5, 0.5},
 			},
 		},
-		selection_box = {
-			type = "fixed",
-			fixed = {
-				{-0.5, -0.5, -0.5, 0.5, 0, 0.5},
-				{-0.5, 0, 0, 0.5, 0.5, 0.5},
-			},
-		},
 		sounds = default.node_sound_stone_defaults(),
 		on_place = stairsplus_rotate_and_place
 	})
@@ -48,13 +41,6 @@ function register_stair(modname, subname, recipeitem, groups, images, descriptio
 		sunlight_propagates = true,
 		groups = {cracky=3, not_in_creative_inventory=1},
 		node_box = {
-			type = "fixed",
-			fixed = {
-				{-0.5, -0.5, -0.5, 0.5, 0, 0.5},
-				{-0.5, 0, 0, 0.5, 0.5, 0.5},
-			},
-		},
-		selection_box = {
 			type = "fixed",
 			fixed = {
 				{-0.5, -0.5, -0.5, 0.5, 0, 0.5},
@@ -81,13 +67,6 @@ function register_stair(modname, subname, recipeitem, groups, images, descriptio
 				{-0.5, 0, 0, 0, 0.5, 0.5},
 			},
 		},
-		selection_box = {
-			type = "fixed",
-			fixed = {
-				{-0.5, -0.5, -0.5, 0, 0, 0.5},
-				{-0.5, 0, 0, 0, 0.5, 0.5},
-			},
-		},
 		sounds = default.node_sound_stone_defaults(),
 		on_place = stairsplus_rotate_and_place
 	})
@@ -102,13 +81,6 @@ function register_stair(modname, subname, recipeitem, groups, images, descriptio
 		sunlight_propagates = true,
 		groups = groups,
 		node_box = {
-			type = "fixed",
-			fixed = {
-				{0, -0.5, -0.5, 0.5, 0, 0.5},
-				{0, 0, 0, 0.5, 0.5, 0.5},
-			},
-		},
-		selection_box = {
 			type = "fixed",
 			fixed = {
 				{0, -0.5, -0.5, 0.5, 0, 0.5},
@@ -137,14 +109,6 @@ function register_stair(modname, subname, recipeitem, groups, images, descriptio
 				{-0.5, 0, -0.5, 0, 0.5, 0},
 			},
 		},
-		selection_box = {
-			type = "fixed",
-			fixed = {
-				{-0.5, -0.5, -0.5, 0.5, 0, 0.5},
-				{-0.5, 0, 0, 0.5, 0.5, 0.5},
-				{-0.5, 0, -0.5, 0, 0.5, 0},
-			},
-		},
 		sounds = default.node_sound_stone_defaults(),
 		on_place = stairsplus_rotate_and_place
 	})
@@ -160,13 +124,6 @@ function register_stair(modname, subname, recipeitem, groups, images, descriptio
 		sunlight_propagates = true,
 		groups = groups,
 		node_box = {
-			type = "fixed",
-			fixed = {
-				{-0.5, -0.5, -0.5, 0.5, 0, 0.5},
-				{-0.5, 0, 0, 0, 0.5, 0.5},
-			},
-		},
-		selection_box = {
 			type = "fixed",
 			fixed = {
 				{-0.5, -0.5, -0.5, 0.5, 0, 0.5},
@@ -191,6 +148,66 @@ function register_stair(modname, subname, recipeitem, groups, images, descriptio
 			fixed = {
 				{-0.5, -0.5, -0.5, 0.5, 0, 0},
 				{-0.5, 0, 0, 0.5, 0.5, 0.5},
+			},
+		},
+		sounds = default.node_sound_stone_defaults(),
+		on_place = stairsplus_rotate_and_place
+	})
+	
+	minetest.register_node(":" .. modname .. ":stair_" .. subname .. "_alt_1", {
+		description = S("%s Stairs"):format(S(description)),
+		drawtype = "nodebox",
+		tiles = images,
+		light_source = light,
+		paramtype = "light",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		groups = groups,
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-0.5, -0.0625, -0.5, 0.5, 0, 0},
+				{-0.5, 0.4375, 0, 0.5, 0.5, 0.5},
+			},
+		},
+		sounds = default.node_sound_stone_defaults(),
+		on_place = stairsplus_rotate_and_place
+	})
+	
+	minetest.register_node(":" .. modname .. ":stair_" .. subname .. "_alt_2", {
+		description = S("%s Stairs"):format(S(description)),
+		drawtype = "nodebox",
+		tiles = images,
+		light_source = light,
+		paramtype = "light",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		groups = groups,
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-0.5, -0.125, -0.5, 0.5, 0, 0},
+				{-0.5, 0.375, 0, 0.5, 0.5, 0.5},
+			},
+		},
+		sounds = default.node_sound_stone_defaults(),
+		on_place = stairsplus_rotate_and_place
+	})
+	
+	minetest.register_node(":" .. modname .. ":stair_" .. subname .. "_alt_4", {
+		description = S("%s Stairs"):format(S(description)),
+		drawtype = "nodebox",
+		tiles = images,
+		light_source = light,
+		paramtype = "light",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		groups = groups,
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-0.5, -0.25, -0.5, 0.5, 0, 0},
+				{-0.5, 0.25, 0, 0.5, 0.5, 0.5},
 			},
 		},
 		sounds = default.node_sound_stone_defaults(),

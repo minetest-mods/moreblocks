@@ -26,10 +26,6 @@ function register_micro(modname, subname, recipeitem, groups, images, descriptio
 			type = "fixed",
 			fixed = {-0.5, -0.5, 0, 0, 0, 0.5},
 		},
-		selection_box = {
-			type = "fixed",
-			fixed = {-0.5, -0.5, 0, 0, 0, 0.5},
-		},
 		sounds = default.node_sound_stone_defaults(),
 		on_place = stairsplus_rotate_and_place
 	})
@@ -45,10 +41,6 @@ function register_micro(modname, subname, recipeitem, groups, images, descriptio
 		sunlight_propagates = true,
 		groups = groups,
 		node_box = {
-			type = "fixed",
-			fixed = {-0.5, -0.5, 0, 0, -0.4375, 0.5},
-		},
-		selection_box = {
 			type = "fixed",
 			fixed = {-0.5, -0.5, 0, 0, -0.4375, 0.5},
 		},
@@ -70,10 +62,6 @@ function register_micro(modname, subname, recipeitem, groups, images, descriptio
 			type = "fixed",
 			fixed = {-0.5, -0.5, 0, 0, -0.375, 0.5},
 		},
-		selection_box = {
-			type = "fixed",
-			fixed = {-0.5, -0.5, 0, 0, -0.375, 0.5},
-		},
 		sounds = default.node_sound_stone_defaults(),
 		on_place = stairsplus_rotate_and_place
 	})
@@ -89,10 +77,6 @@ function register_micro(modname, subname, recipeitem, groups, images, descriptio
 		sunlight_propagates = true,
 		groups = groups,
 		node_box = {
-			type = "fixed",
-			fixed = {-0.5, -0.5, 0, 0, -0.25, 0.5},
-		},
-		selection_box = {
 			type = "fixed",
 			fixed = {-0.5, -0.5, 0, 0, -0.25, 0.5},
 		},
@@ -114,10 +98,6 @@ function register_micro(modname, subname, recipeitem, groups, images, descriptio
 			type = "fixed",
 			fixed = {-0.5, -0.5, 0, 0, 0.25, 0.5},
 		},
-		selection_box = {
-			type = "fixed",
-			fixed = {-0.5, -0.5, 0, 0, 0.25, 0.5},
-		},
 		sounds = default.node_sound_stone_defaults(),
 		on_place = stairsplus_rotate_and_place
 	})
@@ -136,10 +116,6 @@ function register_micro(modname, subname, recipeitem, groups, images, descriptio
 			type = "fixed",
 			fixed = {-0.5, -0.5, 0, 0, 0.375, 0.5},
 		},
-		selection_box = {
-			type = "fixed",
-			fixed = {-0.5, -0.5, 0, 0, 0.375, 0.5},
-		},
 		sounds = default.node_sound_stone_defaults(),
 		on_place = stairsplus_rotate_and_place
 	})
@@ -155,10 +131,6 @@ function register_micro(modname, subname, recipeitem, groups, images, descriptio
 		sunlight_propagates = true,
 		groups = groups,
 		node_box = {
-			type = "fixed",
-			fixed = {-0.5, -0.5, 0, 0, 0.4375, 0.5},
-		},
-		selection_box = {
 			type = "fixed",
 			fixed = {-0.5, -0.5, 0, 0, 0.4375, 0.5},
 		},

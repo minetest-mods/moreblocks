@@ -299,6 +299,7 @@ minetest.register_node("moreblocks:glow_glass", {
 	groups = {snappy=2,cracky=3,oddly_breakable_by_hand=3},
 	sounds = default.node_sound_glass_defaults(),
 })
+
 minetest.register_node("moreblocks:trap_glow_glass", {
 	description = S("Trap Glow Glass"),
 	drawtype = "glasslike",
