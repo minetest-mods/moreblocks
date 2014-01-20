@@ -192,20 +192,6 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "default:wood 4",
-	recipe = {
-		{"moreblocks:horizontal_tree"},
-	}
-})
-
-minetest.register_craft({
-	output = "default:junglewood 4",
-	recipe = {
-		{"moreblocks:horizontal_jungle_tree"},
-	}
-})
-
-minetest.register_craft({
 	output = "moreblocks:plankstone 4",
 	recipe = {
 		{"default:stone", "default:wood"},
@@ -357,37 +343,6 @@ minetest.register_craft({
 		{"default:junglegrass"},
 	}
 })
-
-minetest.register_craft({
-	output = "moreblocks:horizontal_tree 2",
-	recipe = {
-		{"default:tree", "", "default:tree"},
-	}
-})
-
-minetest.register_craft({
-	output = "default:tree 2",
-	recipe = {
-		{"moreblocks:horizontal_tree"},
-		{"moreblocks:horizontal_tree"},
-	}
-})
-
-minetest.register_craft({
-	output = "moreblocks:horizontal_jungle_tree 2",
-	recipe = {
-		{"default:jungletree", "", "default:jungletree"},
-	}
-})
-
-minetest.register_craft({
-	output = "default:jungletree 2",
-	recipe = {
-		{"moreblocks:horizontal_jungle_tree"},
-		{"moreblocks:horizontal_jungle_tree"},
-	}
-})
-
 
 minetest.register_craft({
 		output = "moreblocks:circular_saw 1", 

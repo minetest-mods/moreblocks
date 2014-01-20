@@ -272,26 +272,6 @@ minetest.register_node("moreblocks:fence_jungle_wood", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("moreblocks:horizontal_tree", {
-	description = S("Horizontal Tree"),
-	tiles = {"default_tree.png", "default_tree.png", "default_tree.png^[transformR90",
-	"default_tree.png^[transformR90", "default_tree_top.png", "default_tree_top.png"},
-	paramtype2 = "facedir",
-	groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
-	sounds = default.node_sound_wood_defaults(),
-	furnace_burntime = 30,
-})
-
-minetest.register_node("moreblocks:horizontal_jungle_tree", {
-	description = S("Horizontal Jungle Tree"),
-	tiles = {"default_jungletree.png", "default_jungletree.png", "default_jungletree.png^[transformR90",
-	"default_jungletree.png^[transformR90", "default_jungletree_top.png", "default_jungletree_top.png"},
-	paramtype2 = "facedir",
-	groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
-	sounds = default.node_sound_wood_defaults(),
-	furnace_burntime = 30,
-})
-
 minetest.register_node("moreblocks:all_faces_tree", {
 	description = S("All-faces Tree"),
 	tiles = {"default_tree_top.png"},

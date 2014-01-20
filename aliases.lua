@@ -186,3 +186,21 @@ minetest.register_alias("moreblocks:emptybookshelf", "moreblocks:empty_bookshelf
 minetest.register_alias("moreblocks:junglestick", "moreblocks:jungle_stick")
 minetest.register_alias("moreblocks:splitstonesquare","moreblocks:split_stone_tile")
 minetest.register_alias("moreblocks:allfacestree","moreblocks:all_faces_tree")
+
+--Abm for Horizontal_tree (fix facedir)
+
+minetest.register_abm({
+	nodenames = {"moreblocks:horizontal_tree","moreblocks:horizontal_jungle_tree"},
+	interval = 1,
+	chance = 1,
+	action = function(pos, node)
+		local convert_facedir={7,12,9,18}
+		if node.name=="moreblocks:horizontal_tree" then
+			node.name="default:tree"
+		else
+			node.name="default:jungletree"
+		end
+		minetest.set_node(pos, {name=node.name,param2=convert_facedir[node.param2+1]})
+	end,
+})
+
