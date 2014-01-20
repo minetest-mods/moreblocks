@@ -194,9 +194,9 @@ circular_saw.allow_metadata_inventory_put = function(pos, listname, index, stack
 	 
 		for i,v in ipairs(circular_saw.known_stairs) do
 
-		if(circular_saw.known_stairs[ i ] == stack:get_name()) then
-			return stack:get_count();
-		end
+			if(circular_saw.known_stairs[ i ] == stack:get_name()) and inv:room_for_item("input", stack) then
+				return stack:get_count();
+			end
 
 		end
 		return 0;
