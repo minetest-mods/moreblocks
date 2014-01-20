@@ -8,7 +8,7 @@ else
 	stairsplus_expect_infinite_stacks = true
 end
 
--- these vales are in order: facedir in degrees = 90, 0, 270, 180, 90
+-- These vales are in order: facedir in degrees = 90, 0, 270, 180, 90
 
 local dirs1 = { 21, 20, 23, 22, 21 }
 local dirs2 = { 15, 8, 17, 6, 15 }
@@ -116,7 +116,7 @@ function register_stair_slab_panel_micro(modname, subname, recipeitem, groups, i
         register_6dfacedir_conversion(modname, subname)
 end
 
--- Default stairs/slabs/panels/microblocks
+-- Default stairs/slabs/panels/microblocks.
 
 register_stair_slab_panel_micro("moreblocks", "wood", "default:wood",
 	{snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=3},
@@ -241,7 +241,7 @@ register_stair_slab_panel_micro("moreblocks", "stonebrick", "default:stonebrick"
 	{cracky=3},
 	{"default_stone_brick.png"},
 	"Stone Bricks",
-	"stone_bricks",
+	"stonebrick",
 	0)
 	
 register_stair_slab_panel_micro("moreblocks", "desert_stonebrick", "default:desert_stonebrick",
