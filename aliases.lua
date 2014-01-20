@@ -187,7 +187,7 @@ minetest.register_alias("moreblocks:junglestick", "moreblocks:jungle_stick")
 minetest.register_alias("moreblocks:splitstonesquare","moreblocks:split_stone_tile")
 minetest.register_alias("moreblocks:allfacestree","moreblocks:all_faces_tree")
 
---Abm for Horizontal_tree (fix facedir)
+-- ABM for Horizontal_tree (fix facedir).
 
 minetest.register_abm({
 	nodenames = {"moreblocks:horizontal_tree","moreblocks:horizontal_jungle_tree"},
