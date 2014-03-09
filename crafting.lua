@@ -345,10 +345,11 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-		output = "moreblocks:circular_saw 1", 
-		recipe = {
-				{ "",  "default:steel_ingot",  "" },
-				{ "default:tree",  "default:tree",  "default:tree"},
-				{ "default:tree",  "",  "default:tree"},
-		}
+	output = "moreblocks:circular_saw 1", 
+	recipe = {
+		{ "",  "default:steel_ingot",  "" },
+		{ "default:tree",  "default:tree",  "default:tree"},
+		{ "default:tree",  "",  "default:tree"},
+	}
 })
+
