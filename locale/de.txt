@@ -48,7 +48,7 @@ Circular saw is empty (owned by %s) = Kreissaege ist leer (gehoert %s)
 
 Input\nmaterial = Ausgangs-\nmaterial
 Left-over = Rest
-Max: = Anzahl:
+Max = Anzahl
 Set = Ok
 Recycle\noutput = Wiederver-\nwerten
 
