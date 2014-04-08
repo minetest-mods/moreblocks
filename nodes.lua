@@ -1,4 +1,3 @@
-
 local S = moreblocks.gettext
 
 local sound_wood = default.node_sound_wood_defaults()
@@ -256,7 +255,7 @@ local nodes = {
 		tiles = {"moreblocks_super_glow_glass.png"},
 		paramtype = "light",
 		sunlight_propagates = true,
-		light_source = 11,
+		light_source = 15,
 		walkable = false,
 		groups = {snappy=2,cracky=3,oddly_breakable_by_hand=3},
 		sounds = sound_glass,
