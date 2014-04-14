@@ -1,4 +1,3 @@
-
 local S = moreblocks.gettext
 
 local sound_wood = default.node_sound_wood_defaults()

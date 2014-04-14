@@ -1,0 +1,67 @@
+# Translation by Xanthin
+
+###init.lua###
+[moreblocks] loaded. = [moreblocks] geladen.
+
+###nodes.lua###
+Jungle Wood Fence = Tropenholzzaun
+Empty Bookshelf = Leeres Buecherregal
+Clean Glass = Klares Glas
+Plankstone = Brettstein
+Wooden Tile = Holzfliese
+Full Wooden Tile = Vollholzfliese
+Centered Wooden Tile = Holzfliese mittig
+Up Wooden Tile = Holzfliese oben
+Down Wooden Tile = Holzfliese unten
+Left Wooden Tile = Holzfliese links
+Right Wooden Tile = Holzfliese rechts
+Circle Stone Bricks = Kreissteinziegel 
+Stone Tile = Steinfliese
+Split Stone Tile = Geteilte Steinfliese
+Glow Glass = Leuchtglas
+Super Glow Glass = Superleuchtglas
+Coal Glass = Kohleglas
+Iron Glass = Eisenglas
+Coal Checker = Karierte Kohle 
+Iron Checker = Kariertes Eisen 
+Trap Stone = Steinfalle
+Trap Glass = Glasfalle
+Trap Glow Glass = Leuchtglasfalle
+Trap Super Glow Glass = Superleuchtglasfalle
+Coal Stone = Kohlestein
+Iron Stone = Eisenstein
+Coal Stone Bricks = Kohlesteinziegel
+Iron Stone Bricks = Eisensteinziegel
+Cactus Checker = Karierter Kaktus
+Cactus Brick = Kaktusziegel
+Sweeper = Besen
+Jungle Stick = Tropenholzstock
+Rope = Seil
+All-faces Tree = Baumscheibenstamm
+
+###circular_saw.lua###
+Circular Saw = Kreissaege
+Circular saw, empty (owned by %s) = Kreissaege, leer (gehoert %s)
+Circular saw, working with %s (owned by %s) = Kreissaege, arbeitet mit %s (gehoert %s)
+Circular saw, empty = Kreissaege, leer
+Circular saw is empty (owned by %s) = Kreissaege ist leer (gehoert %s)
+
+Input\nmaterial = Ausgangs-\nmaterial
+Left-over = Rest
+Max = Anzahl
+Set = Ok
+Recycle\noutput = Wiederver-\nwerten
+
+###./stairsplus/*###
+%s Stairs = %streppe
+%s Slab = %sstufe
+%s Panel = %spaneel
+%s Microblock = %smikroblock
+
+%s Pane = %sscheibe
+%s Fence = %szaun
+
+###ownership.lua###
+someone = jemand
+Sorry, %s owns that spot. = Tut mir leid, %s gehoert diese Stelle.
+
