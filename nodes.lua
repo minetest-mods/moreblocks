@@ -107,7 +107,7 @@ local nodes = {
 	},
 	["iron_glass"] = {
 		description = S("Iron Glass"),
-		drawtype = "glasslike",
+		drawtype = "glasslike_framed",
 		paramtype = "light",
 		sunlight_propagates = true,
 		groups = {snappy=2,cracky=3,oddly_breakable_by_hand=3},
@@ -115,7 +115,7 @@ local nodes = {
 	},
 	["coal_glass"] = {
 		description = S("Coal Glass"),
-		drawtype = "glasslike",
+		drawtype = "glasslike_framed",
 		paramtype = "light",
 		sunlight_propagates = true,
 		groups = {snappy=2,cracky=3,oddly_breakable_by_hand=3},
@@ -123,7 +123,7 @@ local nodes = {
 	},
 	["clean_glass"] = {
 		description = S("Clean Glass"),
-		drawtype = "glasslike",
+		drawtype = "glasslike_framed",
 		paramtype = "light",
 		sunlight_propagates = true,
 		groups = {snappy=2,cracky=3,oddly_breakable_by_hand=3},
@@ -182,7 +182,7 @@ local nodes = {
 	},
 	["trap_glass"] = {
 		description = S("Trap Glass"),
-		drawtype = "glasslike",
+		drawtype = "glasslike_framed",
 		paramtype = "light",
 		sunlight_propagates = true,
 		walkable = false,
@@ -194,8 +194,8 @@ local nodes = {
 		description = S("Jungle Wood Fence"),
 		drawtype = "fencelike",
 		tiles = {"moreblocks_jungle_wood.png"},
-		inventory_image = "moreblocks_fence_jungle_wood.png",
-		wield_image = "moreblocks_fence_jungle_wood.png",
+		inventory_image = "default_fence_overlay.png^moreblocks_jungle_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
+		wield_image = "default_fence_overlay.png^moreblocks_jungle_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
 		paramtype = "light",
 		selection_box = {
 			type = "fixed",
@@ -213,7 +213,7 @@ local nodes = {
 		furnace_burntime = 30,
 	},
 	["all_faces_jungle_tree"] = {
-		description = S("All-faces Tree"),
+		description = S("All-faces Jungle Tree"),
 		tiles = {"default_jungletree_top.png"},
 		groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
 		sounds = sound_wood,
