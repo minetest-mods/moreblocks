@@ -221,7 +221,7 @@ local nodes = {
 	},
 	["glow_glass"] = {
 		description = S("Glow Glass"),
-		drawtype = "glasslike",
+		drawtype = "glasslike_framed",
 		paramtype = "light",
 		sunlight_propagates = true,
 		light_source = 11,
@@ -230,8 +230,7 @@ local nodes = {
 	},
 	["trap_glow_glass"] = {
 		description = S("Trap Glow Glass"),
-		drawtype = "glasslike",
-		tiles = {"moreblocks_glow_glass.png"},
+		drawtype = "glasslike_framed",
 		paramtype = "light",
 		sunlight_propagates = true,
 		light_source = 11,
@@ -242,7 +241,7 @@ local nodes = {
 	},
 	["super_glow_glass"] = {
 		description = S("Super Glow Glass"),
-		drawtype = "glasslike",
+		drawtype = "glasslike_framed",
 		paramtype = "light",
 		sunlight_propagates = true,
 		light_source = 15,
@@ -251,8 +250,7 @@ local nodes = {
 	},
 	["trap_super_glow_glass"] = {
 		description = S("Trap Super Glow Glass"),
-		drawtype = "glasslike",
-		tiles = {"moreblocks_super_glow_glass.png"},
+		drawtype = "glasslike_framed",
 		paramtype = "light",
 		sunlight_propagates = true,
 		light_source = 15,

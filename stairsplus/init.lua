@@ -21,7 +21,7 @@ function stairsplus:register_all(modname, subname, recipeitem, fields)
 	self:register_slab (modname, subname, recipeitem, fields)
 	self:register_panel(modname, subname, recipeitem, fields)
 	self:register_micro(modname, subname, recipeitem, fields)
-	self:register_6dfacedir_conversion(modname, subname)
+	-- self:register_6dfacedir_conversion(modname, subname)
 	circular_saw.known_nodes[recipeitem] = {modname, subname}
 end
 
@@ -35,11 +35,12 @@ function register_stair_slab_panel_micro(modname, subname, recipeitem, groups, i
 	})
 end
 
-dofile(modpath.."/conversion.lua")
+-- dofile(modpath.."/aliases.lua")
+-- dofile(modpath.."/conversion.lua")
+
 dofile(modpath.."/stairs.lua")
 dofile(modpath.."/slabs.lua")
 dofile(modpath.."/panels.lua")
 dofile(modpath.."/microblocks.lua")
-dofile(modpath.."/aliases.lua")
 dofile(modpath.."/registrations.lua")
 
