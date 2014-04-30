@@ -6,6 +6,16 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = "default:stick 1",
+	recipe = {{"default:sapling"},}
+})
+
+minetest.register_craft({
+	output = "default:stick 1",
+	recipe = {{"default:junglesapling"},}
+})
+
+minetest.register_craft({
 	output = "default:dirt_with_grass 1",
 	type = "shapeless",
 	recipe = {"default:junglegrass", "default:dirt"},
