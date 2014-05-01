@@ -70,14 +70,23 @@ minetest.register_craft({
 
 -- Redefinitions of some default nodes
 
--- Don't bother overriding nodes if minetest.override_item isn't available
-if minetest.override_item then
+if minetest.override_item then -- Don't bother overriding nodes if minetest.override_item isn't available
 
 if moreblocks.config.wood_facedir then
 	minetest.override_item("default:wood", {
 		paramtype2 = "facedir",
 	})
 end
+
+-- Make glass and obsidian glass framed, like the More Blocks glasses
+
+minetest.override_item("default:glass", {
+	drawtype = "glasslike_framed",
+})
+
+minetest.override_item("default:obsidian_glass", {
+	drawtype = "glasslike_framed",
+})
 
 -- Let there be light!
 
@@ -117,8 +126,7 @@ minetest.override_item("default:junglesapling", {
 })
 
 minetest.override_item("default:grass_1", {
-	-- Use a bigger inventory image
-	inventory_image = "default_grass_3.png",
+	inventory_image = "default_grass_3.png", -- Use a bigger inventory image
 	wield_image = "default_grass_3.png",
 	paramtype = "light",
 	sunlight_propagates = true,
