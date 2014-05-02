@@ -1,5 +1,3 @@
-dofile(minetest.get_modpath("moreblocks").."/_config.txt")
-
 -- Nodes will be called <modname>:{stair,slab,panel,micro}_<subname>
 
 if minetest.get_modpath("unified_inventory") or not minetest.setting_getbool("creative_mode") then
