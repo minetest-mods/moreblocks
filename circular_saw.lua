@@ -5,8 +5,8 @@ circular_saw = {}
 circular_saw.known_stairs = setmetatable({}, {
 	__newindex = function(k, v)
 		local modname = minetest.get_current_modname()
-		print(("Mod %s tried to add node %s to the circular saw"
-				.." manually!"):format(modname, v))
+		print(("WARNING: mod %s tried to add node %s to the circular saw"
+				.." manually."):format(modname, v))
 	end,
 })
 
@@ -94,7 +94,7 @@ function circular_saw:reset(pos)
 	meta:set_int("anz", 0)
 
 	meta:set_string("infotext",
-			S("Circular saw, empty (owned by %s)")
+			S("Circular Saw is empty (owned by %s)")
 			:format(meta:get_string("owner") or ""))
 end
 
@@ -153,7 +153,7 @@ function circular_saw:update_inventory(pos, amount)
 	meta:set_int("anz",  amount)
 
 	meta:set_string("infotext",
-			S("Circular saw, working with %s (owned by %s)")
+			S("Circular Saw is working on %s (owned by %s)")
 			:format(material, meta:get_string("owner") or ""))
 end
 
@@ -284,15 +284,15 @@ function circular_saw.on_construct(pos)
 			"list[current_name;output;2.8,0;8,4;]"..
 			"list[current_player;main;1.5,5;8,4;]")
 
-	meta:set_int("anz", 0) -- No microblocks inside yet
+	meta:set_int("anz", 0) -- No microblocks inside yet.
 	meta:set_string("max_offered", 99) -- How many items of this kind are offered by default?
-	meta:set_string("infotext", S("Circular saw, empty"))
+	meta:set_string("infotext", S("Circular Saw is empty"))
 
 	local inv = meta:get_inventory()
-	inv:set_size("input", 1)  -- Input slot for full blocks of material x
-	inv:set_size("micro", 1)  -- Storage for 1-7 surplus microblocks
-	inv:set_size("recycle", 1)  -- Surplus partial blocks can be placed here
-	inv:set_size("output", 4*8) -- 4x8 versions of stair-parts of material x
+	inv:set_size("input", 1)  -- Input slot for full blocks of material x.
+	inv:set_size("micro", 1)  -- Storage for 1-7 surplus microblocks.
+	inv:set_size("recycle", 1)  -- Surplus partial blocks can be placed here.
+	inv:set_size("output", 4*8) -- 4x8 versions of stair-parts of material x.
 
 	circular_saw:reset(pos)
 end
@@ -307,7 +307,7 @@ function circular_saw.can_dig(pos,player)
 		return false
 	end
 
-	-- Can be dug by anyone when empty (not only by the owner)
+	-- Can be dug by anyone when empty ,not only by the owner.
 	return true
 end
 
@@ -333,26 +333,27 @@ minetest.register_node("moreblocks:circular_saw",  {
 	paramtype = "light", 
 	sunlight_propagates = true,
 	paramtype2 = "facedir", 
-	groups = {cracky=2},
+	groups = {choppy = 2,oddly_breakable_by_hand = 2},
+	sounds = default.node_sound_wood_defaults(),
 	on_construct = circular_saw.on_construct,
 	can_dig = circular_saw.can_dig,
-	-- Set owner of this circular saw
+	-- Set the owner of this circular saw.
 	after_place_node = function(pos, placer)
 		local meta = minetest.get_meta(pos)
 		local owner = placer and placer:get_player_name() or ""
 		meta:set_string("owner",  owner)
 		meta:set_string("infotext",
-				S("Circular saw is empty (owned by %s)")
+				S("Circular Saw is empty (owned by %s)")
 				:format(owner))
 	end,
 
-	-- The amount of items offered per shape can be configured
+	-- The amount of items offered per shape can be configured.
 	on_receive_fields = circular_saw.on_receive_fields,
 	allow_metadata_inventory_move = circular_saw.allow_metadata_inventory_move,
-	-- Only input- and recycle-slot are intended as input slots
+	-- Only input- and recycle-slot are intended as input slots.
 	allow_metadata_inventory_put = circular_saw.allow_metadata_inventory_put,
 	-- Taking is allowed from all slots (even the internal microblock slot). Moving is forbidden.
-	-- Putting something in is slightly more complicated than taking anything because we have to make sure it is of a suitable material
+	-- Putting something in is slightly more complicated than taking anything because we have to make sure it is of a suitable material.
 	on_metadata_inventory_put = circular_saw.on_metadata_inventory_put,
 	on_metadata_inventory_take = circular_saw.on_metadata_inventory_take,
 })
