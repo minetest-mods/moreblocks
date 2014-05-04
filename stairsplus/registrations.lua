@@ -12,7 +12,7 @@ local default_nodes = {
 	"bronzeblock",
 	"diamondblock",
 	"desert_stone",
-	"desert_cobble",
+	-- "desert_cobble", Does not work in minetest_game.
 	"glass",
 	"tree",
 	"wood",
