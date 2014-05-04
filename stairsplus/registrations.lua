@@ -40,7 +40,7 @@ for _, name in pairs(default_nodes) do
 		groups = groups,
 		sounds = ndef.sounds,
 		tiles = ndef.tiles,
-		sunlight_propagates = ndef.sunlight_propagates,
+		sunlight_propagates = true,
 	})
 end
 
