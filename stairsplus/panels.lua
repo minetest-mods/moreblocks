@@ -82,7 +82,33 @@ function stairsplus:register_panel(modname, subname, recipeitem, fields)
 		end
 		minetest.register_node(":"..modname..":panel_"..subname..alternate, def)
 	end
-
 	minetest.register_alias(modname..":panel_"..subname.."_bottom", modname..":panel_"..subname)
+	
+	-- Some saw-less recipe.
+	
+		minetest.register_craft({
+			output = "moreblocks:panel_" .. subname .. " 12",
+			recipe = {
+				{recipeitem, ""},
+				{recipeitem, recipeitem},
+			},
+		})
+		minetest.register_craft({
+			output = "moreblocks:panel_" .. subname .. " 12",
+			recipe = {
+				{"", recipeitem},
+				{recipeitem, recipeitem},
+			},
+		})
+		minetest.register_craft({
+			type = "shapeless",
+			output = "moreblocks:panel_" .. subname,
+			recipe = {"moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname},
+		})
+		minetest.register_craft({
+			type = "shapeless",
+			output = recipeitem,
+			recipe = {"moreblocks:panel_" .. subname, "moreblocks:panel_" .. subname, "moreblocks:panel_" .. subname, "moreblocks:panel_" .. subname},
+		})
 end
 

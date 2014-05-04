@@ -83,5 +83,31 @@ function stairsplus:register_micro(modname, subname, recipeitem, fields)
 	end
 
 	minetest.register_alias(modname..":micro_"..subname.."_bottom", modname..":micro_"..subname)
+	
+	-- Some saw-less recipe.
+	
+		minetest.register_craft({
+		output = "moreblocks:micro_" .. subname .. " 6",
+		recipe = {
+			{"moreblocks:stair_" .. subname},
+		},
+	})
+		minetest.register_craft({
+		output = "moreblocks:micro_" .. subname .. " 4",
+		recipe = {
+			{"moreblocks:slab_" .. subname},
+		},
+	})
+		minetest.register_craft({
+		output = "moreblocks:micro_" .. subname .. " 2",
+		recipe = {
+			{"moreblocks:panel_" .. subname},
+		},
+	})
+		minetest.register_craft({
+			type = "shapeless",
+			output = recipeitem,
+			recipe = {"moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname},
+	})
 end
 

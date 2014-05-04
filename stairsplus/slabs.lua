@@ -82,15 +82,23 @@ function stairsplus:register_slab(modname, subname, recipeitem, fields)
 	end
 	minetest.register_alias("stairs:slab_"..subname, modname..":slab_"..subname)
 
-	-- Unregister default recipes, optional, see config.lua
+	-- Some saw-less recipe.
 
-	if not moreblocks.config.allow_stair_slab_crafting then
 		minetest.register_craft({
-			output = "moreblocks:nothing 1",
+			output = "moreblocks:slab_" .. subname .. " 6",
 			recipe = {
 				{recipeitem, recipeitem, recipeitem},
 			},
 		})
-	end
+		minetest.register_craft({
+			type = "shapeless",
+			output = "moreblocks:slab_" .. subname,
+			recipe = {"moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname},
+		})
+		minetest.register_craft({
+			type = "shapeless",
+			output = "moreblocks:slab_" .. subname,
+			recipe = {"moreblocks:panel_" .. subname, "moreblocks:panel_" .. subname},
+		})
 end
 

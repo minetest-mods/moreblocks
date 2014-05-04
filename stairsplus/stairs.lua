@@ -123,12 +123,10 @@ function stairsplus:register_stair(modname, subname, recipeitem, fields)
 	end
 	minetest.register_alias(":stairs:stair_"..subname, modname..":stair_"..subname)
 
-
-	-- Unregister default recipes, optional, see config.lua
-
-	if not moreblocks.config.allow_stair_slab_crafting then
+	-- Some saw-less recipes.
+	
 		minetest.register_craft({
-			output = "moreblocks:nothing 1",
+			output = "moreblocks:stair_" .. subname .. " 8",
 			recipe = {
 				{recipeitem, "", ""},
 				{recipeitem, recipeitem, ""},
@@ -137,13 +135,61 @@ function stairsplus:register_stair(modname, subname, recipeitem, fields)
 		})
 
 		minetest.register_craft({
-			output = "moreblocks:nothing 1",
+			output = "moreblocks:stair_" .. subname .. " 8",
 			recipe = {
 				{"", "", recipeitem},
 				{"", recipeitem, recipeitem},
 				{recipeitem, recipeitem, recipeitem},
 			},
 		})
-	end
+		minetest.register_craft({
+			output = "moreblocks:stair_" .. subname,
+			recipe = {
+				{"moreblocks:panel_" .. subname},
+				{"moreblocks:slab_" .. subname},
+			},
+		})
+		minetest.register_craft({
+			output = "moreblocks:stair_" .. subname .. "_outer",
+			recipe = {
+				{"moreblocks:micro_" .. subname},
+				{"moreblocks:slab_" .. subname},
+			},
+		})
+		minetest.register_craft({
+			type = "shapeless",
+			output = "moreblocks:stair_" .. subname .. "_half",
+			recipe = {"moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname},
+		})
+		minetest.register_craft({
+			type = "shapeless",
+			output = "moreblocks:stair_" .. subname .. "_right_half",
+			recipe = {"moreblocks:stair_" .. subname .. "_half"},
+		})
+		minetest.register_craft({
+			type = "shapeless",
+			output = "moreblocks:stair_" .. subname .. "_half",
+			recipe = {"moreblocks:stair_" .. subname .. "_right_half"},
+		})
+		minetest.register_craft({
+			type = "shapeless",
+			output = "moreblocks:stair_" .. subname,
+			recipe = {"moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname},
+		})
+		minetest.register_craft({
+			type = "shapeless",
+			output = "moreblocks:stair_" .. subname .. "_inner",
+			recipe = {"moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname},
+		})
+		minetest.register_craft({
+			type = "shapeless",
+			output = "moreblocks:stair_" .. subname .. "_outer",
+			recipe = {"moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname},
+		})
+		minetest.register_craft({
+			type = "shapeless",
+			output = "moreblocks:stair_" .. subname,
+			recipe = {"moreblocks:panel_" .. subname, "moreblocks:panel_" .. subname, "moreblocks:panel_" .. subname},
+		})
 end
 
