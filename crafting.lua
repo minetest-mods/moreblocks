@@ -157,7 +157,7 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "moreblocks:sweeper 3",
+	output = "moreblocks:sweeper 4",
 	recipe = {
 		{"default:junglegrass"},
 		{"default:stick"},
@@ -173,20 +173,20 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "moreblocks:split_stone_tile 1",
+	output = "moreblocks:split_stone_tile",
 	recipe = {
 		{"moreblocks:stone_tile"},
 	}
 })
 
 minetest.register_craft({
-	output = "moreblocks:empty_bookshelf 1",
+	output = "moreblocks:empty_bookshelf",
 	type = "shapeless",
 	recipe = {"moreblocks:sweeper", "default:bookshelf"},
 })
 
 minetest.register_craft({
-	output = "moreblocks:coal_stone_bricks 1",
+	output = "moreblocks:coal_stone_bricks 4",
 	recipe = {
 		{"moreblocks:coal_stone", "moreblocks:coal_stone"},
 		{"moreblocks:coal_stone", "moreblocks:coal_stone"},
@@ -194,7 +194,7 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "moreblocks:iron_stone_bricks 1",
+	output = "moreblocks:iron_stone_bricks 4",
 	recipe = {
 		{"moreblocks:iron_stone", "moreblocks:iron_stone"},
 		{"moreblocks:iron_stone", "moreblocks:iron_stone"},

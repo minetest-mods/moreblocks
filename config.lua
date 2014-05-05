@@ -18,11 +18,8 @@ local function setting(settingtype, name, default)
 	end
 end
 
--- Whether to direct wood based on player yaw when placing the block (true or false).
+-- Whether to direct wood based on player posititon when placing the block (true or false).
 setting("bool", "wood_facedir", true)
-
--- Allow stair/slab crafting without a circular saw or not (true or false).
-setting("bool", "allow_stair_slab_crafting", false)
 
 -- Show stairs/slabs/panels/microblocks in creative inventory (true or false).
 setting("bool", "show_stairsplus_creative_inv", false)
