@@ -12,7 +12,7 @@ local default_nodes = {
 	"bronzeblock",
 	"diamondblock",
 	"desert_stone",
-	-- "desert_cobble", Does not work in minetest_game.
+--	"desert_cobble", -- Does not work in minetest_game.
 	"glass",
 	"tree",
 	"wood",
@@ -30,7 +30,8 @@ for _, name in pairs(default_nodes) do
 	local ndef = minetest.registered_nodes[nodename]
 	local groups = {}
 	for k, v in pairs(ndef.groups)
-		do if k ~= "wood" and k ~= "stone" then -- Ignore wood and stone groups to not make them usable in crafting.
+		-- Ignore wood and stone groups to not make them usable in crafting.
+		do if k ~= "wood" and k ~= "stone" then
 			groups[k] = v
 		end
 	end
