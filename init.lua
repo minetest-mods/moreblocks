@@ -1,6 +1,6 @@
 --[[
 -- More Blocks (moreblocks) by Calinou
--- Licensed under the zlib/ license for code and CC BY-SA 3.0 for textures, see LICENSE.txt for info.
+-- Licensed under the zlib license for code and CC BY-SA 3.0 for textures, see LICENSE.txt for info.
 --]]
 
 moreblocks = {}
