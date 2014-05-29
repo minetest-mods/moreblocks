@@ -132,6 +132,7 @@ local nodes = {
 	["cactus_brick"] = {
 		description = S("Cactus Brick"),
 		groups = {cracky=3},
+		paramtype2 = "facedir",
 		sounds = sound_stone,
 	},
 	["cactus_checker"] = {
