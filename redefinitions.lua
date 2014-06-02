@@ -68,13 +68,20 @@ minetest.register_craft({
 
 -- Redefinitions of some default nodes:
 
-if minetest.override_item then -- Don't bother overriding nodes if minetest.override_item isn't available.
+ -- Don't bother overriding nodes if minetest.override_item isn't available.
+if minetest.override_item then
 
 if moreblocks.config.wood_facedir then
 	minetest.override_item("default:wood", {
 		paramtype2 = "facedir",
 	})
+	minetest.override_item("default:junglewood", {
+		paramtype2 = "facedir",
+	})
 	minetest.override_item("default:brick", {
+		paramtype2 = "facedir",
+	})
+	minetest.override_item("moreblocks:cactus_brick", {
 		paramtype2 = "facedir",
 	})
 end
