@@ -81,7 +81,22 @@ if moreblocks.config.wood_facedir then
 	minetest.override_item("default:brick", {
 		paramtype2 = "facedir",
 	})
+	minetest.override_item("default:stonebrick", {
+		paramtype2 = "facedir",
+	})
+	minetest.override_item("default:desert_stonebrick", {
+		paramtype2 = "facedir",
+	})
+	minetest.override_item("default:sandstonebrick", {
+		paramtype2 = "facedir",
+	})
 	minetest.override_item("moreblocks:cactus_brick", {
+		paramtype2 = "facedir",
+	})
+	minetest.override_item("moreblocks:coal_stone_bricks", {
+		paramtype2 = "facedir",
+	})
+	minetest.override_item("moreblocks:iron_stone_bricks", {
 		paramtype2 = "facedir",
 	})
 end
