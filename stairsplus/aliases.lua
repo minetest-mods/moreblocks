@@ -60,4 +60,3 @@ register_stairsplus_alias("moreblocks", "splitstonesquare", "split_stone_tile")
 register_stairsplus_alias("moreblocks", "woodtile", "wood_tile")
 register_stairsplus_alias("moreblocks", "woodtile_centered", "wood_tile_centered")
 register_stairsplus_alias("moreblocks", "woodtile_full", "wood_tile_full")
-

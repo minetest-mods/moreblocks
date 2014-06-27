@@ -1,6 +1,4 @@
--- Load translation library if intllib is installed
-
-local S
+local S -- Load translation library if intllib is installed:
 if intllib then
 	S = intllib.Getter(minetest.get_current_modname())
 else
@@ -111,4 +109,3 @@ function stairsplus:register_panel(modname, subname, recipeitem, fields)
 			recipe = {"moreblocks:panel_" .. subname, "moreblocks:panel_" .. subname, "moreblocks:panel_" .. subname, "moreblocks:panel_" .. subname},
 		})
 end
-

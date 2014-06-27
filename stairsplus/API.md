@@ -1,11 +1,11 @@
-API documentation for StairsPlus
+API documentation for Stairs+
 ================================
 - - - - - - - - - - - - - - - -
 
 * `stairsplus:register_all(modname, subname, recipeitem, fields)`
 	Registers a stair, slab, panel, microblock, and any other types of
-	microblocks to be added in the future.
-	Also registers the node with the circular saw.
+	nodes to be added in the future.
+	This also registers the node with the circular saw.
 	Example:
 	```lua
 	stairsplus:register_all("moreblocks", "wood", "defaut:wood", {
@@ -16,7 +16,7 @@ API documentation for StairsPlus
 	})
 	```
 The following register only a particular type of microblock.
-You will probably never want to use them directly.
+You will probably never want to use them directly:
 
 * `stairsplus:register_stair(modname, subname, recipeitem, fields)`
 * `stairsplus:register_slab(modname, subname, recipeitem, fields)`

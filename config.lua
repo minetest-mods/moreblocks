@@ -18,8 +18,8 @@ local function setting(settingtype, name, default)
 	end
 end
 
--- Whether to direct wood based on player posititon when placing the block (true or false).
+-- Whether to direct wood based on player posititon when placing the block (true or false):
 setting("bool", "wood_facedir", true)
 
--- Show stairs/slabs/panels/microblocks in creative inventory (true or false).
-setting("bool", "show_stairsplus_creative_inv", false)
+-- Show stairs/slabs/panels/microblocks in creative inventory (true or false):
+setting("bool", "stairsplus_in_creative_inventory", false)

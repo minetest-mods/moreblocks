@@ -14,7 +14,6 @@ local nodes = {
 	["wood_tile"] = {
 		description = S("Wooden Tile"),
 		groups = {snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
-		paramtype2 = "facedir",
 		tiles = {"default_wood.png^moreblocks_wood_tile.png",
 		"default_wood.png^moreblocks_wood_tile.png",
 		"default_wood.png^moreblocks_wood_tile.png",
@@ -26,7 +25,6 @@ local nodes = {
 	["wood_tile_flipped"] = {
 		description = S("Wooden Tile"),
 		groups = {snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
-		paramtype2 = "facedir",
 		tiles = {"default_wood.png^moreblocks_wood_tile.png^[transformR90",
 		"default_wood.png^moreblocks_wood_tile.png^[transformR90",
 		"default_wood.png^moreblocks_wood_tile.png^[transformR90",
@@ -39,21 +37,18 @@ local nodes = {
 	["wood_tile_center"] = {
 		description = S("Centered Wooden Tile"),
 		groups = {snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
-		paramtype2 = "facedir",
 		tiles = {"default_wood.png^moreblocks_wood_tile_center.png"},
 		sounds = sound_wood,
 	},
 	["wood_tile_full"] = {
 		description = S("Full Wooden Tile"),
 		groups = {snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
-		paramtype2 = "facedir",
 		tiles = tile_tiles("wood_tile_full"),
 		sounds = sound_wood,
 	},
 	["wood_tile_up"] = {
 		description = S("Upwards Wooden Tile"),
 		groups = {snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
-		paramtype2 = "facedir",
 		tiles = {"default_wood.png^moreblocks_wood_tile_up.png"},
 		sounds = sound_wood,
 		no_stairs = true,
@@ -61,7 +56,6 @@ local nodes = {
 	["wood_tile_down"] = {
 		description = S("Downwards Wooden Tile"),
 		groups = {snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
-		paramtype2 = "facedir",
 		tiles = {"default_wood.png^[transformR180^moreblocks_wood_tile_up.png^[transformR180"},
 		sounds = sound_wood,
 		no_stairs = true,
@@ -69,7 +63,6 @@ local nodes = {
 	["wood_tile_left"] = {
 		description = S("Leftwards Wooden Tile"),
 		groups = {snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
-		paramtype2 = "facedir",
 		tiles = {"default_wood.png^[transformR270^moreblocks_wood_tile_up.png^[transformR270"},
 		sounds = sound_wood,
 		no_stairs = true,
@@ -77,13 +70,17 @@ local nodes = {
 	["wood_tile_right"] = {
 		description = S("Rightwards Wooden Tile"),
 		groups = {snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
-		paramtype2 = "facedir",
 		tiles = {"default_wood.png^[transformR90^moreblocks_wood_tile_up.png^[transformR90"},
 		sounds = sound_wood,
 		no_stairs = true,
 	},
 	["circle_stone_bricks"] = {
 		description = S("Circle Stone Bricks"),
+		groups = {cracky = 3},
+		sounds = sound_stone,
+	},
+	["grey_bricks"] = {
+		description = S("Stone Bricks"),
 		groups = {cracky = 3},
 		sounds = sound_stone,
 	},
@@ -107,6 +104,18 @@ local nodes = {
 		tiles = {"moreblocks_split_stone_tile_top.png",
 			"moreblocks_split_stone_tile.png"},
 		groups = {cracky = 3},
+		sounds = sound_stone,
+	},
+	["split_stone_tile_alt"] = {
+		description = S("Split Stone Tile"),
+		tiles = {"moreblocks_split_stone_tile_alt_top.png",
+			"moreblocks_split_stone_tile_alt.png"},
+		groups = {cracky = 3},
+		sounds = sound_stone,
+	},
+	["tar"] = {
+		description = S("Tar"),
+		groups = {cracky = 2},
 		sounds = sound_stone,
 	},
 	["plankstone"] = {
@@ -147,7 +156,6 @@ local nodes = {
 	["cactus_checker"] = {
 		description = S("Cactus Checker"),
 		groups = {cracky = 3},
-		paramtype2 = "facedir",
 		tiles = {"default_stone.png^moreblocks_cactus_checker.png",
 		"default_stone.png^moreblocks_cactus_checker.png",
 		"default_stone.png^moreblocks_cactus_checker.png",
@@ -182,7 +190,6 @@ local nodes = {
 		"default_stone.png^moreblocks_coal_checker.png",
 		"default_stone.png^moreblocks_coal_checker.png^[transformR90",
 		"default_stone.png^moreblocks_coal_checker.png^[transformR90"},
-		paramtype2 = "facedir",
 		groups = {cracky = 3},
 		sounds = sound_stone,
 	},
@@ -194,7 +201,6 @@ local nodes = {
 		"default_stone.png^moreblocks_iron_checker.png",
 		"default_stone.png^moreblocks_iron_checker.png^[transformR90",
 		"default_stone.png^moreblocks_iron_checker.png^[transformR90"},
-		paramtype2 = "facedir",
 		groups = {cracky = 3},
 		sounds = sound_stone,
 	},

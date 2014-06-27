@@ -1,6 +1,4 @@
--- Default stairs/slabs/panels/microblocks.
-
-local default_nodes = {
+local default_nodes = { -- Default stairs/slabs/panels/microblocks:
 	"stone",
 	"cobble",
 	"mossycobble",
@@ -12,7 +10,7 @@ local default_nodes = {
 	"bronzeblock",
 	"diamondblock",
 	"desert_stone",
---	"desert_cobble", -- Does not work in minetest_game.
+--	"desert_cobble",
 	"glass",
 	"tree",
 	"wood",
@@ -26,11 +24,11 @@ local default_nodes = {
 }
 
 for _, name in pairs(default_nodes) do
-	local nodename = "default:"..name
+	local nodename = "default:" .. name
 	local ndef = minetest.registered_nodes[nodename]
 	local groups = {}
 	for k, v in pairs(ndef.groups)
-		-- Ignore wood and stone groups to not make them usable in crafting.
+		-- Ignore wood and stone groups to not make them usable in crafting:
 		do if k ~= "wood" and k ~= "stone" then
 			groups[k] = v
 		end

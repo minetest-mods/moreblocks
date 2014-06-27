@@ -180,6 +180,25 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = "moreblocks:split_stone_tile_alt",
+	recipe = {
+		{"moreblocks:split_stone_tile"},
+	}
+})
+
+minetest.register_craft({
+	output = "moreblocks:grey_bricks",
+	type = "shapeless",
+	recipe =  {"default:stone", "default:brick"},
+})
+
+minetest.register_craft({
+	output = "moreblocks:grey_bricks",
+	type = "shapeless",
+	recipe =  {"default:stonebrick", "default:brick"},
+})
+
+minetest.register_craft({
 	output = "moreblocks:empty_bookshelf",
 	type = "shapeless",
 	recipe = {"moreblocks:sweeper", "default:bookshelf"},
@@ -414,6 +433,10 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	type = "cooking", output = "moreblocks:tar", recipe = "default:gravel",
+})
+
+minetest.register_craft({
 	output = "moreblocks:circular_saw", 
 	recipe = {
 		{ "",  "default:steel_ingot",  "" },
@@ -421,4 +444,3 @@ minetest.register_craft({
 		{ "group:wood",  "",  "group:wood"},
 	}
 })
-

@@ -1,4 +1,3 @@
-
 local S = moreblocks.gettext
 circular_saw = {}
 
@@ -10,10 +9,10 @@ circular_saw.known_stairs = setmetatable({}, {
 	end,
 })
 
--- This is populated by stairsplus:register_all
+-- This is populated by stairsplus:register_all:
 circular_saw.known_nodes = {}
 
--- How many microblocks does this shape at the output inventory cost?
+-- How many microblocks does this shape at the output inventory cost:
 circular_saw.cost_in_microblocks = {
 	1, 1, 1, 1, 1, 1, 1, 2,
 	2, 3, 2, 4, 2, 4, 5, 6,
@@ -67,15 +66,15 @@ function circular_saw:get_output_inv(modname, material, amount, max)
 	end
 
 	local list = {}
-	-- If there is nothing inside display empty inventory
+	-- If there is nothing inside, display empty inventory:
 	if amount < 1 then
 		return list
 	end
 
 	for i, t in ipairs(circular_saw.names) do
 		local cost = circular_saw.cost_in_microblocks[i]
-		table.insert(list, modname..":"..t[1].."_"..material..t[2]
-				.." "..math.min(math.floor(amount/cost), max))
+		table.insert(list, modname .. ":" .. t[1] .. "_" .. material .. t[2]
+				.. " " .. math.min(math.floor(amount/cost), max))
 	end
 	return list
 end
@@ -83,7 +82,7 @@ end
 
 -- Reset empty circular_saw after last full block has been taken out
 -- (or the circular_saw has been placed the first time)
--- note: max_offered is not reset
+-- Note: max_offered is not reset:
 function circular_saw:reset(pos)
 	local meta = minetest.get_meta(pos)
 	local inv  = meta:get_inventory()
@@ -100,7 +99,7 @@ end
 
 
 -- Player has taken something out of the box or placed something inside
--- that amounts to count microblocks
+-- that amounts to count microblocks:
 function circular_saw:update_inventory(pos, amount)
 	local meta          = minetest.get_meta(pos)
 	local inv           = meta:get_inventory()
@@ -129,28 +128,27 @@ function circular_saw:update_inventory(pos, amount)
 	local modname  = name_parts[1]
 	local material = name_parts[2]
 
-	-- Display as many full blocks as possible
-	inv:set_list("input", {
+	inv:set_list("input", { -- Display as many full blocks as possible:
 		node_name.." ".. math.floor(amount / 8)
 	})
 
-	-- The stairnodes made of default nodes use moreblocks namespace, other mods keep own.
+	-- The stairnodes made of default nodes use moreblocks namespace, other mods keep own:
 	if modname == "default" then
 		modname = "moreblocks"
 	end
-	--print("circular_saw set to " ..modname.. " : "
-	--	..material.. " with "..(amount).." microblocks.")
+	-- print("circular_saw set to " .. modname .. " : "
+	--	.. material .. " with " .. (amount) .. " microblocks.")
 
-	-- 0-7 microblocks may remain left-over.
+	-- 0-7 microblocks may remain left-over:
 	inv:set_list("micro", {
-		modname..":micro_"..material.."_bottom "..(amount % 8)
+		modname .. ":micro_" .. material .. "_bottom " .. (amount % 8)
 	})
-	-- Display 
+	-- Display:
 	inv:set_list("output",
 		self:get_output_inv(modname, material, amount,
 				meta:get_int("max_offered")))
-	-- Store how many microblocks are available
-	meta:set_int("anz",  amount)
+	-- Store how many microblocks are available:
+	meta:set_int("anz", amount)
 
 	meta:set_string("infotext",
 			S("Circular Saw is working on %s (owned by %s)")
@@ -158,31 +156,31 @@ function circular_saw:update_inventory(pos, amount)
 end
 
 
--- The amount of items offered per shape can be configured
+-- The amount of items offered per shape can be configured:
 function circular_saw.on_receive_fields(pos, formname, fields, sender)
 	local meta = minetest.get_meta(pos)
 	local max = tonumber(fields.max_offered)
 	if max and max > 0 then
 		meta:set_string("max_offered",  max)
-		-- update to show the correct number of items
+		-- Update to show the correct number of items:
 		circular_saw:update_inventory(pos, 0)
 	end
 end
 
 
 -- Moving the inventory of the circular_saw around is not allowed because it
--- is a fictional inventory.  Moving inventory around would be rather
--- impractical and make things more difficult to calculate.
+-- is a fictional inventory. Moving inventory around would be rather
+-- impractical and make things more difficult to calculate:
 function circular_saw.allow_metadata_inventory_move(
 		pos, from_list, from_index, to_list, to_index, count, player)
 	return 0
 end
 
 
--- Only input- and recycle-slot are intended as input slots
+-- Only input- and recycle-slot are intended as input slots:
 function circular_saw.allow_metadata_inventory_put(
 		pos, listname, index, stack, player)
-	-- The player is not allowed to put something in there
+	-- The player is not allowed to put something in there:
 	if listname == "output" or listname == "micro" then
 		return 0
 	end
@@ -192,7 +190,7 @@ function circular_saw.allow_metadata_inventory_put(
 	local stackname = stack:get_name()
 	local count = stack:get_count()
 
-	-- Only alow those items that are offered in the output inventory to be recycled
+	-- Only alow those items that are offered in the output inventory to be recycled:
 	if listname == "recycle" then
 		if not inv:contains_item("output", stackname) then
 			return 0
@@ -210,7 +208,7 @@ function circular_saw.allow_metadata_inventory_put(
 		return count
 	end
 
-	-- Only accept certain blocks as input which are known to be craftable into stairs
+	-- Only accept certain blocks as input which are known to be craftable into stairs:
 	if listname == "input" then
 		if not inv:is_empty("input") and
 				inv:get_stack("input", index):get_name() ~= stackname then
@@ -225,25 +223,25 @@ function circular_saw.allow_metadata_inventory_put(
 	end
 end
 
--- Taking is allowed from all slots (even the internal microblock slot)
+-- Taking is allowed from all slots (even the internal microblock slot).
 -- Putting something in is slightly more complicated than taking anything
--- because we have to make sure it is of a suitable material
+-- because we have to make sure it is of a suitable material:
 function circular_saw.on_metadata_inventory_put(
 		pos, listname, index, stack, player)
 	-- We need to find out if the circular_saw is already set to a
-	-- specific material or not
+	-- specific material or not:
 	local meta = minetest.get_meta(pos)
 	local inv  = meta:get_inventory()
 	local stackname = stack:get_name()
 	local count = stack:get_count()
 
 	-- Putting something into the input slot is only possible if that had
-	-- been empty before or did contain something of the same material
+	-- been empty before or did contain something of the same material:
 	if listname == "input" then
-		-- Each new block is worth 8 microblocks
+		-- Each new block is worth 8 microblocks:
 		circular_saw:update_inventory(pos, 8 * count)
 	elseif listname == "recycle" then
-		-- Lets look which shape this represents
+		-- Lets look which shape this represents:
 		local cost = circular_saw:get_cost(inv, stackname)
 		circular_saw:update_inventory(pos, cost * count)
 	end
@@ -252,27 +250,28 @@ end
 function circular_saw.on_metadata_inventory_take(
 		pos, listname, index, stack, player)
 	-- If it is one of the offered stairs: find out how many
-	-- microblocks have to be substracted
+	-- microblocks have to be substracted:
 	if listname == "output" then
-		-- We do know how much each block at each position costs
+		-- We do know how much each block at each position costs:
 		local cost = circular_saw.cost_in_microblocks[index]
 				* stack:get_count()
 
 		circular_saw:update_inventory(pos, -cost)
 	elseif listname == "micro" then
-		-- Each microblock costs 1 microblock
+		-- Each microblock costs 1 microblock:
 		circular_saw:update_inventory(pos, -stack:get_count())
 	elseif listname == "input" then
-		-- Each normal (= full) block taken costs 8 microblocks
+		-- Each normal (= full) block taken costs 8 microblocks:
 		circular_saw:update_inventory(pos, 8 * -stack:get_count())
 	end
 	-- The recycle field plays no role here since it is processed immediately.
 end
 
+gui_slots = "listcolors[#606060AA;#808080;#101010;#202020;#FFF]"
 
 function circular_saw.on_construct(pos)
 	local meta = minetest.get_meta(pos)
-	meta:set_string("formspec", "size[11,9]"..
+	meta:set_string("formspec", "size[11,9]"..gui_slots..
 			"label[0,0;"..S("Input\nmaterial").."]"..
 			"list[current_name;input;1.5,0;1,1;]"..
 			"label[0,1;"..S("Left-over").."]"..
@@ -289,8 +288,8 @@ function circular_saw.on_construct(pos)
 	meta:set_string("infotext", S("Circular Saw is empty"))
 
 	local inv = meta:get_inventory()
-	inv:set_size("input", 1)  -- Input slot for full blocks of material x.
-	inv:set_size("micro", 1)  -- Storage for 1-7 surplus microblocks.
+	inv:set_size("input", 1)    -- Input slot for full blocks of material x.
+	inv:set_size("micro", 1)    -- Storage for 1-7 surplus microblocks.
 	inv:set_size("recycle", 1)  -- Surplus partial blocks can be placed here.
 	inv:set_size("output", 4*8) -- 4x8 versions of stair-parts of material x.
 
@@ -306,8 +305,7 @@ function circular_saw.can_dig(pos,player)
 	   not inv:is_empty("recycle") then
 		return false
 	end
-
-	-- Can be dug by anyone when empty ,not only by the owner.
+	-- Can be dug by anyone when empty, not only by the owner:
 	return true
 end
 
@@ -347,14 +345,13 @@ minetest.register_node("moreblocks:circular_saw",  {
 				:format(owner))
 	end,
 
-	-- The amount of items offered per shape can be configured.
+	-- The amount of items offered per shape can be configured:
 	on_receive_fields = circular_saw.on_receive_fields,
 	allow_metadata_inventory_move = circular_saw.allow_metadata_inventory_move,
-	-- Only input- and recycle-slot are intended as input slots.
+	-- Only input- and recycle-slot are intended as input slots:
 	allow_metadata_inventory_put = circular_saw.allow_metadata_inventory_put,
 	-- Taking is allowed from all slots (even the internal microblock slot). Moving is forbidden.
-	-- Putting something in is slightly more complicated than taking anything because we have to make sure it is of a suitable material.
+	-- Putting something in is slightly more complicated than taking anything because we have to make sure it is of a suitable material:
 	on_metadata_inventory_put = circular_saw.on_metadata_inventory_put,
 	on_metadata_inventory_take = circular_saw.on_metadata_inventory_take,
 })
-
