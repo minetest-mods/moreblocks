@@ -187,13 +187,13 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "moreblocks:grey_bricks",
+	output = "moreblocks:grey_bricks 2",
 	type = "shapeless",
 	recipe =  {"default:stone", "default:brick"},
 })
 
 minetest.register_craft({
-	output = "moreblocks:grey_bricks",
+	output = "moreblocks:grey_bricks 2",
 	type = "shapeless",
 	recipe =  {"default:stonebrick", "default:brick"},
 })
