@@ -108,8 +108,6 @@ local nodes = {
 	},
 	["split_stone_tile_alt"] = {
 		description = S("Split Stone Tile"),
-		tiles = {"moreblocks_split_stone_tile_alt_top.png",
-			"moreblocks_split_stone_tile_alt.png"},
 		groups = {cracky = 3},
 		sounds = sound_stone,
 	},
