@@ -61,9 +61,7 @@ function circular_saw:get_cost(inv, stackname)
 end
 
 function circular_saw:get_output_inv(modname, material, amount, max)
-	if (not max or max < 1) then
-		max = 99
-	end
+	if (not max or max < 1 or max > 99) then max = 99 end
 
 	local list = {}
 	-- If there is nothing inside, display empty inventory:
