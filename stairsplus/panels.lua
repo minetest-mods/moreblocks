@@ -75,11 +75,11 @@ function stairsplus:register_panel(modname, subname, recipeitem, fields)
 		end
 		def.description = desc
 		if fields.drop then
-			def.drop = modname..":panel_"..fields.drop..alternate
+			def.drop = modname.. ":panel_" ..fields.drop..alternate
 		end
-		minetest.register_node(":"..modname..":panel_"..subname..alternate, def)
+		minetest.register_node(":" ..modname.. ":panel_" ..subname..alternate, def)
 	end
-	minetest.register_alias(modname..":panel_"..subname.."_bottom", modname..":panel_"..subname)
+	minetest.register_alias(modname.. ":panel_" ..subname.. "_bottom", modname.. ":panel_" ..subname)
 	
 	-- Some saw-less recipes:
 

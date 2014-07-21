@@ -75,28 +75,43 @@ function stairsplus:register_micro(modname, subname, recipeitem, fields)
 		end
 		def.description = desc
 		if fields.drop then
-			def.drop = modname..":micro_"..fields.drop..alternate
+			def.drop = modname.. ":micro_" ..fields.drop..alternate
 		end
-		minetest.register_node(":"..modname..":micro_"..subname..alternate, def)
+		minetest.register_node(":" ..modname.. ":micro_" ..subname..alternate, def)
 	end
 
-	minetest.register_alias(modname..":micro_"..subname.."_bottom", modname..":micro_"..subname)
+	minetest.register_alias(modname.. ":micro_" ..subname.. "_bottom", modname.. ":micro_" ..subname)
 	
 	-- Some saw-less recipes:
 	
 	minetest.register_craft({
+		type = "shapeless",
+		output = "moreblocks:micro_" .. subname .. " 7",
+		recipe = {"moreblocks:stair_" .. subname .. "_inner"},
+	})
+	
+	minetest.register_craft({
 	output = "moreblocks:micro_" .. subname .. " 6",
-	recipe = {{"moreblocks:stair_" .. subname}},
+		type = "shapeless",
+	recipe = {"moreblocks:stair_" .. subname},
 	})
 	
 	minetest.register_craft({
-	output = "moreblocks:micro_" .. subname .. " 4",
-	recipe = {{"moreblocks:slab_" .. subname}},
+		type = "shapeless",
+		output = "moreblocks:micro_" .. subname .. " 5",
+		recipe = {"moreblocks:stair_" .. subname .. "_outer"},
 	})
 	
 	minetest.register_craft({
-	output = "moreblocks:micro_" .. subname .. " 2",
-	recipe = {{"moreblocks:panel_" .. subname}},
+		type = "shapeless",
+		output = "moreblocks:micro_" .. subname .. " 4",
+		recipe = {"moreblocks:slab_" .. subname},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = "moreblocks:micro_" .. subname .. " 2",
+		recipe = {"moreblocks:panel_" .. subname},
 	})
 	
 	minetest.register_craft({

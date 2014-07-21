@@ -6,8 +6,8 @@ local sound_glass = default.node_sound_glass_defaults()
 local sound_leaves = default.node_sound_leaves_defaults()
 
 local function tile_tiles(name)
-	local tex = "moreblocks_"..name..".png"
-	return {tex, tex, tex, tex, tex.."^[transformR90", tex.."^[transformR90"}
+	local tex = "moreblocks_" ..name.. ".png"
+	return {tex, tex, tex, tex, tex.. "^[transformR90", tex.. "^[transformR90"}
 end
 
 local nodes = {
@@ -306,13 +306,13 @@ local nodes = {
 }
 
 for name, def in pairs(nodes) do
-	def.tiles = def.tiles or {"moreblocks_"..name..".png"}
-	minetest.register_node("moreblocks:"..name, def)
-	minetest.register_alias(name, "moreblocks:"..name)
+	def.tiles = def.tiles or {"moreblocks_" ..name.. ".png"}
+	minetest.register_node("moreblocks:" ..name, def)
+	minetest.register_alias(name, "moreblocks:" ..name)
 	if not def.no_stairs then
 		local groups = {}
 		for k, v in pairs(def.groups) do groups[k] = v end
-		stairsplus:register_all("moreblocks", name, "moreblocks:"..name, {
+		stairsplus:register_all("moreblocks", name, "moreblocks:" ..name, {
 			description = def.description,
 			groups = groups,
 			tiles = def.tiles,

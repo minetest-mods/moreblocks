@@ -17,8 +17,8 @@ minetest.register_alias("moreblocks:junglewood", "default:junglewood")
 minetest.register_alias("moreblocks:jungle_wood", "default:junglewood")
 
 for _, t in pairs(circular_saw.names) do
-	minetest.register_alias("moreblocks:"..t[1].."_jungle_wood"..t[2],
-			"moreblocks:"..t[1].."_junglewood"..t[2])
+	minetest.register_alias("moreblocks:" ..t[1].. "_jungle_wood" ..t[2],
+			"moreblocks:" ..t[1].. "_junglewood" ..t[2])
 end
 minetest.register_alias("moreblocks:horizontaltree", "moreblocks:horizontal_tree")
 minetest.register_alias("moreblocks:horizontaljungletree", "moreblocks:horizontal_jungle_tree")

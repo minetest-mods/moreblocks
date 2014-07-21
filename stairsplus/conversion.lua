@@ -10,26 +10,26 @@ function stairsplus:register_6dfacedir_conversion(modname, material)
 	--print('ABM for '..modname..' "'..material..'"')
 
 	local objects_list1 = {
-		modname..":slab_"..material.."_inverted",
-		modname..":slab_"..material.."_quarter_inverted",
-		modname..":slab_"..material.."_three_quarter_inverted",
-		modname..":stair_"..material.."_inverted",
-		modname..":stair_"..material.."_wall",
-		modname..":stair_"..material.."_wall_half",
-		modname..":stair_"..material.."_wall_half_inverted",
-		modname..":stair_"..material.."_half_inverted",
-		modname..":stair_"..material.."_right_half_inverted",
-		modname..":panel_"..material.."_vertical",
-		modname..":panel_"..material.."_top",
+		modname.. ":slab_" ..material.. "_inverted",
+		modname.. ":slab_" ..material.. "_quarter_inverted",
+		modname.. ":slab_" ..material.. "_three_quarter_inverted",
+		modname.. ":stair_" ..material.. "_inverted",
+		modname.. ":stair_" ..material.. "_wall",
+		modname.. ":stair_" ..material.. "_wall_half",
+		modname.. ":stair_" ..material.. "_wall_half_inverted",
+		modname.. ":stair_" ..material.. "_half_inverted",
+		modname.. ":stair_" ..material.. "_right_half_inverted",
+		modname.. ":panel_" ..material.. "_vertical",
+		modname.. ":panel_" ..material.. "_top",
 	}
 
 	local objects_list2 = {
-		modname..":slab_"..material.."_wall",
-		modname..":slab_"..material.."_quarter_wall",
-		modname..":slab_"..material.."_three_quarter_wall",
-		modname..":stair_"..material.."_inner_inverted",
-		modname..":stair_"..material.."_outer_inverted",
-		modname..":micro_"..material.."_top"
+		modname.. ":slab_" ..material.. "_wall",
+		modname.. ":slab_" ..material.. "_quarter_wall",
+		modname.. ":slab_" ..material.. "_three_quarter_wall",
+		modname.. ":stair_" ..material.. "_inner_inverted",
+		modname.. ":stair_" ..material.. "_outer_inverted",
+		modname.. ":micro_" ..material.. "_top"
 	}
 
 	for _, object in pairs(objects_list1) do
@@ -64,8 +64,8 @@ function stairsplus:register_6dfacedir_conversion(modname, material)
 			dest_object = string.gsub(dest_object, "_right_half", "_half")
 		end
 
-		--print("    +---> convert "..object)
-		--print("    |     to "..dest_object)
+		--print("    +---> convert " ..object)
+		--print("    |     to " ..dest_object)
 
 		minetest.register_abm({
 			nodenames = {object},
@@ -107,8 +107,8 @@ function stairsplus:register_6dfacedir_conversion(modname, material)
 			dest_object = string.gsub(dest_object, "_wall", "")
 		end
 
-		--print("    +---> convert "..object)
-		--print("    |     to "..dest_object)
+		--print("    +---> convert " ..object)
+		--print("    |     to " ..dest_object)
 
 		minetest.register_abm({
 			nodenames = {object},

@@ -115,11 +115,11 @@ function stairsplus:register_stair(modname, subname, recipeitem, fields)
 		end
 		def.description = desc
 		if fields.drop then
-			def.drop = modname..":stair_"..fields.drop..alternate
+			def.drop = modname.. ":stair_" ..fields.drop..alternate
 		end
-		minetest.register_node(":"..modname..":stair_"..subname..alternate, def)
+		minetest.register_node(":" ..modname.. ":stair_" ..subname..alternate, def)
 	end
-	minetest.register_alias(":stairs:stair_"..subname, modname..":stair_"..subname)
+	minetest.register_alias(":stairs:stair_" ..subname, modname.. ":stair_" ..subname)
 
 	-- Some saw-less recipes:
 	
@@ -205,5 +205,21 @@ function stairsplus:register_stair(modname, subname, recipeitem, fields)
 		type = "shapeless",
 		output = "moreblocks:stair_" .. subname,
 		recipe = {"moreblocks:panel_" .. subname, "moreblocks:panel_" .. subname, "moreblocks:panel_" .. subname},
+	})
+	
+	minetest.register_craft({ -- See mirrored variation of the recipe below.
+		output = "moreblocks:stair_" .. subname .. "_alt",
+		recipe = {
+			{"moreblocks:panel_" .. subname, ""},
+			{""                            , "moreblocks:panel_" .. subname},
+		},
+	})
+	
+	minetest.register_craft({ -- Mirrored variation of the recipe above.
+		output = "moreblocks:stair_" .. subname .. "_alt",
+		recipe = {
+			{""                            , "moreblocks:panel_" .. subname},
+			{"moreblocks:panel_" .. subname, ""},
+		},
 	})
 end
