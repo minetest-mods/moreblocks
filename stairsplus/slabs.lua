@@ -83,38 +83,38 @@ function stairsplus:register_slab(modname, subname, recipeitem, fields)
 	-- Some saw-less recipes:
 
 		minetest.register_craft({
-			output = "moreblocks:slab_" .. subname .. " 6",
+			output = modname .. ":slab_" .. subname .. " 6",
 			recipe = {{recipeitem, recipeitem, recipeitem}},
 		})
 		
 		minetest.register_craft({
 			type = "shapeless",
-			output = "moreblocks:slab_" .. subname,
-			recipe = {"moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname},
+			output = modname .. ":slab_" .. subname,
+			recipe = {modname .. ":micro_" .. subname, modname .. ":micro_" .. subname, modname .. ":micro_" .. subname, modname .. ":micro_" .. subname},
 		})
 		
 		minetest.register_craft({
-			output = "moreblocks:slab_" .. subname,
-			recipe = {{"moreblocks:panel_" .. subname, "moreblocks:panel_" .. subname}},
+			output = modname .. ":slab_" .. subname,
+			recipe = {{modname .. ":panel_" .. subname, modname .. ":panel_" .. subname}},
 		})
 		
 		minetest.register_craft({
-			output = "moreblocks:slab_" .. subname,
+			output = modname .. ":slab_" .. subname,
 			recipe = {
-				{"moreblocks:panel_" .. subname},
-				{"moreblocks:panel_" .. subname},
+				{modname .. ":panel_" .. subname},
+				{modname .. ":panel_" .. subname},
 			},
 		})
 
 		minetest.register_craft({
 			type = "shapeless",
 			output = recipeitem,
-			recipe = {"moreblocks:slab_" .. subname, "moreblocks:slab_" .. subname},
+			recipe = {modname .. ":slab_" .. subname, modname .. ":slab_" .. subname},
 		})
 		
 		minetest.register_craft({
 			type = "shapeless",
-			output = "moreblocks:slab_" .. subname .. " 3",
-			recipe = {"moreblocks:stair_" .. subname, "moreblocks:stair_" .. subname},
+			output = modname .. ":slab_" .. subname .. " 3",
+			recipe = {modname .. ":stair_" .. subname, modname .. ":stair_" .. subname},
 		})
 end

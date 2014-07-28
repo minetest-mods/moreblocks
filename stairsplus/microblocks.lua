@@ -86,37 +86,37 @@ function stairsplus:register_micro(modname, subname, recipeitem, fields)
 	
 	minetest.register_craft({
 		type = "shapeless",
-		output = "moreblocks:micro_" .. subname .. " 7",
-		recipe = {"moreblocks:stair_" .. subname .. "_inner"},
+		output = modname .. ":micro_" .. subname .. " 7",
+		recipe = {modname .. ":stair_" .. subname .. "_inner"},
 	})
 	
 	minetest.register_craft({
-	output = "moreblocks:micro_" .. subname .. " 6",
+	output = modname .. ":micro_" .. subname .. " 6",
 		type = "shapeless",
-	recipe = {"moreblocks:stair_" .. subname},
-	})
-	
-	minetest.register_craft({
-		type = "shapeless",
-		output = "moreblocks:micro_" .. subname .. " 5",
-		recipe = {"moreblocks:stair_" .. subname .. "_outer"},
+	recipe = {modname .. ":stair_" .. subname},
 	})
 	
 	minetest.register_craft({
 		type = "shapeless",
-		output = "moreblocks:micro_" .. subname .. " 4",
-		recipe = {"moreblocks:slab_" .. subname},
+		output = modname .. ":micro_" .. subname .. " 5",
+		recipe = {modname .. ":stair_" .. subname .. "_outer"},
 	})
 	
 	minetest.register_craft({
 		type = "shapeless",
-		output = "moreblocks:micro_" .. subname .. " 2",
-		recipe = {"moreblocks:panel_" .. subname},
+		output = modname .. ":micro_" .. subname .. " 4",
+		recipe = {modname .. ":slab_" .. subname},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":micro_" .. subname .. " 2",
+		recipe = {modname .. ":panel_" .. subname},
 	})
 	
 	minetest.register_craft({
 		type = "shapeless",
 		output = recipeitem,
-		recipe = {"moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname, "moreblocks:micro_" .. subname},
+		recipe = {modname .. ":micro_" .. subname, modname .. ":micro_" .. subname, modname .. ":micro_" .. subname, modname .. ":micro_" .. subname, modname .. ":micro_" .. subname, modname .. ":micro_" .. subname, modname .. ":micro_" .. subname, modname .. ":micro_" .. subname},
 	})
 end
