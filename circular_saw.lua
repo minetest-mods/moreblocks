@@ -123,8 +123,8 @@ function circular_saw:update_inventory(pos, amount)
 	end
 	local node_name = stack:get_name()
 	local name_parts = circular_saw.known_nodes[node_name] or ""
-	local modname  = name_parts[1]
-	local material = name_parts[2]
+	local modname  = name_parts[1] or ""
+	local material = name_parts[2] or ""
 
 	inv:set_list("input", { -- Display as many full blocks as possible:
 		node_name.. " " .. math.floor(amount / 8)
