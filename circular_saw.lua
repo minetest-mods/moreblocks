@@ -121,7 +121,7 @@ function circular_saw:update_inventory(pos, amount)
 		return
 
 	end
-	local node_name = stack:get_name()
+	local node_name = stack:get_name() or ""
 	local name_parts = circular_saw.known_nodes[node_name] or ""
 	local modname  = name_parts[1] or ""
 	local material = name_parts[2] or ""
