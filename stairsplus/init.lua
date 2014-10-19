@@ -13,7 +13,7 @@ end
 function stairsplus:register_all(modname, subname, recipeitem, fields)
 	fields = fields or {}
 	fields.groups = fields.groups or {}
-	if not moreblocks.config.show_stairsplus_creative_inv then
+	if not moreblocks.config.stairsplus_in_creative_inventory then
 		fields.groups.not_in_creative_inventory = 1
 	end
 	self:register_stair(modname, subname, recipeitem, fields)
