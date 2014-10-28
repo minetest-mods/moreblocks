@@ -10,7 +10,7 @@ local default_nodes = { -- Default stairs/slabs/panels/microblocks:
 	"bronzeblock",
 	"diamondblock",
 	"desert_stone",
---	"desert_cobble",
+	"desert_cobble",
 	"glass",
 	"tree",
 	"wood",
