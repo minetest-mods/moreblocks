@@ -421,6 +421,24 @@ function stairsplus:register_slope(modname, subname, recipeitem, fields)
 	
 	minetest.register_craft({
 		type = "shapeless",
+		output = modname .. ":slope_" .. subname .. "_inner_half_raised",
+		recipe =  {modname .. ":slab_" .. subname, modname .. ":slope_" .. subname .. "_inner_half"},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":slope_" .. subname .. "_outer_half_raised",
+		recipe =  {modname .. ":slab_" .. subname, modname .. ":slope_" .. subname .. "_outer_half"},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":slope_" .. subname .. "_outer_cut_half_raised",
+		recipe =  {modname .. ":slab_" .. subname, modname .. ":slope_" .. subname .. "_outer_cut_half"},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
 		output = modname .. ":slope_" .. subname .. "_outer_cut",
 		recipe =  {modname .. ":slope_" .. subname .. "_outer"},
 	})
