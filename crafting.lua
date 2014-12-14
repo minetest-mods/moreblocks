@@ -433,6 +433,23 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = "moreblocks:cobble_compressed",
+	recipe = {
+		{"default:cobble", "default:cobble", "default:cobble"},
+		{"default:cobble", "default:cobble", "default:cobble"},
+		{"default:cobble", "default:cobble", "default:cobble"},
+	}
+})
+
+minetest.register_craft({
+	output = "default:cobble 9",
+	recipe = {
+		{"moreblocks:cobble_compressed"},
+	}
+})
+
+
+minetest.register_craft({
 	type = "cooking", output = "moreblocks:tar", recipe = "default:gravel",
 })
 

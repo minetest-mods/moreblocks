@@ -116,6 +116,11 @@ local nodes = {
 		groups = {cracky = 2},
 		sounds = sound_stone,
 	},
+	["cobble_compressed"] = {
+		description = S("Compressed Cobblestone"),
+		groups = {cracky = 1},
+		sounds = sound_stone,
+	},
 	["plankstone"] = {
 		description = S("Plankstone"),
 		groups = {cracky = 3},

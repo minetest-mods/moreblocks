@@ -74,11 +74,11 @@ function stairsplus:register_slab(modname, subname, recipeitem, fields)
 		end
 		def.description = desc
 		if fields.drop then
-			def.drop = modname.. ":slab_" ..fields.drop..alternate
+			def.drop = modname.. ":slab_" .. fields.drop .. alternate
 		end
-		minetest.register_node(":" ..modname.. ":slab_" ..subname..alternate, def)
+		minetest.register_node(":" .. modname .. ":slab_" .. subname .. alternate, def)
 	end
-	minetest.register_alias("stairs:slab_" ..subname, modname.. ":slab_" ..subname)
+	minetest.register_alias("stairs:slab_" .. subname, modname .. ":slab_" .. subname)
 
 	-- Some saw-less recipes:
 
