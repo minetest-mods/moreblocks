@@ -1,4 +1,5 @@
-local S = moreblocks.gettext
+local S = moreblocks.intllib
+
 circular_saw = {}
 
 circular_saw.known_stairs = setmetatable({}, {

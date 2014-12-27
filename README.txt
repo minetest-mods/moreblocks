@@ -1,5 +1,5 @@
 More Blocks
-==========
+===========
 
 More Blocks for Minetest (http://minetest.net), a free and open source infinite
 world block sandbox game.

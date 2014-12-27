@@ -1,19 +1,22 @@
 --[[
--- More Blocks (moreblocks) by Calinou
--- Licensed under the zlib/ license for code and CC BY-SA 3.0 for textures, see LICENSE.txt for info.
+======================================================================
+** More Blocks **
+By Calinou, with the help of ShadowNinja and VanessaE.
+
+Copyright (c) 2011-2014 Calinou and contributors.
+Licensed under the zlib license. See LICENSE.txt for more information.
+======================================================================
 --]]
 
 moreblocks = {}
 
--- Load translation library if intllib is installed
-
-local S -- Load translation library if intllib is installed:
-if intllib then
-	S = intllib.Getter(minetest.get_current_modname())
+local S
+if minetest.get_modpath("intllib") then
+	S = intllib.Getter()
 else
 	S = function(s) return s end
 end
-moreblocks.gettext = S
+moreblocks.intllib = S
 
 local modpath = minetest.get_modpath("moreblocks")
 
@@ -26,6 +29,5 @@ dofile(modpath .. "/crafting.lua")
 dofile(modpath .. "/aliases.lua")
 
 if minetest.setting_getbool("log_mods") then
-	print(S("[moreblocks] loaded."))
+	minetest.log("action", S("[moreblocks] loaded."))
 end
-
