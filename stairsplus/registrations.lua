@@ -16,6 +16,8 @@ local default_nodes = { -- Default stairs/slabs/panels/microblocks:
 	"wood",
 	"jungletree",
 	"junglewood",
+	"pinetree",
+	"pinewood",
 	"obsidian",
 	"obsidian_glass",
 	"stonebrick",
