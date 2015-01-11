@@ -1,3 +1,11 @@
+--[[
+======================================================================
+This file is part of More Blocks.
+
+Copyright (c) 2011-2015 Calinou and contributors.
+Licensed under the zlib license. See LICENSE.md for more information.
+======================================================================
+--]]
 
 local function register_stairsplus_alias(modname, origname, newname)
 	minetest.register_alias(modname.. ":slab_" ..origname, "moreblocks:slab_" ..newname)

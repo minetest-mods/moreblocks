@@ -1,6 +1,5 @@
 API documentation for Stairs+
-================================
-- - - - - - - - - - - - - - - -
+=============================
 
 * `stairsplus:register_all(modname, subname, recipeitem, fields)`
 	Registers a stair, slab, panel, microblock, and any other types of

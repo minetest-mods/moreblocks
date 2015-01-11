@@ -1,4 +1,11 @@
--- Crafting
+--[[
+======================================================================
+This file is part of More Blocks.
+
+Copyright (c) 2011-2015 Calinou and contributors.
+Licensed under the zlib license. See LICENSE.md for more information.
+======================================================================
+--]]
 
 minetest.register_craft({
 	output = "default:stick",
@@ -447,7 +454,6 @@ minetest.register_craft({
 		{"moreblocks:cobble_compressed"},
 	}
 })
-
 
 minetest.register_craft({
 	type = "cooking", output = "moreblocks:tar", recipe = "default:gravel",

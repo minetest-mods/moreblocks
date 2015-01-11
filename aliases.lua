@@ -1,24 +1,30 @@
--- More Blocks aliases
+--[[
+======================================================================
+This file is part of More Blocks.
 
+Copyright (c) 2011-2015 Calinou and contributors.
+Licensed under the zlib license. See LICENSE.md for more information.
+======================================================================
+--]]
+
+-- More Blocks aliases:
 minetest.register_alias("sweeper", "moreblocks:sweeper")
 minetest.register_alias("circular_saw", "moreblocks:circular_saw")
 minetest.register_alias("jungle_stick", "moreblocks:jungle_stick")
 
--- Old block/item replacement
-
+-- Old block/item replacement:
 minetest.register_alias("moreblocks:oerkkiblock", "default:mossycobble")
 minetest.register_alias("moreblocks:screwdriver", "screwdriver:screwdriver")
 
--- Node and item renaming
-
+-- Node and item renaming:
 minetest.register_alias("moreblocks:stone_bricks", "default:stonebrick")
 minetest.register_alias("moreblocks:stonebrick", "default:stonebrick")
 minetest.register_alias("moreblocks:junglewood", "default:junglewood")
 minetest.register_alias("moreblocks:jungle_wood", "default:junglewood")
 
 for _, t in pairs(circular_saw.names) do
-	minetest.register_alias("moreblocks:" ..t[1].. "_jungle_wood" ..t[2],
-			"moreblocks:" ..t[1].. "_junglewood" ..t[2])
+	minetest.register_alias("moreblocks:" .. t[1] .. "_jungle_wood" .. t[2],
+			"moreblocks:" .. t[1] .. "_junglewood" .. t[2])
 end
 minetest.register_alias("moreblocks:horizontaltree", "moreblocks:horizontal_tree")
 minetest.register_alias("moreblocks:horizontaljungletree", "moreblocks:horizontal_jungle_tree")
@@ -51,8 +57,7 @@ minetest.register_alias("moreblocks:junglestick", "moreblocks:jungle_stick")
 minetest.register_alias("moreblocks:splitstonesquare","moreblocks:split_stone_tile")
 minetest.register_alias("moreblocks:allfacestree","moreblocks:all_faces_tree")
 
--- ABM for horizontal trees (fix facedir).
-
+-- ABM for horizontal trees (fix facedir):
 local horizontal_tree_convert_facedir = {7, 12, 9, 18}
 
 minetest.register_abm({
