@@ -1,10 +1,8 @@
 --[[
-======================================================================
-This file is part of More Blocks.
+More Blocks: Stairs+
 
 Copyright (c) 2011-2015 Calinou and contributors.
 Licensed under the zlib license. See LICENSE.md for more information.
-======================================================================
 --]]
 
 -- Nodes will be called <modname>:{stair,slab,panel,micro}_<subname>

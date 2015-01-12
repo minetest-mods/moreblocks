@@ -1,10 +1,8 @@
 --[[
-======================================================================
-This file is part of More Blocks.
+More Blocks: registrations
 
 Copyright (c) 2011-2015 Calinou and contributors.
 Licensed under the zlib license. See LICENSE.md for more information.
-======================================================================
 --]]
 
 local default_nodes = { -- Default stairs/slabs/panels/microblocks:

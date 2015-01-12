@@ -1,10 +1,8 @@
 --[[
-======================================================================
-This file is part of More Blocks.
+More Blocks: conversion
 
 Copyright (c) 2011-2015 Calinou and contributors.
 Licensed under the zlib license. See LICENSE.md for more information.
-======================================================================
 --]]
 
 -- Function to convert all stairs/slabs/etc nodes from
