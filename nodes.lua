@@ -120,7 +120,7 @@ local nodes = {
 	},
 	["tar"] = {
 		description = S("Tar"),
-		groups = {cracky = 2},
+		groups = {cracky = 2, tar_block = 1},
 		sounds = sound_stone,
 	},
 	["cobble_compressed"] = {
