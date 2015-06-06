@@ -93,9 +93,10 @@ function circular_saw:get_output_inv(modname, material, amount, max)
 
 	for i, t in ipairs(circular_saw.names) do
 		local cost = circular_saw.cost_in_microblocks[i]
+		local balance = math.min(math.floor(amount/cost), max)
 		pos = pos + 1
 		list[pos] = modname .. ":" .. t[1] .. "_" .. material .. t[2]
-				.. " " .. math.min(math.floor(amount/cost), max)
+				.. " " .. balance
 	end
 	return list
 end
