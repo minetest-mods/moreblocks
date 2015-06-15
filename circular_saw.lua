@@ -233,9 +233,17 @@ function circular_saw.allow_metadata_inventory_put(
 
 	-- Only accept certain blocks as input which are known to be craftable into stairs:
 	if listname == "input" then
-		if not inv:is_empty("input") and
-				inv:get_stack("input", index):get_name() ~= stackname then
-			return 0
+		if not inv:is_empty("input") then
+			if inv:get_stack("input", index):get_name() ~= stackname then
+				return 0
+			end
+		end
+		if not inv:is_empty("micro") then
+			local microstackname = inv:get_stack("micro", 1):get_name():gsub("^.+:micro_", "", 1)
+			local cutstackname = stackname:gsub("^.+:", "", 1)
+			if microstackname ~= cutstackname then
+				return 0
+			end
 		end
 		for name, t in pairs(circular_saw.known_nodes) do
 			if name == stackname and inv:room_for_item("input", stack) then
