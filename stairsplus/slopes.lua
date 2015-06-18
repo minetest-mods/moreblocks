@@ -162,6 +162,24 @@ function stairsplus:register_slope(modname, subname, recipeitem, fields)
 		
 --==============================================================
 		
+		["_inner_cut"] = {
+			mesh = "moreblocks_slope_inner_cut.obj",
+			collision_box = box_slope_inner,
+			selection_box = box_slope_inner,
+		},
+		["_inner_cut_half"] = {
+			mesh = "moreblocks_slope_inner_cut_half.obj",
+			collision_box = box_slope_inner_half,
+			selection_box = box_slope_inner_half,
+		},
+		["_inner_cut_half_raised"] = {
+			mesh = "moreblocks_slope_inner_cut_half_raised.obj",
+			collision_box = box_slope_inner_half_raised,
+			selection_box = box_slope_inner_half_raised,
+		},
+
+--==============================================================
+
 		["_outer"] = {
 			mesh = "moreblocks_slope_outer.obj",
 			collision_box = box_slope_outer,
@@ -194,6 +212,11 @@ function stairsplus:register_slope(modname, subname, recipeitem, fields)
 			mesh = "moreblocks_slope_outer_cut_half_raised.obj",
 			collision_box = box_slope_outer_half_raised,
 			selection_box = box_slope_outer_half_raised,
+		},
+		["_cut"] = {
+			mesh = "moreblocks_slope_cut.obj",
+			collision_box = box_slope_outer,
+			selection_box = box_slope_outer,
 		},
 	}
 
