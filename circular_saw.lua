@@ -21,12 +21,13 @@ circular_saw.known_stairs = setmetatable({}, {
 circular_saw.known_nodes = {}
 
 -- How many microblocks does this shape at the output inventory cost:
+-- It may cause slight loss, but no gain.
 circular_saw.cost_in_microblocks = {
 	1, 1, 1, 1, 1, 1, 1, 2,
 	2, 3, 2, 4, 2, 4, 5, 6,
 	7, 1, 1, 2, 4, 6, 7, 8,
-	3, 1, 1, 2, 4, 4, 2, 7,
-	7, 2, 7, 6, 4, 6, 5, 4,
+	3, 1, 1, 2, 4, 4, 2, 6,
+	7, 3, 7, 7, 4, 8, 3, 2,
 }
 
 circular_saw.names = {
