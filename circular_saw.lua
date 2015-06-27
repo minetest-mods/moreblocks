@@ -28,6 +28,7 @@ circular_saw.cost_in_microblocks = {
 	7, 1, 1, 2, 4, 6, 7, 8,
 	3, 1, 1, 2, 4, 4, 2, 6,
 	7, 3, 7, 7, 4, 8, 3, 2,
+	6, 2, 1, 3, 4,
 }
 
 circular_saw.names = {
@@ -66,11 +67,16 @@ circular_saw.names = {
 	{"slope", "_inner"},
 	{"slope", "_inner_half"},
 	{"slope", "_inner_half_raised"},
+	{"slope", "_inner_cut"},
+	{"slope", "_inner_cut_half"},
+	{"slope", "_inner_cut_half_raised"},
 	{"slope", "_outer"},
 	{"slope", "_outer_half"},
 	{"slope", "_outer_half_raised"},
 	{"slope", "_outer_cut"},
 	{"slope", "_outer_cut_half"},
+	{"slope", "_outer_cut_half_raised"},
+	{"slope", "_cut"},
 }
 
 function circular_saw:get_cost(inv, stackname)
@@ -304,7 +310,7 @@ gui_slots = "listcolors[#606060AA;#808080;#101010;#202020;#FFF]"
 function circular_saw.on_construct(pos)
 	local meta = minetest.get_meta(pos)
 	local fancy_inv = default.gui_bg..default.gui_bg_img..default.gui_slots
-	meta:set_string("formspec", "size[11,9]"..fancy_inv..
+	meta:set_string("formspec", "size[11,10]"..fancy_inv..
 			"label[0,0;" ..S("Input\nmaterial").. "]" ..
 			"list[current_name;input;1.5,0;1,1;]" ..
 			"label[0,1;" ..S("Left-over").. "]" ..
@@ -313,8 +319,8 @@ function circular_saw.on_construct(pos)
 			"list[current_name;recycle;1.5,2;1,1;]" ..
 			"field[0.3,3.5;1,1;max_offered;" ..S("Max").. ":;${max_offered}]" ..
 			"button[1,3.2;1,1;Set;" ..S("Set").. "]" ..
-			"list[current_name;output;2.8,0;8,5;]" ..
-			"list[current_player;main;1.5,5.25;8,4;]")
+			"list[current_name;output;2.8,0;8,6;]" ..
+			"list[current_player;main;1.5,6.25;8,4;]")
 
 	meta:set_int("anz", 0) -- No microblocks inside yet.
 	meta:set_string("max_offered", 99) -- How many items of this kind are offered by default?
@@ -324,7 +330,7 @@ function circular_saw.on_construct(pos)
 	inv:set_size("input", 1)    -- Input slot for full blocks of material x.
 	inv:set_size("micro", 1)    -- Storage for 1-7 surplus microblocks.
 	inv:set_size("recycle", 1)  -- Surplus partial blocks can be placed here.
-	inv:set_size("output", 5*8) -- 5x8 versions of stair-parts of material x.
+	inv:set_size("output", 6*8) -- 6x8 versions of stair-parts of material x.
 
 	circular_saw:reset(pos)
 end
