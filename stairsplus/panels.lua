@@ -22,43 +22,43 @@ end
 
 function stairsplus:register_panel(modname, subname, recipeitem, fields)
 	local defs = {
-		[""] = {
+		[""] = { -- 8/16 high (default panel)
 			node_box = {
 				type = "fixed",
 				fixed = {-0.5, -0.5, 0, 0.5, 0, 0.5},
 			},
 		},
-		["_1"] = {
+		["_1"] = { -- 1/16 high
 			node_box = {
 				type = "fixed",
 				fixed = {-0.5, -0.5, 0, 0.5, -0.4375, 0.5},
 			},
 		},
-		["_2"] = {
+		["_2"] = { -- 2/16 high
 			node_box = {
 				type = "fixed",
 				fixed = {-0.5, -0.5, 0, 0.5, -0.375, 0.5},
 			},
 		},
-		["_4"] = {
+		["_4"] = { -- 4/16 high
 			node_box = {
 				type = "fixed",
 				fixed = {-0.5, -0.5, 0, 0.5, -0.25, 0.5},
 			},
 		},
-		["_12"] = {
+		["_12"] = { -- 12/16 high
 			node_box = {
 				type = "fixed",
 				fixed = {-0.5, -0.5, 0, 0.5, 0.25, 0.5},
 			},
 		},
-		["_14"] = {
+		["_14"] = { -- 14/16 high
 			node_box = {
 				type = "fixed",
 				fixed = {-0.5, -0.5, 0, 0.5, 0.375, 0.5},
 			},
 		},
-		["_15"] = {
+		["_15"] = { -- 15/16 high
 			node_box = {
 				type = "fixed",
 				fixed = {-0.5, -0.5, 0, 0.5, 0.4375, 0.5},
@@ -85,6 +85,7 @@ function stairsplus:register_panel(modname, subname, recipeitem, fields)
 	
 	-- Some saw-less recipes:
 
+	-- 3 blocks shaped to stair -> 12 panels
 	minetest.register_craft({
 		output = modname .. ":panel_" .. subname .. " 12",
 		recipe = {
@@ -93,6 +94,7 @@ function stairsplus:register_panel(modname, subname, recipeitem, fields)
 		},
 	})
 	
+	-- mirrored rule from above
 	minetest.register_craft({
 		output = modname .. ":panel_" .. subname .. " 12",
 		recipe = {
@@ -101,12 +103,14 @@ function stairsplus:register_panel(modname, subname, recipeitem, fields)
 		},
 	})
 	
+	-- 2 microblocks -> panel
 	minetest.register_craft({
 		type = "shapeless",
 		output = modname .. ":panel_" .. subname,
 		recipe = {modname .. ":micro_" .. subname, modname .. ":micro_" .. subname},
 	})
 	
+	-- 4 panels -> full block
 	minetest.register_craft({
 		type = "shapeless",
 		output = recipeitem,

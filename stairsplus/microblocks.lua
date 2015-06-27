@@ -85,40 +85,66 @@ function stairsplus:register_micro(modname, subname, recipeitem, fields)
 	minetest.register_alias(modname.. ":micro_" ..subname.. "_bottom", modname.. ":micro_" ..subname)
 	
 	-- Some saw-less recipes:
-	
+
+	-- chopping into microblocks
+			
+	-- full block minus 1 microblock
 	minetest.register_craft({
 		type = "shapeless",
 		output = modname .. ":micro_" .. subname .. " 7",
 		recipe = {modname .. ":stair_" .. subname .. "_inner"},
 	})
 	
+	-- stair
 	minetest.register_craft({
 	output = modname .. ":micro_" .. subname .. " 6",
 		type = "shapeless",
 	recipe = {modname .. ":stair_" .. subname},
 	})
 	
+	-- slab + 1 microblock
 	minetest.register_craft({
 		type = "shapeless",
 		output = modname .. ":micro_" .. subname .. " 5",
 		recipe = {modname .. ":stair_" .. subname .. "_outer"},
 	})
 	
+	-- slab
 	minetest.register_craft({
 		type = "shapeless",
 		output = modname .. ":micro_" .. subname .. " 4",
 		recipe = {modname .. ":slab_" .. subname},
 	})
 	
+	-- right half stair
+	-- NOTE: this is circular crafting rule:
+	--   3 microblocks -> left half stair -> right half stair -> 3 microblocks
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":micro_" .. subname .. " 3",
+		recipe = {modname .. ":stair_" .. subname .. "_right_half"},
+	})
+	
+	-- panel
 	minetest.register_craft({
 		type = "shapeless",
 		output = modname .. ":micro_" .. subname .. " 2",
 		recipe = {modname .. ":panel_" .. subname},
-	})
+	})	
 	
+	-- coupling microblocks back to full block
 	minetest.register_craft({
 		type = "shapeless",
 		output = recipeitem,
-		recipe = {modname .. ":micro_" .. subname, modname .. ":micro_" .. subname, modname .. ":micro_" .. subname, modname .. ":micro_" .. subname, modname .. ":micro_" .. subname, modname .. ":micro_" .. subname, modname .. ":micro_" .. subname, modname .. ":micro_" .. subname},
+		recipe = {
+			modname .. ":micro_" .. subname,
+			modname .. ":micro_" .. subname,
+			modname .. ":micro_" .. subname,
+			modname .. ":micro_" .. subname,
+			modname .. ":micro_" .. subname,
+			modname .. ":micro_" .. subname,
+			modname .. ":micro_" .. subname,
+			modname .. ":micro_" .. subname,
+		}
 	})
 end
