@@ -56,6 +56,7 @@ for _, name in pairs(default_nodes) do
 			sounds = ndef.sounds,
 			tiles = ndef.tiles,
 			sunlight_propagates = true,
+			light_source = ndef.light_source
 		})
 	end
 end
