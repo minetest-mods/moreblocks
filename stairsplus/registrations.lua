@@ -24,8 +24,10 @@ local default_nodes = { -- Default stairs/slabs/panels/microblocks:
 	"wood",
 	"jungletree",
 	"junglewood",
-	"pinetree",
-	"pinewood",
+	"pine_tree",
+	"pine_wood",
+	"acacia_tree",
+	"acacia_wood",
 	"obsidian",
 	"obsidian_glass",
 	"stonebrick",
@@ -60,4 +62,3 @@ for _, name in pairs(default_nodes) do
 		})
 	end
 end
-
