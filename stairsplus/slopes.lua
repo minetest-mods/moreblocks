@@ -113,7 +113,7 @@ local box_slope_outer_half_raised = {
 -- Node will be called <modname>:slope_<subname>
 
 function register_slope(modname, subname, recipeitem, groups, images, description, drop, light)
-	return stairsplus:register_slope(modname, subname, recipeitem, {
+	stairsplus:register_slope(modname, subname, recipeitem, {
 		groups = groups,
 		tiles = images,
 		description = description,
@@ -222,19 +222,22 @@ function stairsplus:register_slope(modname, subname, recipeitem, fields)
 
 	local desc = S("%s Slope"):format(fields.description)
 	for alternate, def in pairs(defs) do
+		for k, v in pairs(fields) do
+			def[k] = v
+		end
 		def.drawtype = "mesh"
 		def.paramtype = "light"
 		def.paramtype2 = "facedir"
 		def.on_place = minetest.rotate_node
-		for k, v in pairs(fields) do
-			def[k] = v
-		end
 		def.description = desc
+		def.groups = stairsplus:prepare_groups(fields.groups)
 		if fields.drop then
 			def.drop = modname.. ":slope_" ..fields.drop..alternate
 		end
 		minetest.register_node(":" ..modname.. ":slope_" ..subname..alternate, def)
 	end
+
+	circular_saw.known_nodes[recipeitem] = {modname, subname}
 
 	-- Some saw-less recipes:
 

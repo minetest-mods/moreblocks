@@ -10,7 +10,7 @@ local S = moreblocks.intllib
 -- Node will be called <modname>:stair_<subname>
 
 function register_stair(modname, subname, recipeitem, groups, images, description, drop, light)
-	return stairsplus:register_stair(modname, subname, recipeitem, {
+	stairsplus:register_stair(modname, subname, recipeitem, {
 		groups = groups,
 		tiles = images,
 		description = description,
@@ -108,20 +108,23 @@ function stairsplus:register_stair(modname, subname, recipeitem, fields)
 
 	local desc = S("%s Stairs"):format(fields.description)
 	for alternate, def in pairs(defs) do
+		for k, v in pairs(fields) do
+			def[k] = v
+		end
 		def.drawtype = "nodebox"
 		def.paramtype = "light"
 		def.paramtype2 = "facedir"
 		def.on_place = minetest.rotate_node
-		for k, v in pairs(fields) do
-			def[k] = v
-		end
 		def.description = desc
+		def.groups = stairsplus:prepare_groups(fields.groups)
 		if fields.drop then
 			def.drop = modname .. ":stair_" .. fields.drop .. alternate
 		end
 		minetest.register_node(":" .. modname .. ":stair_" .. subname .. alternate, def)
 	end
 	minetest.register_alias("stairs:stair_" .. subname, modname .. ":stair_" .. subname)
+
+	circular_saw.known_nodes[recipeitem] = {modname, subname}
 
 	-- Some saw-less recipes:
 	
