@@ -102,9 +102,11 @@ function circular_saw:get_output_inv(modname, material, amount, max)
 		local t = circular_saw.names[i]
 		local cost = circular_saw.cost_in_microblocks[i]
 		local balance = math.min(math.floor(amount/cost), max)
-		pos = pos + 1
-		list[pos] = modname .. ":" .. t[1] .. "_" .. material .. t[2]
-				.. " " .. balance
+		local nodename = modname .. ":" .. t[1] .. "_" .. material .. t[2]
+		if  minetest.registered_nodes[nodename] then
+			pos = pos + 1
+			list[pos] = nodename .. " " .. balance
+		end
 	end
 	return list
 end

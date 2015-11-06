@@ -40,13 +40,6 @@ for _, name in pairs(default_nodes) do
 	local nodename = "default:" .. name
 	local ndef = minetest.registered_nodes[nodename]
 	if ndef then
-		local groups = {}
-		for k, v in pairs(ndef.groups)
-			-- Ignore wood and stone groups to not make them usable in crafting:
-			do if k ~= "wood" and k ~= "stone" then
-				groups[k] = v
-			end
-		end
 		local drop
 		if type(ndef.drop) == "string" then
 			drop = ndef.drop:sub(9)
@@ -54,7 +47,7 @@ for _, name in pairs(default_nodes) do
 		stairsplus:register_all("moreblocks", name, nodename, {
 			description = ndef.description,
 			drop = drop,
-			groups = groups,
+			groups = ndef.groups,
 			sounds = ndef.sounds,
 			tiles = ndef.tiles,
 			sunlight_propagates = true,
