@@ -18,7 +18,7 @@ and minetest.setting_getbool("creative_mode") then
 end
 
 function stairsplus:prepare_groups(groups)
-	result = {}
+	local result = {}
 	if groups then
 		for k, v in pairs(groups) do
 			if k ~= "wood" and k ~= "stone" then
