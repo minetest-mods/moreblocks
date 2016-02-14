@@ -283,7 +283,11 @@ function circular_saw.on_metadata_inventory_put(
 	elseif listname == "recycle" then
 		-- Lets look which shape this represents:
 		local cost = circular_saw:get_cost(inv, stackname)
-		circular_saw:update_inventory(pos, cost * count)
+		local input_stack = inv:get_stack("input", 1)
+		-- check if this would not exceed input itemstack max_stacks
+		if input_stack:get_count() + ((cost * count) / 8) <= input_stack:get_stack_max() then
+			circular_saw:update_inventory(pos, cost * count)
+		end
 	end
 end
 
