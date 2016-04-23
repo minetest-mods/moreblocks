@@ -141,7 +141,6 @@ function stairsplus:register_stair(modname, subname, recipeitem, fields)
 		end
 		minetest.register_node(":" .. modname .. ":stair_" .. subname .. alternate, def)
 	end
-	minetest.register_alias("stairs:stair_" .. subname, modname .. ":stair_" .. subname)
 
 	circular_saw.known_nodes[recipeitem] = {modname, subname}
 
