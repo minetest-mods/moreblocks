@@ -67,7 +67,10 @@ for _, name in pairs(default_nodes) do
 		ndef.tiles = {ndef.tiles[1]}
 	end
 
-	stairsplus:register_all("moreblocks", name, nodename, ndef)
+	mod = "moreblocks"
+	stairsplus:register_all(mod, name, nodename, ndef)
+	minetest.register_alias_force("stairs:stair_" .. name, mod .. ":stair_" .. name)
+	minetest.register_alias_force("stairs:slab_"  .. name, mod .. ":slab_"  .. name)
 end
 
 -- farming registrations
@@ -78,7 +81,11 @@ if minetest.get_modpath("farming") then
 		local nodename = mod .. ":" .. name
 		local ndef = table.copy(minetest.registered_nodes[nodename])
 		ndef.sunlight_propagates = true
-		stairsplus:register_all("moreblocks", name, nodename, ndef)
+
+		mod = "moreblocks"
+		stairsplus:register_all(mod, name, nodename, ndef)
+		minetest.register_alias_force("stairs:stair_" .. name, mod .. ":stair_" .. name)
+		minetest.register_alias_force("stairs:slab_"  .. name, mod .. ":slab_"  .. name)
 	end
 end
 
