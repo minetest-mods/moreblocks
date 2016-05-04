@@ -457,6 +457,22 @@ minetest.register_craft({
 	type = "cooking", output = "moreblocks:tar", recipe = "default:gravel",
 })
 
+minetest.register_craft({
+	type = "shapeless",
+	output = "moreblocks:copperpatina",
+	recipe = {"bucket:bucket_water", "default:copperblock"},
+	replacements = {
+		{"bucket:bucket_water", "bucket:bucket_empty"}
+	}
+})
+
+minetest.register_craft({
+	output = "default:copper_ingot 9",
+	recipe = {
+		{"moreblocks:copperpatina"},
+	}
+})
+
 if minetest.setting_getbool("moreblocks.circular_saw_crafting") ~= false then -- “If nil or true then”
 	minetest.register_craft({
 		output = "moreblocks:circular_saw", 

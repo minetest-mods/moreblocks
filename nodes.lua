@@ -331,6 +331,11 @@ local nodes = {
 		sounds = sound_leaves,
 		no_stairs = true,
 	},
+	["copperpatina"] = {
+		description = S("Copper Patina Block"),
+		groups = {cracky = 1, level = 2},
+		sounds = sound_stone,
+	},
 }
 
 for name, def in pairs(nodes) do
