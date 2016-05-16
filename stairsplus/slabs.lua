@@ -31,7 +31,7 @@ function stairsplus:register_slab(modname, subname, recipeitem, fields)
 		["_15"] = 15,
 	}
 
-	local desc_base = S("%s Slab"):format(fields.description)
+	local desc_base = S("Lastra - %s"):format(fields.description)
 	for alternate, num in pairs(defs) do
 		local def = {
 			node_box = {
