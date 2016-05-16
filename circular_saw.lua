@@ -12,8 +12,8 @@ circular_saw = {}
 circular_saw.known_stairs = setmetatable({}, {
 	__newindex = function(k, v)
 		local modname = minetest.get_current_modname()
-		print(("WARNING: mod %s tried to add node %s to the circular saw"
-				.. " manually."):format(modname, v))
+		print(("AVVISO: il mod %s ha tentato di aggiungere il nodo %s alla sega circolare"
+				.. " manualmente."):format(modname, v))
 	end,
 })
 
@@ -125,7 +125,7 @@ function circular_saw:reset(pos)
 	meta:set_int("anz", 0)
 
 	meta:set_string("infotext",
-			S("Circular Saw is empty (owned by %s)")
+			S("La sega circolare è vuota (di proprietà di %s)")
 			:format(meta:get_string("owner") or ""))
 end
 
@@ -183,7 +183,7 @@ function circular_saw:update_inventory(pos, amount)
 	meta:set_int("anz", amount)
 
 	meta:set_string("infotext",
-			S("Circular Saw is working on %s (owned by %s)")
+			S("La sega circolare sta lavorando su %s (di proprietà di %s)")
 			:format(material, meta:get_string("owner") or ""))
 end
 
@@ -333,20 +333,20 @@ function circular_saw.on_construct(pos)
 	local meta = minetest.get_meta(pos)
 	local fancy_inv = default.gui_bg..default.gui_bg_img..default.gui_slots
 	meta:set_string("formspec", "size[11,10]"..fancy_inv..
-			"label[0,0;" ..S("Input\nmaterial").. "]" ..
+			"label[0,0;" ..S("Materiale\niniziale").. "]" ..
 			"list[current_name;input;1.5,0;1,1;]" ..
-			"label[0,1;" ..S("Left-over").. "]" ..
+			"label[0,1;" ..S("Scarto").. "]" ..
 			"list[current_name;micro;1.5,1;1,1;]" ..
-			"label[0,2;" ..S("Recycle\noutput").. "]" ..
+			"label[0,2;" ..S("Riciclo\nprodotto").. "]" ..
 			"list[current_name;recycle;1.5,2;1,1;]" ..
-			"field[0.3,3.5;1,1;max_offered;" ..S("Max").. ":;${max_offered}]" ..
-			"button[1,3.2;1,1;Set;" ..S("Set").. "]" ..
+			"field[0.3,3.5;1,1;max_offered;" ..S("Max.").. ":;${max_offered}]" ..
+			"button[1,3.2;1,1;Set;" ..S("Imp.").. "]" ..
 			"list[current_name;output;2.8,0;8,6;]" ..
 			"list[current_player;main;1.5,6.25;8,4;]")
 
 	meta:set_int("anz", 0) -- No microblocks inside yet.
 	meta:set_string("max_offered", 99) -- How many items of this kind are offered by default?
-	meta:set_string("infotext", S("Circular Saw is empty"))
+	meta:set_string("infotext", S("La sega circolare è vuota"))
 
 	local inv = meta:get_inventory()
 	inv:set_size("input", 1)    -- Input slot for full blocks of material x.
@@ -371,7 +371,7 @@ function circular_saw.can_dig(pos,player)
 end
 
 minetest.register_node("moreblocks:circular_saw",  {
-	description = S("Circular Saw"), 
+	description = S("Sega circolare"), 
 	drawtype = "nodebox", 
 	node_box = {
 		type = "fixed", 
@@ -402,7 +402,7 @@ minetest.register_node("moreblocks:circular_saw",  {
 		local owner = placer and placer:get_player_name() or ""
 		meta:set_string("owner",  owner)
 		meta:set_string("infotext",
-				S("Circular Saw is empty (owned by %s)")
+				S("La sega circolare è vuota (di proprietà di %s)")
 				:format(owner))
 	end,
 
