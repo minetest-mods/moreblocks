@@ -66,7 +66,7 @@ function stairsplus:register_micro(modname, subname, recipeitem, fields)
 		}
 	}
 
-	local desc = S("%s Microblock"):format(fields.description)
+	local desc = S("Microblocco - %s"):format(fields.description)
 	for alternate, def in pairs(defs) do
 		for k, v in pairs(fields) do
 			def[k] = v
