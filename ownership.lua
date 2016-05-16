@@ -17,23 +17,23 @@ function moreblocks.node_is_owned(pos, placer)
 				elseif type(GetNodeOwnerName) == "function" then	-- ...is a recent version
 					ownername = GetNodeOwnerName(pos)
 				else
-					ownername = S("someone")
+					ownername = S("qualcun*")
 				end
 			end
 		end
 
 	elseif type(isprotect)=="function" then 					-- glomie's protection mod
 		if not isprotect(5, pos, placer) then
-			ownername = S("someone")
+			ownername = S("qualcun*")
 		end
 	elseif type(protector)=="table" and type(protector.can_dig)=="function" then 					-- Zeg9's protection mod
 		if not protector.can_dig(5, pos, placer) then
-			ownername = S("someone")
+			ownername = S("qualcun*")
 		end
 	end
 
 	if ownername ~= false then
-		minetest.chat_send_player( placer:get_player_name(), S("Sorry, %s owns that spot."):format(ownername) )
+		minetest.chat_send_player( placer:get_player_name(), S("Spiacente, quel posto è di %s."):format(ownername) )
 		return true
 	else
 		return false

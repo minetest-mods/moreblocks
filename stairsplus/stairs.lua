@@ -106,7 +106,7 @@ function stairsplus:register_stair(modname, subname, recipeitem, fields)
 		},
 	}
 
-	local desc = S("%s Stairs"):format(fields.description)
+	local desc = S("Scale - %s"):format(fields.description)
 	for alternate, def in pairs(defs) do
 		for k, v in pairs(fields) do
 			def[k] = v

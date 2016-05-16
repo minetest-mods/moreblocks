@@ -220,7 +220,7 @@ function stairsplus:register_slope(modname, subname, recipeitem, fields)
 		},
 	}
 
-	local desc = S("%s Slope"):format(fields.description)
+	local desc = S("Piano inclinato - %s Slope"):format(fields.description)
 	for alternate, def in pairs(defs) do
 		for k, v in pairs(fields) do
 			def[k] = v

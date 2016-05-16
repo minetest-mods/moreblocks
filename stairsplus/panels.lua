@@ -66,7 +66,7 @@ function stairsplus:register_panel(modname, subname, recipeitem, fields)
 		}
 	}
 
-	local desc = S("%s Panel"):format(fields.description)
+	local desc = S("Pannello - %s"):format(fields.description)
 	for alternate, def in pairs(defs) do
 		for k, v in pairs(fields) do
 			def[k] = v

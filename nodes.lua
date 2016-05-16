@@ -19,7 +19,7 @@ end
 
 local nodes = {
 	["wood_tile"] = {
-		description = S("Wooden Tile"),
+		description = S("Mattonella di legno"),
 		groups = {snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 		tiles = {"default_wood.png^moreblocks_wood_tile.png",
 		"default_wood.png^moreblocks_wood_tile.png",
@@ -30,7 +30,7 @@ local nodes = {
 		sounds = sound_wood,
 	},
 	["wood_tile_flipped"] = {
-		description = S("Wooden Tile"),
+		description = S("Mattonella di legno"),
 		groups = {snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 		tiles = {"default_wood.png^moreblocks_wood_tile.png^[transformR90",
 		"default_wood.png^moreblocks_wood_tile.png^[transformR90",
@@ -42,100 +42,100 @@ local nodes = {
 		no_stairs = true,
 	},
 	["wood_tile_center"] = {
-		description = S("Centered Wooden Tile"),
+		description = S("Mattonella di legno centrata"),
 		groups = {snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 		tiles = {"default_wood.png^moreblocks_wood_tile_center.png"},
 		sounds = sound_wood,
 	},
 	["wood_tile_full"] = {
-		description = S("Full Wooden Tile"),
+		description = S("Mattonella di legno pieno"),
 		groups = {snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 		tiles = tile_tiles("wood_tile_full"),
 		sounds = sound_wood,
 	},
 	["wood_tile_up"] = {
-		description = S("Upwards Wooden Tile"),
+		description = S("Mattonella di legno rivolta in alto"),
 		groups = {snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 		tiles = {"default_wood.png^moreblocks_wood_tile_up.png"},
 		sounds = sound_wood,
 		no_stairs = true,
 	},
 	["wood_tile_down"] = {
-		description = S("Downwards Wooden Tile"),
+		description = S("Mattonella di legno rivolta in basso"),
 		groups = {snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 		tiles = {"default_wood.png^[transformR180^moreblocks_wood_tile_up.png^[transformR180"},
 		sounds = sound_wood,
 		no_stairs = true,
 	},
 	["wood_tile_left"] = {
-		description = S("Leftwards Wooden Tile"),
+		description = S("Mattonella di legno rivolta a sinistra"),
 		groups = {snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 		tiles = {"default_wood.png^[transformR270^moreblocks_wood_tile_up.png^[transformR270"},
 		sounds = sound_wood,
 		no_stairs = true,
 	},
 	["wood_tile_right"] = {
-		description = S("Rightwards Wooden Tile"),
+		description = S("Mattonella di legno rivolta a destra"),
 		groups = {snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 		tiles = {"default_wood.png^[transformR90^moreblocks_wood_tile_up.png^[transformR90"},
 		sounds = sound_wood,
 		no_stairs = true,
 	},
 	["circle_stone_bricks"] = {
-		description = S("Circle Stone Bricks"),
+		description = S("Mattoni di pietra concentrici"),
 		groups = {cracky = 3},
 		sounds = sound_stone,
 	},
 	["grey_bricks"] = {
-		description = S("Stone Bricks"),
+		description = S("Mattoni di pietra"),
 		groups = {cracky = 3},
 		sounds = sound_stone,
 	},
 	["coal_stone_bricks"] = {
-		description = S("Coal Stone Bricks"),
+		description = S("Mattoni in pietra di carbone"),
 		groups = {cracky = 3},
 		sounds = sound_stone,
 	},
 	["iron_stone_bricks"] = {
-		description = S("Iron Stone Bricks"),
+		description = S("Mattoni in pietra di ferro"),
 		groups = {cracky = 3},
 		sounds = sound_stone,
 	},
 	["stone_tile"] = {
-		description = S("Stone Tile"),
+		description = S("Mattonella di pietra"),
 		groups = {cracky = 3},
 		sounds = sound_stone,
 	},
 	["split_stone_tile"] = {
-		description = S("Split Stone Tile"),
+		description = S("Mattonella di pietra divisa"),
 		tiles = {"moreblocks_split_stone_tile_top.png",
 			"moreblocks_split_stone_tile.png"},
 		groups = {cracky = 3},
 		sounds = sound_stone,
 	},
 	["split_stone_tile_alt"] = {
-		description = S("Checkered Stone Tile"),
+		description = S("Mattonella di pietra a scacchi"),
 		groups = {cracky = 3},
 		sounds = sound_stone,
 	},
 	["tar"] = {
-		description = S("Tar"),
+		description = S("Catrame"),
 		groups = {cracky = 2, tar_block = 1},
 		sounds = sound_stone,
 	},
 	["cobble_compressed"] = {
-		description = S("Compressed Cobblestone"),
+		description = S("Ciottoli compatti"),
 		groups = {cracky = 1},
 		sounds = sound_stone,
 	},
 	["plankstone"] = {
-		description = S("Plankstone"),
+		description = S("Pietra e assi"),
 		groups = {cracky = 3},
 		tiles = tile_tiles("plankstone"),
 		sounds = sound_stone,
 	},
 	["iron_glass"] = {
-		description = S("Iron Glass"),
+		description = S("Vetro e ferro"),
 		drawtype = "glasslike_framed_optional",
 		--tiles = {"moreblocks_iron_glass.png", "moreblocks_iron_glass_detail.png"},
 		tiles = {"moreblocks_iron_glass.png"},
@@ -145,7 +145,7 @@ local nodes = {
 		sounds = sound_glass,
 	},
 	["coal_glass"] = {
-		description = S("Coal Glass"),
+		description = S("Vetro e carbone"),
 		drawtype = "glasslike_framed_optional",
 		--tiles = {"moreblocks_coal_glass.png", "moreblocks_coal_glass_detail.png"},
 		tiles = {"moreblocks_coal_glass.png"},
@@ -155,7 +155,7 @@ local nodes = {
 		sounds = sound_glass,
 	},
 	["clean_glass"] = {
-		description = S("Clean Glass"),
+		description = S("Vetro pulito"),
 		drawtype = "glasslike_framed_optional",
 		--tiles = {"moreblocks_clean_glass.png", "moreblocks_clean_glass_detail.png"},
 		tiles = {"moreblocks_clean_glass.png"},
@@ -165,12 +165,12 @@ local nodes = {
 		sounds = sound_glass,
 	},
 	["cactus_brick"] = {
-		description = S("Cactus Brick"),
+		description = S("Mattone di cactus"),
 		groups = {cracky = 3},
 		sounds = sound_stone,
 	},
 	["cactus_checker"] = {
-		description = S("Cactus Checker"),
+		description = S("Scacchi di cactus"),
 		groups = {cracky = 3},
 		tiles = {"default_stone.png^moreblocks_cactus_checker.png",
 		"default_stone.png^moreblocks_cactus_checker.png",
@@ -181,7 +181,7 @@ local nodes = {
 		sounds = sound_stone,
 	},
 	["empty_bookshelf"] = {
-		description = S("Empty Bookshelf"),
+		description = S("Libreria vuota"),
 		tiles = {"default_wood.png", "default_wood.png",
 			"moreblocks_empty_bookshelf.png"},
 		groups = {snappy = 2, choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
@@ -189,17 +189,17 @@ local nodes = {
 		no_stairs = true,
 	},
 	["coal_stone"] = {
-		description = S("Coal Stone"),
+		description = S("Pietra di carbone"),
 		groups = {cracky = 3},
 		sounds = sound_stone,
 	},
 	["iron_stone"] = {
-		description = S("Iron Stone"),
+		description = S("Pietra di ferro"),
 		groups = {cracky = 3},
 		sounds = sound_stone,
 	},
 	["coal_checker"] = {
-		description = S("Coal Checker"),
+		description = S("Scacchi di carbone"),
 		tiles = {"default_stone.png^moreblocks_coal_checker.png",
 		"default_stone.png^moreblocks_coal_checker.png",
 		"default_stone.png^moreblocks_coal_checker.png",
@@ -210,7 +210,7 @@ local nodes = {
 		sounds = sound_stone,
 	},
 	["iron_checker"] = {
-		description = S("Iron Checker"),
+		description = S("Scacchi di ferro"),
 		tiles = {"default_stone.png^moreblocks_iron_checker.png",
 		"default_stone.png^moreblocks_iron_checker.png",
 		"default_stone.png^moreblocks_iron_checker.png",
@@ -221,14 +221,14 @@ local nodes = {
 		sounds = sound_stone,
 	},
 	["trap_stone"] = {
-		description = S("Trap Stone"),
+		description = S("Pietra trappola"),
 		walkable = false,
 		groups = {cracky = 3},
 		sounds = sound_stone,
 		no_stairs = true,
 	},
 	["trap_glass"] = {
-		description = S("Trap Glass"),
+		description = S("Vetro trappola"),
 		drawtype = "glasslike_framed_optional",
 		--tiles = {"moreblocks_trap_glass.png", "default_glass_detail.png"},
 		tiles = {"moreblocks_trap_glass.png"},
@@ -239,6 +239,8 @@ local nodes = {
 		sounds = sound_glass,
 		no_stairs = true,
 	},
+
+--[[
 	["fence_jungle_wood"] = {
 		description = S("Jungle Wood Fence"),
 		drawtype = "fencelike",
@@ -254,22 +256,25 @@ local nodes = {
 		sounds = sound_wood,
 		no_stairs = true,
 	},
+]]--	
+	
+	
 	["all_faces_tree"] = {
-		description = S("All-faces Tree"),
+		description = S("Albero su ogni faccia"),
 		tiles = {"default_tree_top.png"},
 		groups = {tree = 1,snappy = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
 		sounds = sound_wood,
 		furnace_burntime = 30,
 	},
 	["all_faces_jungle_tree"] = {
-		description = S("All-faces Jungle Tree"),
+		description = S("Albero della giungla su ogni faccia"),
 		tiles = {"default_jungletree_top.png"},
 		groups = {tree = 1,snappy = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
 		sounds = sound_wood,
 		furnace_burntime = 30,
 	},
 	["glow_glass"] = {
-		description = S("Glow Glass"),
+		description = S("Vetro splendente"),
 		drawtype = "glasslike_framed_optional",
 		--tiles = {"moreblocks_glow_glass.png", "moreblocks_glow_glass_detail.png"},
 		tiles = {"moreblocks_glow_glass.png"},
@@ -280,7 +285,7 @@ local nodes = {
 		sounds = sound_glass,
 	},
 	["trap_glow_glass"] = {
-		description = S("Trap Glow Glass"),
+		description = S("Vetro splendente trappola"),
 		drawtype = "glasslike_framed_optional",
 		--tiles = {"moreblocks_trap_glass.png", "moreblocks_glow_glass_detail.png"},
 		tiles = {"moreblocks_trap_glass.png"},
@@ -293,7 +298,7 @@ local nodes = {
 		no_stairs = true,
 	},
 	["super_glow_glass"] = {
-		description = S("Super Glow Glass"),
+		description = S("Super vetro splendente"),
 		drawtype = "glasslike_framed_optional",
 		--tiles = {"moreblocks_super_glow_glass.png", "moreblocks_super_glow_glass_detail.png"},
 		tiles = {"moreblocks_super_glow_glass.png"},
@@ -304,7 +309,7 @@ local nodes = {
 		sounds = sound_glass,
 	},
 	["trap_super_glow_glass"] = {
-		description = S("Trap Super Glow Glass"),
+		description = S("Super vetro splendente trappola"),
 		drawtype = "glasslike_framed_optional",
 		--tiles = {"moreblocks_trap_super_glow_glass.png", "moreblocks_super_glow_glass_detail.png"},
 		tiles = {"moreblocks_trap_super_glow_glass.png"},
@@ -317,7 +322,7 @@ local nodes = {
 		no_stairs = true,
 	},
 	["rope"] = {
-		description = S("Rope"),
+		description = S("Corda"),
 		drawtype = "signlike",
 		inventory_image = "moreblocks_rope.png",
 		wield_image = "moreblocks_rope.png",
@@ -355,12 +360,12 @@ end
 -- Items
 
 minetest.register_craftitem("moreblocks:sweeper", {
-	description = S("Sweeper"),
+	description = S("Spazzola"),
 	inventory_image = "moreblocks_sweeper.png",
 })
 
 minetest.register_craftitem("moreblocks:jungle_stick", {
-	description = S("Jungle Stick"),
+	description = S("Bastone di legno della giungla"),
 	inventory_image = "moreblocks_junglestick.png",
 	groups = {stick= 1},
 })
