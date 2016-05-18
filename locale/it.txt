@@ -1,0 +1,70 @@
+#
+# Italian translation
+# Translator: Emon
+#
+
+
+###init.lua###
+[moreblocks] loaded. = [moreblocks] caricato.
+
+###nodes.lua###
+Jungle Wood Fence = Recinzione in legno della giungla
+Empty Bookshelf = Libreria vuota
+Clean Glass = Vetro pulito
+Plankstone = Pietra e legno
+Wooden Tile = Mattonella in legno
+Full Wooden Tile = Mattonella in legno pieno
+Centered Wooden Tile = Mattonella in legno centrata
+Up Wooden Tile = Mattonella in legno verso l'alto
+Down Wooden Tile = Mattonella in legno verso il basso
+Left Wooden Tile = Mattonella in legno verso sinistra
+Right Wooden Tile = Mattonella in legno verso destra
+Circle Stone Bricks = Mattoni concentrici in pietra
+Stone Tile = Mattonella in pietra
+Split Stone Tile = Mattonella in pietra divisa
+Glow Glass = Vetro luminoso
+Super Glow Glass = Super vetro luminoso
+Coal Glass = Vetro e carbone
+Iron Glass = Vetro e ferro
+Coal Checker = Scacchiera in carbone
+Iron Checker = Scacchiera in ferro
+Trap Stone = Pietra trappola
+Trap Glass = Vetro trappola
+Trap Glow Glass = Vetro luminoso trappola
+Trap Super Glow Glass = Super vetro luminoso trappola
+Coal Stone = Pietra in carbone
+Iron Stone = Pietra in ferro 
+Coal Stone Bricks = Mattoni di pietra in carbone
+Iron Stone Bricks = Mattoni di pietra in ferro
+Cactus Checker = Scacchiera in cactus
+Cactus Brick = Mattoni di cactus
+Sweeper = Spazzola
+Jungle Stick = Bastone in legno della giungla
+Rope = Corda
+All-faces Tree = Albero su ogni lato
+
+###circular_saw.lua###
+Circular Saw = Sega circolare
+Circular saw, empty (owned by %s) = Sega circolare, vuota (di proprietà di %s)
+Circular saw, working with %s (owned by %s) = Sega circolare, in funzione su %s (di proprietà di %s)
+Circular saw, empty = Sega circolare, vuota
+Circular saw is empty (owned by %s) = La sega circolare è vuota (di proprietà di %s)
+
+Input\nmaterial = Materiale\niniziale
+Left-over = Scarto
+Max = Max.
+Set = Imp.
+Recycle\noutput = Ricicla\nfinale
+
+###ownership.lua###
+someone = qualcuno
+Sorry, %s owns that spot. = Spiacente, quel punto è di proprietà di %s
+
+###./stairsplus/*###
+%s Stairs = Scale - %s
+%s Slab =  Lastra - %s
+%s Panel = Pannello - %s
+%s Microblock = Microblocco %s
+
+%s Pane = Pannello - %s
+%s Fence = Recinzione - %s
