@@ -28,6 +28,8 @@ local default_nodes = { -- Default stairs/slabs/panels/microblocks:
 	"pine_wood",
 	"acacia_tree",
 	"acacia_wood",
+	"aspen_tree",
+	"aspen_wood",
 	"obsidian",
 	"obsidian_glass",
 	"stonebrick",
