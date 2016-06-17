@@ -77,7 +77,7 @@ function stairsplus:register_panel(modname, subname, recipeitem, fields)
 		def.on_place = minetest.rotate_node
 		def.description = desc
 		def.groups = stairsplus:prepare_groups(fields.groups)
-		if fields.drop then
+		if fields.drop and not type(fields.drop) == "table" then
 			def.drop = modname.. ":panel_" ..fields.drop..alternate
 		end
 		minetest.register_node(":" ..modname.. ":panel_" ..subname..alternate, def)
