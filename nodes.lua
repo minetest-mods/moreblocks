@@ -239,21 +239,6 @@ local nodes = {
 		sounds = sound_glass,
 		no_stairs = true,
 	},
-	["fence_jungle_wood"] = {
-		description = S("Jungle Wood Fence"),
-		drawtype = "fencelike",
-		tiles = {"default_junglewood.png"},
-		inventory_image = "default_fence_overlay.png^default_junglewood.png^default_fence_overlay.png^[makealpha:255,126,126",
-		wield_image = "default_fence_overlay.png^default_junglewood.png^default_fence_overlay.png^[makealpha:255,126,126",
-		paramtype = "light",
-		selection_box = {
-			type = "fixed",
-			fixed = {-1/7, -1/2, -1/7, 1/7, 1/2, 1/7},
-		},
-		groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
-		sounds = sound_wood,
-		no_stairs = true,
-	},
 	["all_faces_tree"] = {
 		description = S("All-faces Tree"),
 		tiles = {"default_tree_top.png"},
@@ -362,12 +347,6 @@ end
 minetest.register_craftitem("moreblocks:sweeper", {
 	description = S("Sweeper"),
 	inventory_image = "moreblocks_sweeper.png",
-})
-
-minetest.register_craftitem("moreblocks:jungle_stick", {
-	description = S("Jungle Stick"),
-	inventory_image = "moreblocks_junglestick.png",
-	groups = {stick= 1},
 })
 
 minetest.register_craftitem("moreblocks:nothing", {
