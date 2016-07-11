@@ -48,7 +48,7 @@ function stairsplus:register_slab(modname, subname, recipeitem, fields)
 		def.on_place = minetest.rotate_node
 		def.description = ("%s (%d/16)"):format(desc_base, num)
 		def.groups = stairsplus:prepare_groups(fields.groups)
-		if fields.drop and not type(fields.drop) == "table" then
+		if fields.drop and not (type(fields.drop) == "table") then
 			def.drop = modname.. ":slab_" .. fields.drop .. alternate
 		end
 		minetest.register_node(":" .. modname .. ":slab_" .. subname .. alternate, def)
