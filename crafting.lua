@@ -29,14 +29,6 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "default:junglewood",
-	recipe = {
-		{"moreblocks:jungle_stick", "moreblocks:jungle_stick"},
-		{"moreblocks:jungle_stick", "moreblocks:jungle_stick"},
-	}
-})
-
-minetest.register_craft({
 	output = "default:dirt_with_grass",
 	type = "shapeless",
 	recipe = {"default:junglegrass", "default:dirt"},
@@ -118,19 +110,6 @@ minetest.register_craft({
 	output = "moreblocks:wood_tile_right",
 	recipe = {
 		{"moreblocks:wood_tile_center", "default:stick"},
-	}
-})
-
-minetest.register_craft({
-	output = "moreblocks:junglestick 4",
-	recipe = {{"default:junglewood"},}
-})
-
-minetest.register_craft({
-	output = "moreblocks:fence_jungle_wood 2",
-	recipe = {
-		{"moreblocks:jungle_stick", "moreblocks:jungle_stick", "moreblocks:jungle_stick"},
-		{"moreblocks:jungle_stick", "moreblocks:jungle_stick", "moreblocks:jungle_stick"},
 	}
 })
 
