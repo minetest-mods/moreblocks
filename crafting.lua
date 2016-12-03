@@ -207,6 +207,8 @@ minetest.register_craft({
 	output = "moreblocks:empty_bookshelf",
 	type = "shapeless",
 	recipe = {"moreblocks:sweeper", "default:bookshelf"},
+	replacements = {{"default:bookshelf", "default:book 3"}},
+	-- When obtaining an empty bookshelf, return the books used in it as well
 })
 
 minetest.register_craft({
