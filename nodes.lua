@@ -11,6 +11,7 @@ local sound_wood = default.node_sound_wood_defaults()
 local sound_stone = default.node_sound_stone_defaults()
 local sound_glass = default.node_sound_glass_defaults()
 local sound_leaves = default.node_sound_leaves_defaults()
+local sound_metal = default.node_sound_metal_defaults()
 
 local function tile_tiles(name)
 	local tex = "moreblocks_" ..name.. ".png"
@@ -31,7 +32,7 @@ local nodes = {
 	},
 	["wood_tile_flipped"] = {
 		description = S("Wooden Tile"),
-		groups = {snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
+		groups = {wood = 1, snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 		tiles = {"default_wood.png^moreblocks_wood_tile.png^[transformR90",
 		"default_wood.png^moreblocks_wood_tile.png^[transformR90",
 		"default_wood.png^moreblocks_wood_tile.png^[transformR90",
@@ -43,40 +44,40 @@ local nodes = {
 	},
 	["wood_tile_center"] = {
 		description = S("Centered Wooden Tile"),
-		groups = {snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
+		groups = {wood = 1, snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 		tiles = {"default_wood.png^moreblocks_wood_tile_center.png"},
 		sounds = sound_wood,
 	},
 	["wood_tile_full"] = {
 		description = S("Full Wooden Tile"),
-		groups = {snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
+		groups = {wood = 1, snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 		tiles = tile_tiles("wood_tile_full"),
 		sounds = sound_wood,
 	},
 	["wood_tile_up"] = {
 		description = S("Upwards Wooden Tile"),
-		groups = {snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
+		groups = {wood = 1, snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 		tiles = {"default_wood.png^moreblocks_wood_tile_up.png"},
 		sounds = sound_wood,
 		no_stairs = true,
 	},
 	["wood_tile_down"] = {
 		description = S("Downwards Wooden Tile"),
-		groups = {snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
+		groups = {wood = 1, snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 		tiles = {"default_wood.png^[transformR180^moreblocks_wood_tile_up.png^[transformR180"},
 		sounds = sound_wood,
 		no_stairs = true,
 	},
 	["wood_tile_left"] = {
 		description = S("Leftwards Wooden Tile"),
-		groups = {snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
+		groups = {wood = 1, snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 		tiles = {"default_wood.png^[transformR270^moreblocks_wood_tile_up.png^[transformR270"},
 		sounds = sound_wood,
 		no_stairs = true,
 	},
 	["wood_tile_right"] = {
 		description = S("Rightwards Wooden Tile"),
-		groups = {snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
+		groups = {wood = 1, snappy = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 		tiles = {"default_wood.png^[transformR90^moreblocks_wood_tile_up.png^[transformR90"},
 		sounds = sound_wood,
 		no_stairs = true,
@@ -186,6 +187,7 @@ local nodes = {
 			"moreblocks_empty_bookshelf.png"},
 		groups = {snappy = 2, choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
 		sounds = sound_wood,
+		furnace_burntime = 15,
 		no_stairs = true,
 	},
 	["coal_stone"] = {
@@ -319,7 +321,7 @@ local nodes = {
 	["copperpatina"] = {
 		description = S("Copper Patina Block"),
 		groups = {cracky = 1, level = 2},
-		sounds = sound_stone,
+		sounds = sound_metal,
 	},
 }
 
