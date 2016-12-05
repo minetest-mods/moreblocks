@@ -124,6 +124,33 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = "moreblocks:all_faces_pine_tree 8",
+	recipe = {
+		{"default:pine_tree", "default:pine_tree", "default:pine_tree"},
+		{"default:pine_tree", "", "default:pine_tree"},
+		{"default:pine_tree", "default:pine_tree", "default:pine_tree"},
+	}
+})
+
+minetest.register_craft({
+	output = "moreblocks:all_faces_acacia_tree 8",
+	recipe = {
+		{"default:acacia_tree", "default:acacia_tree", "default:acacia_tree"},
+		{"default:acacia_tree", "", "default:acacia_tree"},
+		{"default:acacia_tree", "default:acacia_tree", "default:acacia_tree"},
+	}
+})
+
+minetest.register_craft({
+	output = "moreblocks:all_faces_aspen_tree 8",
+	recipe = {
+		{"default:aspen_tree", "default:aspen_tree", "default:aspen_tree"},
+		{"default:aspen_tree", "", "default:aspen_tree"},
+		{"default:aspen_tree", "default:aspen_tree", "default:aspen_tree"},
+	}
+})
+
+minetest.register_craft({
 	output = "moreblocks:sweeper 4",
 	recipe = {
 		{"default:junglegrass"},
