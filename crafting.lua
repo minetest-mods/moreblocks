@@ -12,12 +12,7 @@ minetest.register_craft({
 
 minetest.register_craft({
 	output = "default:stick",
-	recipe = {{"default:sapling"},}
-})
-
-minetest.register_craft({
-	output = "default:stick",
-	recipe = {{"default:junglesapling"},}
+	recipe = {{"group:sapling"},}
 })
 
 minetest.register_craft({
@@ -35,29 +30,17 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "default:dirt_with_grass",
-	type = "shapeless",
-	recipe = {"default:mese", "default:dirt"},
-})
-
-minetest.register_craft({
 	output = "default:mossycobble",
 	type = "shapeless",
 	recipe = {"default:junglegrass", "default:cobble"},
 })
 
 minetest.register_craft({
-	output = "default:mossycobble",
-	type = "shapeless",
-	recipe = {"default:mese_crystal_fragment", "default:cobble"},
-})
-
-minetest.register_craft({
 	output = "moreblocks:wood_tile 9",
 	recipe = {
-		{"default:wood", "default:wood", "default:wood"},
-		{"default:wood", "default:wood", "default:wood"},
-		{"default:wood", "default:wood", "default:wood"},
+		{"group:wood", "group:wood", "group:wood"},
+		{"group:wood", "group:wood", "group:wood"},
+		{"group:wood", "group:wood", "group:wood"},
 	}
 })
 
@@ -69,9 +52,9 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "moreblocks:wood_tile_center 9",
 	recipe = {
-		{"default:wood", "default:wood", "default:wood"},
-		{"default:wood", "moreblocks:wood_tile", "default:wood"},
-		{"default:wood", "default:wood", "default:wood"},
+		{"group:wood", "group:wood", "group:wood"},
+		{"group:wood", "moreblocks:wood_tile", "group:wood"},
+		{"group:wood", "group:wood", "group:wood"},
 	}
 })
 
@@ -209,16 +192,16 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "moreblocks:plankstone 4",
 	recipe = {
-		{"default:stone", "default:wood"},
-		{"default:wood", "default:stone"},
+		{"group:stone", "group:wood"},
+		{"group:wood", "group:stone"},
 	}
 })
 
 minetest.register_craft({
 	output = "moreblocks:plankstone 4",
 	recipe = {
-		{"default:wood", "default:stone"},
-		{"default:stone", "default:wood"},
+		{"group:wood", "group:stone"},
+		{"group:stone", "group:wood"},
 	}
 })
 
@@ -441,9 +424,9 @@ minetest.register_craft({
 minetest.register_craft({
 	type = "shapeless",
 	output = "moreblocks:copperpatina",
-	recipe = {"bucket:bucket_water", "default:copperblock"},
+	recipe = {"group:water_bucket", "default:copperblock"},
 	replacements = {
-		{"bucket:bucket_water", "bucket:bucket_empty"}
+		{"group:water_bucket", "bucket:bucket_empty"}
 	}
 })
 
