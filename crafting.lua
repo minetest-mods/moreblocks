@@ -153,9 +153,9 @@ minetest.register_craft({
 	}
 })
 
--- When approaching the below craft, loop back to the stone tile
+-- When approaching the below craft, loop back to cobblestone, which can then be used to craft stone tiles again
 minetest.register_craft({
-	output = "moreblocks:stone_tile",
+	output = "default:cobble",
 	recipe = {
 		{"moreblocks:split_stone_tile_alt"},
 	}
@@ -174,34 +174,35 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "moreblocks:empty_bookshelf",
+	output = "moreblocks:empty_shelf",
 	type = "shapeless",
 	recipe = {"moreblocks:sweeper", "default:bookshelf"},
 	replacements = {{"default:bookshelf", "default:book 3"}},
-	-- When obtaining an empty bookshelf, return the books used in it as well
+	-- When obtaining an empty shelf, return the books used in it as well
 })
 
 minetest.register_craft({
-	output = "moreblocks:empty_bookshelf",
+	output = "moreblocks:empty_shelf",
 	type = "shapeless",
 	recipe = {"moreblocks:sweeper", "vessels:shelf"},
 	replacements = {{"vessels:shelf", "vessels:glass_fragments 4"}},
+	-- When obtaining an empty shelf, return four glass_fragment pieces
 })
 
 minetest.register_craft({
 	type = "shapeless",
 	output = "default:bookshelf",
-	recipe = {"moreblocks:empty_bookshelf", "default:book", "default:book", "default:book"},
+	recipe = {"moreblocks:empty_shelf", "default:book", "default:book", "default:book"},
 })
 
 minetest.register_craft({
 	type = "shapeless",
 	output = "vessels:shelf",
-	recipe = {"moreblocks:empty_bookshelf", "group:vessel", "group:vessel", "group:vessel"},
+	recipe = {"moreblocks:empty_shelf", "group:vessel", "group:vessel", "group:vessel"},
 })
 
 minetest.register_craft({
-	output = "moreblocks:empty_bookshelf",
+	output = "moreblocks:empty_shelf",
 	recipe = {
 		{"group:wood", "group:wood", "group:wood"},
 		{"", "", ""},
