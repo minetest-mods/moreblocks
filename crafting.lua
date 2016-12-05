@@ -45,11 +45,6 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "moreblocks:wood_tile_flipped",
-	recipe = {{"moreblocks:wood_tile"},}
-})
-
-minetest.register_craft({
 	output = "moreblocks:wood_tile_center 9",
 	recipe = {
 		{"group:wood", "group:wood", "group:wood"},
@@ -71,28 +66,6 @@ minetest.register_craft({
 	recipe = {
 		{"default:stick"},
 		{"moreblocks:wood_tile_center"},
-	}
-})
-
-minetest.register_craft({
-	output = "moreblocks:wood_tile_down",
-	recipe = {
-		{"moreblocks:wood_tile_center"},
-		{"default:stick"},
-	}
-})
-
-minetest.register_craft({
-	output = "moreblocks:wood_tile_left",
-	recipe = {
-		{"default:stick", "moreblocks:wood_tile_center"},
-	}
-})
-
-minetest.register_craft({
-	output = "moreblocks:wood_tile_right",
-	recipe = {
-		{"moreblocks:wood_tile_center", "default:stick"},
 	}
 })
 
@@ -180,6 +153,14 @@ minetest.register_craft({
 	}
 })
 
+-- When approaching the below craft, loop back to the stone tile
+minetest.register_craft({
+	output = "moreblocks:stone_tile",
+	recipe = {
+		{"moreblocks:split_stone_tile_alt"},
+	}
+})
+
 minetest.register_craft({
 	output = "moreblocks:grey_bricks 2",
 	type = "shapeless",
@@ -198,6 +179,34 @@ minetest.register_craft({
 	recipe = {"moreblocks:sweeper", "default:bookshelf"},
 	replacements = {{"default:bookshelf", "default:book 3"}},
 	-- When obtaining an empty bookshelf, return the books used in it as well
+})
+
+minetest.register_craft({
+	output = "moreblocks:empty_bookshelf",
+	type = "shapeless",
+	recipe = {"moreblocks:sweeper", "vessels:shelf"},
+	replacements = {{"vessels:shelf", "vessels:glass_fragments 4"}},
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = "default:bookshelf",
+	recipe = {"moreblocks:empty_bookshelf", "default:book", "default:book", "default:book"},
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = "vessels:shelf",
+	recipe = {"moreblocks:empty_bookshelf", "group:vessel", "group:vessel", "group:vessel"},
+})
+
+minetest.register_craft({
+	output = "moreblocks:empty_bookshelf",
+	recipe = {
+		{"group:wood", "group:wood", "group:wood"},
+		{"", "", ""},
+		{"group:wood", "group:wood", "group:wood"},
+	}
 })
 
 minetest.register_craft({
