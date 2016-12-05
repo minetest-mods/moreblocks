@@ -56,6 +56,10 @@ minetest.register_alias("moreblocks:emptybookshelf", "moreblocks:empty_bookshelf
 minetest.register_alias("moreblocks:junglestick", "moreblocks:jungle_stick")
 minetest.register_alias("moreblocks:splitstonesquare","moreblocks:split_stone_tile")
 minetest.register_alias("moreblocks:allfacestree","moreblocks:all_faces_tree")
+minetest.register_alias("moreblocks:wood_tile_flipped","moreblocks:wood_tile")
+minetest.register_alias("moreblocks:wood_tile_down","moreblocks:wood_tile_up")
+minetest.register_alias("moreblocks:wood_tile_left","moreblocks:wood_up")
+minetest.register_alias("moreblocks:wood_tile_right","moreblocks:wood_up")
 
 -- ABM for horizontal trees (fix facedir):
 local horizontal_tree_convert_facedir = {7, 12, 9, 18}
