@@ -186,11 +186,11 @@ local nodes = {
 		"default_stone.png^moreblocks_cactus_checker.png^[transformR90"},
 		sounds = sound_stone,
 	},
-	["empty_bookshelf"] = {
-		description = S("Empty Bookshelf"),
+	["empty_shelf"] = {
+		description = S("Empty Shelf"),
 		paramtype2 = "facedir",
 		tiles = {"default_wood.png", "default_wood.png", "default_wood.png",
-		"default_wood.png", "moreblocks_empty_bookshelf.png", "moreblocks_empty_bookshelf.png"},
+		"default_wood.png", "moreblocks_empty_shelf.png", "moreblocks_empty_shelf.png"},
 		groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
 		is_ground_content = false,
 		sounds = sound_wood,
