@@ -7,6 +7,7 @@ Licensed under the zlib license. See LICENSE.md for more information.
 
 local S = moreblocks.intllib
 
+local sound_dirt = default.node_sound_dirt_defaults()
 local sound_wood = default.node_sound_wood_defaults()
 local sound_stone = default.node_sound_stone_defaults()
 local sound_glass = default.node_sound_glass_defaults()
@@ -112,11 +113,11 @@ local nodes = {
 		is_ground_content = false,
 		sounds = sound_stone,
 	},
-	["tar"] = {
-		description = S("Tar"),
-		groups = {cracky = 2, tar_block = 1},
+	["dirt_compressed"] = {
+		description = S("Compressed Dirt"),
+		groups = {snappy=2,crumbly=2},
 		is_ground_content = false,
-		sounds = sound_stone,
+		sounds = sound_dirt,
 	},
 	["cobble_compressed"] = {
 		description = S("Compressed Cobblestone"),
