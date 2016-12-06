@@ -439,6 +439,20 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = "moreblocks:dirt_compressed",
+	recipe = {
+		{'default:dirt', 'default:dirt', 'default:dirt'},
+		{'default:dirt', 'default:dirt', 'default:dirt'},
+		{'default:dirt', 'default:dirt', 'default:dirt'},
+	}
+})
+
+minetest.register_craft({
+	output = "default:dirt 9",
+	recipe = {{"moreblocks:dirt_compressed"}},
+})
+
+minetest.register_craft({
 	output = "moreblocks:cobble_compressed",
 	recipe = {
 		{"default:cobble", "default:cobble", "default:cobble"},
@@ -452,10 +466,6 @@ minetest.register_craft({
 	recipe = {
 		{"moreblocks:cobble_compressed"},
 	}
-})
-
-minetest.register_craft({
-	type = "cooking", output = "moreblocks:tar", recipe = "default:gravel",
 })
 
 minetest.register_craft({
