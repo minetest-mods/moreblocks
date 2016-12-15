@@ -145,7 +145,7 @@ function circular_saw:update_inventory(pos, amount)
 		self:reset(pos)
 		return
 	end
- 
+
 	local stack = inv:get_stack("input",  1)
 	-- At least one "normal" block is necessary to see what kind of stairs are requested.
 	if stack:is_empty() then
@@ -371,14 +371,14 @@ function circular_saw.can_dig(pos,player)
 end
 
 minetest.register_node("moreblocks:circular_saw",  {
-	description = S("Circular Saw"), 
-	drawtype = "nodebox", 
+	description = S("Circular Saw"),
+	drawtype = "nodebox",
 	node_box = {
-		type = "fixed", 
+		type = "fixed",
 		fixed = {
 			{-0.4, -0.5, -0.4, -0.25, 0.25, -0.25}, -- Leg
 			{0.25, -0.5, 0.25, 0.4, 0.25, 0.4}, -- Leg
-			{-0.4, -0.5, 0.25, -0.25, 0.25, 0.4}, -- Leg 
+			{-0.4, -0.5, 0.25, -0.25, 0.25, 0.4}, -- Leg
 			{0.25, -0.5, -0.4, 0.4, 0.25, -0.25}, -- Leg
 			{-0.5, 0.25, -0.5, 0.5, 0.375, 0.5}, -- Tabletop
 			{-0.01, 0.4375, -0.125, 0.01, 0.5, 0.125}, -- Saw blade (top)
@@ -389,9 +389,9 @@ minetest.register_node("moreblocks:circular_saw",  {
 	tiles = {"moreblocks_circular_saw_top.png",
 		"moreblocks_circular_saw_bottom.png",
 		"moreblocks_circular_saw_side.png"},
-	paramtype = "light", 
+	paramtype = "light",
 	sunlight_propagates = true,
-	paramtype2 = "facedir", 
+	paramtype2 = "facedir",
 	groups = {choppy = 2,oddly_breakable_by_hand = 2},
 	sounds = default.node_sound_wood_defaults(),
 	on_construct = circular_saw.on_construct,
