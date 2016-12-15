@@ -358,4 +358,3 @@ minetest.register_craftitem("moreblocks:nothing", {
 	inventory_image = "invisible.png",
 	on_use = function() end,
 })
-

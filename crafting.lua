@@ -477,7 +477,7 @@ minetest.register_craft({
 
 if minetest.setting_getbool("moreblocks.circular_saw_crafting") ~= false then -- “If nil or true then”
 	minetest.register_craft({
-		output = "moreblocks:circular_saw", 
+		output = "moreblocks:circular_saw",
 		recipe = {
 			{ "",  "default:steel_ingot",  "" },
 			{ "group:wood",  "group:wood",  "group:wood"},
