@@ -327,8 +327,6 @@ function circular_saw.on_metadata_inventory_take(
 	-- The recycle field plays no role here since it is processed immediately.
 end
 
-gui_slots = "listcolors[#606060AA;#808080;#101010;#202020;#FFF]"
-
 function circular_saw.on_construct(pos)
 	local meta = minetest.get_meta(pos)
 	local fancy_inv = default.gui_bg..default.gui_bg_img..default.gui_slots
