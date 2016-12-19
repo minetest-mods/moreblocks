@@ -11,7 +11,10 @@ local sound_wood = default.node_sound_wood_defaults()
 local sound_stone = default.node_sound_stone_defaults()
 local sound_glass = default.node_sound_glass_defaults()
 local sound_leaves = default.node_sound_leaves_defaults()
-local sound_metal = default.node_sound_metal_defaults()
+
+-- Don't break on 0.4.14 and earlier.
+local sound_metal = (default.node_sound_metal_defaults
+		and default.node_sound_metal_defaults() or sound_stone)
 
 local function tile_tiles(name)
 	local tex = "moreblocks_" ..name.. ".png"
