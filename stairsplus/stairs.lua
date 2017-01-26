@@ -128,7 +128,7 @@ function stairsplus:register_stair(modname, subname, recipeitem, fields)
 		end
 		def.drawtype = "nodebox"
 		def.paramtype = "light"
-		def.paramtype2 = "facedir"
+		def.paramtype2 = def.paramtype2 or "facedir"
 		def.on_place = minetest.rotate_node
 		def.description = desc
 		def.groups = stairsplus:prepare_groups(fields.groups)
