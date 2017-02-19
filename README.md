@@ -1,7 +1,6 @@
-More Blocks
-===========
+# More Blocks
 
-More Blocks for Minetest <http://minetest.net>, a free/libre infinite
+More Blocks for [Minetest](http://minetest.net), a free and open source infinite
 world block sandbox game.
 
 To install, just clone this repository into your "mods" directory.

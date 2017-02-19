@@ -1,7 +1,6 @@
-zlib license
-============
+# zlib license
 
-Copyright (c) 2011-2015 Calinou and contributors
+Copyright (c) 2011-2017 Hugo Locurcio and contributors
 
 **This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.**
 
