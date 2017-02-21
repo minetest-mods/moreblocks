@@ -26,9 +26,9 @@ circular_saw.cost_in_microblocks = {
 	1, 1, 1, 1, 1, 1, 1, 2,
 	2, 3, 2, 4, 2, 4, 5, 6,
 	7, 1, 1, 2, 4, 6, 7, 8,
-	3, 1, 1, 2, 4, 4, 2, 6,
-	7, 3, 7, 7, 4, 8, 3, 2,
-	6, 2, 1, 3, 4,
+	1, 2, 2, 3, 1, 1, 2, 4,
+	4, 2, 6, 7, 3, 7, 7, 4,
+	8, 3, 2, 6, 2, 1, 3, 4
 }
 
 circular_saw.names = {
@@ -40,6 +40,7 @@ circular_saw.names = {
 	{"panel", "_4"},
 	{"micro", ""},
 	{"panel", ""},
+
 	{"micro", "_12"},
 	{"panel", "_12"},
 	{"micro", "_14"},
@@ -48,6 +49,7 @@ circular_saw.names = {
 	{"panel", "_15"},
 	{"stair", "_outer"},
 	{"stair", ""},
+
 	{"stair", "_inner"},
 	{"slab", "_1"},
 	{"slab", "_2"},
@@ -56,11 +58,16 @@ circular_saw.names = {
 	{"slab", "_three_quarter"},
 	{"slab", "_14"},
 	{"slab", "_15"},
+
+	{"slab", "_two_sides"},
+	{"slab", "_three_sides"},
+	{"slab", "_three_sides_u"},
 	{"stair", "_half"},
 	{"stair", "_alt_1"},
 	{"stair", "_alt_2"},
 	{"stair", "_alt_4"},
 	{"stair", "_alt"},
+
 	{"slope", ""},
 	{"slope", "_half"},
 	{"slope", "_half_raised"},
@@ -69,6 +76,7 @@ circular_saw.names = {
 	{"slope", "_inner_half_raised"},
 	{"slope", "_inner_cut"},
 	{"slope", "_inner_cut_half"},
+
 	{"slope", "_inner_cut_half_raised"},
 	{"slope", "_outer"},
 	{"slope", "_outer_half"},
