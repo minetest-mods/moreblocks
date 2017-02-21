@@ -347,6 +347,26 @@ for name, def in pairs(nodes) do
 end
 
 
+-- Use moss mod for copper patina
+
+if minetest.global_exists("moss") then
+	moss.register_moss({
+		node = "moreblocks:copperpatina",
+		result = "default:copperblock"
+	})
+
+	moss.register_moss({
+		node = "moreblocks:slab_copperpatina",
+		result = "stairs:slab_copperblock"
+	})
+
+	moss.register_moss({
+		node = "moreblocks:stair_copperpatina",
+		result = "stairs:stair_copperblock"
+	})
+end
+
+
 -- Items
 
 minetest.register_craftitem("moreblocks:sweeper", {
