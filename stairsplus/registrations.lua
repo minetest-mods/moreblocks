@@ -46,14 +46,16 @@ local default_nodes = { -- Default stairs/slabs/panels/microblocks:
 
 for _, name in pairs(default_nodes) do
 	local nodename = "default:"..name
-	if string.find(name, ":") then
+	local a,b = string.find(name, ":")
+	if b then
 		nodename = name
+		name = string.sub(name, b+1)
 	end
 	local ndef = minetest.registered_nodes[nodename]
 	if ndef then
 		local drop
 		if type(ndef.drop) == "string" then
-			drop = ndef.drop:sub(9)
+			drop = ndef.drop:sub((b or 8)+1)
 		end
 
 		local tiles = ndef.tiles
