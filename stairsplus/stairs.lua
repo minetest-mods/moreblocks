@@ -105,6 +105,10 @@ local stairs_defs = {
 	},
 }
 
+for k,v in pairs(stairs_defs) do
+	table.insert(stairsplus.shapes_list, { "stair_", k })
+end
+
 function stairsplus:register_stair_alias(modname_old, subname_old, modname_new, subname_new)
 	local defs = stairsplus.copytable(stairs_defs)
 	for alternate, def in pairs(defs) do

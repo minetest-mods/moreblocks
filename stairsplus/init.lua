@@ -12,6 +12,8 @@ local modpath = minetest.get_modpath("moreblocks").. "/stairsplus"
 stairsplus = {}
 stairsplus.expect_infinite_stacks = false
 
+stairsplus.shapes_list = {}
+
 if not minetest.get_modpath("unified_inventory")
 and minetest.setting_getbool("creative_mode") then
 	stairsplus.expect_infinite_stacks = true

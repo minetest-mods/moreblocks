@@ -44,6 +44,10 @@ local slabs_defs = {
 					}
 }
 
+for k,v in pairs(slabs_defs) do
+	table.insert(stairsplus.shapes_list, { "slab_", k })
+end
+
 function stairsplus:register_slab_alias(modname_old, subname_old, modname_new, subname_new)
 	local defs = stairsplus.copytable(slabs_defs)
 	for alternate, def in pairs(defs) do
