@@ -65,6 +65,10 @@ local microblocks_defs = {
 	}
 }
 
+for k,v in pairs(microblocks_defs) do
+	table.insert(stairsplus.shapes_list, { "micro_", k })
+end
+
 function stairsplus:register_micro_alias(modname_old, subname_old, modname_new, subname_new)
 	local defs = stairsplus.copytable(microblocks_defs)
 	for alternate, def in pairs(defs) do

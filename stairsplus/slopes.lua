@@ -219,6 +219,10 @@ local slopes_defs = {
 	},
 }
 
+for k,v in pairs(slopes_defs) do
+	table.insert(stairsplus.shapes_list, { "slope_", k })
+end
+
 function stairsplus:register_slope_alias(modname_old, subname_old, modname_new, subname_new)
 	local defs = stairsplus.copytable(slopes_defs)
 	for alternate, def in pairs(defs) do

@@ -65,6 +65,10 @@ local panels_defs = {
 	}
 }
 
+for k,v in pairs(panels_defs) do
+	table.insert(stairsplus.shapes_list, { "panel_", k })
+end
+
 function stairsplus:register_panel_alias(modname_old, subname_old, modname_new, subname_new)
 	local defs = stairsplus.copytable(panels_defs)
 	for alternate, def in pairs(defs) do
