@@ -74,3 +74,36 @@ for _, name in pairs(default_nodes) do
 		})
 	end
 end
+
+-- wool registrations
+
+local colorlist = {
+	{"white",      "White"},
+	{"grey",       "Grey"},
+	{"black",      "Black"},
+	{"red",        "Red"},
+	{"yellow",     "Yellow"},
+	{"green",      "Green"},
+	{"cyan",       "Cyan"},
+	{"blue",       "Blue"},
+	{"magenta",    "Magenta"},
+	{"orange",     "Orange"},
+	{"violet",     "Violet"},
+	{"brown",      "Brown"},
+	{"pink",       "Pink"},
+	{"dark_grey",  "Dark Grey"},
+	{"dark_green", "Dark Green"},
+}
+
+for i in ipairs(colorlist) do
+	local color = colorlist[i][1]
+	local colordesc = colorlist[i][2]
+		
+	stairsplus:register_all("wool", color, "wool:"..color, {
+		description = colordesc.." Wool",
+		tiles = {"wool_"..color..".png"},
+		groups = {snappy=2,choppy=2,oddly_breakable_by_hand=3,flammable=3,wool=1,not_in_creative_inventory=1},
+		sounds = default.node_sound_defaults(),
+		sunlight_propagates = true,
+	})
+end
