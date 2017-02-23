@@ -7,6 +7,7 @@ Licensed under the zlib license. See LICENSE.md for more information.
 
 local default_nodes = { -- Default stairs/slabs/panels/microblocks:
 	"stone",
+	"stone_block",
 	"cobble",
 	"mossycobble",
 	"brick",
@@ -17,6 +18,7 @@ local default_nodes = { -- Default stairs/slabs/panels/microblocks:
 	"bronzeblock",
 	"diamondblock",
 	"desert_stone",
+	"desert_stone_block",
 	"desert_cobble",
 	"meselamp",
 	"glass",
@@ -31,15 +33,22 @@ local default_nodes = { -- Default stairs/slabs/panels/microblocks:
 	"aspen_tree",
 	"aspen_wood",
 	"obsidian",
+	"obsidian_block",
+	"obsidianbrick",
 	"obsidian_glass",
 	"stonebrick",
 	"desert_stonebrick",
 	"sandstonebrick",
-	"obsidianbrick",
+	"sandstone_block",
+	"coral_skeleton",
+	"farming:straw"
 }
 
 for _, name in pairs(default_nodes) do
-	local nodename = "default:" .. name
+	local nodename = "default:"..name
+	if string.find(name, ":") then
+		nodename = name
+	end
 	local ndef = minetest.registered_nodes[nodename]
 	if ndef then
 		local drop
