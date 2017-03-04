@@ -402,9 +402,33 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = "moreblocks:trap_desert_stone",
+	type = "shapeless",
+	recipe = {"default:mese_crystal_fragment", "default:desert_stone"},
+})
+
+minetest.register_craft({
 	output = "moreblocks:trap_glass",
 	type = "shapeless",
 	recipe = {"default:mese_crystal_fragment", "default:glass"},
+})
+
+minetest.register_craft({
+	output = "moreblocks:trap_obsidian_glass",
+	type = "shapeless",
+	recipe = {"default:mese_crystal_fragment", "default:obsidian_glass"},
+})
+
+minetest.register_craft({
+	output = "moreblocks:trap_obsidian",
+	type = "shapeless",
+	recipe = {"default:mese_crystal_fragment", "default:obsidian"},
+})
+
+minetest.register_craft({
+	output = "moreblocks:trap_sandstone",
+	type = "shapeless",
+	recipe = {"default:mese_crystal_fragment", "default:sandstone"},
 })
 
 minetest.register_craft({
