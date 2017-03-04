@@ -25,7 +25,7 @@ end
 local nodes = {
 	["wood_tile"] = {
 		description = S("Wooden Tile"),
-		groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
+		groups = {wood = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 		is_ground_content = false,
 		paramtype2 = "facedir",
 		place_param2 = 0,
@@ -107,8 +107,8 @@ local nodes = {
 		is_ground_content = false,
 		sounds = sound_stone,
 	},
-	["split_stone_tile_alt"] = {
-		description = S("Checkered Stone Tile"),
+	["checker_stone_tile"] = {
+		description = S("Checker Stone Tile"),
 		groups = {stone = 1, cracky = 3},
 		is_ground_content = false,
 		sounds = sound_stone,
@@ -236,6 +236,16 @@ local nodes = {
 	},
 	["trap_stone"] = {
 		description = S("Trap Stone"),
+		tiles = {"default_stone.png^moreblocks_trap_box.png"},
+		walkable = false,
+		groups = {cracky = 3},
+		is_ground_content = false,
+		sounds = sound_stone,
+		no_stairs = true,
+	},
+	["trap_desert_stone"] = {
+		description = S("Trap Desert Stone"),
+		tiles = {"default_desert_stone.png^moreblocks_trap_box.png"},
 		walkable = false,
 		groups = {cracky = 3},
 		is_ground_content = false,
@@ -246,13 +256,44 @@ local nodes = {
 		description = S("Trap Glass"),
 		drawtype = "glasslike_framed_optional",
 		--tiles = {"moreblocks_trap_glass.png", "default_glass_detail.png"},
-		tiles = {"moreblocks_trap_glass.png"},
+		tiles = {"default_glass.png^moreblocks_trap_box_glass.png"},
 		paramtype = "light",
 		sunlight_propagates = true,
 		is_ground_content = false,
 		walkable = false,
 		groups = {cracky = 3, oddly_breakable_by_hand = 3},
 		sounds = sound_glass,
+		no_stairs = true,
+	},
+	["trap_obsidian_glass"] = {
+		description = S("Trap Obsidian Glass"),
+		drawtype = "glasslike_framed_optional",
+		--tiles = {"moreblocks_trap_glass.png", "default_glass_detail.png"},
+		tiles = {"default_obsidian_glass.png^moreblocks_trap_box_glass.png"},
+		paramtype = "light",
+		sunlight_propagates = true,
+		is_ground_content = false,
+		walkable = false,
+		groups = {cracky = 3, oddly_breakable_by_hand = 3},
+		sounds = sound_glass,
+		no_stairs = true,
+	},
+	["trap_obsidian"] = {
+		description = S("Trap Obsidian"),
+		tiles = {"default_obsidian.png^moreblocks_trap_box.png"},
+		walkable = false,
+		groups = {cracky = 1, level = 2},
+		is_ground_content = false,
+		sounds = sound_stone,
+		no_stairs = true,
+	},
+	["trap_sandstone"] = {
+		description = S("Trap Sandstone"),
+		tiles = {"default_sandstone.png^moreblocks_trap_box.png"},
+		walkable = false,
+		groups = {crumbly = 1, cracky = 3},
+		is_ground_content = false,
+		sounds = sound_stone,
 		no_stairs = true,
 	},
 	["all_faces_tree"] = {
@@ -306,7 +347,7 @@ local nodes = {
 		description = S("Trap Glow Glass"),
 		drawtype = "glasslike_framed_optional",
 		--tiles = {"moreblocks_trap_glass.png", "moreblocks_glow_glass_detail.png"},
-		tiles = {"moreblocks_trap_glass.png"},
+		tiles = {"moreblocks_glow_glass.png^moreblocks_trap_box_glass.png"},
 		paramtype = "light",
 		sunlight_propagates = true,
 		is_ground_content = false,
@@ -332,7 +373,7 @@ local nodes = {
 		description = S("Trap Super Glow Glass"),
 		drawtype = "glasslike_framed_optional",
 		--tiles = {"moreblocks_trap_super_glow_glass.png", "moreblocks_super_glow_glass_detail.png"},
-		tiles = {"moreblocks_trap_super_glow_glass.png"},
+		tiles = {"moreblocks_super_glow_glass.png^moreblocks_trap_box_glass.png"},
 		paramtype = "light",
 		sunlight_propagates = true,
 		is_ground_content = false,
@@ -384,15 +425,9 @@ for name, def in pairs(nodes) do
 	end
 end
 
-
 -- Items
 
 minetest.register_craftitem("moreblocks:sweeper", {
 	description = S("Sweeper"),
 	inventory_image = "moreblocks_sweeper.png",
-})
-
-minetest.register_craftitem("moreblocks:nothing", {
-	inventory_image = "invisible.png",
-	on_use = function() end,
 })
