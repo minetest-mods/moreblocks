@@ -80,21 +80,21 @@ end
 if minetest.get_modpath("wool") then
 
 	local colorlist = {
-		{"white",      "White"},
-		{"grey",       "Grey"},
-		{"black",      "Black"},
-		{"red",        "Red"},
-		{"yellow",     "Yellow"},
-		{"green",      "Green"},
-		{"cyan",       "Cyan"},
-		{"blue",       "Blue"},
-		{"magenta",    "Magenta"},
-		{"orange",     "Orange"},
-		{"violet",     "Violet"},
-		{"brown",      "Brown"},
-		{"pink",       "Pink"},
-		{"dark_grey",  "Dark Grey"},
-		{"dark_green", "Dark Green"},
+		{"white",      "White Wool"},
+		{"grey",       "Grey Wool"},
+		{"black",      "Black Wool"},
+		{"red",        "Red Wool"},
+		{"yellow",     "Yellow Wool"},
+		{"green",      "Green Wool"},
+		{"cyan",       "Cyan Wool"},
+		{"blue",       "Blue Wool"},
+		{"magenta",    "Magenta Wool"},
+		{"orange",     "Orange Wool"},
+		{"violet",     "Violet Wool"},
+		{"brown",      "Brown Wool"},
+		{"pink",       "Pink Wool"},
+		{"dark_grey",  "Dark Grey Wool"},
+		{"dark_green", "Dark Green Wool"},
 	}
 
 	for i in ipairs(colorlist) do
@@ -102,7 +102,7 @@ if minetest.get_modpath("wool") then
 		local colordesc = colorlist[i][2]
 		
 		stairsplus:register_all("wool", color, "wool:"..color, {
-			description = colordesc.." Wool",
+			description = colordesc,
 			tiles = {"wool_"..color..".png"},
 			groups = {snappy=2,choppy=2,oddly_breakable_by_hand=3,
 					flammable=3,wool=1,not_in_creative_inventory=1},
