@@ -95,6 +95,8 @@ function stairsplus:register_micro(modname, subname, recipeitem, fields)
 		def.paramtype2 = def.paramtype2 or "facedir"
 		def.on_place = minetest.rotate_node
 		def.groups = stairsplus:prepare_groups(fields.groups)
+		def.base_material = recipeitem
+		def.shape_type = "micro"
 		def.description = desc
 		if fields.drop and not (type(fields.drop) == "table") then
 			def.drop = modname.. ":micro_" ..fields.drop..alternate
