@@ -250,6 +250,7 @@ function stairsplus:register_slope(modname, subname, recipeitem, fields)
 		def.on_place = minetest.rotate_node
 		def.description = desc
 		def.groups = stairsplus:prepare_groups(fields.groups)
+		def.groups.slope = 1
 		if fields.drop and not (type(fields.drop) == "table") then
 			def.drop = modname.. ":slope_" ..fields.drop..alternate
 		end
