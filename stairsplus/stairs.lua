@@ -136,8 +136,7 @@ function stairsplus:register_stair(modname, subname, recipeitem, fields)
 		def.on_place = minetest.rotate_node
 		def.description = desc
 		def.groups = stairsplus:prepare_groups(fields.groups)
-		def.base_material = recipeitem
-		def.shape_type = "stair"
+		def.groups.stair = 1
 		if fields.drop and not (type(fields.drop) == "table") then
 			def.drop = modname .. ":stair_" .. fields.drop .. alternate
 		end
