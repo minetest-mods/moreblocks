@@ -15,7 +15,7 @@ stairsplus.expect_infinite_stacks = false
 stairsplus.shapes_list = {}
 
 if not minetest.get_modpath("unified_inventory")
-and minetest.setting_getbool("creative_mode") then
+and minetest.settings:get_bool("creative_mode") then
 	stairsplus.expect_infinite_stacks = true
 end
 

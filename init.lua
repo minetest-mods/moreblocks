@@ -28,6 +28,6 @@ dofile(modpath .. "/redefinitions.lua")
 dofile(modpath .. "/crafting.lua")
 dofile(modpath .. "/aliases.lua")
 
-if minetest.setting_getbool("log_mods") then
+if minetest.settings:get_bool("log_mods") then
 	minetest.log("action", S("[moreblocks] loaded."))
 end
