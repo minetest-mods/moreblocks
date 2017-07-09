@@ -11,7 +11,7 @@ Licensed under the zlib license. See LICENSE.md for more information.
 moreblocks = {}
 
 local S
-if minetest.get_modpath("intllib") then
+if minetest.global_exists("intllib") then
 	S = intllib.Getter()
 else
 	S = function(s) return s end
