@@ -1,7 +1,7 @@
 --[[
 More Blocks: circular saw
 
-Copyright (c) 2011-2017 Hugo Locurcio and contributors.
+Copyright (c) 2011-2017 Hugo Locurcio, Sokomine and contributors.
 Licensed under the zlib license. See LICENSE.md for more information.
 --]]
 
