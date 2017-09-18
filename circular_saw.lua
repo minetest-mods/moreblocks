@@ -338,8 +338,6 @@ end
 function circular_saw.on_construct(pos)
 	local meta = minetest.get_meta(pos)
 	local fancy_inv = default.gui_bg..default.gui_bg_img..default.gui_slots
-	meta:set_string("formspec", "size[11,10]"..fancy_inv..
-			"label[0,0;" ..S("Input\nmaterial").. "]" ..
 	meta:set_string(
 		"formspec", "size[11,10]"..fancy_inv..
 		"label[0,0;" ..S("Input\nmaterial").. "]" ..
