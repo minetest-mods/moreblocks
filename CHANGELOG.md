@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
   thickness.
 - Stone Block, Desert Stone Block, Obsidian Block, Sandstone Block, Coral
   Skeleton and Straw are now present as Stairs+ nodes.
+- Listring add for circular saw.
 
 ## [1.0.0] - 2017-02-19
 
