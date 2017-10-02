@@ -12,8 +12,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - 3 new node shapes in the circular saw (thin slabs, available in
   "L-shaped", "corner-shaped" and "U-shaped" variations), all with 1/16
   thickness.
-- Stone Block, Desert Stone Block, Obsidian Block, Sandstone Block, Coral
-  Skeleton and Straw are now present as Stairs+ nodes.
+- New Stairs+ nodes:
+  - Coral Skeleton
+  - Desert Sandstone, Silver Sandstone
+  - Desert Sandstone Brick, Silver Sandstone Brick
+  - Desert Sandstone Block, Silver Sandstone Block
+  - Obsidian Block
+  - Sandstone Block
+  - Stone Block, Desert Stone Block
+  - Straw
+  - Tin Block
+  - Wool (all colors)
 
 ## [1.0.0] - 2017-02-19
 
