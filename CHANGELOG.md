@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- All Stairs+ nodes can be now converted into microblocks
+
 ## [1.1.0] - 2017-10-04
 
 ### Added
