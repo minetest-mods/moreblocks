@@ -134,4 +134,40 @@ function stairsplus:register_panel(modname, subname, recipeitem, fields)
 		output = recipeitem,
 		recipe = {modname .. ":panel_" .. subname, modname .. ":panel_" .. subname, modname .. ":panel_" .. subname, modname .. ":panel_" .. subname},
 	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":micro_" .. subname .. " 1",
+		recipe =  {modname .. ":panel_" .. subname .. "_1"},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":micro_" .. subname .. " 1",
+		recipe =  {modname .. ":panel_" .. subname .. "_2"},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":micro_" .. subname .. " 1",
+		recipe =  {modname .. ":panel_" .. subname .. "_4"},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":micro_" .. subname .. " 3",
+		recipe =  {modname .. ":panel_" .. subname .. "_12"},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":micro_" .. subname .. " 4",
+		recipe =  {modname .. ":panel_" .. subname .. "_14"},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":micro_" .. subname .. " 4",
+		recipe =  {modname .. ":panel_" .. subname .. "_15"},
+	})
 end

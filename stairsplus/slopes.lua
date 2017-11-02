@@ -363,4 +363,100 @@ function stairsplus:register_slope(modname, subname, recipeitem, fields)
 		output = modname .. ":slope_" .. subname .. "_inner_cut_half_raised",
 		recipe =  {modname .. ":slab_" .. subname, modname .. ":slope_" .. subname .. "_inner_cut_half"},
 	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":micro_" .. subname .. " 4",
+		recipe =  {modname .. ":slope_" .. subname},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":micro_" .. subname .. " 2",
+		recipe =  {modname .. ":slope_" .. subname .. "_half"},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":micro_" .. subname .. " 6",
+		recipe =  {modname .. ":slope_" .. subname .. "_half_raised"},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":micro_" .. subname .. " 7",
+		recipe =  {modname .. ":slope_" .. subname .. "_inner"},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":micro_" .. subname .. " 3",
+		recipe =  {modname .. ":slope_" .. subname .. "_inner_half"},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":micro_" .. subname .. " 7",
+		recipe =  {modname .. ":slope_" .. subname .. "_inner_half_raised"},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":micro_" .. subname .. " 7",
+		recipe =  {modname .. ":slope_" .. subname .. "_inner_cut"},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":micro_" .. subname .. " 4",
+		recipe =  {modname .. ":slope_" .. subname .. "_inner_cut_half"},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":micro_" .. subname .. " 8",
+		recipe =  {modname .. ":slope_" .. subname .. "_inner_cut_half_raised"},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":micro_" .. subname .. " 3",
+		recipe =  {modname .. ":slope_" .. subname .. "_outer"},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":micro_" .. subname .. " 2",
+		recipe =  {modname .. ":slope_" .. subname .. "_outer_half"},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":micro_" .. subname .. " 6",
+		recipe =  {modname .. ":slope_" .. subname .. "_outer_half_raised"},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":micro_" .. subname .. " 2",
+		recipe =  {modname .. ":slope_" .. subname .. "_outer_cut"},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":micro_" .. subname .. " 1",
+		recipe =  {modname .. ":slope_" .. subname .. "_outer_cut_half"},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":micro_" .. subname .. " 3",
+		recipe =  {modname .. ":slope_" .. subname .. "_outer_cut_half_raised"},
+	})
+	
+	minetest.register_craft({
+		type = "shapeless",
+		output = modname .. ":micro_" .. subname .. " 4",
+		recipe =  {modname .. ":slope_" .. subname .. "_cut"},
+	})
 end

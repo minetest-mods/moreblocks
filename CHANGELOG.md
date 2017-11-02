@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   - Tin Block
   - Wool (all colors)
 - Other mods can now get a list of all the defined Stairs+ shapes
+- All Stairs+ nodes can be now converted into microblocks
 
 ## [1.0.0] - 2017-02-19
 
