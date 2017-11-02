@@ -311,6 +311,7 @@ function circular_saw.on_metadata_inventory_take(
 		local player_inv = player:get_inventory()
 		if player_inv:room_for_item("main", input_stack) then
 			player_inv:add_item("main", input_stack)
+		else return
 		end
 
 		circular_saw:reset(pos)
