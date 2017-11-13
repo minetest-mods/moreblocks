@@ -164,7 +164,7 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "moreblocks:split_stone_tile_alt",
+	output = "moreblocks:split_stone_tile_other",
 	recipe = {
 		{"moreblocks:split_stone_tile"},
 	}
