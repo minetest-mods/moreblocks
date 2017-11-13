@@ -13,6 +13,7 @@ minetest.register_alias("jungle_stick", "moreblocks:jungle_stick")
 -- Old block/item replacement:
 minetest.register_alias("moreblocks:oerkkiblock", "default:mossycobble")
 minetest.register_alias("moreblocks:screwdriver", "screwdriver:screwdriver")
+minetest.register_alias("moreblocks:split_stone_tile_alt", "moreblocks:split_stone_tile_other")
 
 -- Node and item renaming:
 minetest.register_alias("moreblocks:stone_bricks", "default:stonebrick")
