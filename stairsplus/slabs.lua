@@ -48,18 +48,31 @@ for k,v in pairs(slabs_defs) do
 	table.insert(stairsplus.shapes_list, { "slab_", k })
 end
 
-function stairsplus:register_slab_alias(modname_old, subname_old, modname_new, subname_new)
+function stairsplus:register_slabs_xdecor_alias(modname_old, subname_old, modname_new, subname_new)
+	if not(minetest.settings:get_bool("moreblocks.conversion_xdecor>moreblocks")) then
+		return
+	end
+	local stairsplus_alias = stairsplus:normal_alias_or_force(force)
+	stairsplus_alias(modname_old .. ":" .. subname_old .."_microslab", modname_new .. ":slab_" .. subname_new .. "_1")
+	stairsplus_alias("stairs:slab_" .. subname_old, modname_new .. ":slab_" .. subname_new)
+end
+
+function register_slab_alias_and_force(modname_old, subname_old, modname_new, subname_new, force)
+	local stairsplus_alias = stairsplus:normal_alias_or_force(force)
 	local defs = stairsplus.copytable(slabs_defs)
 	for alternate, def in pairs(defs) do
-		minetest.register_alias(modname_old .. ":slab_" .. subname_old .. alternate, modname_new .. ":slab_" .. subname_new .. alternate)
+		stairsplus_alias(modname_old .. ":slab_" .. subname_old .. alternate, modname_new .. ":slab_" .. subname_new .. alternate)
 	end
+	stairsplus:register_slabs_xdecor_alias(modname_old, subname_old, modname_new, subname_new, force)
+end
+
+function stairsplus:register_slab_alias(modname_old, subname_old, modname_new, subname_new)
+	register_slab_alias_and_force(modname_old, subname_old, modname_new, subname_new, false)
+	minetest.register_alias("stairs:slab_" .. subname_old, modname_new .. ":slab_" .. subname_new)
 end
 
 function stairsplus:register_slab_alias_force(modname_old, subname_old, modname_new, subname_new)
-	local defs = stairsplus.copytable(slabs_defs)
-	for alternate, def in pairs(defs) do
-		minetest.register_alias_force(modname_old .. ":slab_" .. subname_old .. alternate, modname_new .. ":slab_" .. subname_new .. alternate)
-	end
+	register_slab_alias_and_force(modname_old, subname_old, modname_new, subname_new, true)
 end
 
 function stairsplus:register_slab(modname, subname, recipeitem, fields)
@@ -100,6 +113,8 @@ function stairsplus:register_slab(modname, subname, recipeitem, fields)
 		minetest.register_node(":" .. modname .. ":slab_" .. subname .. alternate, def)
 	end
 
+	stairsplus:register_slabs_xdecor_alias(modname, subname, modname, subname, false)
+	
 	circular_saw.known_nodes[recipeitem] = {modname, subname}
 
 	-- Some saw-less recipes:

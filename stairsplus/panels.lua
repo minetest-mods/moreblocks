@@ -69,18 +69,47 @@ for k,v in pairs(panels_defs) do
 	table.insert(stairsplus.shapes_list, { "panel_", k })
 end
 
-function stairsplus:register_panel_alias(modname_old, subname_old, modname_new, subname_new)
+function stairsplus:register_panels_xdecor_alias(modname_old, subname_old, modname_new, subname_new, force)
+	if not(minetest.settings:get_bool("moreblocks.conversion_xdecor>moreblocks")) then
+		return
+	end
+	minetest.register_lbm({
+		name = ":replace_xdecor_panel_micropanel_" .. modname_old .. "_" .. string.lower(subname_old) ..  "_" .. stairsplus:uppercase_index_string(subname_old) .. "_" .. 
+			modname_new .. "_" .. string.lower(subname_new) .. stairsplus:uppercase_index_string(subname_new) .. string.gsub(minetest.serialize(force),"return ", "_"),
+		nodenames = {modname_old .. ":" .. subname_old .. "_micropanel", modname_old .. ":" .. subname_old .. "_panel"},
+		run_at_every_load = false,
+		action = function(pos, node)
+			if modname_old .. ":" .. subname_old .. "_micropanel" == node.name then
+				nodename = modname_new .. ":panel_" .. subname_new .. "_1"
+			else
+				nodename = modname_new .. ":panel_" .. subname_new
+			end
+			if node.param2 == 0 or node.param2%4 == 0 then
+				minetest.set_node(pos, {name = nodename, param2 = node.param2+2})
+			elseif node.param2%4 == 3 or node.param2%2 == 0 then
+				minetest.set_node(pos, {name = nodename, param2 = node.param2-2})
+			else
+				minetest.set_node(pos, {name = nodename, param2 = node.param2+2})
+			end
+		end,
+	})
+end
+
+function register_panel_alias_and_force(modname_old, subname_old, modname_new, subname_new, force)
+	local stairsplus_alias = stairsplus:normal_alias_or_force(force)
 	local defs = stairsplus.copytable(panels_defs)
 	for alternate, def in pairs(defs) do
-		minetest.register_alias(modname_old .. ":panel_" .. subname_old .. alternate, modname_new .. ":panel_" .. subname_new .. alternate)
+		stairsplus_alias(modname_old .. ":panel_" .. subname_old .. alternate, modname_new .. ":panel_" .. subname_new .. alternate)
 	end
+	stairsplus:register_panels_xdecor_alias(modname_old, subname_old, modname_new, subname_new, force)
+end
+
+function stairsplus:register_panel_alias(modname_old, subname_old, modname_new, subname_new)
+	register_panel_alias_and_force(modname_old, subname_old, modname_new, subname_new, false)
 end
 
 function stairsplus:register_panel_alias_force(modname_old, subname_old, modname_new, subname_new)
-	local defs = stairsplus.copytable(panels_defs)
-	for alternate, def in pairs(defs) do
-		minetest.register_alias_force(modname_old .. ":panel_" .. subname_old .. alternate, modname_new .. ":panel_" .. subname_new .. alternate)
-	end
+	register_panel_alias_and_force(modname_old, subname_old, modname_new, subname_new, true)
 end
 
 function stairsplus:register_panel(modname, subname, recipeitem, fields)
@@ -102,6 +131,7 @@ function stairsplus:register_panel(modname, subname, recipeitem, fields)
 		minetest.register_node(":" ..modname.. ":panel_" ..subname..alternate, def)
 	end
 	minetest.register_alias(modname.. ":panel_" ..subname.. "_bottom", modname.. ":panel_" ..subname)
+	stairsplus:register_panels_xdecor_alias(modname, subname, modname, subname, false)
 
 	circular_saw.known_nodes[recipeitem] = {modname, subname}
 

@@ -1,0 +1,4 @@
+#
+
+moreblocks.circular_saw_crafting			(If false desactive a craft the circular saw)				bool true
+moreblocks.conversion_xdecor>moreblocks		(Convert all block cutting by xdecor) 						bool false

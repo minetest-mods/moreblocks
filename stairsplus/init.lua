@@ -49,6 +49,28 @@ function stairsplus:prepare_groups(groups)
 	return result
 end
 
+function stairsplus:uppercase_index_string(words)
+	return string.gsub(
+		string.gsub(
+			minetest.serialize(
+				string.find(
+					words,"%u"
+				)
+			),
+			"return ", "_"
+		),
+		",", "_"
+	)
+end
+
+function stairsplus:normal_alias_or_force(force)
+	if force then
+		return minetest.register_alias_force
+	else
+		return minetest.register_alias
+	end
+end
+
 function stairsplus:register_all(modname, subname, recipeitem, fields)
 	self:register_stair(modname, subname, recipeitem, fields)
 	self:register_slab (modname, subname, recipeitem, fields)
@@ -71,6 +93,12 @@ function stairsplus:register_alias_force_all(modname_old, subname_old, modname_n
 	self:register_slope_alias_force(modname_old, subname_old, modname_new, subname_new)
 	self:register_panel_alias_force(modname_old, subname_old, modname_new, subname_new)
 	self:register_micro_alias_force(modname_old, subname_old, modname_new, subname_new)
+end
+function stairsplus:register_xdecor_alias_all(modname_old, subname_old, modname_new, subname_new, force)
+	self:register_stairs_xdecor_alias(modname_old, subname_old, modname_new, subname_new, force)
+	self:register_slabs_xdecor_alias(modname_old, subname_old, modname_new, subname_new, force)
+	self:register_panels_xdecor_alias(modname_old, subname_old, modname_new, subname_new, force)
+	self:register_micro_xdecor_alias(modname_old, subname_old, modname_new, subname_new, force)
 end
 
 function register_stair_slab_panel_micro(modname, subname, recipeitem, groups, images, description, drop, light)

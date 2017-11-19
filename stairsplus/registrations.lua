@@ -72,6 +72,7 @@ for _, name in pairs(default_nodes) do
 	stairsplus:register_all(mod, name, nodename, ndef)
 	minetest.register_alias_force("stairs:stair_" .. name, mod .. ":stair_" .. name)
 	minetest.register_alias_force("stairs:slab_"  .. name, mod .. ":slab_"  .. name)
+	stairsplus:register_xdecor_alias_all("default", name, mod, name, false)
 end
 
 -- farming registrations
@@ -87,6 +88,7 @@ if minetest.get_modpath("farming") then
 		stairsplus:register_all(mod, name, nodename, ndef)
 		minetest.register_alias_force("stairs:stair_" .. name, mod .. ":stair_" .. name)
 		minetest.register_alias_force("stairs:slab_"  .. name, mod .. ":slab_"  .. name)
+		stairsplus:register_xdecor_alias_all("farming", name, mod, name, false)
 	end
 end
 
