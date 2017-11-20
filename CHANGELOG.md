@@ -7,8 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-### Fixed
-
+- Listring add for circular saw.
 - The circular saw can no longer replace items from the player's inventory
   when it is full.
 
