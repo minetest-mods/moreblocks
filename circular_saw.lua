@@ -299,6 +299,17 @@ function circular_saw.on_metadata_inventory_put(
 	end
 end
 
+function circular_saw.allow_metadata_inventory_take(pos, listname, index, stack, player)
+	local meta          = minetest.get_meta(pos)
+	local inv           = meta:get_inventory()
+	local input_stack = inv:get_stack(listname,  index)
+	local player_inv = player:get_inventory()
+	if not player_inv:room_for_item("main", input_stack) then
+		return 0
+	else return stack:get_count()
+	end
+end
+
 function circular_saw.on_metadata_inventory_take(
 		pos, listname, index, stack, player)
 
@@ -427,6 +438,7 @@ minetest.register_node("moreblocks:circular_saw",  {
 	allow_metadata_inventory_move = circular_saw.allow_metadata_inventory_move,
 	-- Only input- and recycle-slot are intended as input slots:
 	allow_metadata_inventory_put = circular_saw.allow_metadata_inventory_put,
+	allow_metadata_inventory_take = circular_saw.allow_metadata_inventory_take,
 	-- Taking is allowed from all slots (even the internal microblock slot). Moving is forbidden.
 	-- Putting something in is slightly more complicated than taking anything because we have to make sure it is of a suitable material:
 	on_metadata_inventory_put = circular_saw.on_metadata_inventory_put,
