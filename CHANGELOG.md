@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- The circular saw can no longer replace items from the player's inventory
+  when it is full.
+
 ## [1.1.0] - 2017-10-04
 
 ### Added
