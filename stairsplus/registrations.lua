@@ -62,7 +62,7 @@ for _, name in pairs(default_nodes) do
 	if ndef then
 		local drop
 		if type(ndef.drop) == "string" then
-			drop = ndef.drop:sub((b or 8)+1)
+			drop = ndef.drop:gsub('.+:', '')
 		end
 
 		local tiles = ndef.tiles
