@@ -55,6 +55,7 @@ for _, name in pairs(default_nodes) do
 	local mod = "default"
 	local nodename = mod .. ":" .. name
 	local ndef = table.copy(minetest.registered_nodes[nodename])
+	ndef.sunlight_propagates = true
 
 	-- Stone and desert_stone drop cobble and desert_cobble respectively.
 	if type(ndef.drop) == "string" then
@@ -76,6 +77,7 @@ if minetest.get_modpath("farming") then
 		local mod = "farming"
 		local nodename = mod .. ":" .. name
 		local ndef = table.copy(minetest.registered_nodes[nodename])
+		ndef.sunlight_propagates = true
 		stairsplus:register_all("moreblocks", name, nodename, ndef)
 	end
 end
@@ -89,6 +91,7 @@ if minetest.get_modpath("wool") then
 		local mod = "wool"
 		local nodename = mod .. ":" .. name
 		local ndef = table.copy(minetest.registered_nodes[nodename])
+		ndef.sunlight_propagates = true
 
 		-- Prevent dye+cut wool recipy from creating a full wool block.
 		ndef.groups.wool = nil
