@@ -117,7 +117,7 @@ local nodes = {
 		groups = {cracky = 3},
 		sounds = sound_stone,
 	},
-	["split_stone_tile_alt"] = {
+	["split_stone_tile_other"] = {
 		description = S("Checkered Stone Tile"),
 		groups = {cracky = 3},
 		sounds = sound_stone,
