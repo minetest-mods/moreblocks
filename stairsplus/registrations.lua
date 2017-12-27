@@ -62,9 +62,10 @@ for _, name in pairs(default_nodes) do
 		ndef.drop = ndef.drop:gsub(".+:", "")
 	end
 
-	-- Use the primary tile for all sides of cut glasslike nodes.
+	-- Use the primary tile for all sides of cut glasslike nodes and disregard paramtype2.
 	if #ndef.tiles > 1 and ndef.drawtype and ndef.drawtype:find("glass") then
 		ndef.tiles = {ndef.tiles[1]}
+		ndef.paramtype2 = nil
 	end
 
 	stairsplus:register_all("moreblocks", name, nodename, ndef)
