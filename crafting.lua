@@ -45,6 +45,12 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	type = "shapeless",
+	output = "moreblocks:wood_tile",
+	recipe = {"moreblocks:wood_tile_flipped"}
+})
+
+minetest.register_craft({
 	output = "moreblocks:wood_tile_center 9",
 	recipe = {
 		{"group:wood", "group:wood", "group:wood"},
@@ -62,11 +68,29 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "moreblocks:wood_tile_up",
+	output = "moreblocks:wood_tile_offset",
 	recipe = {
 		{"default:stick"},
 		{"moreblocks:wood_tile_center"},
 	}
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = "moreblocks:wood_tile_offset",
+	recipe = {"moreblocks:wood_tile_down"}
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = "moreblocks:wood_tile_offset",
+	recipe = {"moreblocks:wood_tile_left"}
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = "moreblocks:wood_tile_offset",
+	recipe = {"moreblocks:wood_tile_right"}
 })
 
 minetest.register_craft({
