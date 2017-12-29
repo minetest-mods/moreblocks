@@ -37,7 +37,8 @@ minetest.register_alias("moreblocks:ironstone", "moreblocks:iron_stone")
 minetest.register_alias("moreblocks:woodtile", "moreblocks:wood_tile")
 minetest.register_alias("moreblocks:woodtile_full", "moreblocks:wood_tile_full")
 minetest.register_alias("moreblocks:woodtile_centered", "moreblocks:wood_tile_centered")
-minetest.register_alias("moreblocks:woodtile_up", "moreblocks:wood_tile_up")
+minetest.register_alias("moreblocks:woodtile_up", "moreblocks:wood_tile_offset")
+minetest.register_alias("moreblocks:wood_tile_up", "moreblocks:wood_tile_offset")
 minetest.register_alias("moreblocks:woodtile_down", "moreblocks:wood_tile_down")
 minetest.register_alias("moreblocks:woodtile_left", "moreblocks:wood_tile_left")
 minetest.register_alias("moreblocks:woodtile_right", "moreblocks:wood_tile_right")
@@ -56,10 +57,6 @@ minetest.register_alias("moreblocks:emptybookshelf", "moreblocks:empty_bookshelf
 minetest.register_alias("moreblocks:junglestick", "moreblocks:jungle_stick")
 minetest.register_alias("moreblocks:splitstonesquare","moreblocks:split_stone_tile")
 minetest.register_alias("moreblocks:allfacestree","moreblocks:all_faces_tree")
-minetest.register_alias("moreblocks:wood_tile_flipped","moreblocks:wood_tile")
-minetest.register_alias("moreblocks:wood_tile_down","moreblocks:wood_tile_up")
-minetest.register_alias("moreblocks:wood_tile_left","moreblocks:wood_tile_up")
-minetest.register_alias("moreblocks:wood_tile_right","moreblocks:wood_tile_up")
 minetest.register_alias("moreblocks:empty_bookshelf","moreblocks:empty_shelf")
 minetest.register_alias("moreblocks:split_stone_tile_alt","moreblocks:checker_stone_tile")
 minetest.register_alias("moreblocks:tar","default:gravel")
@@ -82,5 +79,28 @@ minetest.register_abm({
 			name = node.name,
 			param2 = horizontal_tree_convert_facedir[node.param2 + 1]
 		})
+	end,
+})
+
+minetest.register_lbm({
+	name = "moreblocks:reduce_wood_tile_redundancy",
+	nodenames = {
+		"moreblocks:wood_tile_left",
+		"moreblocks:wood_tile_down",
+		"moreblocks:wood_tile_right",
+		"moreblocks:wood_tile_flipped",
+	},
+	action = function(pos, node)
+		if node.name:find("left") then
+			minetest.set_node(pos, {name = "moreblocks:wood_tile_offset", param2=1})
+		elseif node.name:find("down") then
+			minetest.set_node(pos, {name = "moreblocks:wood_tile_offset", param2=2})
+		elseif node.name:find("right") then
+			minetest.set_node(pos, {name = "moreblocks:wood_tile_offset", param2=3})
+		else -- wood_tile_flipped
+			minetest.set_node(pos, {name = "moreblocks:wood_tile", param2=1})
+		end
+		minetest.log('action', "LBM replaced " .. node.name ..
+			" at " .. minetest.pos_to_string(pos))
 	end,
 })

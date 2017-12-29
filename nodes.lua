@@ -22,6 +22,20 @@ local function tile_tiles(name)
 	return {tex, tex, tex, tex, tex.. "^[transformR90", tex.. "^[transformR90"}
 end
 
+local function wood_tile_replace(itemstack, placer, pointed_thing)
+	local substack
+	if itemstack:get_name() == "moreblocks:wood_tile_flipped" then
+		substack = ItemStack("moreblocks:wood_tile")
+	else -- right, left, and down variants
+		substack = ItemStack("moreblocks:wood_tile_offset")
+	end
+	local _, success = minetest.item_place(substack, placer, pointed_thing)
+	if success then
+		itemstack:take_item()
+	end
+	return itemstack
+end
+
 local nodes = {
 	["wood_tile"] = {
 		description = S("Wooden Tile"),
@@ -37,6 +51,17 @@ local nodes = {
 		"default_wood.png^moreblocks_wood_tile.png^[transformR90"},
 		sounds = sound_wood,
 	},
+	["wood_tile_flipped"] = {
+		description = S("Wooden Tile (Deprecated)"),
+		tiles = {"default_wood.png^moreblocks_wood_tile.png^[transformR90",
+		"default_wood.png^moreblocks_wood_tile.png^[transformR90",
+		"default_wood.png^moreblocks_wood_tile.png^[transformR90",
+		"default_wood.png^moreblocks_wood_tile.png^[transformR90",
+		"default_wood.png^moreblocks_wood_tile.png^[transformR180",
+		"default_wood.png^moreblocks_wood_tile.png^[transformR180"},
+		no_stairs = true,
+		on_place = wood_tile_replace
+	},
 	["wood_tile_center"] = {
 		description = S("Centered Wooden Tile"),
 		groups = {wood = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
@@ -51,15 +76,33 @@ local nodes = {
 		tiles = tile_tiles("wood_tile_full"),
 		sounds = sound_wood,
 	},
-	["wood_tile_up"] = {
-		description = S("Upwards Wooden Tile"),
+	["wood_tile_offset"] = {
+		description = S("Offset Wooden Tile"),
 		paramtype2 = "facedir",
 		place_param2 = 0,
 		groups = {wood = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 		is_ground_content = false,
-		tiles = {"default_wood.png^moreblocks_wood_tile_up.png"},
+		tiles = {"default_wood.png^moreblocks_wood_tile_offset.png"},
 		sounds = sound_wood,
 		no_stairs = true,
+	},
+	["wood_tile_down"] = {
+		description = S("Downwards Wooden Tile (Deprecated)"),
+		tiles = {"default_wood.png^[transformR180^moreblocks_wood_tile_offset.png^[transformR180"},
+		no_stairs = true,
+		on_place = wood_tile_replace
+	},
+	["wood_tile_left"] = {
+		description = S("Leftwards Wooden Tile (Deprecated)"),
+		tiles = {"default_wood.png^[transformR270^moreblocks_wood_tile_offset.png^[transformR270"},
+		no_stairs = true,
+		on_place = wood_tile_replace
+	},
+	["wood_tile_right"] = {
+		description = S("Rightwards Wooden Tile (Deprecated)"),
+		tiles = {"default_wood.png^[transformR90^moreblocks_wood_tile_offset.png^[transformR90"},
+		no_stairs = true,
+		on_place = wood_tile_replace
 	},
 	["circle_stone_bricks"] = {
 		description = S("Circle Stone Bricks"),
