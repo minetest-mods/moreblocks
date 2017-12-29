@@ -185,20 +185,13 @@ minetest.register_craft({
 	output = "moreblocks:empty_shelf",
 	type = "shapeless",
 	recipe = {"moreblocks:sweeper", "vessels:shelf"},
-	replacements = {{"vessels:shelf", "vessels:glass_fragments 4"}},
-	-- When obtaining an empty shelf, return four glass_fragment pieces
+	replacements = {{"vessels:shelf", "vessels:glass_bottle 3"}},
 })
 
 minetest.register_craft({
 	type = "shapeless",
 	output = "default:bookshelf",
 	recipe = {"moreblocks:empty_shelf", "default:book", "default:book", "default:book"},
-})
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "vessels:shelf",
-	recipe = {"moreblocks:empty_shelf", "group:vessel", "group:vessel", "group:vessel"},
 })
 
 minetest.register_craft({
