@@ -113,6 +113,12 @@ local nodes = {
 		is_ground_content = false,
 		sounds = sound_stone,
 	},
+	["tar"] = {
+		description = S("Tar"),
+		groups = {cracky=2, tar_block=1},
+		is_ground_content = false,
+		sounds = sound_stone,
+	},
 	["dirt_compressed"] = {
 		description = S("Compressed Dirt"),
 		groups = {crumbly=2},

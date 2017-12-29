@@ -486,6 +486,10 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	type = "cooking", output = "moreblocks:tar", recipe = "default:pine_tree",
+})
+
+minetest.register_craft({
 	type = "shapeless",
 	output = "moreblocks:copperpatina",
 	recipe = {"group:water_bucket", "default:copperblock"},

@@ -62,7 +62,6 @@ minetest.register_alias("moreblocks:wood_tile_left","moreblocks:wood_tile_up")
 minetest.register_alias("moreblocks:wood_tile_right","moreblocks:wood_tile_up")
 minetest.register_alias("moreblocks:empty_bookshelf","moreblocks:empty_shelf")
 minetest.register_alias("moreblocks:split_stone_tile_alt","moreblocks:checker_stone_tile")
-minetest.register_alias("moreblocks:tar","default:gravel")
 
 -- ABM for horizontal trees (fix facedir):
 local horizontal_tree_convert_facedir = {7, 12, 9, 18}
