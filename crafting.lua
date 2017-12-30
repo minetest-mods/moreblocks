@@ -171,7 +171,7 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "moreblocks:split_stone_tile_alt",
+	output = "moreblocks:checker_stone_tile",
 	recipe = {
 		{"moreblocks:split_stone_tile"},
 	}
@@ -181,7 +181,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "default:cobble",
 	recipe = {
-		{"moreblocks:split_stone_tile_alt"},
+		{"moreblocks:checker_stone_tile"},
 	}
 })
 
