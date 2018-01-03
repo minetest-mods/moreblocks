@@ -70,9 +70,14 @@ for _, name in pairs(default_nodes) do
 
 	mod = "moreblocks"
 	stairsplus:register_all(mod, name, nodename, ndef)
-	minetest.register_alias_force("stairs:stair_" .. name, mod .. ":stair_" .. name)
-	minetest.register_alias_force("stairs:slab_"  .. name, mod .. ":slab_"  .. name)
-	stairsplus:register_xdecor_alias_all("default", name, mod, name, false)
+
+	if minetest.settings:get_bool("moreblocks.conversion_xdecor>moreblocks") then
+		stairsplus:register_xdecor_alias_all("default", name, mod, name, false)
+	else
+		minetest.register_alias_force("stairs:stair_" .. name, mod .. ":stair_" .. name)
+		minetest.register_alias_force("stairs:slab_"  .. name, mod .. ":slab_"  .. name)
+	end
+
 end
 
 -- farming registrations
@@ -86,9 +91,14 @@ if minetest.get_modpath("farming") then
 
 		mod = "moreblocks"
 		stairsplus:register_all(mod, name, nodename, ndef)
-		minetest.register_alias_force("stairs:stair_" .. name, mod .. ":stair_" .. name)
-		minetest.register_alias_force("stairs:slab_"  .. name, mod .. ":slab_"  .. name)
-		stairsplus:register_xdecor_alias_all("farming", name, mod, name, false)
+
+		if minetest.settings:get_bool("moreblocks.conversion_xdecor>moreblocks") then
+			stairsplus:register_xdecor_alias_all("farming", name, mod, name, false)
+		else
+			minetest.register_alias_force("stairs:stair_" .. name, mod .. ":stair_" .. name)
+			minetest.register_alias_force("stairs:slab_"  .. name, mod .. ":slab_"  .. name)
+		end
+
 	end
 end
 
