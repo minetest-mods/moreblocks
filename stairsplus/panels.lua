@@ -95,7 +95,7 @@ function stairsplus:register_panel(modname, subname, recipeitem, fields)
 		def.paramtype2 = def.paramtype2 or "facedir"
 		def.on_place = minetest.rotate_node
 		def.description = desc
-		def.groups = stairsplus:prepare_groups(fields.groups)
+		def.groups = stairsplus:prepare_groups(fields.groups, moreblocks.config.stairsplus_panels_not_in_creative_inventory)
 		if fields.drop and not (type(fields.drop) == "table") then
 			def.drop = modname.. ":panel_" ..fields.drop..alternate
 		end

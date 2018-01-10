@@ -27,3 +27,9 @@ end
 
 -- Show stairs/slabs/panels/microblocks in creative inventory (true or false):
 setting("bool", "stairsplus_in_creative_inventory", false)
+
+setting("bool", "stairsplus_microblocks_not_in_creative_inventory", false)
+setting("bool", "stairsplus_panels_not_in_creative_inventory", false)
+setting("bool", "stairsplus_slabs_not_in_creative_inventory", false)
+setting("bool", "stairsplus_slopes_not_in_creative_inventory", false)
+setting("bool", "stairsplus_stairs_not_in_creative_inventory", false)

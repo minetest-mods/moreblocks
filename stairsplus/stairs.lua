@@ -135,7 +135,7 @@ function stairsplus:register_stair(modname, subname, recipeitem, fields)
 		def.paramtype2 = def.paramtype2 or "facedir"
 		def.on_place = minetest.rotate_node
 		def.description = desc
-		def.groups = stairsplus:prepare_groups(fields.groups)
+		def.groups = stairsplus:prepare_groups(fields.groups, moreblocks.config.stairsplus_stairs_not_in_creative_inventory)
 		if alternate == "" then
 			def.groups.stair = 1
 		end

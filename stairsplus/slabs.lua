@@ -90,7 +90,7 @@ function stairsplus:register_slab(modname, subname, recipeitem, fields)
 		def.paramtype = "light"
 		def.paramtype2 = def.paramtype2 or "facedir"
 		def.on_place = minetest.rotate_node
-		def.groups = stairsplus:prepare_groups(fields.groups)
+		def.groups = stairsplus:prepare_groups(fields.groups, moreblocks.config.stairsplus_slabs_not_in_creative_inventory)
 		if alternate == "" then
 			def.groups.slab = 1
 		end
