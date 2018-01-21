@@ -8,7 +8,7 @@ Licensed under the zlib license. See LICENSE.md for more information.
 moreblocks.config = {}
 
 local function getbool_default(setting, default)
-	local value = minetest.settings:get_bool(setting)
+	local value = minetest.setting_getbool(setting)
 	if value == nil then
 		value = default
 	end
