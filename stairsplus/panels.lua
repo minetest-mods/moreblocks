@@ -79,6 +79,7 @@ function stairsplus:register_panels_xdecor_alias(modname_old, subname_old, modna
 		nodenames = {modname_old .. ":" .. subname_old .. "_micropanel", modname_old .. ":" .. subname_old .. "_panel"},
 		run_at_every_load = false,
 		action = function(pos, node)
+			local nodename
 			if modname_old .. ":" .. subname_old .. "_micropanel" == node.name then
 				nodename = modname_new .. ":panel_" .. subname_new .. "_1"
 			else

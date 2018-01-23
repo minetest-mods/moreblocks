@@ -79,6 +79,7 @@ function stairsplus:register_micro_xdecor_alias(modname_old, subname_old, modnam
 		nodenames = {modname_old .. ":" .. subname_old .. "_nanoslab", modname_old .. ":" .. subname_old .."_cube"},
 		run_at_every_load = false,
 		action = function(pos, node)
+			local nodename
 			if modname_old .. ":" .. subname_old .. "_nanoslab" == node.name then
 				nodename = modname_new .. ":micro_" .. subname_new .. "_1"
 			else
