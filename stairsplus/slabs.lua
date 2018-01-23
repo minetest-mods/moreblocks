@@ -48,7 +48,7 @@ for k,v in pairs(slabs_defs) do
 	table.insert(stairsplus.shapes_list, { "slab_", k })
 end
 
-function stairsplus:register_slabs_xdecor_alias(modname_old, subname_old, modname_new, subname_new)
+function stairsplus:register_slabs_xdecor_alias(modname_old, subname_old, modname_new, subname_new, force)
 	if not(minetest.settings:get_bool("moreblocks.conversion_xdecor>moreblocks")) then
 		return
 	end
