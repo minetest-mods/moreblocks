@@ -94,11 +94,11 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "moreblocks:circle_stone_bricks 16",
+	output = "moreblocks:circle_stone_bricks 5",
 	recipe = {
-		{"default:stone", "default:stone", "default:stone"},
-		{"default:stone", "default:coalblock", "default:stone"},
-		{"default:stone", "default:stone", "default:stone"},
+		{"", "default:stone", ""},
+		{"default:stone", "default:coal_lump", "default:stone"},
+		{"", "default:stone", ""},
 	}
 })
 
