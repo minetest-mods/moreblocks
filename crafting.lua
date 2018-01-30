@@ -156,10 +156,11 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "moreblocks:stone_tile 8",
+	output = "moreblocks:stone_tile 9",
 	recipe = {
-		{"default:stone_block", "default:stone_block"},
-		{"default:stone_block", "default:stone_block"},
+		{"default:cobble", "default:cobble", "default:cobble"},
+		{"default:cobble", "default:stone", "default:cobble"},
+		{"default:cobble", "default:cobble", "default:cobble"},
 	}
 })
 
