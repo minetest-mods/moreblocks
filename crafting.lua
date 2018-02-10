@@ -549,8 +549,11 @@ end
 -- a colored synthetic stone.
 
 minetest.register_craft({
-	type = "cooking", 
-	recipe = "default:gravel",
+	recipe = {
+			{ "",  "default:gravel",  "" },
+			{ "default:gravel",  "",  "default:gravel"},
+			{ "",  "default:gravel",  ""},
+		},
 	output = "moreblocks:synthstone"
 })
 
