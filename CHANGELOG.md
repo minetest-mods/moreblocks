@@ -17,6 +17,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - The circular saw can no longer replace items from the player's inventory
   when it is full.
 
+### Changed
+
+- New craft for:
+  - Stone Tile
+  - Circle Stone Bricks
+
 ## [1.1.0] - 2017-10-04
 
 ### Added
