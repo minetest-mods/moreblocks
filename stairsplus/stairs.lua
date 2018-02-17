@@ -109,18 +109,35 @@ for k,v in pairs(stairs_defs) do
 	table.insert(stairsplus.shapes_list, { "stair_", k })
 end
 
-function stairsplus:register_stair_alias(modname_old, subname_old, modname_new, subname_new)
-	local defs = stairsplus.copytable(stairs_defs)
-	for alternate, def in pairs(defs) do
-		minetest.register_alias(modname_old .. ":stair_" .. subname_old .. alternate, modname_new .. ":stair_" .. subname_new .. alternate)
+function stairsplus:register_stairs_xdecor_alias(modname_old, subname_old, modname_new, subname_new, force)
+	if not(minetest.settings:get_bool("moreblocks.conversion_xdecor>moreblocks")) then
+		return
 	end
+	local stairsplus_alias = stairsplus:normal_alias_or_force(force)
+	stairsplus_alias(modname_old .. ":" .. subname_old .."_thinstair", modname_new .. ":stair_" ..subname_new .. "_alt_1")
+	stairsplus_alias(modname_old .. ":" .. subname_old .."_doublepanel", modname_new .. ":stair_" ..subname_new .. "_alt")
+	stairsplus_alias(modname_old .. ":" .. subname_old .."_halfstair", modname_new .. ":stair_" ..subname_new .. "_half")
+	stairsplus_alias(modname_old .. ":" .. subname_old .."_outerstair", modname_new .. ":stair_" ..subname_new .. "_outer")
+	stairsplus_alias(modname_old .. ":" .. subname_old .."_innerstair", modname_new .. ":stair_" ..subname_new .. "_inner")
+	stairsplus_alias("stairs:stair_" .. subname_old, modname_new .. ":stair_" .. subname_new)
 end
 
-function stairsplus:register_stair_alias_force(modname_old, subname_old, modname_new, subname_new)
+function register_stair_alias_and_force(modname_old, subname_old, modname_new, subname_new, force)
+	local stairsplus_alias = stairsplus:normal_alias_or_force(force)
 	local defs = stairsplus.copytable(stairs_defs)
 	for alternate, def in pairs(defs) do
-		minetest.register_alias_force(modname_old .. ":stair_" .. subname_old .. alternate, modname_new .. ":stair_" .. subname_new .. alternate)
+		stairsplus_alias(modname_old .. ":stair_" .. subname_old .. alternate, modname_new .. ":stair_" .. subname_new .. alternate)
 	end
+	stairsplus:register_stairs_xdecor_alias(modname_old, subname_old, modname_new, subname_new, force)
+end
+
+function stairsplus:register_stair_alias(modname_old, subname_old, modname_new, subname_new)
+	register_stair_alias_and_force(modname_old, subname_old, modname_new, subname_new, false)
+end
+
+
+function stairsplus:register_stair_alias_force(modname_old, subname_old, modname_new, subname_new)
+	register_stair_alias_and_force(modname_old, subname_old, modname_new, subname_new, true)
 end
 
 function stairsplus:register_stair(modname, subname, recipeitem, fields)
@@ -144,6 +161,8 @@ function stairsplus:register_stair(modname, subname, recipeitem, fields)
 		end
 		minetest.register_node(":" .. modname .. ":stair_" .. subname .. alternate, def)
 	end
+
+	stairsplus:register_stairs_xdecor_alias(modname, subname, modname, subname, false)
 
 	circular_saw.known_nodes[recipeitem] = {modname, subname}
 
