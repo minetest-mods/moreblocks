@@ -36,21 +36,8 @@ end
 
 function stairsplus:register_slope(modname, subname, recipeitem, fields)
 	local defs = table.copy(stairsplus.defs["slope"])
-	local desc = S("%s Slope"):format(fields.description)
 	for alternate, def in pairs(defs) do
-		for k, v in pairs(fields) do
-			def[k] = v
-		end
-		def.drawtype = "mesh"
-		def.paramtype = "light"
-		def.paramtype2 = def.paramtype2 or "facedir"
-		def.on_place = minetest.rotate_node
-		def.description = desc
-		def.groups = stairsplus:prepare_groups(fields.groups)
-		if fields.drop and not (type(fields.drop) == "table") then
-			def.drop = modname.. ":slope_" ..fields.drop..alternate
-		end
-		minetest.register_node(":" ..modname.. ":slope_" ..subname..alternate, def)
+		stairsplus.register_single("slope", alternate, def, modname, subname, recipeitem, fields)
 	end
 
 	circular_saw.known_nodes[recipeitem] = {modname, subname}
