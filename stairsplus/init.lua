@@ -71,6 +71,7 @@ end
 -- dofile(modpath.. "/aliases.lua") -- Not needed as of Q2 2013, uncomment to fix old maps.
 -- dofile(modpath.. "/conversion.lua") -- Not needed as of Q2 2013, uncomment to fix old maps.
 dofile(modpath .. "/defs.lua")
+dofile(modpath .. "/common.lua")
 dofile(modpath .. "/stairs.lua")
 dofile(modpath .. "/slabs.lua")
 dofile(modpath .. "/slopes.lua")
