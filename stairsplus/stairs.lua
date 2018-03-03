@@ -20,111 +20,22 @@ function register_stair(modname, subname, recipeitem, groups, images, descriptio
 	})
 end
 
-local stairs_defs = {
-	[""] = {
-		node_box = {
-			type = "fixed",
-			fixed = {
-				{-0.5, -0.5, -0.5, 0.5, 0, 0.5},
-				{-0.5, 0, 0, 0.5, 0.5, 0.5},
-			},
-		},
-	},
-	["_half"] = {
-		node_box = {
-			type = "fixed",
-			fixed = {
-				{-0.5, -0.5, -0.5, 0, 0, 0.5},
-				{-0.5, 0, 0, 0, 0.5, 0.5},
-			},
-		},
-	},
-	["_right_half" ]= {
-		node_box = {
-			type = "fixed",
-			fixed = {
-				{0, -0.5, -0.5, 0.5, 0, 0.5},
-				{0, 0, 0, 0.5, 0.5, 0.5},
-			},
-		},
-	},
-	["_inner"] = {
-		node_box = {
-			type = "fixed",
-			fixed = {
-				{-0.5, -0.5, -0.5, 0.5, 0, 0.5},
-				{-0.5, 0, 0, 0.5, 0.5, 0.5},
-				{-0.5, 0, -0.5, 0, 0.5, 0},
-			},
-		},
-	},
-	["_outer"] = {
-		node_box = {
-			type = "fixed",
-			fixed = {
-				{-0.5, -0.5, -0.5, 0.5, 0, 0.5},
-				{-0.5, 0, 0, 0, 0.5, 0.5},
-			},
-		},
-	},
-	["_alt"] = {
-		node_box = {
-			type = "fixed",
-			fixed = {
-				{-0.5, -0.5, -0.5, 0.5, 0, 0},
-				{-0.5, 0, 0, 0.5, 0.5, 0.5},
-			},
-		},
-	},
-	["_alt_1"] = {
-		node_box = {
-			type = "fixed",
-			fixed = {
-				{-0.5, -0.0625, -0.5, 0.5, 0, 0},
-				{-0.5, 0.4375, 0, 0.5, 0.5, 0.5},
-			},
-		},
-	},
-	["_alt_2"] = {
-		node_box = {
-			type = "fixed",
-			fixed = {
-				{-0.5, -0.125, -0.5, 0.5, 0, 0},
-				{-0.5, 0.375, 0, 0.5, 0.5, 0.5},
-			},
-		},
-	},
-	["_alt_4"] = {
-		node_box = {
-			type = "fixed",
-			fixed = {
-				{-0.5, -0.25, -0.5, 0.5, 0, 0},
-				{-0.5, 0.25, 0, 0.5, 0.5, 0.5},
-			},
-		},
-	},
-}
-
-for k,v in pairs(stairs_defs) do
-	table.insert(stairsplus.shapes_list, { "stair_", k })
-end
-
 function stairsplus:register_stair_alias(modname_old, subname_old, modname_new, subname_new)
-	local defs = stairsplus.copytable(stairs_defs)
+	local defs = table.copy(stairsplus.defs["stair"])
 	for alternate, def in pairs(defs) do
 		minetest.register_alias(modname_old .. ":stair_" .. subname_old .. alternate, modname_new .. ":stair_" .. subname_new .. alternate)
 	end
 end
 
 function stairsplus:register_stair_alias_force(modname_old, subname_old, modname_new, subname_new)
-	local defs = stairsplus.copytable(stairs_defs)
+	local defs = table.copy(stairsplus.defs["stair"])
 	for alternate, def in pairs(defs) do
 		minetest.register_alias_force(modname_old .. ":stair_" .. subname_old .. alternate, modname_new .. ":stair_" .. subname_new .. alternate)
 	end
 end
 
 function stairsplus:register_stair(modname, subname, recipeitem, fields)
-	local defs = stairsplus.copytable(stairs_defs)
+	local defs = table.copy(stairsplus.defs["stair"])
 	local desc = S("%s Stairs"):format(fields.description)
 	for alternate, def in pairs(defs) do
 		for k, v in pairs(fields) do

@@ -7,109 +7,6 @@ Licensed under the zlib license. See LICENSE.md for more information.
 
 local S = moreblocks.intllib
 
-local box_slope = {
-	type = "fixed",
-	fixed = {
-		{-0.5,  -0.5,  -0.5, 0.5, -0.25, 0.5},
-		{-0.5, -0.25, -0.25, 0.5,     0, 0.5},
-		{-0.5,     0,     0, 0.5,  0.25, 0.5},
-		{-0.5,  0.25,  0.25, 0.5,   0.5, 0.5}
-	}
-}
-
-local box_slope_half = {
-	type = "fixed",
-	fixed = {
-		{-0.5, -0.5,   -0.5,  0.5, -0.375, 0.5},
-		{-0.5, -0.375, -0.25, 0.5, -0.25,  0.5},
-		{-0.5, -0.25,  0,    0.5, -0.125, 0.5},
-		{-0.5, -0.125, 0.25, 0.5,  0,     0.5},
-	}
-}
-
-local box_slope_half_raised = {
-	type = "fixed",
-	fixed = {
-		{-0.5, -0.5,   -0.5,  0.5, 0.125, 0.5},
-		{-0.5, 0.125, -0.25, 0.5, 0.25,  0.5},
-		{-0.5, 0.25,  0,    0.5, 0.375, 0.5},
-		{-0.5, 0.375, 0.25, 0.5,  0.5,     0.5},
-	}
-}
-
---==============================================================
-
-local box_slope_inner = {
-	type = "fixed",
-	fixed = {
-		{-0.5, -0.5, -0.5, 0.5, -0.25, 0.5},
-		{-0.5, -0.5, -0.25, 0.5, 0, 0.5},
-		{-0.5, -0.5, -0.5, 0.25, 0, 0.5},
-		{-0.5, 0, -0.5, 0, 0.25, 0.5},
-		{-0.5, 0, 0, 0.5, 0.25, 0.5},
-		{-0.5, 0.25, 0.25, 0.5, 0.5, 0.5},
-		{-0.5, 0.25, -0.5, -0.25, 0.5, 0.5},
-	}
-}
-
-local box_slope_inner_half = {
-	type = "fixed",
-	fixed = {
-		{-0.5, -0.5, -0.5, 0.5, -0.375, 0.5},
-		{-0.5, -0.375, -0.25, 0.5, -0.25, 0.5},
-		{-0.5, -0.375, -0.5, 0.25, -0.25, 0.5},
-		{-0.5, -0.25, -0.5, 0, -0.125, 0.5},
-		{-0.5, -0.25, 0, 0.5, -0.125, 0.5},
-		{-0.5, -0.125, 0.25, 0.5, 0, 0.5},
-		{-0.5, -0.125, -0.5, -0.25, 0, 0.5},
-	}
-}
-
-local box_slope_inner_half_raised = {
-	type = "fixed",
-	fixed = {
-		{-0.5, -0.5, -0.5, 0.5, 0.125, 0.5},
-		{-0.5, 0.125, -0.25, 0.5, 0.25, 0.5},
-		{-0.5, 0.125, -0.5, 0.25, 0.25, 0.5},
-		{-0.5, 0.25, -0.5, 0, 0.375, 0.5},
-		{-0.5, 0.25, 0, 0.5, 0.375, 0.5},
-		{-0.5, 0.375, 0.25, 0.5, 0.5, 0.5},
-		{-0.5, 0.375, -0.5, -0.25, 0.5, 0.5},
-	}
-}
-
---==============================================================
-
-local box_slope_outer = {
-	type = "fixed",
-	fixed = {
-		{-0.5,  -0.5,  -0.5,   0.5, -0.25, 0.5},
-		{-0.5, -0.25, -0.25,  0.25,     0, 0.5},
-		{-0.5,     0,     0,     0,  0.25, 0.5},
-		{-0.5,  0.25,  0.25, -0.25,   0.5, 0.5}
-	}
-}
-
-local box_slope_outer_half = {
-	type = "fixed",
-	fixed = {
-		{-0.5,  -0.5,  -0.5,   0.5, -0.375, 0.5},
-		{-0.5, -0.375, -0.25,  0.25, -0.25, 0.5},
-		{-0.5,  -0.25,     0,     0, -0.125, 0.5},
-		{-0.5,  -0.125,  0.25, -0.25, 0, 0.5}
-	}
-}
-
-local box_slope_outer_half_raised = {
-	type = "fixed",
-	fixed = {
-		{-0.5,  -0.5,  -0.5,   0.5, 0.125, 0.5},
-		{-0.5, 0.125, -0.25,  0.25, 0.25, 0.5},
-		{-0.5,  0.25,     0,     0, 0.375, 0.5},
-		{-0.5,  0.375,  0.25, -0.25, 0.5, 0.5}
-	}
-}
-
 -- Node will be called <modname>:slope_<subname>
 
 function register_slope(modname, subname, recipeitem, groups, images, description, drop, light)
@@ -123,122 +20,22 @@ function register_slope(modname, subname, recipeitem, groups, images, descriptio
 	})
 end
 
-local slopes_defs = {
-	[""] = {
-		mesh = "moreblocks_slope.obj",
-		collision_box = box_slope,
-		selection_box = box_slope,
-
-	},
-	["_half"] = {
-		mesh = "moreblocks_slope_half.obj",
-		collision_box = box_slope_half,
-		selection_box = box_slope_half,
-	},
-	["_half_raised"] = {
-		mesh = "moreblocks_slope_half_raised.obj",
-		collision_box = box_slope_half_raised,
-		selection_box = box_slope_half_raised,
-	},
-
-	--==============================================================
-
-	["_inner"] = {
-		mesh = "moreblocks_slope_inner.obj",
-		collision_box = box_slope_inner,
-		selection_box = box_slope_inner,
-	},
-	["_inner_half"] = {
-		mesh = "moreblocks_slope_inner_half.obj",
-		collision_box = box_slope_inner_half,
-		selection_box = box_slope_inner_half,
-	},
-	["_inner_half_raised"] = {
-		mesh = "moreblocks_slope_inner_half_raised.obj",
-		collision_box = box_slope_inner_half_raised,
-		selection_box = box_slope_inner_half_raised,
-	},
-
-	--==============================================================
-
-	["_inner_cut"] = {
-		mesh = "moreblocks_slope_inner_cut.obj",
-		collision_box = box_slope_inner,
-		selection_box = box_slope_inner,
-	},
-	["_inner_cut_half"] = {
-		mesh = "moreblocks_slope_inner_cut_half.obj",
-		collision_box = box_slope_inner_half,
-		selection_box = box_slope_inner_half,
-	},
-	["_inner_cut_half_raised"] = {
-		mesh = "moreblocks_slope_inner_cut_half_raised.obj",
-		collision_box = box_slope_inner_half_raised,
-		selection_box = box_slope_inner_half_raised,
-	},
-
-	--==============================================================
-
-	["_outer"] = {
-		mesh = "moreblocks_slope_outer.obj",
-		collision_box = box_slope_outer,
-		selection_box = box_slope_outer,
-	},
-	["_outer_half"] = {
-		mesh = "moreblocks_slope_outer_half.obj",
-		collision_box = box_slope_outer_half,
-		selection_box = box_slope_outer_half,
-	},
-	["_outer_half_raised"] = {
-		mesh = "moreblocks_slope_outer_half_raised.obj",
-		collision_box = box_slope_outer_half_raised,
-		selection_box = box_slope_outer_half_raised,
-	},
-
-	--==============================================================
-
-	["_outer_cut"] = {
-		mesh = "moreblocks_slope_outer_cut.obj",
-		collision_box = box_slope_outer,
-		selection_box = box_slope_outer,
-	},
-	["_outer_cut_half"] = {
-		mesh = "moreblocks_slope_outer_cut_half.obj",
-		collision_box = box_slope_outer_half,
-		selection_box = box_slope_outer_half,
-	},
-	["_outer_cut_half_raised"] = {
-		mesh = "moreblocks_slope_outer_cut_half_raised.obj",
-		collision_box = box_slope_outer_half_raised,
-		selection_box = box_slope_outer_half_raised,
-	},
-	["_cut"] = {
-		mesh = "moreblocks_slope_cut.obj",
-		collision_box = box_slope_outer,
-		selection_box = box_slope_outer,
-	},
-}
-
-for k,v in pairs(slopes_defs) do
-	table.insert(stairsplus.shapes_list, { "slope_", k })
-end
-
 function stairsplus:register_slope_alias(modname_old, subname_old, modname_new, subname_new)
-	local defs = stairsplus.copytable(slopes_defs)
+	local defs = table.copy(stairsplus.defs["slope"])
 	for alternate, def in pairs(defs) do
 		minetest.register_alias(modname_old .. ":slope_" .. subname_old .. alternate, modname_new .. ":slope_" .. subname_new .. alternate)
 	end
 end
 
 function stairsplus:register_slope_alias_force(modname_old, subname_old, modname_new, subname_new)
-	local defs = stairsplus.copytable(slopes_defs)
+	local defs = table.copy(stairsplus.defs["slope"])
 	for alternate, def in pairs(defs) do
 		minetest.register_alias_force(modname_old .. ":slope_" .. subname_old .. alternate, modname_new .. ":slope_" .. subname_new .. alternate)
 	end
 end
 
 function stairsplus:register_slope(modname, subname, recipeitem, fields)
-	local defs = stairsplus.copytable(slopes_defs)
+	local defs = table.copy(stairsplus.defs["slope"])
 	local desc = S("%s Slope"):format(fields.description)
 	for alternate, def in pairs(defs) do
 		for k, v in pairs(fields) do

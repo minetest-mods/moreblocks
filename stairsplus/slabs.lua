@@ -20,50 +20,22 @@ function register_slab(modname, subname, recipeitem, groups, images, description
 	})
 end
 
-local slabs_defs = {
-	[""] = 8,
-	["_quarter"] = 4,
-	["_three_quarter"] = 12,
-	["_1"] = 1,
-	["_2"] = 2,
-	["_14"] = 14,
-	["_15"] = 15,
-	["_two_sides"] = {
-						{ -0.5, -0.5, -0.5, 0.5, -7/16, 7/16 },
-						{ -0.5, -0.5, 7/16, 0.5, 0.5, 0.5 }
-					},
-	["_three_sides"] = {
-						{ -7/16, -0.5, -0.5, 0.5, -7/16, 7/16 },
-						{ -7/16, -0.5, 7/16, 0.5, 0.5, 0.5 },
-						{ -0.5, -0.5, -0.5, -7/16, 0.5, 0.5 }
-					},
-	["_three_sides_u"] = {
-						{ -0.5, -0.5, -0.5, 0.5, 0.5, -7/16 },
-						{ -0.5, -0.5, -7/16, 0.5, -7/16, 7/16 },
-						{ -0.5, -0.5, 7/16, 0.5, 0.5, 0.5 }
-					}
-}
-
-for k,v in pairs(slabs_defs) do
-	table.insert(stairsplus.shapes_list, { "slab_", k })
-end
-
 function stairsplus:register_slab_alias(modname_old, subname_old, modname_new, subname_new)
-	local defs = stairsplus.copytable(slabs_defs)
+	local defs = table.copy(stairsplus.defs["slab"])
 	for alternate, def in pairs(defs) do
 		minetest.register_alias(modname_old .. ":slab_" .. subname_old .. alternate, modname_new .. ":slab_" .. subname_new .. alternate)
 	end
 end
 
 function stairsplus:register_slab_alias_force(modname_old, subname_old, modname_new, subname_new)
-	local defs = stairsplus.copytable(slabs_defs)
+	local defs = table.copy(stairsplus.defs["slab"])
 	for alternate, def in pairs(defs) do
 		minetest.register_alias_force(modname_old .. ":slab_" .. subname_old .. alternate, modname_new .. ":slab_" .. subname_new .. alternate)
 	end
 end
 
 function stairsplus:register_slab(modname, subname, recipeitem, fields)
-	local defs = stairsplus.copytable(slabs_defs)
+	local defs = table.copy(stairsplus.defs["slab"])
 	local desc_base = S("%s Slab"):format(fields.description)
 	for alternate, shape in pairs(defs) do
 		local def = {}

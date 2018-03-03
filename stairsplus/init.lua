@@ -19,21 +19,6 @@ and minetest.settings:get_bool("creative_mode") then
 	stairsplus.expect_infinite_stacks = true
 end
 
-function stairsplus.copytable(orig)
-	local orig_type = type(orig)
-	local copy
-	if orig_type == 'table' then
-		copy = {}
-		for orig_key, orig_value in next, orig, nil do
-			copy[stairsplus.copytable(orig_key)] = stairsplus.copytable(orig_value)
-		end
-		setmetatable(copy, stairsplus.copytable(getmetatable(orig)))
-	else
-		copy = orig
-	end
-	return copy
-end
-
 function stairsplus:prepare_groups(groups)
 	local result = {}
 	if groups then
@@ -85,6 +70,7 @@ end
 
 -- dofile(modpath.. "/aliases.lua") -- Not needed as of Q2 2013, uncomment to fix old maps.
 -- dofile(modpath.. "/conversion.lua") -- Not needed as of Q2 2013, uncomment to fix old maps.
+dofile(modpath .. "/defs.lua")
 dofile(modpath .. "/stairs.lua")
 dofile(modpath .. "/slabs.lua")
 dofile(modpath .. "/slopes.lua")

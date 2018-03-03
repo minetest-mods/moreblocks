@@ -20,71 +20,22 @@ function register_micro(modname, subname, recipeitem, groups, images, descriptio
 	})
 end
 
-local microblocks_defs = {
-	[""] = {
-		node_box = {
-			type = "fixed",
-			fixed = {-0.5, -0.5, 0, 0, 0, 0.5},
-		},
-	},
-	["_1"] = {
-		node_box = {
-			type = "fixed",
-			fixed = {-0.5, -0.5, 0, 0, -0.4375, 0.5},
-		},
-	},
-	["_2"] = {
-		node_box = {
-			type = "fixed",
-			fixed = {-0.5, -0.5, 0, 0, -0.375, 0.5},
-		},
-	},
-	["_4"] = {
-		node_box = {
-			type = "fixed",
-			fixed = {-0.5, -0.5, 0, 0, -0.25, 0.5},
-		},
-	},
-	["_12"] = {
-		node_box = {
-			type = "fixed",
-			fixed = {-0.5, -0.5, 0, 0, 0.25, 0.5},
-		},
-	},
-	["_14"] = {
-		node_box = {
-			type = "fixed",
-			fixed = {-0.5, -0.5, 0, 0, 0.375, 0.5},
-		},
-	},
-	["_15"] = {
-		node_box = {
-			type = "fixed",
-			fixed = {-0.5, -0.5, 0, 0, 0.4375, 0.5},
-		},
-	}
-}
-
-for k,v in pairs(microblocks_defs) do
-	table.insert(stairsplus.shapes_list, { "micro_", k })
-end
-
 function stairsplus:register_micro_alias(modname_old, subname_old, modname_new, subname_new)
-	local defs = stairsplus.copytable(microblocks_defs)
+	local defs = table.copy(stairsplus.defs["micro"])
 	for alternate, def in pairs(defs) do
 		minetest.register_alias(modname_old .. ":micro_" .. subname_old .. alternate, modname_new .. ":micro_" .. subname_new .. alternate)
 	end
 end
 
 function stairsplus:register_micro_alias_force(modname_old, subname_old, modname_new, subname_new)
-	local defs = stairsplus.copytable(microblocks_defs)
+	local defs = table.copy(stairsplus.defs["micro"])
 	for alternate, def in pairs(defs) do
 		minetest.register_alias_force(modname_old .. ":micro_" .. subname_old .. alternate, modname_new .. ":micro_" .. subname_new .. alternate)
 	end
 end
 
 function stairsplus:register_micro(modname, subname, recipeitem, fields)
-	local defs = stairsplus.copytable(microblocks_defs)
+	local defs = table.copy(stairsplus.defs["micro"])
 	local desc = S("%s Microblock"):format(fields.description)
 	for alternate, def in pairs(defs) do
 		for k, v in pairs(fields) do
