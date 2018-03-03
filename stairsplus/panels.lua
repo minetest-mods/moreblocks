@@ -101,7 +101,7 @@ function stairsplus:register_panel(modname, subname, recipeitem, fields)
 		end
 		minetest.register_node(":" ..modname.. ":panel_" ..subname..alternate, def)
 	end
-	minetest.register_alias(modname.. ":panel_" ..subname.. "_bottom", modname.. ":panel_" ..subname)
+	minetest.register_alias_force(modname.. ":panel_" ..subname.. "_bottom", modname.. ":panel_" ..subname)
 
 	circular_saw.known_nodes[recipeitem] = {modname, subname}
 

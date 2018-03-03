@@ -101,7 +101,7 @@ function stairsplus:register_micro(modname, subname, recipeitem, fields)
 		end
 		minetest.register_node(":" ..modname.. ":micro_" ..subname..alternate, def)
 	end
-	minetest.register_alias(modname.. ":micro_" ..subname.. "_bottom", modname.. ":micro_" ..subname)
+	minetest.register_alias_force(modname.. ":micro_" ..subname.. "_bottom", modname.. ":micro_" ..subname)
 
 	circular_saw.known_nodes[recipeitem] = {modname, subname}
 
