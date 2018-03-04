@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - Listring add for circular saw.
+- Stairs+: New API function:
+ `stairsplus:register_custom_subset(subset, modname, subname, recipeitem, fields)`
 
 ### Fixed
 
@@ -22,6 +24,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - New craft for:
   - Stone Tile
   - Circle Stone Bricks
+- Stairs+:
+  - Move definitions to `stairsplus.defs` table in a separate file
+  - Move recipe definitions to `stairsplus.register_recipes` function in a separate file
 
 ## [1.1.0] - 2017-10-04
 
