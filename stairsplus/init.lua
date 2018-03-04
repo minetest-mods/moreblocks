@@ -5,7 +5,7 @@ Copyright (c) 2011-2017 Hugo Locurcio and contributors.
 Licensed under the zlib license. See LICENSE.md for more information.
 --]]
 
--- Nodes will be called <modname>:{stair,slab,panel,micro}_<subname>
+-- Nodes will be called <modname>:{stair,slab,panel,micro,slope}_<subname>
 
 local modpath = minetest.get_modpath("moreblocks").. "/stairsplus"
 
@@ -71,6 +71,7 @@ end
 -- dofile(modpath.. "/aliases.lua") -- Not needed as of Q2 2013, uncomment to fix old maps.
 -- dofile(modpath.. "/conversion.lua") -- Not needed as of Q2 2013, uncomment to fix old maps.
 dofile(modpath .. "/defs.lua")
+dofile(modpath .. "/recipes.lua")
 dofile(modpath .. "/common.lua")
 dofile(modpath .. "/stairs.lua")
 dofile(modpath .. "/slabs.lua")
