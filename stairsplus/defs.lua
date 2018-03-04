@@ -335,7 +335,7 @@ stairsplus.defs = {
 				},
 			},
 		},
-		["_right_half" ]= {
+		["_right_half"] = {
 			node_box = {
 				type = "fixed",
 				fixed = {
