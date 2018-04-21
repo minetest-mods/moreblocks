@@ -48,7 +48,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   - Wool (all colors)
 - Other mods can now get a list of all the defined Stairs+ shapes
 
-## [1.0.0] - 2017-02-19
+## 1.0.0 - 2017-02-19
 
 - Initial versioned release.
 
