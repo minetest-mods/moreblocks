@@ -36,6 +36,7 @@ local function wood_tile_replace(itemstack, placer, pointed_thing)
 	return itemstack
 end
 
+local deprecated = (" (%s)"):format(S('Deprecated'))
 local nodes = {
 	["wood_tile"] = {
 		description = S("Wooden Tile"),
@@ -52,7 +53,7 @@ local nodes = {
 		sounds = sound_wood,
 	},
 	["wood_tile_flipped"] = {
-		description = S("Wooden Tile (Deprecated)"),
+		description = S("Wooden Tile") .. deprecated,
 		tiles = {"default_wood.png^moreblocks_wood_tile.png^[transformR90",
 		"default_wood.png^moreblocks_wood_tile.png^[transformR90",
 		"default_wood.png^moreblocks_wood_tile.png^[transformR90",
@@ -87,19 +88,19 @@ local nodes = {
 		no_stairs = true,
 	},
 	["wood_tile_down"] = {
-		description = S("Downwards Wooden Tile (Deprecated)"),
+		description = S("Downwards Wooden Tile") .. deprecated,
 		tiles = {"default_wood.png^[transformR180^moreblocks_wood_tile_offset.png^[transformR180"},
 		no_stairs = true,
 		on_place = wood_tile_replace
 	},
 	["wood_tile_left"] = {
-		description = S("Leftwards Wooden Tile (Deprecated)"),
+		description = S("Leftwards Wooden Tile") .. deprecated,
 		tiles = {"default_wood.png^[transformR270^moreblocks_wood_tile_offset.png^[transformR270"},
 		no_stairs = true,
 		on_place = wood_tile_replace
 	},
 	["wood_tile_right"] = {
-		description = S("Rightwards Wooden Tile (Deprecated)"),
+		description = S("Rightwards Wooden Tile") .. deprecated,
 		tiles = {"default_wood.png^[transformR90^moreblocks_wood_tile_offset.png^[transformR90"},
 		no_stairs = true,
 		on_place = wood_tile_replace

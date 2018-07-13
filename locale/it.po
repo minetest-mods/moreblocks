@@ -180,11 +180,6 @@ msgid "Plankstone"
 msgstr "Pietra e legno"
 
 #: nodes.lua
-#, fuzzy
-msgid "Rightwards Wooden Tile (Deprecated)"
-msgstr "Mattonella in legno verso destra"
-
-#: nodes.lua
 msgid "Rope"
 msgstr "Corda"
 
@@ -254,23 +249,23 @@ msgstr "Mattonella in legno"
 
 #: nodes.lua
 #, fuzzy
-msgid "Wooden Tile (Deprecated)"
-msgstr "Mattonella in legno"
-
-#: nodes.lua
-#, fuzzy
 msgid "Offset Wooden Tile"
 msgstr "Mattonella in legno verso sinistra"
 
 #: nodes.lua
 #, fuzzy
-msgid "Downwards Wooden Tile (Deprecated)"
+msgid "Downwards Wooden Tile"
 msgstr "Mattonella in legno verso il basso"
 
 #: nodes.lua
 #, fuzzy
-msgid "Leftwards Wooden Tile (Deprecated)"
+msgid "Leftwards Wooden Tile"
 msgstr "Mattonella in legno verso sinistra"
+
+#: nodes.lua
+#, fuzzy
+msgid "Rightwards Wooden Tile"
+msgstr "Mattonella in legno verso destra"
 
 #: ownership.lua
 msgid "Sorry, @1 owns that spot."

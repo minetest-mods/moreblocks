@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MOREBLOCKS MOD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-13 13:00+0200\n"
+"POT-Creation-Date: 2018-07-13 14:30+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: CodeXP <codexp@gmx.net>\n"
 "Language-Team: \n"
@@ -65,6 +65,10 @@ msgstr "Scie circulaire, manipule @1"
 #: init.lua
 msgid "[MOD] moreblocks loaded."
 msgstr "[MOD] moreblocks a été chargé."
+
+#: nodes.lua
+msgid "Deprecated"
+msgstr ""
 
 #: nodes.lua
 #, fuzzy
@@ -177,11 +181,6 @@ msgid "Plankstone"
 msgstr "Pierre-bois"
 
 #: nodes.lua
-#, fuzzy
-msgid "Rightwards Wooden Tile (Deprecated)"
-msgstr "Dalle en bois vers la droite"
-
-#: nodes.lua
 msgid "Rope"
 msgstr "Corde"
 
@@ -251,23 +250,23 @@ msgstr "Dalle en bois"
 
 #: nodes.lua
 #, fuzzy
-msgid "Wooden Tile (Deprecated)"
-msgstr "Dalle en bois"
-
-#: nodes.lua
-#, fuzzy
 msgid "Offset Wooden Tile"
 msgstr "Dalle en bois vers la gauche"
 
 #: nodes.lua
 #, fuzzy
-msgid "Downwards Wooden Tile (Deprecated)"
+msgid "Downwards Wooden Tile"
 msgstr "Dalle en bois vers le bas"
 
 #: nodes.lua
 #, fuzzy
-msgid "Leftwards Wooden Tile (Deprecated)"
+msgid "Leftwards Wooden Tile"
 msgstr "Dalle en bois vers la gauche"
+
+#: nodes.lua
+#, fuzzy
+msgid "Rightwards Wooden Tile"
+msgstr "Dalle en bois vers la droite"
 
 #: ownership.lua
 msgid "Sorry, @1 owns that spot."

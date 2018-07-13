@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MOREBLOCKS MOD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-13 13:00+0200\n"
+"POT-Creation-Date: 2018-07-13 14:30+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: CodeXP <codexp@gmx.net>\n"
 "Language-Team: \n"
@@ -61,6 +61,10 @@ msgstr ""
 
 #: init.lua
 msgid "[MOD] moreblocks loaded."
+msgstr ""
+
+#: nodes.lua
+msgid "Deprecated"
 msgstr ""
 
 #: nodes.lua
@@ -168,10 +172,6 @@ msgid "Plankstone"
 msgstr ""
 
 #: nodes.lua
-msgid "Rightwards Wooden Tile (Deprecated)"
-msgstr ""
-
-#: nodes.lua
 msgid "Rope"
 msgstr ""
 
@@ -236,19 +236,22 @@ msgid "Wooden Tile"
 msgstr ""
 
 #: nodes.lua
-msgid "Wooden Tile (Deprecated)"
-msgstr ""
-
-#: nodes.lua
 msgid "Offset Wooden Tile"
 msgstr ""
 
+# @deprecated
 #: nodes.lua
-msgid "Downwards Wooden Tile (Deprecated)"
+msgid "Downwards Wooden Tile"
 msgstr ""
 
+# @deprecated
 #: nodes.lua
-msgid "Leftwards Wooden Tile (Deprecated)"
+msgid "Leftwards Wooden Tile"
+msgstr ""
+
+# @deprecated
+#: nodes.lua
+msgid "Rightwards Wooden Tile"
 msgstr ""
 
 #: ownership.lua
