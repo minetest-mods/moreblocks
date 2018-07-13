@@ -50,12 +50,12 @@ msgstr "Imp."
 
 #: circular_saw.lua
 #, fuzzy, lua-format
-msgid "Circular Saw is empty (owned by %s)"
+msgid "Circular Saw is empty"
 msgstr "La sega circolare è vuota (di proprietà di %s)"
 
 #: circular_saw.lua
 #, fuzzy, lua-format
-msgid "Circular Saw is working on %s (owned by %s)"
+msgid "Circular Saw is working on %s"
 msgstr "Sega circolare, in funzione su %s (di proprietà di %s)"
 
 #: circular_saw.lua
@@ -271,9 +271,8 @@ msgid "Leftwards Wooden Tile (Deprecated)"
 msgstr "Mattonella in legno verso sinistra"
 
 #: ownership.lua
-#, lua-format
-msgid "Sorry, %s owns that spot."
-msgstr "Spiacente, quel punto è di proprietà di %s"
+msgid "Sorry, @1 owns that spot."
+msgstr "Spiacente, quel punto è di proprietà di @1"
 
 #: ownership.lua
 msgid "someone"

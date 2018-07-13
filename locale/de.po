@@ -18,7 +18,7 @@ msgstr ""
 
 #: circular_saw.lua
 msgid "Circular Saw"
-msgstr "Kreissaege"
+msgstr "Kreissäge"
 
 #: circular_saw.lua
 msgid ""
@@ -49,47 +49,40 @@ msgid "Set"
 msgstr "Ok"
 
 #: circular_saw.lua
-#, fuzzy, lua-format
-msgid "Circular Saw is empty (owned by %s)"
-msgstr "Kreissaege ist leer (gehoert %s)"
+msgid "(owned by @1)"
+msgstr "(gehört @1)"
 
 #: circular_saw.lua
-#, fuzzy, lua-format
-msgid "Circular Saw is working on %s (owned by %s)"
-msgstr "Kreissaege, arbeitet mit %s (gehoert %s)"
+msgid "Circular Saw is working on @1"
+msgstr "Kreissäge arbeitet mit @1"
 
 #: circular_saw.lua
-#, fuzzy
 msgid "Circular Saw is empty"
-msgstr "Kreissaege, leer"
+msgstr "Kreissäge ist leer"
 
 #: init.lua
 msgid "[moreblocks] loaded."
 msgstr "[moreblocks] geladen."
 
 #: nodes.lua
-#, fuzzy
 msgid "All-faces Acacia Tree"
-msgstr "Baumscheibenstamm"
+msgstr "Akazien Baumstamm (allseitig)"
 
 #: nodes.lua
-#, fuzzy
 msgid "All-faces Aspen Tree"
-msgstr "Baumscheibenstamm"
+msgstr "Espen Baumstamm (allseitig)"
 
 #: nodes.lua
-#, fuzzy
 msgid "All-faces Jungle Tree"
-msgstr "Baumscheibenstamm"
+msgstr "Tropenbaum Baumstamm (allseitig)"
 
 #: nodes.lua
-#, fuzzy
 msgid "All-faces Pine Tree"
-msgstr "Baumscheibenstamm"
+msgstr "Kiefer Baumstamm (allseitig)"
 
 #: nodes.lua
 msgid "All-faces Tree"
-msgstr "Baumscheibenstamm"
+msgstr "Baumstamm (allseitig)"
 
 #: nodes.lua
 msgid "Cactus Brick"
@@ -104,9 +97,8 @@ msgid "Centered Wooden Tile"
 msgstr "Holzfliese mittig"
 
 #: nodes.lua
-#, fuzzy
 msgid "Checker Stone Tile"
-msgstr "Steinfliese"
+msgstr "Schachsteinfliese"
 
 #: nodes.lua
 msgid "Circle Stone Bricks"
@@ -145,9 +137,8 @@ msgid "Copper Patina Block"
 msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "Empty Shelf"
-msgstr "Leeres Buecherregal"
+msgstr "Leeres Regal"
 
 #: nodes.lua
 msgid "Full Wooden Tile"
@@ -191,9 +182,8 @@ msgid "Split Stone Tile"
 msgstr "Geteilte Steinfliese"
 
 #: nodes.lua
-#, fuzzy
 msgid "Stone Bricks"
-msgstr "Kohlesteinziegel"
+msgstr "Steinziegel"
 
 #: nodes.lua
 msgid "Stone Tile"
@@ -212,9 +202,8 @@ msgid "Tar"
 msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "Trap Desert Stone"
-msgstr "Steinfalle"
+msgstr "Wüstensteinfalle"
 
 #: nodes.lua
 msgid "Trap Glass"
@@ -229,14 +218,12 @@ msgid "Trap Obsidian"
 msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "Trap Obsidian Glass"
-msgstr "Glasfalle"
+msgstr "Obsidianglasfalle"
 
 #: nodes.lua
-#, fuzzy
 msgid "Trap Sandstone"
-msgstr "Steinfalle"
+msgstr "Sandsteinfalle"
 
 #: nodes.lua
 msgid "Trap Stone"
@@ -271,9 +258,8 @@ msgid "Leftwards Wooden Tile (Deprecated)"
 msgstr "Holzfliese links"
 
 #: ownership.lua
-#, lua-format
-msgid "Sorry, %s owns that spot."
-msgstr "Tut mir leid, %s gehoert diese Stelle."
+msgid "Sorry, @1 owns that spot."
+msgstr "Tut mir leid, dieser Bereich gehört @1."
 
 #: ownership.lua
 msgid "someone"

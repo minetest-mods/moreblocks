@@ -126,15 +126,22 @@ end
 function circular_saw:reset(pos)
 	local meta = minetest.get_meta(pos)
 	local inv  = meta:get_inventory()
+	local owned_by = meta:get_string("owner")
+
+	if owned_by and owned_by ~= "" then
+		owned_by = " " .. S("(owned by @1)", meta:get_string("owner"))
+	else
+		owned_by = ""
+	end
 
 	inv:set_list("input",  {})
 	inv:set_list("micro",  {})
 	inv:set_list("output", {})
-	meta:set_int("anz", 0)
 
+	meta:set_int("anz", 0)
 	meta:set_string("infotext",
-			S("Circular Saw is empty (owned by %s)")
-			:format(meta:get_string("owner") or ""))
+		S("Circular Saw is empty") .. owned_by
+	)
 end
 
 
@@ -167,6 +174,13 @@ function circular_saw:update_inventory(pos, amount)
 	local name_parts = circular_saw.known_nodes[node_name] or ""
 	local modname  = name_parts[1] or ""
 	local material = name_parts[2] or ""
+	local owned_by = meta:get_string("owner")
+
+	if owned_by and owned_by ~= "" then
+		owned_by = " " .. S("(owned by @1)", meta:get_string("owner"))
+	else
+		owned_by = ""
+	end
 
 	inv:set_list("input", { -- Display as many full blocks as possible:
 		node_name.. " " .. math.floor(amount / 8)
@@ -191,8 +205,8 @@ function circular_saw:update_inventory(pos, amount)
 	meta:set_int("anz", amount)
 
 	meta:set_string("infotext",
-			S("Circular Saw is working on %s (owned by %s)")
-			:format(material, meta:get_string("owner") or ""))
+		S("Circular Saw is working on @1") .. owned_by
+	)
 end
 
 
@@ -427,10 +441,16 @@ minetest.register_node("moreblocks:circular_saw",  {
 	after_place_node = function(pos, placer)
 		local meta = minetest.get_meta(pos)
 		local owner = placer and placer:get_player_name() or ""
+		local owned_by = owner
+
+		if owner ~= "" then
+			owned_by = " " .. S("(owned by @1)", owner)
+		end
+
 		meta:set_string("owner",  owner)
 		meta:set_string("infotext",
-				S("Circular Saw is empty (owned by %s)")
-				:format(owner))
+			S("Circular Saw is empty") . owned_by
+		)
 	end,
 
 	-- The amount of items offered per shape can be configured:
