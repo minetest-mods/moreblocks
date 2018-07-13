@@ -6,6 +6,7 @@ Licensed under the zlib license. See LICENSE.md for more information.
 --]]
 
 local S = moreblocks.S
+local F = minetest.formspec_escape
 
 circular_saw = {}
 
@@ -365,14 +366,14 @@ function circular_saw.on_construct(pos)
 	local fancy_inv = default.gui_bg..default.gui_bg_img..default.gui_slots
 	meta:set_string(
 		"formspec", "size[11,10]"..fancy_inv..
-		"label[0,0;" ..S("Input\nmaterial").. "]" ..
+		"label[0,0;" ..F(S("Input\nmaterial")).. "]" ..
 		"list[current_name;input;1.5,0;1,1;]" ..
-		"label[0,1;" ..S("Left-over").. "]" ..
+		"label[0,1;" ..F(S("Left-over")).. "]" ..
 		"list[current_name;micro;1.5,1;1,1;]" ..
-		"label[0,2;" ..S("Recycle\noutput").. "]" ..
+		"label[0,2;" ..F(S("Recycle\noutput")).. "]" ..
 		"list[current_name;recycle;1.5,2;1,1;]" ..
-		"field[0.3,3.5;1,1;max_offered;" ..S("Max").. ":;${max_offered}]" ..
-		"button[1,3.2;1,1;Set;" ..S("Set").. "]" ..
+		"field[0.3,3.5;1,1;max_offered;" ..F(S("Max")).. ":;${max_offered}]" ..
+		"button[1,3.2;1,1;Set;" ..F(S("Set")).. "]" ..
 		"list[current_name;output;2.8,0;8,6;]" ..
 		"list[current_player;main;1.5,6.25;8,4;]" ..
 		"listring[current_name;output]" ..
