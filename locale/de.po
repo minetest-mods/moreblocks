@@ -66,7 +66,7 @@ msgstr "[moreblocks] geladen."
 
 #: nodes.lua
 msgid "Deprecated"
-msgstr ""
+msgstr "veraltet"
 
 #: nodes.lua
 msgid "All-faces Acacia Tree"
@@ -102,7 +102,7 @@ msgstr "Holzfliese mittig"
 
 #: nodes.lua
 msgid "Checker Stone Tile"
-msgstr "Schachsteinfliese"
+msgstr "Karierte Steinfliese"
 
 #: nodes.lua
 msgid "Circle Stone Bricks"
@@ -130,15 +130,15 @@ msgstr "Kohlesteinziegel"
 
 #: nodes.lua
 msgid "Compressed Cobblestone"
-msgstr ""
+msgstr "Gepresster Kopfsteinpflaster"
 
 #: nodes.lua
 msgid "Compressed Dirt"
-msgstr ""
+msgstr "Gepresste Erde"
 
 #: nodes.lua
 msgid "Copper Patina Block"
-msgstr ""
+msgstr "Kupfer Edelrostblock"
 
 #: nodes.lua
 msgid "Empty Shelf"
@@ -198,7 +198,7 @@ msgstr "Besen"
 
 #: nodes.lua
 msgid "Tar"
-msgstr ""
+msgstr "Teer"
 
 #: nodes.lua
 msgid "Trap Desert Stone"
@@ -214,7 +214,7 @@ msgstr "Leuchtglasfalle"
 
 #: nodes.lua
 msgid "Trap Obsidian"
-msgstr ""
+msgstr "Obsidianfalle"
 
 #: nodes.lua
 msgid "Trap Obsidian Glass"
