@@ -72,23 +72,23 @@ msgstr "veraltet"
 
 #: nodes.lua
 msgid "All-faces Acacia Tree"
-msgstr "Akazien Baumstamm (allseitig)"
+msgstr "allseitiger Akazienbaumstamm"
 
 #: nodes.lua
 msgid "All-faces Aspen Tree"
-msgstr "Espen Baumstamm (allseitig)"
+msgstr "allseitiger Espenbaumstamm"
 
 #: nodes.lua
 msgid "All-faces Jungle Tree"
-msgstr "Tropenbaum Baumstamm (allseitig)"
+msgstr "allseitiger Tropenbaumstamm"
 
 #: nodes.lua
 msgid "All-faces Pine Tree"
-msgstr "Kiefer Baumstamm (allseitig)"
+msgstr "allseitiger Kieferbaumstamm"
 
 #: nodes.lua
 msgid "All-faces Tree"
-msgstr "Baumstamm (allseitig)"
+msgstr "allseitiger Baumstamm"
 
 #: nodes.lua
 msgid "Cactus Brick"
@@ -96,7 +96,7 @@ msgstr "Kaktusziegel"
 
 #: nodes.lua
 msgid "Cactus Checker"
-msgstr "Karierter Kaktus"
+msgstr "Kaktus-Mosaik"
 
 #: nodes.lua
 msgid "Centered Wooden Tile"
@@ -104,7 +104,7 @@ msgstr "Holzfliese mittig"
 
 #: nodes.lua
 msgid "Checker Stone Tile"
-msgstr "Karierte Steinfliese"
+msgstr "Stein-Mosaik"
 
 #: nodes.lua
 msgid "Circle Stone Bricks"
@@ -116,7 +116,7 @@ msgstr "Klares Glas"
 
 #: nodes.lua
 msgid "Coal Checker"
-msgstr "Karierte Kohle"
+msgstr "Kohlen-Mosaik"
 
 #: nodes.lua
 msgid "Coal Glass"
@@ -156,11 +156,11 @@ msgstr "Leuchtglas"
 
 #: nodes.lua
 msgid "Iron Checker"
-msgstr "Kariertes Eisen"
+msgstr "Metall-Mosaik"
 
 #: nodes.lua
 msgid "Iron Glass"
-msgstr "Eisenglas"
+msgstr "metallisiertes Glas"
 
 #: nodes.lua
 msgid "Iron Stone"

@@ -24,23 +24,22 @@ msgid "Circular Saw"
 msgstr "Scie circulaire"
 
 #: circular_saw.lua
-#, fuzzy
 msgid ""
 "Input\n"
 "material"
-msgstr "Entrée du matériel"
+msgstr ""
+"Entrée du\n"
+"matériel"
 
 #: circular_saw.lua
 msgid "Left-over"
 msgstr ""
 
 #: circular_saw.lua
-#, fuzzy
 msgid "Max"
-msgstr "Max:"
+msgstr ""
 
 #: circular_saw.lua
-#, fuzzy
 msgid ""
 "Recycle\n"
 "output"
@@ -71,24 +70,20 @@ msgid "Deprecated"
 msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "All-faces Acacia Tree"
-msgstr "Tronc d'arbre"
+msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "All-faces Aspen Tree"
-msgstr "Tronc d'arbre"
+msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "All-faces Jungle Tree"
-msgstr "Tronc d'arbre"
+msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "All-faces Pine Tree"
-msgstr "Tronc d'arbre"
+msgstr ""
 
 #: nodes.lua
 msgid "All-faces Tree"
@@ -107,9 +102,8 @@ msgid "Centered Wooden Tile"
 msgstr "Dalle en bois centrée"
 
 #: nodes.lua
-#, fuzzy
 msgid "Checker Stone Tile"
-msgstr "Dalle en pierre"
+msgstr ""
 
 #: nodes.lua
 msgid "Circle Stone Bricks"
@@ -148,9 +142,8 @@ msgid "Copper Patina Block"
 msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "Empty Shelf"
-msgstr "Ètagère vide"
+msgstr ""
 
 #: nodes.lua
 msgid "Full Wooden Tile"
@@ -189,9 +182,8 @@ msgid "Split Stone Tile"
 msgstr "Dalle en pierre découpée"
 
 #: nodes.lua
-#, fuzzy
 msgid "Stone Bricks"
-msgstr "Briques en pierre de charbon"
+msgstr ""
 
 #: nodes.lua
 msgid "Stone Tile"
@@ -210,9 +202,8 @@ msgid "Tar"
 msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "Trap Desert Stone"
-msgstr "Pierre traversable"
+msgstr ""
 
 #: nodes.lua
 msgid "Trap Glass"
@@ -227,14 +218,12 @@ msgid "Trap Obsidian"
 msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "Trap Obsidian Glass"
-msgstr "Verre traversable"
+msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "Trap Sandstone"
-msgstr "Pierre traversable"
+msgstr ""
 
 #: nodes.lua
 msgid "Trap Stone"
@@ -249,24 +238,20 @@ msgid "Wooden Tile"
 msgstr "Dalle en bois"
 
 #: nodes.lua
-#, fuzzy
 msgid "Offset Wooden Tile"
-msgstr "Dalle en bois vers la gauche"
+msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "Downwards Wooden Tile"
-msgstr "Dalle en bois vers le bas"
+msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "Leftwards Wooden Tile"
-msgstr "Dalle en bois vers la gauche"
+msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "Rightwards Wooden Tile"
-msgstr "Dalle en bois vers la droite"
+msgstr ""
 
 #: ownership.lua
 msgid "Sorry, @1 owns that spot."
