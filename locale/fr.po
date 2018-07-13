@@ -1,0 +1,282 @@
+# French translation for MOREBLOCKS minetest mod.
+# Copyright (C) 2018 Hugo Locurcio and contributors
+# This file is distributed under the same license as the MOREBLOCKS package.
+# Calinou, 2013.
+# Jat15, 2013.
+# CodeXP <codexp@gmx.net>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MOREBLOCKS MOD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-13 12:37+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: CodeXP <codexp@gmx.net>\n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: circular_saw.lua
+msgid "Circular Saw"
+msgstr "Scie circulaire"
+
+#: circular_saw.lua
+#, fuzzy
+msgid ""
+"Input\n"
+"material"
+msgstr "Entrée du matériel"
+
+#: circular_saw.lua
+msgid "Left-over"
+msgstr ""
+
+#: circular_saw.lua
+#, fuzzy
+msgid "Max"
+msgstr "Max:"
+
+#: circular_saw.lua
+#, fuzzy
+msgid ""
+"Recycle\n"
+"output"
+msgstr "Recyclage"
+
+#: circular_saw.lua
+msgid "Set"
+msgstr "Fixer"
+
+#: circular_saw.lua
+#, fuzzy, lua-format
+msgid "Circular Saw is empty (owned by %s)"
+msgstr "Scie circulaire est vide (propriété de %s)"
+
+#: circular_saw.lua
+#, fuzzy, lua-format
+msgid "Circular Saw is working on %s (owned by %s)"
+msgstr "Scie circulaire, manipule %s (propriété de %s)"
+
+#: circular_saw.lua
+#, fuzzy
+msgid "Circular Saw is empty"
+msgstr "Scie circulaire, vide"
+
+#: init.lua
+msgid "[moreblocks] loaded."
+msgstr "[moreblocks] a été chargé."
+
+#: nodes.lua
+#, fuzzy
+msgid "All-faces Acacia Tree"
+msgstr "Tronc d'arbre"
+
+#: nodes.lua
+#, fuzzy
+msgid "All-faces Aspen Tree"
+msgstr "Tronc d'arbre"
+
+#: nodes.lua
+#, fuzzy
+msgid "All-faces Jungle Tree"
+msgstr "Tronc d'arbre"
+
+#: nodes.lua
+#, fuzzy
+msgid "All-faces Pine Tree"
+msgstr "Tronc d'arbre"
+
+#: nodes.lua
+msgid "All-faces Tree"
+msgstr "Tronc d'arbre"
+
+#: nodes.lua
+msgid "Cactus Brick"
+msgstr "Briques de cactus"
+
+#: nodes.lua
+msgid "Cactus Checker"
+msgstr "Damier en cactus"
+
+#: nodes.lua
+msgid "Centered Wooden Tile"
+msgstr "Dalle en bois centrée"
+
+#: nodes.lua
+#, fuzzy
+msgid "Checker Stone Tile"
+msgstr "Dalle en pierre"
+
+#: nodes.lua
+msgid "Circle Stone Bricks"
+msgstr "Briques en pierre circulaires"
+
+#: nodes.lua
+msgid "Clean Glass"
+msgstr "Verre propre"
+
+#: nodes.lua
+msgid "Coal Checker"
+msgstr "Damier en charbon"
+
+#: nodes.lua
+msgid "Coal Glass"
+msgstr "Verre de charbon"
+
+#: nodes.lua
+msgid "Coal Stone"
+msgstr "Pierre de charbon"
+
+#: nodes.lua
+msgid "Coal Stone Bricks"
+msgstr "Briques en pierre de charbon"
+
+#: nodes.lua
+msgid "Compressed Cobblestone"
+msgstr ""
+
+#: nodes.lua
+msgid "Compressed Dirt"
+msgstr ""
+
+#: nodes.lua
+msgid "Copper Patina Block"
+msgstr ""
+
+#: nodes.lua
+#, fuzzy
+msgid "Empty Shelf"
+msgstr "Ètagère vide"
+
+#: nodes.lua
+msgid "Full Wooden Tile"
+msgstr "Dalle en bois complète"
+
+#: nodes.lua
+msgid "Glow Glass"
+msgstr "Verre brillant"
+
+#: nodes.lua
+msgid "Iron Checker"
+msgstr "Damier en fer"
+
+#: nodes.lua
+msgid "Iron Glass"
+msgstr "Verre de fer"
+
+#: nodes.lua
+msgid "Iron Stone"
+msgstr "Pierre de fer"
+
+#: nodes.lua
+msgid "Iron Stone Bricks"
+msgstr "Briques en pierre de fer"
+
+#: nodes.lua
+msgid "Plankstone"
+msgstr "Pierre-bois"
+
+#: nodes.lua
+#, fuzzy
+msgid "Rightwards Wooden Tile (Deprecated)"
+msgstr "Dalle en bois vers la droite"
+
+#: nodes.lua
+msgid "Rope"
+msgstr "Corde"
+
+#: nodes.lua
+msgid "Split Stone Tile"
+msgstr "Dalle en pierre découpée"
+
+#: nodes.lua
+#, fuzzy
+msgid "Stone Bricks"
+msgstr "Briques en pierre de charbon"
+
+#: nodes.lua
+msgid "Stone Tile"
+msgstr "Dalle en pierre"
+
+#: nodes.lua
+msgid "Super Glow Glass"
+msgstr "Verre très brillant"
+
+#: nodes.lua
+msgid "Sweeper"
+msgstr "Balai"
+
+#: nodes.lua
+msgid "Tar"
+msgstr ""
+
+#: nodes.lua
+#, fuzzy
+msgid "Trap Desert Stone"
+msgstr "Pierre traversable"
+
+#: nodes.lua
+msgid "Trap Glass"
+msgstr "Verre traversable"
+
+#: nodes.lua
+msgid "Trap Glow Glass"
+msgstr "Verre brillant traversable"
+
+#: nodes.lua
+msgid "Trap Obsidian"
+msgstr ""
+
+#: nodes.lua
+#, fuzzy
+msgid "Trap Obsidian Glass"
+msgstr "Verre traversable"
+
+#: nodes.lua
+#, fuzzy
+msgid "Trap Sandstone"
+msgstr "Pierre traversable"
+
+#: nodes.lua
+msgid "Trap Stone"
+msgstr "Pierre traversable"
+
+#: nodes.lua
+msgid "Trap Super Glow Glass"
+msgstr "Verre très brillant traversable"
+
+#: nodes.lua
+msgid "Wooden Tile"
+msgstr "Dalle en bois"
+
+#: nodes.lua
+#, fuzzy
+msgid "Wooden Tile (Deprecated)"
+msgstr "Dalle en bois"
+
+#: nodes.lua
+#, fuzzy
+msgid "Offset Wooden Tile"
+msgstr "Dalle en bois vers la gauche"
+
+#: nodes.lua
+#, fuzzy
+msgid "Downwards Wooden Tile (Deprecated)"
+msgstr "Dalle en bois vers le bas"
+
+#: nodes.lua
+#, fuzzy
+msgid "Leftwards Wooden Tile (Deprecated)"
+msgstr "Dalle en bois vers la gauche"
+
+#: ownership.lua
+#, lua-format
+msgid "Sorry, %s owns that spot."
+msgstr ""
+
+#: ownership.lua
+msgid "someone"
+msgstr ""
