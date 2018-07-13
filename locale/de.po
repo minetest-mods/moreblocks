@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MOREBLOCKS MOD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-13 14:30+0200\n"
+"POT-Creation-Date: 2018-07-13 23:30+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: CodeXP <codexp@gmx.net>\n"
 "Language-Team: \n"
@@ -261,3 +261,28 @@ msgstr "Tut mir leid, dieser Bereich gehört @1."
 #: ownership.lua
 msgid "someone"
 msgstr "jemand"
+
+#: stairsplus/common.lua
+#, lua-format
+msgid "%s Microblock"
+msgstr "%smikroblock"
+
+#: stairsplus/common.lua stairsplus/slabs.lua
+#, lua-format
+msgid "%s Slab"
+msgstr "%splatte"
+
+#: stairsplus/common.lua
+#, lua-format
+msgid "%s Slope"
+msgstr "%sneigung"
+
+#: stairsplus/common.lua
+#, lua-format
+msgid "%s Panel"
+msgstr "%spaneel"
+
+#: stairsplus/common.lua
+#, lua-format
+msgid "%s Stairs"
+msgstr "%streppe"
