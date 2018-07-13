@@ -48,7 +48,7 @@ msgid "Set"
 msgstr ""
 
 #: circular_saw.lua
-msgid "(owned by @1)"
+msgid "owned by @1"
 msgstr ""
 
 #: circular_saw.lua
