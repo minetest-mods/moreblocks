@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MOREBLOCKS MOD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-13 13:00+0200\n"
+"POT-Creation-Date: 2018-07-13 14:30+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: CodeXP <codexp@gmx.net>\n"
 "Language-Team: \n"
@@ -51,23 +51,26 @@ msgid "Set"
 msgstr "Imp."
 
 #: circular_saw.lua
-#, fuzzy, lua-format
-msgid "Circular Saw is empty"
-msgstr "La sega circolare è vuota (di proprietà di %s)"
-
-#: circular_saw.lua
-#, fuzzy, lua-format
-msgid "Circular Saw is working on %s"
-msgstr "Sega circolare, in funzione su %s (di proprietà di %s)"
+msgid "(owned by @1)"
+msgstr ""
 
 #: circular_saw.lua
 #, fuzzy
 msgid "Circular Saw is empty"
 msgstr "Sega circolare, vuota"
 
+#: circular_saw.lua
+#, fuzzy
+msgid "Circular Saw is working on @1"
+msgstr "Sega circolare, in funzione su %s (di proprietà di %s)"
+
 #: init.lua
 msgid "[MOD] moreblocks loaded."
 msgstr "[MOD] moreblocks caricato."
+
+#: nodes.lua
+msgid "Deprecated"
+msgstr ""
 
 #: nodes.lua
 #, fuzzy
