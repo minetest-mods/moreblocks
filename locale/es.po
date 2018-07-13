@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MOREBLOCKS MOD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-13 12:37+0200\n"
+"POT-Creation-Date: 2018-07-13 13:00+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: CodeXP <codexp@gmx.net>\n"
 "Language-Team: \n"
@@ -61,8 +61,8 @@ msgid "Circular Saw is empty"
 msgstr ""
 
 #: init.lua
-msgid "[moreblocks] loaded."
-msgstr "[moreblocks] cargado."
+msgid "[MOD] moreblocks loaded."
+msgstr "[MOD] moreblocks cargado."
 
 #: nodes.lua
 #, fuzzy
