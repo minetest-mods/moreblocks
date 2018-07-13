@@ -51,19 +51,16 @@ msgid "Set"
 msgstr "Fixer"
 
 #: circular_saw.lua
-#, fuzzy, lua-format
-msgid "Circular Saw is empty (owned by %s)"
-msgstr "Scie circulaire est vide (propriété de %s)"
+msgid "(owned by @1)"
+msgstr "(propriété de @1)"
 
 #: circular_saw.lua
-#, fuzzy, lua-format
-msgid "Circular Saw is working on %s (owned by %s)"
-msgstr "Scie circulaire, manipule %s (propriété de %s)"
-
-#: circular_saw.lua
-#, fuzzy
 msgid "Circular Saw is empty"
-msgstr "Scie circulaire, vide"
+msgstr "Scie circulaire est vide"
+
+#: circular_saw.lua
+msgid "Circular Saw is working on @1"
+msgstr "Scie circulaire, manipule @1"
 
 #: init.lua
 msgid "[MOD] moreblocks loaded."
@@ -273,8 +270,7 @@ msgid "Leftwards Wooden Tile (Deprecated)"
 msgstr "Dalle en bois vers la gauche"
 
 #: ownership.lua
-#, lua-format
-msgid "Sorry, %s owns that spot."
+msgid "Sorry, @1 owns that spot."
 msgstr ""
 
 #: ownership.lua

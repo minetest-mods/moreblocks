@@ -47,17 +47,15 @@ msgid "Set"
 msgstr ""
 
 #: circular_saw.lua
-#, lua-format
-msgid "Circular Saw is empty (owned by %s)"
-msgstr ""
-
-#: circular_saw.lua
-#, lua-format
-msgid "Circular Saw is working on %s (owned by %s)"
+msgid "(owned by @1)"
 msgstr ""
 
 #: circular_saw.lua
 msgid "Circular Saw is empty"
+msgstr ""
+
+#: circular_saw.lua
+msgid "Circular Saw is working on @1"
 msgstr ""
 
 #: init.lua
@@ -272,8 +270,7 @@ msgid "Leftwards Wooden Tile (Deprecated)"
 msgstr "Parquet Izquierdo"
 
 #: ownership.lua
-#, lua-format
-msgid "Sorry, %s owns that spot."
+msgid "Sorry, @1 owns that spot."
 msgstr ""
 
 #: ownership.lua

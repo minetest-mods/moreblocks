@@ -33,7 +33,7 @@ function moreblocks.node_is_owned(pos, placer)
 	end
 
 	if ownername ~= false then
-		minetest.chat_send_player( placer:get_player_name(), S("Sorry, %s owns that spot."):format(ownername) )
+		minetest.chat_send_player( placer:get_player_name(), S("Sorry, @1 owns that spot.", ownername) )
 		return true
 	else
 		return false
