@@ -130,7 +130,7 @@ function circular_saw:reset(pos)
 	local owned_by = meta:get_string("owner")
 
 	if owned_by and owned_by ~= "" then
-		owned_by = " " .. S("(owned by @1)", meta:get_string("owner"))
+		owned_by = (" (%s)"):format(S("owned by @1", meta:get_string("owner")))
 	else
 		owned_by = ""
 	end
@@ -178,7 +178,7 @@ function circular_saw:update_inventory(pos, amount)
 	local owned_by = meta:get_string("owner")
 
 	if owned_by and owned_by ~= "" then
-		owned_by = " " .. S("(owned by @1)", meta:get_string("owner"))
+		owned_by = (" (%s)"):format(S("owned by @1", meta:get_string("owner")))
 	else
 		owned_by = ""
 	end
@@ -445,7 +445,7 @@ minetest.register_node("moreblocks:circular_saw",  {
 		local owned_by = owner
 
 		if owner ~= "" then
-			owned_by = " " .. S("(owned by @1)", owner)
+			owned_by = (" (%s)"):format(S("owned by @1", owner))
 		end
 
 		meta:set_string("owner",  owner)

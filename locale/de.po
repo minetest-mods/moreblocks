@@ -49,8 +49,8 @@ msgid "Set"
 msgstr "Ok"
 
 #: circular_saw.lua
-msgid "(owned by @1)"
-msgstr "(gehört @1)"
+msgid "owned by @1"
+msgstr "gehört @1"
 
 #: circular_saw.lua
 msgid "Circular Saw is empty"
