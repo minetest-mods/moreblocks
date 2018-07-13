@@ -172,6 +172,7 @@ function circular_saw:update_inventory(pos, amount)
 
 	end
 	local node_name = stack:get_name() or ""
+	local node_def = stack:get_definition()
 	local name_parts = circular_saw.known_nodes[node_name] or ""
 	local modname  = name_parts[1] or ""
 	local material = name_parts[2] or ""
@@ -206,7 +207,9 @@ function circular_saw:update_inventory(pos, amount)
 	meta:set_int("anz", amount)
 
 	meta:set_string("infotext",
-		S("Circular Saw is working on @1", material) .. owned_by
+		S("Circular Saw is working on @1",
+			node_def and node_def.description or material
+		) .. owned_by
 	)
 end
 
