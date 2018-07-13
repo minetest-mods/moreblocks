@@ -259,3 +259,28 @@ msgstr "Spiacente, quel punto è di proprietà di @1"
 #: ownership.lua
 msgid "someone"
 msgstr "qualcuno"
+
+#: stairsplus/common.lua
+#, lua-format
+msgid "%s Microblock"
+msgstr "Microblocco %s"
+
+#: stairsplus/common.lua stairsplus/slabs.lua
+#, lua-format
+msgid "%s Slab"
+msgstr "Lastra - %s"
+
+#: stairsplus/common.lua
+#, lua-format
+msgid "%s Slope"
+msgstr ""
+
+#: stairsplus/common.lua
+#, lua-format
+msgid "%s Panel"
+msgstr "Pannello - %s"
+
+#: stairsplus/common.lua
+#, lua-format
+msgid "%s Stairs"
+msgstr "Scale - %s"

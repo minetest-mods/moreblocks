@@ -257,3 +257,28 @@ msgstr ""
 #: ownership.lua
 msgid "someone"
 msgstr ""
+
+#: stairsplus/common.lua
+#, lua-format
+msgid "%s Microblock"
+msgstr ""
+
+#: stairsplus/common.lua stairsplus/slabs.lua
+#, lua-format
+msgid "%s Slab"
+msgstr ""
+
+#: stairsplus/common.lua
+#, lua-format
+msgid "%s Slope"
+msgstr ""
+
+#: stairsplus/common.lua
+#, lua-format
+msgid "%s Panel"
+msgstr ""
+
+#: stairsplus/common.lua
+#, lua-format
+msgid "%s Stairs"
+msgstr ""

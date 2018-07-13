@@ -260,3 +260,28 @@ msgstr "Désolé, @1 possède cet endroit."
 #: ownership.lua
 msgid "someone"
 msgstr "quelqu'un"
+
+#: stairsplus/common.lua
+#, lua-format
+msgid "%s Microblock"
+msgstr "Microbloc en %s"
+
+#: stairsplus/common.lua stairsplus/slabs.lua
+#, lua-format
+msgid "%s Slab"
+msgstr "Demi-dalle en %s"
+
+#: stairsplus/common.lua
+#, lua-format
+msgid "%s Slope"
+msgstr "Pente en %s"
+
+#: stairsplus/common.lua
+#, lua-format
+msgid "%s Panel"
+msgstr "Barre en %s"
+
+#: stairsplus/common.lua
+#, lua-format
+msgid "%s Stairs"
+msgstr "Escaliers en %s"
