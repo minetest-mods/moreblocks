@@ -205,7 +205,7 @@ function circular_saw:update_inventory(pos, amount)
 	meta:set_int("anz", amount)
 
 	meta:set_string("infotext",
-		S("Circular Saw is working on @1") .. owned_by
+		S("Circular Saw is working on @1", material) .. owned_by
 	)
 end
 
