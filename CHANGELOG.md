@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Listring add for circular saw.
 - Stairs+: New API function:
  `stairsplus:register_custom_subset(subset, modname, subname, recipeitem, fields)`
+- Original Intllib helper has been added
+- Material name in circle saw is now translated description from node def
+- Russian translation added
+- Formspec variables are escaped now
 
 ### Fixed
 
@@ -27,6 +31,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Stairs+:
   - Move definitions to `stairsplus.defs` table in a separate file
   - Move recipe definitions to `stairsplus.register_recipes` function in a separate file
+- All locales refactored to PO format
+  - Some obsolete strings were removed
+  - Some strings were unified (minimize duplicated translation)
+  - Lua format placeholders were replaced with intllib placeholders
+- German translation extended/improved
+- Code in common.lua was optimized
+  - make locale strings detectable by intllib tool
+  - do not translate same strings all over again (moved)
+  - do not run some if statements if result is obviously falsy (moved)
 
 ## [1.1.0] - 2017-10-04
 
