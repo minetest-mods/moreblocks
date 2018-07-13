@@ -1,0 +1,280 @@
+# Italian translation for More Blocks.
+# Copyright © 2011-2019 Hugo Locurcio and contributors
+# This file is distributed under the same license as the More Blocks package.
+# Emon, 2016.
+# CodeXP <codexp@gmx.net>, 2018.
+msgid ""
+msgstr ""
+"Project-Id-Version: More Blocks\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-13 12:37+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: CodeXP <codexp@gmx.net>\n"
+"Language-Team: \n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: circular_saw.lua
+msgid "Circular Saw"
+msgstr "Sega circolare"
+
+#: circular_saw.lua
+msgid ""
+"Input\n"
+"material"
+msgstr ""
+"Materiale\n"
+"iniziale"
+
+#: circular_saw.lua
+msgid "Left-over"
+msgstr "Scarto"
+
+#: circular_saw.lua
+msgid "Max"
+msgstr "Max."
+
+#: circular_saw.lua
+msgid ""
+"Recycle\n"
+"output"
+msgstr ""
+"Ricicla\n"
+"finale"
+
+#: circular_saw.lua
+msgid "Set"
+msgstr "Imp."
+
+#: circular_saw.lua
+#, fuzzy, lua-format
+msgid "Circular Saw is empty (owned by %s)"
+msgstr "La sega circolare è vuota (di proprietà di %s)"
+
+#: circular_saw.lua
+#, fuzzy, lua-format
+msgid "Circular Saw is working on %s (owned by %s)"
+msgstr "Sega circolare, in funzione su %s (di proprietà di %s)"
+
+#: circular_saw.lua
+#, fuzzy
+msgid "Circular Saw is empty"
+msgstr "Sega circolare, vuota"
+
+#: init.lua
+msgid "[moreblocks] loaded."
+msgstr "[moreblocks] caricato."
+
+#: nodes.lua
+#, fuzzy
+msgid "All-faces Acacia Tree"
+msgstr "Albero su ogni lato"
+
+#: nodes.lua
+#, fuzzy
+msgid "All-faces Aspen Tree"
+msgstr "Albero su ogni lato"
+
+#: nodes.lua
+#, fuzzy
+msgid "All-faces Jungle Tree"
+msgstr "Albero su ogni lato"
+
+#: nodes.lua
+#, fuzzy
+msgid "All-faces Pine Tree"
+msgstr "Albero su ogni lato"
+
+#: nodes.lua
+msgid "All-faces Tree"
+msgstr "Albero su ogni lato"
+
+#: nodes.lua
+msgid "Cactus Brick"
+msgstr "Mattoni di cactus"
+
+#: nodes.lua
+msgid "Cactus Checker"
+msgstr "Scacchiera in cactus"
+
+#: nodes.lua
+msgid "Centered Wooden Tile"
+msgstr "Mattonella in legno centrata"
+
+#: nodes.lua
+#, fuzzy
+msgid "Checker Stone Tile"
+msgstr "Mattonella in pietra"
+
+#: nodes.lua
+msgid "Circle Stone Bricks"
+msgstr "Mattoni concentrici in pietra"
+
+#: nodes.lua
+msgid "Clean Glass"
+msgstr "Vetro pulito"
+
+#: nodes.lua
+msgid "Coal Checker"
+msgstr "Scacchiera in carbone"
+
+#: nodes.lua
+msgid "Coal Glass"
+msgstr "Vetro e carbone"
+
+#: nodes.lua
+msgid "Coal Stone"
+msgstr "Pietra in carbone"
+
+#: nodes.lua
+msgid "Coal Stone Bricks"
+msgstr "Mattoni di pietra in carbone"
+
+#: nodes.lua
+msgid "Compressed Cobblestone"
+msgstr ""
+
+#: nodes.lua
+msgid "Compressed Dirt"
+msgstr ""
+
+#: nodes.lua
+msgid "Copper Patina Block"
+msgstr ""
+
+#: nodes.lua
+#, fuzzy
+msgid "Empty Shelf"
+msgstr "Libreria vuota"
+
+#: nodes.lua
+msgid "Full Wooden Tile"
+msgstr "Mattonella in legno pieno"
+
+#: nodes.lua
+msgid "Glow Glass"
+msgstr "Vetro luminoso"
+
+#: nodes.lua
+msgid "Iron Checker"
+msgstr "Scacchiera in ferro"
+
+#: nodes.lua
+msgid "Iron Glass"
+msgstr "Vetro e ferro"
+
+#: nodes.lua
+msgid "Iron Stone"
+msgstr "Pietra in ferro"
+
+#: nodes.lua
+msgid "Iron Stone Bricks"
+msgstr "Mattoni di pietra in ferro"
+
+#: nodes.lua
+msgid "Plankstone"
+msgstr "Pietra e legno"
+
+#: nodes.lua
+#, fuzzy
+msgid "Rightwards Wooden Tile (Deprecated)"
+msgstr "Mattonella in legno verso destra"
+
+#: nodes.lua
+msgid "Rope"
+msgstr "Corda"
+
+#: nodes.lua
+msgid "Split Stone Tile"
+msgstr "Mattonella in pietra divisa"
+
+#: nodes.lua
+#, fuzzy
+msgid "Stone Bricks"
+msgstr "Mattoni di pietra in carbone"
+
+#: nodes.lua
+msgid "Stone Tile"
+msgstr "Mattonella in pietra"
+
+#: nodes.lua
+msgid "Super Glow Glass"
+msgstr "Super vetro luminoso"
+
+#: nodes.lua
+msgid "Sweeper"
+msgstr "Spazzola"
+
+#: nodes.lua
+msgid "Tar"
+msgstr ""
+
+#: nodes.lua
+#, fuzzy
+msgid "Trap Desert Stone"
+msgstr "Pietra trappola"
+
+#: nodes.lua
+msgid "Trap Glass"
+msgstr "Vetro trappola"
+
+#: nodes.lua
+msgid "Trap Glow Glass"
+msgstr "Vetro luminoso trappola"
+
+#: nodes.lua
+msgid "Trap Obsidian"
+msgstr ""
+
+#: nodes.lua
+#, fuzzy
+msgid "Trap Obsidian Glass"
+msgstr "Vetro trappola"
+
+#: nodes.lua
+#, fuzzy
+msgid "Trap Sandstone"
+msgstr "Pietra trappola"
+
+#: nodes.lua
+msgid "Trap Stone"
+msgstr "Pietra trappola"
+
+#: nodes.lua
+msgid "Trap Super Glow Glass"
+msgstr "Super vetro luminoso trappola"
+
+#: nodes.lua
+msgid "Wooden Tile"
+msgstr "Mattonella in legno"
+
+#: nodes.lua
+#, fuzzy
+msgid "Wooden Tile (Deprecated)"
+msgstr "Mattonella in legno"
+
+#: nodes.lua
+#, fuzzy
+msgid "Offset Wooden Tile"
+msgstr "Mattonella in legno verso sinistra"
+
+#: nodes.lua
+#, fuzzy
+msgid "Downwards Wooden Tile (Deprecated)"
+msgstr "Mattonella in legno verso il basso"
+
+#: nodes.lua
+#, fuzzy
+msgid "Leftwards Wooden Tile (Deprecated)"
+msgstr "Mattonella in legno verso sinistra"
+
+#: ownership.lua
+#, lua-format
+msgid "Sorry, %s owns that spot."
+msgstr "Spiacente, quel punto è di proprietà di %s"
+
+#: ownership.lua
+msgid "someone"
+msgstr "qualcuno"
