@@ -53,14 +53,12 @@ msgid "(owned by @1)"
 msgstr ""
 
 #: circular_saw.lua
-#, fuzzy
 msgid "Circular Saw is empty"
 msgstr "Sega circolare, vuota"
 
 #: circular_saw.lua
-#, fuzzy
 msgid "Circular Saw is working on @1"
-msgstr "Sega circolare, in funzione su %s (di proprietà di %s)"
+msgstr "Sega circolare, in funzione su @1"
 
 #: init.lua
 msgid "[moreblocks] loaded."
@@ -71,24 +69,20 @@ msgid "Deprecated"
 msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "All-faces Acacia Tree"
-msgstr "Albero su ogni lato"
+msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "All-faces Aspen Tree"
-msgstr "Albero su ogni lato"
+msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "All-faces Jungle Tree"
-msgstr "Albero su ogni lato"
+msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "All-faces Pine Tree"
-msgstr "Albero su ogni lato"
+msgstr ""
 
 #: nodes.lua
 msgid "All-faces Tree"
@@ -107,9 +101,8 @@ msgid "Centered Wooden Tile"
 msgstr "Mattonella in legno centrata"
 
 #: nodes.lua
-#, fuzzy
 msgid "Checker Stone Tile"
-msgstr "Mattonella in pietra"
+msgstr ""
 
 #: nodes.lua
 msgid "Circle Stone Bricks"
@@ -148,9 +141,8 @@ msgid "Copper Patina Block"
 msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "Empty Shelf"
-msgstr "Libreria vuota"
+msgstr "Scaffale Vuoto"
 
 #: nodes.lua
 msgid "Full Wooden Tile"
@@ -189,9 +181,8 @@ msgid "Split Stone Tile"
 msgstr "Mattonella in pietra divisa"
 
 #: nodes.lua
-#, fuzzy
 msgid "Stone Bricks"
-msgstr "Mattoni di pietra in carbone"
+msgstr ""
 
 #: nodes.lua
 msgid "Stone Tile"
@@ -210,9 +201,8 @@ msgid "Tar"
 msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "Trap Desert Stone"
-msgstr "Pietra trappola"
+msgstr ""
 
 #: nodes.lua
 msgid "Trap Glass"
@@ -227,14 +217,12 @@ msgid "Trap Obsidian"
 msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "Trap Obsidian Glass"
-msgstr "Vetro trappola"
+msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "Trap Sandstone"
-msgstr "Pietra trappola"
+msgstr ""
 
 #: nodes.lua
 msgid "Trap Stone"
@@ -249,24 +237,20 @@ msgid "Wooden Tile"
 msgstr "Mattonella in legno"
 
 #: nodes.lua
-#, fuzzy
 msgid "Offset Wooden Tile"
-msgstr "Mattonella in legno verso sinistra"
+msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "Downwards Wooden Tile"
-msgstr "Mattonella in legno verso il basso"
+msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "Leftwards Wooden Tile"
-msgstr "Mattonella in legno verso sinistra"
+msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "Rightwards Wooden Tile"
-msgstr "Mattonella in legno verso destra"
+msgstr ""
 
 #: ownership.lua
 msgid "Sorry, @1 owns that spot."

@@ -143,7 +143,7 @@ msgstr "Bloc de patine de cuivre"
 
 #: nodes.lua
 msgid "Empty Shelf"
-msgstr "Ètagère vide"
+msgstr "Étagère vide"
 
 #: nodes.lua
 msgid "Full Wooden Tile"

@@ -65,24 +65,20 @@ msgid "Deprecated"
 msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "All-faces Acacia Tree"
-msgstr "Tronco de Árbol"
+msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "All-faces Aspen Tree"
-msgstr "Tronco de Árbol"
+msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "All-faces Jungle Tree"
-msgstr "Tronco de Árbol"
+msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "All-faces Pine Tree"
-msgstr "Tronco de Árbol"
+msgstr ""
 
 #: nodes.lua
 msgid "All-faces Tree"
@@ -101,9 +97,8 @@ msgid "Centered Wooden Tile"
 msgstr "Parquet Centrado"
 
 #: nodes.lua
-#, fuzzy
 msgid "Checker Stone Tile"
-msgstr "Baldosa de Piedra"
+msgstr ""
 
 #: nodes.lua
 msgid "Circle Stone Bricks"
@@ -126,9 +121,8 @@ msgid "Coal Stone"
 msgstr "Carbón y Piedra"
 
 #: nodes.lua
-#, fuzzy
 msgid "Coal Stone Bricks"
-msgstr "Bloques de Piedra Circulares"
+msgstr ""
 
 #: nodes.lua
 msgid "Compressed Cobblestone"
@@ -143,9 +137,8 @@ msgid "Copper Patina Block"
 msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "Empty Shelf"
-msgstr "Estante para libros vacío"
+msgstr ""
 
 #: nodes.lua
 msgid "Full Wooden Tile"
@@ -168,9 +161,8 @@ msgid "Iron Stone"
 msgstr "Hierro y Piedra"
 
 #: nodes.lua
-#, fuzzy
 msgid "Iron Stone Bricks"
-msgstr "Bloques de Piedra Circulares"
+msgstr ""
 
 #: nodes.lua
 msgid "Plankstone"
@@ -185,9 +177,8 @@ msgid "Split Stone Tile"
 msgstr "Baldosas de Piedra Partida"
 
 #: nodes.lua
-#, fuzzy
 msgid "Stone Bricks"
-msgstr "Bloques de Piedra Circulares"
+msgstr ""
 
 #: nodes.lua
 msgid "Stone Tile"
@@ -206,65 +197,56 @@ msgid "Tar"
 msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "Trap Desert Stone"
-msgstr "Piedra Trampa"
+msgstr ""
 
 #: nodes.lua
 msgid "Trap Glass"
 msgstr "Cristal Trampa"
 
 #: nodes.lua
-#, fuzzy
 msgid "Trap Glow Glass"
-msgstr "Cristal Brillante"
+msgstr ""
 
 #: nodes.lua
 msgid "Trap Obsidian"
 msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "Trap Obsidian Glass"
-msgstr "Cristal Trampa"
+msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "Trap Sandstone"
-msgstr "Piedra Trampa"
+msgstr ""
 
 #: nodes.lua
 msgid "Trap Stone"
 msgstr "Piedra Trampa"
 
 #: nodes.lua
-#, fuzzy
 msgid "Trap Super Glow Glass"
-msgstr "Cristal Súper Brillante"
+msgstr ""
 
 #: nodes.lua
 msgid "Wooden Tile"
 msgstr "Parquet"
 
 #: nodes.lua
-#, fuzzy
 msgid "Offset Wooden Tile"
-msgstr "Parquet Izquierdo"
+msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "Downwards Wooden Tile"
-msgstr "Parquet Inferior"
+msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "Leftwards Wooden Tile"
-msgstr "Parquet Izquierdo"
+msgstr ""
 
 #: nodes.lua
-#, fuzzy
 msgid "Rightwards Wooden Tile"
-msgstr "Parquet Derecho"
+msgstr ""
 
 #: ownership.lua
 msgid "Sorry, @1 owns that spot."
