@@ -66,6 +66,10 @@ msgid "[moreblocks] loaded."
 msgstr "[moreblocks] a été chargé."
 
 #: nodes.lua
+msgid "Deprecated"
+msgstr "déprécié"
+
+#: nodes.lua
 msgid "All-faces Acacia Tree"
 msgstr "Tronc d'arbre d'acacia (toutes faces)"
 
@@ -170,10 +174,6 @@ msgid "Plankstone"
 msgstr "Pierre-bois"
 
 #: nodes.lua
-msgid "Rightwards Wooden Tile (Deprecated)"
-msgstr "Dalle en bois vers la droite (déprécié)"
-
-#: nodes.lua
 msgid "Rope"
 msgstr "Corde"
 
@@ -238,20 +238,20 @@ msgid "Wooden Tile"
 msgstr "Dalle en bois"
 
 #: nodes.lua
-msgid "Wooden Tile (Deprecated)"
-msgstr "Dalle en bois (déprécié)"
-
-#: nodes.lua
 msgid "Offset Wooden Tile"
 msgstr "Dalle en bois décalée"
 
 #: nodes.lua
-msgid "Downwards Wooden Tile (Deprecated)"
-msgstr "Dalle en bois vers le bas (déprécié)"
+msgid "Downwards Wooden Tile"
+msgstr "Dalle en bois vers le bas"
 
 #: nodes.lua
-msgid "Leftwards Wooden Tile (Deprecated)"
-msgstr "Dalle en bois vers la gauche (déprécié)"
+msgid "Leftwards Wooden Tile"
+msgstr "Dalle en bois vers la gauche"
+
+#: nodes.lua
+msgid "Rightwards Wooden Tile"
+msgstr "Dalle en bois vers la droite"
 
 #: ownership.lua
 msgid "Sorry, @1 owns that spot."

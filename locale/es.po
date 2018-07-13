@@ -61,6 +61,10 @@ msgid "[moreblocks] loaded."
 msgstr "[moreblocks] cargado."
 
 #: nodes.lua
+msgid "Deprecated"
+msgstr ""
+
+#: nodes.lua
 #, fuzzy
 msgid "All-faces Acacia Tree"
 msgstr "Tronco de Árbol"
@@ -173,11 +177,6 @@ msgid "Plankstone"
 msgstr "Tablones de piedra"
 
 #: nodes.lua
-#, fuzzy
-msgid "Rightwards Wooden Tile (Deprecated)"
-msgstr "Parquet Derecho"
-
-#: nodes.lua
 msgid "Rope"
 msgstr "Soga"
 
@@ -249,23 +248,23 @@ msgstr "Parquet"
 
 #: nodes.lua
 #, fuzzy
-msgid "Wooden Tile (Deprecated)"
-msgstr "Parquet"
-
-#: nodes.lua
-#, fuzzy
 msgid "Offset Wooden Tile"
 msgstr "Parquet Izquierdo"
 
 #: nodes.lua
 #, fuzzy
-msgid "Downwards Wooden Tile (Deprecated)"
+msgid "Downwards Wooden Tile"
 msgstr "Parquet Inferior"
 
 #: nodes.lua
 #, fuzzy
-msgid "Leftwards Wooden Tile (Deprecated)"
+msgid "Leftwards Wooden Tile"
 msgstr "Parquet Izquierdo"
+
+#: nodes.lua
+#, fuzzy
+msgid "Rightwards Wooden Tile"
+msgstr "Parquet Derecho"
 
 #: ownership.lua
 msgid "Sorry, @1 owns that spot."

@@ -53,16 +53,20 @@ msgid "(owned by @1)"
 msgstr "(gehört @1)"
 
 #: circular_saw.lua
-msgid "Circular Saw is working on @1"
-msgstr "Kreissäge arbeitet mit @1"
-
-#: circular_saw.lua
 msgid "Circular Saw is empty"
 msgstr "Kreissäge ist leer"
+
+#: circular_saw.lua
+msgid "Circular Saw is working on @1"
+msgstr "Kreissäge arbeitet mit @1"
 
 #: init.lua
 msgid "[moreblocks] loaded."
 msgstr "[moreblocks] geladen."
+
+#: nodes.lua
+msgid "Deprecated"
+msgstr ""
 
 #: nodes.lua
 msgid "All-faces Acacia Tree"
@@ -169,11 +173,6 @@ msgid "Plankstone"
 msgstr "Brettstein"
 
 #: nodes.lua
-#, fuzzy
-msgid "Rightwards Wooden Tile (Deprecated)"
-msgstr "Holzfliese rechts"
-
-#: nodes.lua
 msgid "Rope"
 msgstr "Seil"
 
@@ -238,24 +237,20 @@ msgid "Wooden Tile"
 msgstr "Holzfliese"
 
 #: nodes.lua
-#, fuzzy
-msgid "Wooden Tile (Deprecated)"
-msgstr "Holzfliese"
-
-#: nodes.lua
-#, fuzzy
 msgid "Offset Wooden Tile"
-msgstr "Holzfliese links"
+msgstr "Holzfliese versetzt"
 
 #: nodes.lua
-#, fuzzy
-msgid "Downwards Wooden Tile (Deprecated)"
+msgid "Downwards Wooden Tile"
 msgstr "Holzfliese unten"
 
 #: nodes.lua
-#, fuzzy
-msgid "Leftwards Wooden Tile (Deprecated)"
+msgid "Leftwards Wooden Tile"
 msgstr "Holzfliese links"
+
+#: nodes.lua
+msgid "Rightwards Wooden Tile"
+msgstr "Holzfliese rechts"
 
 #: ownership.lua
 msgid "Sorry, @1 owns that spot."

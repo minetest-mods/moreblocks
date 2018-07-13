@@ -60,6 +60,10 @@ msgid "[moreblocks] loaded."
 msgstr ""
 
 #: nodes.lua
+msgid "Deprecated"
+msgstr ""
+
+#: nodes.lua
 msgid "All-faces Acacia Tree"
 msgstr ""
 
@@ -164,10 +168,6 @@ msgid "Plankstone"
 msgstr ""
 
 #: nodes.lua
-msgid "Rightwards Wooden Tile (Deprecated)"
-msgstr ""
-
-#: nodes.lua
 msgid "Rope"
 msgstr ""
 
@@ -232,19 +232,22 @@ msgid "Wooden Tile"
 msgstr ""
 
 #: nodes.lua
-msgid "Wooden Tile (Deprecated)"
-msgstr ""
-
-#: nodes.lua
 msgid "Offset Wooden Tile"
 msgstr ""
 
+# @deprecated
 #: nodes.lua
-msgid "Downwards Wooden Tile (Deprecated)"
+msgid "Downwards Wooden Tile"
 msgstr ""
 
+# @deprecated
 #: nodes.lua
-msgid "Leftwards Wooden Tile (Deprecated)"
+msgid "Leftwards Wooden Tile"
+msgstr ""
+
+# @deprecated
+#: nodes.lua
+msgid "Rightwards Wooden Tile"
 msgstr ""
 
 #: ownership.lua
