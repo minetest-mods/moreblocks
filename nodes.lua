@@ -472,10 +472,3 @@ for name, def in pairs(nodes) do
 		})
 	end
 end
-
--- Items
-
-minetest.register_craftitem("moreblocks:sweeper", {
-	description = S("Sweeper"),
-	inventory_image = "moreblocks_sweeper.png",
-})
