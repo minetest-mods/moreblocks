@@ -25,6 +25,11 @@ minetest.register_craft({
 	}
 })
 
+minetest.clear_craft({
+	recipe = {
+		{"default:papyrus", "default:papyrus", "default:papyrus"}
+	}
+})
 minetest.register_craft({
 	output = "default:paper 4",
 	recipe = {
