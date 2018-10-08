@@ -33,10 +33,35 @@ minetest.register_craftitem("moreblocks:sweeper", {
 --
 -- register sweepable node handler
 --
-function moreblocks:register_sweepable(node_name, callback)
+function moreblocks.register_sweepable(node_name, callback)
 	sweepables[node_name] = callback
 end
 
+--
+-- default on_sweep handler factory
+--
+function moreblocks.on_sweep_default(clean_node, sweeps_to_clean)
+	if nil == sweeps_to_clean then
+		sweeps_to_clean = 3
+	end
+
+	return function (pos, node)
+		local meta = minetest.get_meta(pos)
+		local sweeps = meta:get_int('sweeps') + 1
+	
+		-- hit x times to clean
+		if sweeps >= sweeps_to_clean then
+			-- set clean node
+			meta:set_int('sweeps', 0)
+			minetest.swap_node(pos, { name = clean_node })
+			return true
+		end
+	
+		meta:set_int('sweeps', sweeps)
+	
+		return false
+	end
+end
 
 
 ------------------------------------
@@ -45,24 +70,9 @@ end
 -- Sweepable mossycobble example: --
 
 -- use register_sweepable function
-moreblocks:register_sweepable("default:mossycobble", function (pos, node)
-	local meta = minetest.get_meta(pos)
-	local sweeps = meta:get_int('sweeps') + 1
+moreblocks.register_sweepable("default:mossycobble", moreblocks.on_sweep_default('default:cobble'))
 
-	-- hit 3 times to clean
-	if sweeps > 2 then
-		-- set clean node
-		meta:set_int('sweeps', 0)
-		minetest.swap_node(pos, { name = "default:cobble" })
-		return true
-	end
-
-	meta:set_int('sweeps', sweeps)
-
-	return false
-end)
-
--- or when registering node
+-- or use on_sweep when registering node
 --[[ 
 minetest.register_node("default:mossycobble", {
 	description = S("Mossy Cobblestone"),
@@ -71,9 +81,7 @@ minetest.register_node("default:mossycobble", {
 	groups = {cracky = 3, stone = 1},
 	sounds = default.node_sound_stone_defaults(),
 
-	on_sweep = function (pos, node)
-		-- do the magic here
-	end,
+	on_sweep = moreblocks.on_sweep_default('default:cobble'),
 })
 ]]
 
