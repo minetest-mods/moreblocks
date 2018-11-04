@@ -46,11 +46,6 @@ local modname = minetest.get_current_modname()
 
 local contexts = {}
 
-minetest.register_on_leaveplayer(function(player)
-	local playername = get_player_name(player)
-	if playername then contexts[playername] = nil end
-end)
-
 local function get_player_name(player)
 	if type(player) == 'string' then return player end
 	if type(player) == 'userdata' and player.get_player_name then
@@ -58,6 +53,11 @@ local function get_player_name(player)
 	end
 	minetest.log('warning',	'['..modname..'] get_player_name could not identify player.')
 end
+
+minetest.register_on_leaveplayer(function(player)
+	local playername = get_player_name(player)
+	if playername then contexts[playername] = nil end
+end)
 
 local function new_context(player, context)
 	local playername = get_player_name(player)
@@ -95,6 +95,7 @@ end
 
 local function show_node_formspec(player, pos)
 	local meta = minetest.get_meta(pos)
+	local playername = get_player_name(player)
 
 	-- Decontextualize formspec
 	local fs = meta:get_string('formspec')
@@ -115,14 +116,15 @@ local function show_node_formspec(player, pos)
 	until s == nil
 
 	-- Find node on_receive_fields
-	local ndef = mintest.registered_nodes[minetest.get_node(pos)]
+	local ndef = minetest.registered_nodes[minetest.get_node(pos).name]
+
 	if ndef and ndef.on_receive_fields then
 		update_context(player, { on_receive_fields = ndef.on_receive_fields } )
 	end
 	update_context(player, { node_pos = pos } )
 
 	-- Show formspec
-	minetest.show_formspec(context.playername, modname..':context_formspec', fs)
+	minetest.show_formspec(playername, modname..':context_formspec', fs)
 end
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)
@@ -134,7 +136,7 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 			context.on_receive_fields(context.node_pos, '', fields, player)
 		end
 	end
-end
+end)
 
 -- Specific functions
 
@@ -145,7 +147,7 @@ end
 local function item_list_prepare(item_list)
 	local list = {}
 	for _, name in ipairs(item_list) do
-		ndef = minetest.registered_items[name]
+		local ndef = minetest.registered_items[name]
 		if ndef then
 			list[#list+1] = ndef
 		end
@@ -205,9 +207,9 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 			show_fs(context.playername)
 		end
 		if fields.quit == 'true' then
-			if context.caller_pos then
+			if context.node_pos then
 				-- Using after to avoid the "double close" bug
-				minetest.after(0, show_node_formspec, player, pos)
+				minetest.after(0, show_node_formspec, player, context.node_pos)
 			end
 		end
 	end
