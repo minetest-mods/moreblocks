@@ -24,6 +24,8 @@ moreblocks.intllib = S
 
 local modpath = minetest.get_modpath("moreblocks")
 
+moreblocks.show_item_list = dofile(modpath..'/itemlist.lua')
+
 dofile(modpath .. "/config.lua")
 dofile(modpath .. "/circular_saw.lua")
 dofile(modpath .. "/stairsplus/init.lua")

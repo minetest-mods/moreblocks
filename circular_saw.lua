@@ -195,7 +195,6 @@ function circular_saw:update_inventory(pos, amount)
 			:format(material, meta:get_string("owner") or ""))
 end
 
-
 -- The amount of items offered per shape can be configured:
 function circular_saw.on_receive_fields(pos, formname, fields, sender)
 	local meta = minetest.get_meta(pos)
@@ -204,6 +203,13 @@ function circular_saw.on_receive_fields(pos, formname, fields, sender)
 		meta:set_string("max_offered",  max)
 		-- Update to show the correct number of items:
 		circular_saw:update_inventory(pos, 0)
+	end
+	if fields.itemlist then
+		local list = {}
+		for name, t in pairs(circular_saw.known_nodes) do
+			list[#list+1] = name
+		end
+		moreblocks.show_item_list(sender, 'Cuttable materials', list, pos)
 	end
 end
 
@@ -359,6 +365,7 @@ function circular_saw.on_construct(pos)
 		"list[current_name;recycle;1.5,2;1,1;]" ..
 		"field[0.3,3.5;1,1;max_offered;" ..S("Max").. ":;${max_offered}]" ..
 		"button[1,3.2;1,1;Set;" ..S("Set").. "]" ..
+		"button[0,4.2;2,1;itemlist;" ..S("Materials").. "]" ..
 		"list[current_name;output;2.8,0;8,6;]" ..
 		"list[current_player;main;1.5,6.25;8,4;]" ..
 		"listring[current_name;output]" ..
