@@ -19,7 +19,9 @@
 --[[ The item list dialog can only be displayed from within a node formspec.
 To open the item list dialog, add a do_file :
 
-local show_item_list = do_file('itemlist.lua')
+local show_item_list = dofile(
+	minetest.get_modpath(minetest.get_current_modname())..'/itemlist.lua')
+
 ...
 
 -- From your on_receive_field, call :
@@ -47,7 +49,9 @@ local modname = minetest.get_current_modname()
 local contexts = {}
 
 local function get_player_name(player)
-	if type(player) == 'string' then return player end
+	if type(player) == 'string' then
+		return player
+	end
 	if type(player) == 'userdata' and player.get_player_name then
 		return player:get_player_name()
 	end
@@ -56,38 +60,18 @@ end
 
 minetest.register_on_leaveplayer(function(player)
 	local playername = get_player_name(player)
-	if playername then contexts[playername] = nil end
+	if playername then
+		contexts[playername] = nil
+	end
 end)
 
-local function new_context(player, context)
-	local playername = get_player_name(player)
-	if playername then
-		contexts[playername] = context
-		contexts[playername].playername = playername
-		return contexts[playername]
-    end
-end
-
 local function get_context(player)
-	local playername = get_player_name(player)
-	if playername then
-		if contexts[playername] then
-			return contexts[playername]
-		else
-			minetest.log('warning', '['..modname..'] Context not found for player "'..playername..'"')
-		end
-	end
-end
-
-local function update_context(player, changes)
 	local playername = get_player_name(player)
 	if playername then
 		if not contexts[playername] then
 			contexts[playername] = { playername = playername }
 		end
-		for key, value in pairs(changes) do
-			contexts[playername][key] = value
-		end
+		return contexts[playername]
 	end
 end
 
@@ -101,8 +85,9 @@ local function show_node_formspec(player, pos)
 	local fs = meta:get_string('formspec')
 
 	-- Change context and currrent_name references to nodemeta references
-	fs = fs:gsub("current_name", "nodemeta:"..pos.x..","..pos.y..","..pos.z)
-	fs = fs:gsub("context", "nodemeta:"..pos.x..","..pos.y..","..pos.z)
+	local nodemeta = string.format("nodemeta:%i,%i,%i", pos.x, pos.y ,pos.z)
+	fs = fs:gsub("current_name", nodemeta)
+	fs = fs:gsub("context", nodemeta)
 
 	-- Change all ${} to their corresponding metadata values
 	local s, e
@@ -118,10 +103,12 @@ local function show_node_formspec(player, pos)
 	-- Find node on_receive_fields
 	local ndef = minetest.registered_nodes[minetest.get_node(pos).name]
 
+	local context = get_context(player)
+	context.node_pos = pos
+
 	if ndef and ndef.on_receive_fields then
-		update_context(player, { on_receive_fields = ndef.on_receive_fields } )
+		context.on_receive_fields = ndef.on_receive_fields
 	end
-	update_context(player, { node_pos = pos } )
 
 	-- Show formspec
 	minetest.show_formspec(playername, modname..':context_formspec', fs)
@@ -130,7 +117,9 @@ end
 minetest.register_on_player_receive_fields(function(player, formname, fields)
 	if formname == modname..':context_formspec' then
 		local context = get_context(player)
-		if context == nil then return end
+		if context == nil then
+			return
+		end
 
 		if context.on_receive_fields then
 			context.on_receive_fields(context.node_pos, '', fields, player)
@@ -156,9 +145,11 @@ local function item_list_prepare(item_list)
 	return list
 end
 
-local function show_fs(player)
+local function show_item_list_formspec(player)
 	local context = get_context(player)
-	if context == nil then return end
+	if context == nil then
+		return
+	end
 
 	local fs = 'size['..(style.colsize * style.cols)..','
 		..(style.linesize * style.lines + 1.3)..']'
@@ -194,23 +185,28 @@ local function show_fs(player)
 end
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)
-	if formname == modname..':item_list' then
-		local context = get_context(player)
-		if context == nil then return end
+	if formname ~= modname..':item_list' then
+		return
+	end
 
-		if fields.next then
-			context.page = context.page + 1
-			show_fs(context.playername)
-		end
-		if fields.prev then
-			context.page = context.page - 1
-			show_fs(context.playername)
-		end
-		if fields.quit == 'true' then
-			if context.node_pos then
-				-- Using after to avoid the "double close" bug
-				minetest.after(0, show_node_formspec, player, context.node_pos)
-			end
+	local context = get_context(player)
+	if context == nil then
+		return
+	end
+
+	if fields.next then
+		context.page = context.page + 1
+		show_item_list_formspec(context.playername)
+	end
+	if fields.prev then
+		context.page = context.page - 1
+		show_item_list_formspec(context.playername)
+	end
+	if fields.quit == 'true' then
+		if context.node_pos then
+			-- Using after to avoid the "double close" bug
+			minetest.after(0, show_node_formspec, get_player_name(player),
+				context.node_pos)
 		end
 	end
 end)
@@ -218,12 +214,12 @@ end)
 -- Only exposed function - Entry point
 
 local function show_item_list(player, title, item_list, pos_context)
-	new_context(player, {
-		items = item_list_prepare(item_list),
-		title = title,
-		node_pos = pos_context,
-		page = 1,})
-	show_fs(player)
+	local context = get_context(player)
+	context.items = item_list_prepare(item_list)
+	context.title = title
+	context.node_pos = pos_context
+	context.page = 1
+	show_item_list_formspec(player)
 end
 
 return show_item_list
