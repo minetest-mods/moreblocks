@@ -52,7 +52,7 @@ local function get_player_name(player)
 	if type(player) == 'string' then
 		return player
 	end
-	if type(player) == 'userdata' and player.get_player_name then
+	if minetest.is_player(player) then
 		return player:get_player_name()
 	end
 	minetest.log('warning',	'['..modname..'] get_player_name could not identify player.')
@@ -76,10 +76,8 @@ local function get_context(player)
 end
 
 -- Show node formspec functions
-
-local function show_node_formspec(player, pos)
+local function show_node_formspec(playername, pos)
 	local meta = minetest.get_meta(pos)
-	local playername = get_player_name(player)
 
 	-- Decontextualize formspec
 	local fs = meta:get_string('formspec')
@@ -103,7 +101,7 @@ local function show_node_formspec(player, pos)
 	-- Find node on_receive_fields
 	local ndef = minetest.registered_nodes[minetest.get_node(pos).name]
 
-	local context = get_context(player)
+	local context = get_context(playername)
 	context.node_pos = pos
 
 	if ndef and ndef.on_receive_fields then
