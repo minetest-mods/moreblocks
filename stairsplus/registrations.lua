@@ -112,6 +112,21 @@ if minetest.get_modpath("wool") then
 	end
 end
 
+-- basic_materials, keeping the original technic-oriented names
+-- for backwards compatibility
+
+if minetest.get_modpath("basic_materials") then
+	stairsplus:register_all("technic","concrete","basic_materials:concrete_block",{
+		description = "Concrete",
+		tiles = {"basic_materials_concrete_block.png",},
+		groups = {cracky=1, level=2, concrete=1},
+		sounds = default.node_sound_stone_defaults(),
+	})
+
+	minetest.register_alias("prefab:concrete_stair","technic:stair_concrete")
+	minetest.register_alias("prefab:concrete_slab","technic:slab_concrete")
+end
+
 -- Alias cuts of split_stone_tile_alt which was renamed checker_stone_tile.
 stairsplus:register_alias_all("moreblocks", "split_stone_tile_alt", "moreblocks", "checker_stone_tile")
 

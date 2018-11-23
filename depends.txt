@@ -3,3 +3,4 @@ intllib?
 stairs?
 farming?
 wool?
+basic_materials?
