@@ -112,7 +112,7 @@ if minetest.get_modpath("wool") then
 	end
 end
 
--- basic_materials, keeping the original technic-oriented names
+-- basic_materials, keeping the original other-mod-oriented names
 -- for backwards compatibility
 
 if minetest.get_modpath("basic_materials") then
@@ -132,6 +132,12 @@ if minetest.get_modpath("basic_materials") then
 		groups = {cracky=2, not_in_creative_inventory=1},
 		sounds = default.node_sound_stone_defaults(),
 		sunlight_propagates = true,
+	})
+
+	stairsplus:register_all("technic", "brass_block", "basic_materials:brass_block", {
+		description="Brass Block",
+		groups={cracky=1, not_in_creative_inventory=1},
+		tiles={"basic_materials_brass_block.png"},
 	})
 
 end
