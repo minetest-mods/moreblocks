@@ -1,21 +1,3 @@
---[[
-    show_item_list form for Minetest mods
-    (c) Pierre-Yves Rollo
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
---]]
-
 --[[ The item list dialog can only be displayed from within a node formspec.
 To open the item list dialog, add a do_file :
 
@@ -43,8 +25,6 @@ local style={
 }
 
 local modname = minetest.get_current_modname()
-
--- Context management functions (surely many improvements to do)
 
 local contexts = {}
 
@@ -149,19 +129,27 @@ local function show_item_list_formspec(player)
 		return
 	end
 
-	local fs = 'size['..(style.colsize * style.cols)..','
-		..(style.linesize * style.lines + 1.3)..']'
-		..default.gui_bg..default.gui_bg_img..default.gui_slots
-		..'label[1,0;'..context.title..']'
-		..'button_exit['..(style.colsize * style.cols - 2)..','
-		..(style.linesize * style.lines + 0.7)..';2,1;close;Close]'
+	local parts = {}
+	parts[#parts + 1] = string.format(
+		"size[%f,%f]%s%s%slabel[1,0;%s]button_exit[%f,%f;2,1;close;Close]",
+		(style.colsize * style.cols), (style.linesize * style.lines + 1.3),
+		default.gui_bg, default.gui_bg_img, default.gui_slots, context.title,
+		(style.colsize * style.cols - 2), (style.linesize * style.lines + 0.7))
 
-	if context.page > 1 then
-	 	fs = fs..'button['..(style.colsize * style.cols - 2)..',-0.2;1,1;prev;<]'
+	local nb_of_pages = get_nb_of_pages(context)
+	local right = style.colsize * style.cols
+
+	if nb_of_pages > 1 then
+		parts[#parts + 1] = string.format("label[%f,0;Page %d of %d]",
+			(right - 4), context.page, nb_of_pages)
 	end
 
-	if context.page < get_nb_of_pages(context) then
-		fs = fs..'button['..(style.colsize * style.cols - 1)..',-0.2;1,1;next;>]'
+	if context.page > 1 then
+		parts[#parts + 1] = string.format("button[%f,-0.2;1,1;prev;<]", (right - 2))
+	end
+
+	if context.page < nb_of_pages then
+		parts[#parts + 1] = string.format("button[%f,-0.2;1,1;next;>]", (right - 1))
 	end
 
 	local index = (style.lines * style.cols) * (context.page - 1)
@@ -170,16 +158,17 @@ local function show_item_list_formspec(player)
 		local x = (col - 1) * style.colsize
 		for line = 1, style.lines do
 			index = index + 1
-			local y = line * style.linesize - 0.2
+			local y = line * style.linesize
 			if context.items[index] then
-				fs = fs..'item_image['..x..','..y..';1,1;'
-				..context.items[index].name..']label['..(x+1)..','..(y+0.2)..';'
-				..(context.items[index].description or context.items[index].name)
-				..']'
+				parts[#parts + 1] = string.format(
+					"item_image[%f,%f;1,1;%s]label[%f,%f;%s]",
+					x, y - 0.2, context.items[index].name, x + 1, y,
+					(context.items[index].description or context.items[index].name))
 			end
 		end
 	end
-	minetest.show_formspec(context.playername, modname..':item_list', fs)
+	minetest.show_formspec(
+		context.playername, modname..':item_list', table.concat(parts))
 end
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)
@@ -192,11 +181,11 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 		return
 	end
 
-	if fields.next then
+	if fields.next and context.page < get_nb_of_pages(context) then
 		context.page = context.page + 1
 		show_item_list_formspec(context.playername)
 	end
-	if fields.prev then
+	if fields.prev and context.page > 1 then
 		context.page = context.page - 1
 		show_item_list_formspec(context.playername)
 	end
