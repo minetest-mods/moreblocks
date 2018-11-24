@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.2.0] - 2018-11-24
+
 ### Added
 
 - Stairs+ nodes for `basic_materials`'s concrete, cement and brass blocks.
@@ -56,5 +58,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Initial versioned release.
 
-[Unreleased]: https://github.com/minetest-mods/moreblocks/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/minetest-mods/moreblocks/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/minetest-mods/moreblocks/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/minetest-mods/moreblocks/compare/v1.0.0...v1.1.0
