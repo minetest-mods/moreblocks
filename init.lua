@@ -3,7 +3,7 @@
 ** More Blocks **
 By Calinou, with the help of ShadowNinja and VanessaE.
 
-Copyright (c) 2011-2017 Hugo Locurcio and contributors.
+Copyright (c) 2011-2018 Hugo Locurcio and contributors.
 Licensed under the zlib license. See LICENSE.md for more information.
 =====================================================================
 --]]
