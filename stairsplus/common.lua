@@ -10,11 +10,11 @@ local S = moreblocks.intllib
 
 stairsplus.register_single = function(category, alternate, info, modname, subname, recipeitem, fields)
 	local descriptions = {
-		["micro"] = "Microblock",
-		["slab"] = "Slab",
-		["slope"] = "Slope",
-		["panel"] = "Panel",
-		["stair"] = "Stairs",
+		["micro"] = S("Microblock"),
+		["slab"] = S("Slab"),
+		["slope"] = S("Slope"),
+		["panel"] = S("Panel"),
+		["stair"] = S("Stairs"),
 	}
 	local def = {}
 	if category ~= "slab" then
