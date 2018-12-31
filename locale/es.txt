@@ -1,52 +1,65 @@
-# Translation by kaeza
-
+###init.lua###
 [moreblocks] loaded. = [moreblocks] cargado.
 
-Jungle Wooden Planks = Tablones de madera de jungla
-Empty Bookshelf = Estante para libros vacío
-Clean Glass = Cristal Limpio
-Plankstone = Tablones de piedra
-Wooden Tile = Parquet
-Full Wooden Tile = Parquet Completo
-Centered Wooden Tile = Parquet Centrado
-Up Wooden Tile = Parquet Superior
-Down Wooden Tile = Parquet Inferior
-Left Wooden Tile = Parquet Izquierdo
-Right Wooden Tile = Parquet Derecho
-Circle Stone Bricks = Bloques de Piedra Circulares
-Stone Tile = Baldosa de Piedra
-Split Stone Tile = Baldosas de Piedra Partida
-Glow Glass = Cristal Brillante
-Super Glow Glass = Cristal Súper Brillante
-Coal Glass = Cristal con Carbón
-Iron Glass = Cristal con Hierro
-Coal Checker = Cuadros de Carbón
-Iron Checker = Cuadros de Hierro
-Trap Stone = Piedra Trampa
-Trap Glass = Cristal Trampa
-Coal Stone = Carbón y Piedra
-Iron Stone = Hierro y Piedra
-Cactus Checker = Cuadros de Cactus
-Cactus Brick = Ladrillos de Cactus
+###nodes.lua###
+Jungle Wood Fence = Valla de madera tropical 
+Empty Bookshelf = Librería vacía
+Clean Glass = Cristal límpido
+Plankstone = Piedra en planchas
+Wooden Tile = Caldosa de madera
+Full Wooden Tile = Parquet completo
+Centered Wooden Tile = Parquet centrado
+Up Wooden Tile = Parquet superior
+Down Wooden Tile = Parquet inferior
+Left Wooden Tile = Parquet izquierdo
+Right Wooden Tile = Parquet derecho
+Circle Stone Bricks = Ladrillo de piedra circulares
+Stone Tile = Baldosa de piedra
+Split Stone Tile = Baldosa de piedra partida
+Glow Glass = Cristal brillante
+Super Glow Glass = Cristal súper brillante
+Coal Glass = Cristal armado de carbón
+Iron Glass = Cristal armado de hierro
+Coal Checker = Mosaico de carbón
+Iron Checker = Mosaico de hierro
+Trap Stone = Trampa de piedra
+Trap Glass = Trampa de cristal
+Trap Glow Glass = Trampa de cristal brillante
+Trap Super Glow Glass = Trampa de cristal súper brillante
+Coal Stone = Piedra con carbón 
+Iron Stone = Piedra con hierro
+Coal Stone Bricks = Ladrillos de piedra con carbón
+Iron Stone Bricks = Ladrillos de piedra con hierro
+Cactus Checker = Mosaico de cactus
+Cactus Brick = Ladrillo de cactus
 Sweeper = Limpiador
-Jungle Stick = Varita de Madera de Jungla
-Horizontal Tree = Tronco de árbol horizontal
-Horizontal Jungle Tree = Tronco de árbol de la jungla horizontal
-Rope = Soga
-All-faces Tree = Tronco de Árbol
+Jungle Stick = Palo de madera tropical
+Rope = Cuerda
+All-faces Tree = madera
 
-%s Stairs = Escalera de %s
+###circular_saw.lua###
+Circular Saw = Sierra circular
+Circular saw, empty (owned by %s) = Sierra circular, vacía (propiedad de %s)
+Circular saw, working with %s (owned by %s) = Sierra circular, trabajando con %s (propiedad de %s)
+Circular saw, empty = Sierra circular, vacía
+Circular saw is empty (owned by %s) = La sierra circular está vacía (propiedad de %s)
+
+Input\nmaterial = Entrada de\nmaterial:
+Left-over = Remanente:
+Max = Máx.
+Set = Guardar
+Recycle\noutput = Salida de\nreciclaje:
+
+###ownership.lua###
+someone = alguien
+Sorry, %s owns that spot. = Lo siento, esto pertenece a %s.
+
+###./stairsplus/*###
+%s Stairs = Escaleras de %s
 %s Slab = Losa de %s
 %s Panel = Panel de %s
 %s Microblock = Microbloque de %s
-
-Wooden = Madera
-Papyrus = Papiro
-Dry Shrub = Arbusto Desértico
-Sapling = Brote de Árbol
-Wooden Planks = Tablones de Madera
-Ladder = Escalera de Mano
-Glass = Cristal
+%s Slope = Biselado de %s
 
 %s Pane = Panel de %s
 %s Fence = Valla de %s
