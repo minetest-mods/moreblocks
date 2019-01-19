@@ -1,11 +1,11 @@
 --[[
 More Blocks: Stairs+
 
-Copyright (c) 2011-2017 Hugo Locurcio and contributors.
+Copyright (c) 2011-2018 Hugo Locurcio and contributors.
 Licensed under the zlib license. See LICENSE.md for more information.
 --]]
 
--- Nodes will be called <modname>:{stair,slab,panel,micro}_<subname>
+-- Nodes will be called <modname>:{stair,slab,panel,micro,slope}_<subname>
 
 local modpath = minetest.get_modpath("moreblocks").. "/stairsplus"
 
@@ -19,22 +19,7 @@ and minetest.settings:get_bool("creative_mode") then
 	stairsplus.expect_infinite_stacks = true
 end
 
-function stairsplus.copytable(orig)
-	local orig_type = type(orig)
-	local copy
-	if orig_type == 'table' then
-		copy = {}
-		for orig_key, orig_value in next, orig, nil do
-			copy[stairsplus.copytable(orig_key)] = stairsplus.copytable(orig_value)
-		end
-		setmetatable(copy, stairsplus.copytable(getmetatable(orig)))
-	else
-		copy = orig
-	end
-	return copy
-end
-
-function stairsplus:prepare_groups(groups, disabled_in_inventory)
+function stairsplus:prepare_groups(groups)
 	local result = {}
 	if groups then
 		for k, v in pairs(groups) do
@@ -88,9 +73,13 @@ end
 
 -- dofile(modpath.. "/aliases.lua") -- Not needed as of Q2 2013, uncomment to fix old maps.
 -- dofile(modpath.. "/conversion.lua") -- Not needed as of Q2 2013, uncomment to fix old maps.
+dofile(modpath .. "/defs.lua")
+dofile(modpath .. "/recipes.lua")
+dofile(modpath .. "/common.lua")
 dofile(modpath .. "/stairs.lua")
 dofile(modpath .. "/slabs.lua")
 dofile(modpath .. "/slopes.lua")
 dofile(modpath .. "/panels.lua")
 dofile(modpath .. "/microblocks.lua")
+dofile(modpath .. "/custom.lua")
 dofile(modpath .. "/registrations.lua")

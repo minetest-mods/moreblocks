@@ -1,7 +1,7 @@
 --[[
 More Blocks: redefinitions of default stuff
 
-Copyright (c) 2011-2017 Hugo Locurcio and contributors.
+Copyright (c) 2011-2018 Hugo Locurcio and contributors.
 Licensed under the zlib license. See LICENSE.md for more information.
 --]]
 
@@ -25,6 +25,11 @@ minetest.register_craft({
 	}
 })
 
+minetest.clear_craft({
+	recipe = {
+		{"default:papyrus", "default:papyrus", "default:papyrus"}
+	}
+})
 minetest.register_craft({
 	output = "default:paper 4",
 	recipe = {
