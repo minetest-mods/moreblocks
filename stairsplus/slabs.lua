@@ -38,7 +38,7 @@ function stairsplus:register_slab(modname, subname, recipeitem, fields)
 	local defs = table.copy(stairsplus.defs["slab"])
 	local desc_base = S("%s Slab"):format(fields.description)
 	for alternate, shape in pairs(defs) do
-		stairsplus.register_single("slab", alternate, shape, modname, subname, recipeitem, fields)
+		stairsplus.register_single("slab", alternate, shape, modname, subname, recipeitem, fields, moreblocks.config.stairsplus_slabs_not_in_creative_inventory)
 	end
 
 	circular_saw.known_nodes[recipeitem] = {modname, subname}

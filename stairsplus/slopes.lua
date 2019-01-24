@@ -37,7 +37,7 @@ end
 function stairsplus:register_slope(modname, subname, recipeitem, fields)
 	local defs = table.copy(stairsplus.defs["slope"])
 	for alternate, def in pairs(defs) do
-		stairsplus.register_single("slope", alternate, def, modname, subname, recipeitem, fields)
+		stairsplus.register_single("slope", alternate, def, modname, subname, recipeitem, fields, moreblocks.config.stairsplus_slopes_not_in_creative_inventory)
 	end
 
 	circular_saw.known_nodes[recipeitem] = {modname, subname}

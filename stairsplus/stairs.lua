@@ -37,7 +37,7 @@ end
 function stairsplus:register_stair(modname, subname, recipeitem, fields)
 	local defs = table.copy(stairsplus.defs["stair"])
 	for alternate, def in pairs(defs) do
-		stairsplus.register_single("stair", alternate, def, modname, subname, recipeitem, fields)
+		stairsplus.register_single("stair", alternate, def, modname, subname, recipeitem, fields, moreblocks.config.stairsplus_stairs_not_in_creative_inventory)
 	end
 
 	circular_saw.known_nodes[recipeitem] = {modname, subname}

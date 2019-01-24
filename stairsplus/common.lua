@@ -8,7 +8,7 @@ Licensed under the zlib license. See LICENSE.md for more information.
 local S = moreblocks.intllib
 
 
-stairsplus.register_single = function(category, alternate, info, modname, subname, recipeitem, fields)
+stairsplus.register_single = function(category, alternate, info, modname, subname, recipeitem, fields, disabled_in_creative_inventory)
 	local descriptions = {
 		["micro"] = "Microblock",
 		["slab"] = "Slab",
@@ -49,7 +49,7 @@ stairsplus.register_single = function(category, alternate, info, modname, subnam
 			def.description = desc_base .. alternate:gsub("_", " "):gsub("(%a)(%S*)", function(a, b) return a:upper() .. b end)
 		end
 	end
-	def.groups = stairsplus:prepare_groups(fields.groups)
+	def.groups = stairsplus:prepare_groups(fields.groups, disabled_in_creative_inventory)
 	if category == "stair" and alternate == "" then
 		def.groups.stair = 1
 	end

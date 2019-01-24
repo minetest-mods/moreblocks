@@ -37,7 +37,7 @@ end
 function stairsplus:register_micro(modname, subname, recipeitem, fields)
 	local defs = table.copy(stairsplus.defs["micro"])
 	for alternate, def in pairs(defs) do
-		stairsplus.register_single("micro", alternate, def, modname, subname, recipeitem, fields)
+		stairsplus.register_single("micro", alternate, def, modname, subname, recipeitem, fields, moreblocks.config.stairsplus_microblocks_not_in_creative_inventory)
 	end
 
 	circular_saw.known_nodes[recipeitem] = {modname, subname}
