@@ -19,7 +19,7 @@ and minetest.settings:get_bool("creative_mode") then
 	stairsplus.expect_infinite_stacks = true
 end
 
-function stairsplus:prepare_groups(groups)
+function stairsplus:prepare_groups(groups, disabled_in_inventory)
 	local result = {}
 	if groups then
 		for k, v in pairs(groups) do
