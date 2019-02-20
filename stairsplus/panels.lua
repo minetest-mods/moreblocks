@@ -5,8 +5,6 @@ Copyright (c) 2011-2018 Hugo Locurcio and contributors.
 Licensed under the zlib license. See LICENSE.md for more information.
 --]]
 
-local S = moreblocks.intllib
-
 -- Node will be called <modname>:panel_<subname>
 
 function register_panel(modname, subname, recipeitem, groups, images, description, drop, light)

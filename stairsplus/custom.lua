@@ -5,8 +5,6 @@ Copyright (c) 2011-2018 Hugo Locurcio and contributors.
 Licensed under the zlib license. See LICENSE.md for more information.
 --]]
 
-local S = moreblocks.intllib
-
 --[[
 Subset table should have the following format: (You can remove entries as needed.)
 
@@ -75,22 +73,22 @@ function register_custom_subset(subset, modname, subname, recipeitem, groups, im
 end
 
 function stairsplus:register_custom_subset_alias(subset, modname_old, subname_old, modname_new, subname_new)
-	local subset = table.copy(subset)
-	for k, v in pairs(subset) do
+	local subset_copy = table.copy(subset)
+	for k, v in pairs(subset_copy) do
 		minetest.register_alias(modname_old .. ":" .. v[1] .. "_" .. subname_old .. v[2], modname_new .. ":" .. v[1] .. "_" .. subname_new .. v[2])
 	end
 end
 
 function stairsplus:register_custom_subset_alias_force(subset, modname_old, subname_old, modname_new, subname_new)
-	local subset = table.copy(subset)
-	for k, v in pairs(subset) do
+	local subset_copy = table.copy(subset)
+	for k, v in pairs(subset_copy) do
 		minetest.register_alias_force(modname_old .. ":" .. v[1] .. "_" .. subname_old .. v[2], modname_new .. ":" .. v[1] .. "_" .. subname_new .. v[2])
 	end
 end
 
 function stairsplus:register_custom_subset(subset, modname, subname, recipeitem, fields)
-	local subset = table.copy(subset)
-	for k, v in pairs(subset) do
+	local subset_copy = table.copy(subset)
+	for k, v in pairs(subset_copy) do
 		stairsplus.register_single(v[1], v[2], stairsplus.defs[v[1]][v[2]], modname, subname, recipeitem, fields)
 	end
 
