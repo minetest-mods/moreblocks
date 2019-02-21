@@ -56,7 +56,7 @@ Circular saw, working with %s (owned by %s) = Scie circulaire, manipule %s (prop
 Circular saw, empty = Scie circulaire, vide
 Circular saw is empty (owned by %s) = Scie circulaire est vide (propriété de %s)
 
-Input material = Entrée du matériel 
+Input material = Entrée du matériel
 Rest/microblocks = Reste/microbloc
 Max: = Max:
 Set = Fixer

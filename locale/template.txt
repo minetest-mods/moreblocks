@@ -1,64 +1,64 @@
 ###init.lua###
-[moreblocks] loaded. = 
+[moreblocks] loaded. =
 
 ###nodes.lua###
-Jungle Wood Fence = 
-Empty Bookshelf = 
-Clean Glass = 
-Plankstone = 
-Wooden Tile = 
-Full Wooden Tile = 
-Centered Wooden Tile = 
-Up Wooden Tile = 
-Down Wooden Tile = 
-Left Wooden Tile = 
-Right Wooden Tile = 
-Circle Stone Bricks = 
-Stone Tile = 
-Split Stone Tile = 
-Glow Glass = 
-Super Glow Glass = 
-Coal Glass = 
-Iron Glass = 
-Coal Checker = 
-Iron Checker = 
-Trap Stone = 
-Trap Glass = 
-Trap Glow Glass = 
-Trap Super Glow Glass = 
-Coal Stone = 
-Iron Stone = 
-Coal Stone Bricks = 
-Iron Stone Bricks = 
-Cactus Checker = 
-Cactus Brick = 
-Sweeper = 
-Jungle Stick = 
-Rope = 
-All-faces Tree = 
+Jungle Wood Fence =
+Empty Bookshelf =
+Clean Glass =
+Plankstone =
+Wooden Tile =
+Full Wooden Tile =
+Centered Wooden Tile =
+Up Wooden Tile =
+Down Wooden Tile =
+Left Wooden Tile =
+Right Wooden Tile =
+Circle Stone Bricks =
+Stone Tile =
+Split Stone Tile =
+Glow Glass =
+Super Glow Glass =
+Coal Glass =
+Iron Glass =
+Coal Checker =
+Iron Checker =
+Trap Stone =
+Trap Glass =
+Trap Glow Glass =
+Trap Super Glow Glass =
+Coal Stone =
+Iron Stone =
+Coal Stone Bricks =
+Iron Stone Bricks =
+Cactus Checker =
+Cactus Brick =
+Sweeper =
+Jungle Stick =
+Rope =
+All-faces Tree =
 
 ###circular_saw.lua###
-Circular Saw = 
-Circular saw, empty (owned by %s) = 
-Circular saw, working with %s (owned by %s) = 
-Circular saw, empty = 
-Circular saw is empty (owned by %s) = 
+Circular Saw =
+Circular saw, empty (owned by %s) =
+Circular saw, working with %s (owned by %s) =
+Circular saw, empty =
+Circular saw is empty (owned by %s) =
 
-Input\nmaterial = 
-Left-over = 
-Max = 
-Set = 
-Recycle\noutput = 
+Input\nmaterial =
+Left-over =
+Max =
+Set =
+Recycle\noutput =
 
 ###ownership.lua###
-someone = 
-Sorry, %s owns that spot. = 
+someone =
+Sorry, %s owns that spot. =
 
 ###./stairsplus/*###
-%s Stairs = 
-%s Slab = 
-%s Panel = 
-%s Microblock = 
+%s Stairs =
+%s Slab =
+%s Panel =
+%s Microblock =
 
-%s Pane = 
-%s Fence = 
+%s Pane =
+%s Fence =

@@ -15,15 +15,15 @@ Up Wooden Tile = Holzfliese oben
 Down Wooden Tile = Holzfliese unten
 Left Wooden Tile = Holzfliese links
 Right Wooden Tile = Holzfliese rechts
-Circle Stone Bricks = Kreissteinziegel 
+Circle Stone Bricks = Kreissteinziegel
 Stone Tile = Steinfliese
 Split Stone Tile = Geteilte Steinfliese
 Glow Glass = Leuchtglas
 Super Glow Glass = Superleuchtglas
 Coal Glass = Kohleglas
 Iron Glass = Eisenglas
-Coal Checker = Karierte Kohle 
-Iron Checker = Kariertes Eisen 
+Coal Checker = Karierte Kohle
+Iron Checker = Kariertes Eisen
 Trap Stone = Steinfalle
 Trap Glass = Glasfalle
 Trap Glow Glass = Leuchtglasfalle
@@ -64,4 +64,3 @@ Recycle\noutput = Wiederver-\nwerten
 ###ownership.lua###
 someone = jemand
 Sorry, %s owns that spot. = Tut mir leid, %s gehoert diese Stelle.
-
