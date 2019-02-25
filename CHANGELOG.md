@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 
 - Node rotation now works correctly when placing Stairs+ nodes.
+- Stairs+ glasslike nodes' textures are now easier to see.
 
 ## [1.2.0] - 2018-11-24
 
