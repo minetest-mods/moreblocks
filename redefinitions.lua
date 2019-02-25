@@ -1,7 +1,7 @@
 --[[
 More Blocks: redefinitions of default stuff
 
-Copyright (c) 2011-2018 Hugo Locurcio and contributors.
+Copyright © 2011-2019 Hugo Locurcio and contributors.
 Licensed under the zlib license. See LICENSE.md for more information.
 --]]
 

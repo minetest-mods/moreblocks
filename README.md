@@ -65,7 +65,7 @@ versions than 0.4.16 will generally not be fixed.
 
 ## License
 
-Copyright © 2011-2018 Hugo Locurcio and contributors
+Copyright © 2011-2019 Hugo Locurcio and contributors
 
 - More Blocks code is licensed under the zlib license, see
   [`LICENSE.md`](LICENSE.md) for details.
