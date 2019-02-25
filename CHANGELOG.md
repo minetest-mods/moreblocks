@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- Node rotation now works correctly when placing Stairs+ nodes.
+
 ## [1.2.0] - 2018-11-24
 
 ### Added

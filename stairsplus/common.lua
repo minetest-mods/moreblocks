@@ -30,6 +30,10 @@ stairsplus.register_single = function(category, alternate, info, modname, subnam
 	end
 	def.paramtype = "light"
 	def.paramtype2 = def.paramtype2 or "facedir"
+
+	-- This makes node rotation work on placement
+	def.place_param2 = nil
+
 	def.on_place = minetest.rotate_node
 	if category ~= "slab" then
 		def.description = S("%s " .. descriptions[category]):format(fields.description)
