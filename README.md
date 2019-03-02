@@ -12,15 +12,15 @@ world block sandbox game.
 To install More Blocks, clone this Git repository into your Minetest's `mods/`
 directory:
 
-```
+```bash
 git clone https://github.com/minetest-mods/moreblocks.git
 ```
 
 You can also
 [download a ZIP archive](https://github.com/minetest-mods/moreblocks/archive/master.zip)
-of More Blocks. If you do so, you will need to extract the archive, then rename
+of More Blocks. If you do so, you will need to extract the archive then rename
 the resulting folder from `moreblocks-master` to `moreblocks` – this is
-**absolutely** necessary to do, else, it won't work!
+**absolutely** required, as the mod won't work otherwise.
 
 ### Enable the mod
 
@@ -43,16 +43,17 @@ This is the easiest way to enable More Blocks when playing in singleplayer
 
 This is the recommended way to enable the mod on a server without using a GUI.
 
-1. Make sure Minetest is not currently running (else, it will overwrite
+1. Make sure Minetest is not currently running (otherwise, it will overwrite
    the changes when exiting).
 2. Open the world's `world.mt` file using a text editor.
 3. Add the following line at the end of the file:
 
-```
+```text
 load_mod_moreblocks = true
 ```
 
-If the line is already present in the file, then replace `false` with `true` on that line.
+If the line is already present in the file, then replace `false` with `true`
+on that line.
 
 4. Save the file, then start a game on the world you enabled More Blocks on.
 5. More Blocks should now be running on your world.
