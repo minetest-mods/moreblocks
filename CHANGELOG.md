@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- Update intllib support to avoid using deprecated functions.
+- Updated intllib support to avoid using deprecated functions.
 
 ### Fixed
 
@@ -36,12 +36,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- New craft for:
+- New crafting recipes for:
   - Stone Tile
   - Circle Stone Bricks
 - Stairs+:
-  - Move definitions to `stairsplus.defs` table in a separate file
-  - Move recipe definitions to `stairsplus.register_recipes` function in a separate file
+  - Moved definitions to `stairsplus.defs` table into a separate file.
+  - Moved recipe definitions to `stairsplus.register_recipes` function
+    into a separate file.
 
 ## [1.1.0] - 2017-10-04
 
@@ -61,7 +62,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   - Straw
   - Tin Block
   - Wool (all colors)
-- Other mods can now get a list of all the defined Stairs+ shapes
+- Other mods can now get a list of all the defined Stairs+ shapes.
 
 ## 1.0.0 - 2017-02-19
 
