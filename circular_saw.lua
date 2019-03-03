@@ -5,7 +5,7 @@ Copyright © 2011-2019 Hugo Locurcio, Sokomine and contributors.
 Licensed under the zlib license. See LICENSE.md for more information.
 --]]
 
-local S = moreblocks.intllib
+local S = moreblocks.S
 
 circular_saw = {}
 

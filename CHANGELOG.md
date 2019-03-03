@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- Update intllib support to avoid using deprecated functions.
+
 ### Fixed
 
 - Node rotation now works correctly when placing Stairs+ nodes.

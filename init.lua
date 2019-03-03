@@ -10,19 +10,11 @@ Licensed under the zlib license. See LICENSE.md for more information.
 
 moreblocks = {}
 
-local S
-if minetest.global_exists("intllib") then
-	if intllib.make_gettext_pair then
-		S = intllib.make_gettext_pair()
-	else
-		S = intllib.Getter()
-	end
-else
-	S = function(s) return s end
-end
-moreblocks.intllib = S
-
 local modpath = minetest.get_modpath("moreblocks")
+
+local S, NS = dofile(modpath .. "/intllib.lua")
+moreblocks.S = S
+moreblocks.NS = NS
 
 dofile(modpath .. "/config.lua")
 dofile(modpath .. "/circular_saw.lua")
