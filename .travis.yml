@@ -1,0 +1,15 @@
+language: generic
+
+addons:
+  apt:
+    packages:
+    - luarocks
+
+install:
+  - pyenv global 3.6.3
+  - pip3 install --user pre-commit
+  - luarocks install --local luacheck
+
+script:
+  - $HOME/.local/bin/pre-commit run --all-files
+  - $HOME/.luarocks/bin/luacheck .
