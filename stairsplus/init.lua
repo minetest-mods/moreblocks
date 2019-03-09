@@ -58,7 +58,8 @@ function stairsplus:register_alias_force_all(modname_old, subname_old, modname_n
 	self:register_micro_alias_force(modname_old, subname_old, modname_new, subname_new)
 end
 
-function register_stair_slab_panel_micro(modname, subname, recipeitem, groups, images, description, drop, light)
+-- luacheck: no unused
+local function register_stair_slab_panel_micro(modname, subname, recipeitem, groups, images, description, drop, light)
 	stairsplus:register_all(modname, subname, recipeitem, {
 		groups = groups,
 		tiles = images,

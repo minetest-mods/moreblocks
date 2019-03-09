@@ -61,7 +61,8 @@ local subset = {
 }
 --]]
 
-function register_custom_subset(subset, modname, subname, recipeitem, groups, images, description, drop, light)
+-- luacheck: no unused
+local function register_custom_subset(subset, modname, subname, recipeitem, groups, images, description, drop, light)
 	stairsplus:register_custom_subset(subset, modname, subname, recipeitem, {
 		groups = groups,
 		tiles = images,
