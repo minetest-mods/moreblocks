@@ -140,9 +140,7 @@ function circular_saw:reset(pos)
 	inv:set_list("output", {})
 
 	meta:set_int("anz", 0)
-	meta:set_string("infotext",
-		S("Circular Saw is empty") .. owned_by
-	)
+	meta:set_string("infotext", S("Circular Saw is empty") .. owned_by)
 end
 
 
@@ -452,9 +450,7 @@ minetest.register_node("moreblocks:circular_saw",  {
 		end
 
 		meta:set_string("owner",  owner)
-		meta:set_string("infotext",
-			S("Circular Saw is empty") . owned_by
-		)
+		meta:set_string("infotext", S("Circular Saw is empty") .. owned_by)
 	end,
 
 	-- The amount of items offered per shape can be configured:
