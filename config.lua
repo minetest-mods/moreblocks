@@ -26,4 +26,4 @@ local function setting(settingtype, name, default)
 end
 
 -- Show stairs/slabs/panels/microblocks in creative inventory (true or false):
-setting("bool", "stairsplus_in_creative_inventory", false)
+setting("bool", "stairsplus_in_creative_inventory", true)

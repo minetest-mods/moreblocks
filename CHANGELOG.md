@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- Stairs+ are now displayed in the creative inventory by default.
 - Updated intllib support to avoid using deprecated functions.
 
 ### Fixed
