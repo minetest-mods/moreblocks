@@ -60,9 +60,9 @@ on that line.
 
 ## Version compatibility
 
-More Blocks is currently primarily tested with Minetest 0.4.16.
+More Blocks is currently primarily tested with Minetest 0.4.17.
 It may or may not work with newer or older versions. Issues arising in older
-versions than 0.4.16 will generally not be fixed.
+versions than 0.4.17 will generally not be fixed.
 
 ## License
 
