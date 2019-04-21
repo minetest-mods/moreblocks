@@ -6,7 +6,7 @@
 	This also registers the node with the circular saw.
 	Example:
 	```lua
-	stairsplus:register_all("moreblocks", "wood", "defaut:wood", {
+	stairsplus:register_all("moreblocks", "wood", "default:wood", {
 		description = "Wooden",
 		tiles = {"default_wood.png"},
 		groups = {oddly_breakabe_by_hand=1},

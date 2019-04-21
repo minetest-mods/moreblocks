@@ -152,7 +152,7 @@ function circular_saw:update_inventory(pos, amount)
 
 	amount = meta:get_int("anz") + amount
 
-	-- The material is recycled automaticly.
+	-- The material is recycled automatically.
 	inv:set_list("recycle",  {})
 
 	if amount < 1 then -- If the last block is taken out.
@@ -246,7 +246,7 @@ function circular_saw.allow_metadata_inventory_put(
 	local stackname = stack:get_name()
 	local count = stack:get_count()
 
-	-- Only alow those items that are offered in the output inventory to be recycled:
+	-- Only allow those items that are offered in the output inventory to be recycled:
 	if listname == "recycle" then
 		if not inv:contains_item("output", stackname) then
 			return 0
@@ -345,7 +345,7 @@ function circular_saw.on_metadata_inventory_take(
 	end
 
 	-- If it is one of the offered stairs: find out how many
-	-- microblocks have to be substracted:
+	-- microblocks have to be subtracted:
 	if listname == "output" then
 		-- We do know how much each block at each position costs:
 		local cost = circular_saw.cost_in_microblocks[index]
