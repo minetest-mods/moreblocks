@@ -14,8 +14,10 @@ stairsplus.expect_infinite_stacks = false
 
 stairsplus.shapes_list = {}
 
-if not minetest.get_modpath("unified_inventory")
-and minetest.settings:get_bool("creative_mode") then
+if
+	not minetest.get_modpath("unified_inventory")
+	and minetest.settings:get_bool("creative_mode")
+then
 	stairsplus.expect_infinite_stacks = true
 end
 
@@ -36,7 +38,7 @@ end
 
 function stairsplus:register_all(modname, subname, recipeitem, fields)
 	self:register_stair(modname, subname, recipeitem, fields)
-	self:register_slab (modname, subname, recipeitem, fields)
+	self:register_slab(modname, subname, recipeitem, fields)
 	self:register_slope(modname, subname, recipeitem, fields)
 	self:register_panel(modname, subname, recipeitem, fields)
 	self:register_micro(modname, subname, recipeitem, fields)
