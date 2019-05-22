@@ -14,9 +14,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- The minimum supported Minetest version is now 5.0.0.
 - Stairs+ nodes now emit one light level less compared to full nodes to make up
   for their smaller visual size.
-- The minimum supported Minetest version is now 5.0.0.
 
 ### Fixed
 
