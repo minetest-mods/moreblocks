@@ -18,6 +18,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   for their smaller visual size.
 - The minimum supported Minetest version is now 5.0.0.
 
+### Fixed
+
+- Fixed a recipe conflict that made Centered Wooden Tiles impossible to craft.
+
 ## [1.3.0] - 2019-03-23
 
 ### Changed

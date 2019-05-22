@@ -36,19 +36,21 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "moreblocks:wood_tile_center 9",
-	recipe = {
-		{"group:wood", "group:wood", "group:wood"},
-		{"group:wood", "moreblocks:wood_tile", "group:wood"},
-		{"group:wood", "group:wood", "group:wood"},
-	}
-})
-
-minetest.register_craft({
 	output = "moreblocks:wood_tile 9",
 	recipe = {
 		{"group:wood", "group:wood", "group:wood"},
 		{"group:wood", "group:wood", "group:wood"},
+		{"group:wood", "group:wood", "group:wood"},
+	}
+})
+
+-- This must be registered after `moreblocks:wood_tile` to avoid recipe conflicts,
+-- since `moreblocks:wood_tile` is part of `group:wood`
+minetest.register_craft({
+	output = "moreblocks:wood_tile_center 9",
+	recipe = {
+		{"group:wood", "group:wood", "group:wood"},
+		{"group:wood", "moreblocks:wood_tile", "group:wood"},
 		{"group:wood", "group:wood", "group:wood"},
 	}
 })
