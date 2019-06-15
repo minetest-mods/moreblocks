@@ -286,4 +286,4 @@ msgstr "%s Panel"
 #: stairsplus/common.lua
 #, lua-format
 msgid "%s Stairs"
-msgstr "% Schody"
+msgstr "%s Schody"
