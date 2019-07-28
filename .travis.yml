@@ -1,15 +1,15 @@
-language: generic
+dist: bionic
+language: python
 
-addons:
-  apt:
-    packages:
-    - luarocks
+python:
+  - 3.7.1
 
 install:
-  - pyenv global 3.6.3
-  - pip3 install --user pre-commit
+  - sudo apt-get update -qq
+  - sudo apt-get install -qqq luarocks
+  - pip3 install pre-commit
   - luarocks install --local luacheck
 
 script:
-  - $HOME/.local/bin/pre-commit run --all-files
+  - pre-commit run --all-files
   - $HOME/.luarocks/bin/luacheck .
