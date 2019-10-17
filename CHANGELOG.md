@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- Stairs+ nodes for ice.
 - `settingtypes.txt` file to allow configuring settings in the main menu.
 - Polish translation.
 
