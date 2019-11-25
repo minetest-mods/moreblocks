@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.0.0] - 2019-11-25
+
 ### Added
 
 - Stairs+ nodes for ice.
@@ -88,7 +90,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Initial versioned release.
 
-[Unreleased]: https://github.com/minetest-mods/moreblocks/compare/v1.3.0...HEAD
+[Unreleased]: https://github.com/minetest-mods/moreblocks/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/minetest-mods/moreblocks/compare/v1.3.0...v2.0.0
 [1.3.0]: https://github.com/minetest-mods/moreblocks/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/minetest-mods/moreblocks/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/minetest-mods/moreblocks/compare/v1.0.0...v1.1.0

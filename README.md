@@ -60,7 +60,7 @@ on that line.
 
 ## Version compatibility
 
-More Blocks is currently primarily tested with Minetest 5.0.1.
+More Blocks is currently primarily tested with Minetest 5.1.0.
 It may or may not work with newer or older versions. Issues arising in older
 versions than 5.0.0 will generally not be fixed.
 
