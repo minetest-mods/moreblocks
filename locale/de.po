@@ -133,6 +133,10 @@ msgid "Compressed Cobblestone"
 msgstr "Gepresster Kopfsteinpflaster"
 
 #: nodes.lua
+msgid "Compressed Desert Cobblestone"
+msgstr ""
+
+#: nodes.lua
 msgid "Compressed Dirt"
 msgstr "Gepresste Erde"
 

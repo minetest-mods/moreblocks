@@ -175,6 +175,12 @@ local nodes = {
 		is_ground_content = false,
 		sounds = sound_stone,
 	},
+	["desert_cobble_compressed"] = {
+		description = S("Compressed Desert Cobblestone"),
+		groups = {cracky = 1},
+		is_ground_content = false,
+		sounds = sound_stone,
+	},
 	["plankstone"] = {
 		description = S("Plankstone"),
 		paramtype2 = "facedir",
