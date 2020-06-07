@@ -128,6 +128,10 @@ msgid "Compressed Cobblestone"
 msgstr ""
 
 #: nodes.lua
+msgid "Compressed Desert Cobblestone"
+msgstr ""
+
+#: nodes.lua
 msgid "Compressed Dirt"
 msgstr ""
 

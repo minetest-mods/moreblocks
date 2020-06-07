@@ -513,6 +513,22 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = "moreblocks:desert_cobble_compressed",
+	recipe = {
+		{"default:desert_cobble", "default:desert_cobble", "default:desert_cobble"},
+		{"default:desert_cobble", "default:desert_cobble", "default:desert_cobble"},
+		{"default:desert_cobble", "default:desert_cobble", "default:desert_cobble"},
+	}
+})
+
+minetest.register_craft({
+	output = "default:desert_cobble 9",
+	recipe = {
+		{"moreblocks:desert_cobble_compressed"},
+	}
+})
+
+minetest.register_craft({
 	type = "cooking", output = "moreblocks:tar", recipe = "default:pine_tree",
 })
 
