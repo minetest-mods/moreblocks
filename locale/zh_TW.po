@@ -1,0 +1,288 @@
+# Template translation for More Blocks.
+# Copyright © 2011-2020 Hugo Locurcio and contributors
+# This file is distributed under the same license as the More Blocks package.
+# IFRFSX <IFRFSX@protonmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: More Blocks\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-13 12:37+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: CodeXP <codexp@gmx.net>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: circular_saw.lua
+msgid "Circular Saw"
+msgstr "圓鋸"
+
+#: circular_saw.lua
+msgid ""
+"Input\n"
+"material"
+msgstr ""
+"輸入\n"
+"材料"
+
+#: circular_saw.lua
+msgid "Left-over"
+msgstr "剩餘材料"
+
+#: circular_saw.lua
+msgid "Max"
+msgstr "最大值"
+
+#: circular_saw.lua
+msgid ""
+"Recycle\n"
+"output"
+msgstr ""
+"回收\n"
+"輸出物"
+
+#: circular_saw.lua
+msgid "Set"
+msgstr "設置"
+
+#: circular_saw.lua
+msgid "owned by @1"
+msgstr "屬於@1所有"
+
+#: circular_saw.lua
+msgid "Circular Saw is empty"
+msgstr "圓鋸是空的"
+
+#: circular_saw.lua
+msgid "Circular Saw is working on @1"
+msgstr "圓鋸正在加工@1"
+
+#: init.lua
+msgid "[moreblocks] loaded."
+msgstr "[moreblocks] 已加載"
+
+#: nodes.lua
+msgid "Deprecated"
+msgstr "棄用"
+
+#: nodes.lua
+msgid "All-faces Acacia Tree"
+msgstr "全切面相思樹木方塊"
+
+#: nodes.lua
+msgid "All-faces Aspen Tree"
+msgstr "全切面白楊樹木方塊"
+
+#: nodes.lua
+msgid "All-faces Jungle Tree"
+msgstr "全切面叢林樹木方塊"
+
+#: nodes.lua
+msgid "All-faces Pine Tree"
+msgstr "全切面松樹木方塊"
+
+#: nodes.lua
+msgid "All-faces Tree"
+msgstr "全切面樹木方塊"
+
+#: nodes.lua
+msgid "Cactus Brick"
+msgstr "仙人掌磚"
+
+#: nodes.lua
+msgid "Cactus Checker"
+msgstr "仙人掌棋盤方塊"
+
+#: nodes.lua
+msgid "Centered Wooden Tile"
+msgstr "居中的木瓦"
+
+#: nodes.lua
+msgid "Checker Stone Tile"
+msgstr "棋盤石瓦"
+
+#: nodes.lua
+msgid "Circle Stone Bricks"
+msgstr "圓石磚"
+
+#: nodes.lua
+msgid "Clean Glass"
+msgstr "乾淨的玻璃"
+
+#: nodes.lua
+msgid "Coal Checker"
+msgstr "棋盤煤塊"
+
+#: nodes.lua
+msgid "Coal Glass"
+msgstr "煤玻璃"
+
+#: nodes.lua
+msgid "Coal Stone"
+msgstr "煤炭石"
+
+#: nodes.lua
+msgid "Coal Stone Bricks"
+msgstr "煤炭石磚"
+
+#: nodes.lua
+msgid "Compressed Cobblestone"
+msgstr "壓縮圓石"
+
+#: nodes.lua
+msgid "Compressed Dirt"
+msgstr "壓縮土"
+
+#: nodes.lua
+msgid "Copper Patina Block"
+msgstr "銅綠方塊"
+
+#: nodes.lua
+msgid "Empty Shelf"
+msgstr "空書架"
+
+#: nodes.lua
+msgid "Full Wooden Tile"
+msgstr "全木瓦"
+
+#: nodes.lua
+msgid "Glow Glass"
+msgstr "發光玻璃"
+
+#: nodes.lua
+msgid "Iron Checker"
+msgstr "棋盤鐵方塊"
+
+#: nodes.lua
+msgid "Iron Glass"
+msgstr "鐵玻璃"
+
+#: nodes.lua
+msgid "Iron Stone"
+msgstr "鐵石"
+
+#: nodes.lua
+msgid "Iron Stone Bricks"
+msgstr "鐵石磚"
+
+#: nodes.lua
+msgid "Plankstone"
+msgstr "板石"
+
+#: nodes.lua
+msgid "Rope"
+msgstr "繩子"
+
+#: nodes.lua
+msgid "Split Stone Tile"
+msgstr "裂石磚"
+
+#: nodes.lua
+msgid "Stone Bricks"
+msgstr "石磚"
+
+#: nodes.lua
+msgid "Stone Tile"
+msgstr "石瓦"
+
+#: nodes.lua
+msgid "Super Glow Glass"
+msgstr "超級發光玻璃"
+
+#: nodes.lua
+msgid "Sweeper"
+msgstr "清掃器"
+
+#: nodes.lua
+msgid "Tar"
+msgstr "焦油"
+
+#: nodes.lua
+msgid "Trap Desert Stone"
+msgstr "陷阱沙漠石"
+
+#: nodes.lua
+msgid "Trap Glass"
+msgstr "陷阱玻璃"
+
+#: nodes.lua
+msgid "Trap Glow Glass"
+msgstr "陷阱發光玻璃"
+
+#: nodes.lua
+msgid "Trap Obsidian"
+msgstr "陷阱黑耀石"
+
+#: nodes.lua
+msgid "Trap Obsidian Glass"
+msgstr "陷阱黑耀石玻璃"
+
+#: nodes.lua
+msgid "Trap Sandstone"
+msgstr "陷阱沙石"
+
+#: nodes.lua
+msgid "Trap Stone"
+msgstr "陷阱石"
+
+#: nodes.lua
+msgid "Trap Super Glow Glass"
+msgstr "陷阱超級發光玻璃"
+
+#: nodes.lua
+msgid "Wooden Tile"
+msgstr "木瓦"
+
+#: nodes.lua
+msgid "Offset Wooden Tile"
+msgstr "膠合木瓦"
+
+# @deprecated
+#: nodes.lua
+msgid "Downwards Wooden Tile"
+msgstr "向下的木瓦"
+
+# @deprecated
+#: nodes.lua
+msgid "Leftwards Wooden Tile"
+msgstr "向左的木瓦"
+
+# @deprecated
+#: nodes.lua
+msgid "Rightwards Wooden Tile"
+msgstr "向右的木瓦"
+
+#: ownership.lua
+msgid "Sorry, @1 owns that spot."
+msgstr "抱歉，那個位置是@1的。"
+
+#: ownership.lua
+msgid "someone"
+msgstr "某人"
+
+#: stairsplus/common.lua
+#, lua-format
+msgid "%s Microblock"
+msgstr "%s 小方塊"
+
+#: stairsplus/common.lua stairsplus/slabs.lua
+#, lua-format
+msgid "%s Slab"
+msgstr "%s 臺階"
+
+#: stairsplus/common.lua
+#, lua-format
+msgid "%s Slope"
+msgstr "%s 斜坡"
+
+#: stairsplus/common.lua
+#, lua-format
+msgid "%s Panel"
+msgstr "%s 嵌板"
+
+#: stairsplus/common.lua
+#, lua-format
+msgid "%s Stairs"
+msgstr "%s 樓梯"
