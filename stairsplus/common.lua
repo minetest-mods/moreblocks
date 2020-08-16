@@ -16,6 +16,7 @@ local descriptions = {
 }
 
 stairsplus.register_single = function(category, alternate, info, modname, subname, recipeitem, fields)
+	local src_def = minetest.registered_nodes[recipeitem] or {}
 	local desc_base = descriptions[category]:format(fields.description)
 	local def = {}
 
@@ -31,6 +32,9 @@ stairsplus.register_single = function(category, alternate, info, modname, subnam
 	def.drawtype = "nodebox"
 	def.paramtype = "light"
 	def.paramtype2 = def.paramtype2 or "facedir"
+	if def.use_texture_alpha == nil then
+		def.use_texture_alpha = src_def.use_texture_alpha
+	end
 
 	-- This makes node rotation work on placement
 	def.place_param2 = nil
