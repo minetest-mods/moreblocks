@@ -1,4 +1,4 @@
-# More Blocks
+# More Blocks [![Build status](https://github.com/minetest-mods/moreblocks/workflows/build/badge.svg)](https://github.com/minetest-mods/moreblocks/actions)
 
 More Blocks for [Minetest](https://www.minetest.net/), a free and open source infinite
 world block sandbox game.
