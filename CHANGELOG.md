@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Legacy Stairs+ conversion code.
   - It was only required to import worlds last edited before Q3 2013.
+- Removed Travis CI.
+
+### Changed
+
+- Switch to GitHub Actions.
+  - Benefits include faster responses.
 
 ### Added
 
