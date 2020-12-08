@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- Revised placing strategy that takes into account which side of the face
+  (top/bottom for horizontal, left/right for vertical placement) is being clicked.
+  Aux (sprint/special, default E) key can be used to place the node with the orientation
+  it would have if placed from the other side.
+  When placing nodes next to nodes of the same gategory (e.g.slab to slab) the other
+  node's orientation is copied, flipping it placing on top or below an upright or
+  upside-down node. In this case the aux key will disable the special processing of
+  same-category nodes.
+
 ### Removed
 
 - Legacy Stairs+ conversion code.
