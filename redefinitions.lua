@@ -16,15 +16,6 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craft({
-	output = "default:ladder 4",
-	recipe = {
-		{"default:stick", "", "default:stick"},
-		{"default:stick", "default:stick", "default:stick"},
-		{"default:stick", "", "default:stick"},
-	}
-})
-
 minetest.clear_craft({
 	recipe = {
 		{"default:papyrus", "default:papyrus", "default:papyrus"}
