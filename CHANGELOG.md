@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- Clean Glass versions of Trap and (Super) Glowing Glass.
+- Compressed desert cobblestone.
+
+### Changed
+
 - Revised placing strategy that takes into account which side of the face
   (top/bottom for horizontal, left/right for vertical placement) is being clicked.
   Aux (sprint/special, default E) key can be used to place the node with the orientation
@@ -22,15 +27,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Legacy Stairs+ conversion code.
   - It was only required to import worlds last edited before Q3 2013.
-
-### Changed
-
-- Switch to GitHub Actions.
-  - Benefits include faster responses.
-
-### Added
-
-- Compressed desert cobblestone.
 
 ## [2.0.0] - 2019-11-25
 
