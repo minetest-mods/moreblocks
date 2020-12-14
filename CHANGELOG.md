@@ -23,6 +23,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   upside-down node. In this case the aux key will disable the special processing of
   same-category nodes.
 
+### Fixed
+
+- Revised minetest_game crafting recipe overrides to match Minetest 5.0.0 and later.
+
 ### Removed
 
 - Legacy Stairs+ conversion code.
