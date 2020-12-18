@@ -30,16 +30,25 @@ local wall_right_dirmap = {9, 18, 7, 12}
 local wall_left_dirmap = {11, 16, 5, 14}
 local ceil_dirmap = {20, 23, 22, 21}
 
+-- extract the stairsplus category from a node name
+-- assumes the name is in the form mod_name:category_original_ndoe_name
+local function name_to_category(name)
+	local colon = name:find(":") or 0
+	colon = colon + 1
+	local under = name:find("_", colon)
+	return name:sub(colon, under)
+end
+
 stairsplus.rotate_node_aux = function(itemstack, placer, pointed_thing)
 	local sneak = placer and placer:get_player_control().sneak
 	local aux = placer and placer:get_player_control().aux1
 
-	-- namestring for what we are placing, up to the first _ (exclusive)
-	local item_prefix = itemstack:get_name():gsub("_.*$", "")
-	-- namestring for what we are placing against
+	-- category for what we are placing
+	local item_prefix = name_to_category(itemstack:get_name())
+	-- category for what we are placing against
 	local under = pointed_thing.under
 	local under_node = minetest.get_node(under)
-	local under_prefix = under_node and under_node.name:gsub("_.*$", "")
+	local under_prefix = under_node and name_to_category(under_node.name)
 
 	local same_cat = item_prefix == under_prefix
 
