@@ -51,7 +51,10 @@ stairsplus.rotate_node_aux = function(itemstack, placer, pointed_thing)
 	-- and in general for sneak placement
 	local face_pos = minetest.pointed_thing_to_face_pos(placer, pointed_thing)
 	local face_off = vector.subtract(face_pos, under)
-	local wallmounted = minetest.dir_to_wallmounted(face_off)
+
+	-- we cannot trust face_off to tell us the correct directionif the
+	-- under node has a non-standard shape, so use the distance between under and above
+	local wallmounted = minetest.dir_to_wallmounted(vector.subtract(pointed_thing.above, under))
 
 	if same_cat and not aux then
 		p2 = under_node.param2
