@@ -106,9 +106,6 @@ if minetest.get_modpath("wool") then
 		local ndef = table.copy(minetest.registered_nodes[nodename])
 		ndef.sunlight_propagates = true
 
-		-- Prevent dye+cut wool recipy from creating a full wool block.
-		ndef.groups.wool = nil
-
 		stairsplus:register_all(mod, name, nodename, ndef)
 	end
 end
