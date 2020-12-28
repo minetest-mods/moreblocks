@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
+- [Fixed strange placement behavior for non-default Stairs+ nodes.](https://github.com/minetest-mods/moreblocks/pull/168)
 - [Fixed stairs placement over oddly-shaped nodes.](https://github.com/minetest-mods/moreblocks/pull/166)
 
 ## [2.1.0] - 2020-12-14
