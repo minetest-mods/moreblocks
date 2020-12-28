@@ -75,15 +75,7 @@ end
 increase_craft_production_table({
 	{ function(n) return n:match('^default:sign_wall') end, function(old) return old + 1 end },
 	{ function(n) return n == 'default:paper' end, function(old) return old*4 end },
-})
-
-minetest.register_craft({
-	output = "default:rail 24",
-	recipe = {
-		{"default:steel_ingot", "", "default:steel_ingot"},
-		{"default:steel_ingot", "default:stick", "default:steel_ingot"},
-		{"default:steel_ingot", "", "default:steel_ingot"},
-	}
+	{ function(n) return n:match('^carts:.*rail$') or n:match('^default:.*rail$') end, function(old) return old + old/2 end },
 })
 
 minetest.register_craft({
