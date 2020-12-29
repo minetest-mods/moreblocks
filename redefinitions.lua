@@ -5,6 +5,8 @@ Copyright © 2011-2020 Hugo Locurcio and contributors.
 Licensed under the zlib license. See LICENSE.md for more information.
 --]]
 
+local modname = minetest.get_current_modname()
+
 -- Redefine some of the default crafting recipes to be more productive
 
 -- Auxiliary function: take a recipe as returned by get_all_craft_recipes
@@ -39,14 +41,13 @@ local change_recipe_amount = function(product, recipe, func)
 	redo.output = ("%s %d"):format(product, newamount)
 	minetest.register_craft(redo)
 
-	minetest.log(("moreblocks recipe for %s production: %d => %d"):format(product, oldamount, newamount))
+	minetest.log("action", ("[MOD]%s: recipe for %s production: %d => %d"):format(modname, product, oldamount, newamount))
 end
 
 local increase_craft_production = function(product, func)
 	local recipes = minetest.get_all_craft_recipes(product)
 	for _, r in pairs(recipes) do
 		if r.type == "normal" or r.method == "normal" then
-			minetest.log(dump(r))
 			change_recipe_amount(product, r, func)
 		end
 	end

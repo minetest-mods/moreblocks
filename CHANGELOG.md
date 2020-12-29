@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- Refactor recipe override mechanism to avoid re-coding recipes
+  when we only want to change the amount produced.
+- Realign rail recipe to the changes made in Minetest Game. All rail recipes
+  (standard, power, break) are boosted by 50%.
+
 ### Fixed
 
 - [Fixed strange placement behavior for non-default Stairs+ nodes.](https://github.com/minetest-mods/moreblocks/pull/168)
