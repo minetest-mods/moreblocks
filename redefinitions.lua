@@ -72,41 +72,9 @@ local increase_craft_production_table = function(map_table)
 	end
 end
 
--- Signs: +1
-minetest.clear_craft({
-	recipe = {
-		{'default:steel_ingot', 'default:steel_ingot', 'default:steel_ingot'},
-		{'default:steel_ingot', 'default:steel_ingot', 'default:steel_ingot'},
-		{'', 'group:stick', ''},
-	}
+increase_craft_production_table({
+	{ function(n) return n:match('^default:sign_wall') end, function(old) return old + 1 end },
 })
-
-minetest.clear_craft({
-	recipe = {
-		{'group:wood', 'group:wood', 'group:wood'},
-		{'group:wood', 'group:wood', 'group:wood'},
-		{'', 'group:stick', ''},
-	}
-})
-
-minetest.register_craft({
-	output = 'default:sign_wall_steel 4',
-	recipe = {
-		{'default:steel_ingot', 'default:steel_ingot', 'default:steel_ingot'},
-		{'default:steel_ingot', 'default:steel_ingot', 'default:steel_ingot'},
-		{'', 'group:stick', ''},
-	}
-})
-
-minetest.register_craft({
-	output = 'default:sign_wall_wood 4',
-	recipe = {
-		{'group:wood', 'group:wood', 'group:wood'},
-		{'group:wood', 'group:wood', 'group:wood'},
-		{'', 'group:stick', ''},
-	}
-})
-
 
 minetest.clear_craft({
 	recipe = {
