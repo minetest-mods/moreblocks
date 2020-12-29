@@ -74,20 +74,8 @@ end
 
 increase_craft_production_table({
 	{ function(n) return n:match('^default:sign_wall') end, function(old) return old + 1 end },
+	{ function(n) return n == 'default:paper' end, function(old) return old*4 end },
 })
-
-minetest.clear_craft({
-	recipe = {
-		{"default:papyrus", "default:papyrus", "default:papyrus"}
-	}
-})
-minetest.register_craft({
-	output = "default:paper 4",
-	recipe = {
-		{"default:papyrus", "default:papyrus", "default:papyrus"},
-	}
-})
-
 
 minetest.register_craft({
 	output = "default:rail 24",
