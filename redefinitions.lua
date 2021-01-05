@@ -17,9 +17,10 @@ local reconstruct_internal_craft = function(recipe)
 		{ "", "", "" },
 		{ "", "", "" },
 	}
+	local width = recipe.width
 	for idx, item in pairs(recipe.items) do
-		local row = math.ceil(idx / recipe.width)
-		local col = idx - (row-1)*recipe.width
+		local row = math.ceil(idx / width)
+		local col = idx - (row-1)*width
 		recp[row][col] = item
 	end
 	return recp
@@ -27,7 +28,11 @@ end
 
 -- Change the amount produced by recipe by apply func to the old amount
 local change_recipe_amount = function(product, recipe, func)
-	local recp = reconstruct_internal_craft(recipe)
+	-- if width == 0, this is a shapeless recipe, for which the
+	-- internal and Lua API recipe table is the same.
+	-- Otherwise we need to reconstruct the table for the shaped recipe.
+	local shapeless = (recipe.width == 0)
+	local recp = shapeless and recipe.items or reconstruct_internal_craft(recipe)
 
 	local oldamount = tonumber(recipe.output:match(" [0-9]+$") or "1")
 
@@ -35,6 +40,10 @@ local change_recipe_amount = function(product, recipe, func)
 
 	-- remove old crafting recipe
 	local redo = { recipe = recp }
+	-- preserve shapelessness
+	if shapeless then
+		redo.type = "shapeless"
+	end
 	minetest.clear_craft(redo)
 
 	-- new output
