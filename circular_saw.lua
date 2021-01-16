@@ -339,7 +339,7 @@ function circular_saw.on_metadata_inventory_take(
 
 		-- Prevent arbitrary item duplication.
 		inv:remove_item(listname, input_stack)
-		
+
 		if player_inv:room_for_item("main", input_stack) then
 			player_inv:add_item("main", input_stack)
 		end
