@@ -89,8 +89,9 @@ circular_saw.names = {
 }
 
 function circular_saw:get_cost(inv, stackname)
+	local name = minetest.registered_aliases[stackname] or stackname
 	for i, item in pairs(inv:get_list("output")) do
-		if item:get_name() == stackname then
+		if item:get_name() == name then
 			return circular_saw.cost_in_microblocks[i]
 		end
 	end
