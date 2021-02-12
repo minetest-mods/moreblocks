@@ -15,7 +15,7 @@ local default_nodes = { -- Default stairs/slabs/panels/microblocks:
 	"brick",
 	"bronzeblock",
 	"cave_ice",
-	"clay",
+	--"clay",
 	"coalblock",
 	"cobble",
 	"copperblock",
@@ -40,12 +40,12 @@ local default_nodes = { -- Default stairs/slabs/panels/microblocks:
 	--"dirt_with_grass",
 	--"dirt_with_rainforest_litter",
 	--"dirt_with_snow",
-	"dirt",
+	--"dirt",
 	--"dry_dirt_with_dry_grass",
-	"dry_dirt",
+	--"dry_dirt",
 	"glass",
 	"goldblock",
-	"gravel",
+	--"gravel",
 	"ice",
 	"jungletree",
 	"junglewood",
@@ -57,29 +57,29 @@ local default_nodes = { -- Default stairs/slabs/panels/microblocks:
 	"obsidian",
 	"obsidianbrick",
 	--"permafrost_with_moss",
-	"permafrost_with_stones",
-	"permafrost",
+	--"permafrost_with_stones",
+	--"permafrost",
 	"pine_bush_needles",
 	"pine_tree",
 	"pine_wood",
-	"sand",
+	--"sand",
 	"sandstone_block",
 	"sandstone",
 	"sandstonebrick",
-	"silver_sand",
+	--"silver_sand",
 	"silver_sandstone_block",
 	"silver_sandstone_brick",
 	"silver_sandstone",
 	"snowblock",
 	"steelblock",
 	"stone_block",
-	"stone_with_coal",
-	"stone_with_copper",
-	"stone_with_diamond",
-	"stone_with_gold",
-	"stone_with_iron",
-	"stone_with_mese",
-	"stone_with_tin",
+	--"stone_with_coal",
+	--"stone_with_copper",
+	--"stone_with_diamond",
+	--"stone_with_gold",
+	--"stone_with_iron",
+	--"stone_with_mese",
+	--"stone_with_tin",
 	"stone",
 	"stonebrick",
 	"tinblock",
@@ -102,11 +102,6 @@ for _, name in pairs(default_nodes) do
 	if #ndef.tiles > 1 and ndef.drawtype and ndef.drawtype:find("glass") then
 		ndef.tiles = {ndef.tiles[1]}
 		ndef.paramtype2 = nil
-	end
-
-	-- Microblock variants of falling nodes should not fall
-	if ndef.groups and ndef.groups["falling_node"] then
-		ndef.groups["falling_node"] = 0
 	end
 
 	mod = "moreblocks"
