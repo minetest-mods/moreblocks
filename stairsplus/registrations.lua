@@ -34,14 +34,14 @@ local default_nodes = { -- Default stairs/slabs/panels/microblocks:
 	"desert_stone",
 	"desert_stonebrick",
 	"diamondblock",
-	"dirt_with_coniferous_litter",
-	"dirt_with_dry_grass",
-	"dirt_with_grass_footsteps",
-	"dirt_with_grass",
-	"dirt_with_rainforest_litter",
-	"dirt_with_snow",
+	--"dirt_with_coniferous_litter",
+	--"dirt_with_dry_grass",
+	--"dirt_with_grass_footsteps",
+	--"dirt_with_grass",
+	--"dirt_with_rainforest_litter",
+	--"dirt_with_snow",
 	"dirt",
-	"dry_dirt_with_dry_grass",
+	--"dry_dirt_with_dry_grass",
 	"dry_dirt",
 	"glass",
 	"goldblock",
@@ -56,7 +56,7 @@ local default_nodes = { -- Default stairs/slabs/panels/microblocks:
 	"obsidian_glass",
 	"obsidian",
 	"obsidianbrick",
-	"permafrost_with_moss",
+	--"permafrost_with_moss",
 	"permafrost_with_stones",
 	"permafrost",
 	"pine_bush_needles",
@@ -102,6 +102,11 @@ for _, name in pairs(default_nodes) do
 	if #ndef.tiles > 1 and ndef.drawtype and ndef.drawtype:find("glass") then
 		ndef.tiles = {ndef.tiles[1]}
 		ndef.paramtype2 = nil
+	end
+
+	-- Microblock variants of falling nodes should not fall
+	if ndef.groups and ndef.groups["falling_node"] then
+		ndef.groups["falling_node"] = 0
 	end
 
 	mod = "moreblocks"
