@@ -16,6 +16,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
+- [Shapeless crafting recipes are now handled in redefinitions.](https://github.com/minetest-mods/moreblocks/pull/171)
+- [Aliases are now resolved in Stairs+ circular saw cost calculation.](https://github.com/minetest-mods/moreblocks/pull/175)
 - [Fixed strange placement behavior for non-default Stairs+ nodes.](https://github.com/minetest-mods/moreblocks/pull/168)
 - [Fixed stairs placement over oddly-shaped nodes.](https://github.com/minetest-mods/moreblocks/pull/166)
 
