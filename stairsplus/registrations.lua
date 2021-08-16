@@ -6,75 +6,77 @@ Licensed under the zlib license. See LICENSE.md for more information.
 --]]
 
 -- default registrations
-local default_nodes = { -- Default stairs/slabs/panels/microblocks:
-	"stone",
-	"stone_block",
-	"cobble",
-	"mossycobble",
-	"brick",
-	"sandstone",
-	"steelblock",
-	"goldblock",
-	"copperblock",
-	"bronzeblock",
-	"diamondblock",
-	"tinblock",
-	"desert_stone",
-	"desert_stone_block",
-	"desert_cobble",
-	"meselamp",
-	"glass",
-	"tree",
-	"wood",
-	"jungletree",
-	"junglewood",
-	"pine_tree",
-	"pine_wood",
-	"acacia_tree",
-	"acacia_wood",
-	"aspen_tree",
-	"aspen_wood",
-	"obsidian",
-	"obsidian_block",
-	"obsidianbrick",
-	"obsidian_glass",
-	"stonebrick",
-	"desert_stonebrick",
-	"sandstonebrick",
-	"silver_sandstone",
-	"silver_sandstone_brick",
-	"silver_sandstone_block",
-	"desert_sandstone",
-	"desert_sandstone_brick",
-	"desert_sandstone_block",
-	"sandstone_block",
-	"coral_skeleton",
-	"ice",
-}
+if minetest.get_modpath("default") then
+	local default_nodes = { -- Default stairs/slabs/panels/microblocks:
+		"stone",
+		"stone_block",
+		"cobble",
+		"mossycobble",
+		"brick",
+		"sandstone",
+		"steelblock",
+		"goldblock",
+		"copperblock",
+		"bronzeblock",
+		"diamondblock",
+		"tinblock",
+		"desert_stone",
+		"desert_stone_block",
+		"desert_cobble",
+		"meselamp",
+		"glass",
+		"tree",
+		"wood",
+		"jungletree",
+		"junglewood",
+		"pine_tree",
+		"pine_wood",
+		"acacia_tree",
+		"acacia_wood",
+		"aspen_tree",
+		"aspen_wood",
+		"obsidian",
+		"obsidian_block",
+		"obsidianbrick",
+		"obsidian_glass",
+		"stonebrick",
+		"desert_stonebrick",
+		"sandstonebrick",
+		"silver_sandstone",
+		"silver_sandstone_brick",
+		"silver_sandstone_block",
+		"desert_sandstone",
+		"desert_sandstone_brick",
+		"desert_sandstone_block",
+		"sandstone_block",
+		"coral_skeleton",
+		"ice",
+	}
 
-for _, name in pairs(default_nodes) do
-	local mod = "default"
-	local nodename = mod .. ":" .. name
-	local ndef = table.copy(minetest.registered_nodes[nodename])
-	ndef.sunlight_propagates = true
+	for _, name in pairs(default_nodes) do
+		local mod = "default"
+		local nodename = mod .. ":" .. name
+		local ndef = table.copy(minetest.registered_nodes[nodename])
+		ndef.sunlight_propagates = true
 
-	-- Stone and desert_stone drop cobble and desert_cobble respectively.
-	if type(ndef.drop) == "string" then
-		ndef.drop = ndef.drop:gsub(".+:", "")
+		-- Stone and desert_stone drop cobble and desert_cobble respectively.
+		if type(ndef.drop) == "string" then
+			ndef.drop = ndef.drop:gsub(".+:", "")
+		end
+
+		-- Use the primary tile for all sides of cut glasslike nodes and disregard paramtype2.
+		if #ndef.tiles > 1 and ndef.drawtype and ndef.drawtype:find("glass") then
+			ndef.tiles = {ndef.tiles[1]}
+			ndef.paramtype2 = nil
+		end
+
+		mod = "moreblocks"
+		stairsplus:register_all(mod, name, nodename, ndef)
+		minetest.register_alias_force("stairs:stair_" .. name, mod .. ":stair_" .. name)
+		minetest.register_alias_force("stairs:stair_outer_" .. name, mod .. ":stair_" .. name .. "_outer")
+		minetest.register_alias_force("stairs:stair_inner_" .. name, mod .. ":stair_" .. name .. "_inner")
+		minetest.register_alias_force("stairs:slab_"  .. name, mod .. ":slab_"  .. name)
 	end
-
-	-- Use the primary tile for all sides of cut glasslike nodes and disregard paramtype2.
-	if #ndef.tiles > 1 and ndef.drawtype and ndef.drawtype:find("glass") then
-		ndef.tiles = {ndef.tiles[1]}
-		ndef.paramtype2 = nil
-	end
-
-	mod = "moreblocks"
-	stairsplus:register_all(mod, name, nodename, ndef)
-	minetest.register_alias_force("stairs:stair_" .. name, mod .. ":stair_" .. name)
-	minetest.register_alias_force("stairs:stair_outer_" .. name, mod .. ":stair_" .. name .. "_outer")
-	minetest.register_alias_force("stairs:stair_inner_" .. name, mod .. ":stair_" .. name .. "_inner")
-	minetest.register_alias_force("stairs:slab_"  .. name, mod .. ":slab_"  .. name)
 end
 
 -- farming registrations
@@ -118,7 +120,7 @@ if minetest.get_modpath("basic_materials") then
 		description = "Concrete",
 		tiles = {"basic_materials_concrete_block.png",},
 		groups = {cracky=1, level=2, concrete=1},
-		sounds = default.node_sound_stone_defaults(),
+		sounds = moreblocks.node_sound_stone_defaults(),
 	})
 
 	minetest.register_alias("prefab:concrete_stair","technic:stair_concrete")
@@ -128,7 +130,7 @@ if minetest.get_modpath("basic_materials") then
 		description = "Cement",
 		tiles = {"basic_materials_cement_block.png"},
 		groups = {cracky=2, not_in_creative_inventory=1},
-		sounds = default.node_sound_stone_defaults(),
+		sounds = moreblocks.node_sound_stone_defaults(),
 		sunlight_propagates = true,
 	})
 
