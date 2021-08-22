@@ -1,48 +1,20 @@
 --[[
 More Blocks: sound definitions
 
-Copyright © 2011-2020 Hugo Locurcio and contributors.
+Copyright © 2011-2021 Hugo Locurcio and contributors.
 Licensed under the zlib license. See LICENSE.md for more information.
 --]]
 
-function moreblocks.node_sound_wood_defaults()
-    if minetest.get_modpath("default") then
-        -- default game
-        return default.node_sound_wood_defaults()
-    end
-end
-
-function moreblocks.node_sound_glass_defaults()
-    if minetest.get_modpath("default") then
-        -- default game
-        return default.node_sound_glass_defaults()
-    end
-end
-
-function moreblocks.node_sound_metal_defaults()
-    if minetest.get_modpath("default") then
-        -- default game
-        return default.node_sound_metal_defaults()
-    end
-end
-
-function moreblocks.node_sound_stone_defaults()
-    if minetest.get_modpath("default") then
-        -- default game
-        return default.node_sound_stone_defaults()
-    end
-end
-
-function moreblocks.node_sound_dirt_defaults()
-    if minetest.get_modpath("default") then
-        -- default game
-        return default.node_sound_dirt_defaults()
-    end
-end
-
-function moreblocks.node_sound_leaves_defaults()
-    if minetest.get_modpath("default") then
-        -- default game
-        return default.node_sound_leaves_defaults()
+local has_default_mod = minetest.get_modpath("default")
+for _, sound in ipairs({"dirt", "wood", "stone", "metal", "glass", "leaves"}) do
+    -- use sound-function from default if available
+    -- otherwise fall back to a no-op function (no sounds)
+    local sound_function_name = "node_sound_" .. sound .. "_defaults"
+    if has_default_mod then
+        -- use default sounds
+        moreblocks[sound_function_name] = default[sound_function_name]
+    else
+        -- no-op
+        moreblocks[sound_function_name] = function() end
     end
 end
