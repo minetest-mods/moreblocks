@@ -363,9 +363,15 @@ function circular_saw.on_metadata_inventory_take(
 	-- The recycle field plays no role here since it is processed immediately.
 end
 
+local has_default_mod = minetest.get_modpath("default")
+
 function circular_saw.on_construct(pos)
 	local meta = minetest.get_meta(pos)
-	local fancy_inv = default.gui_bg..default.gui_bg_img..default.gui_slots
+	local fancy_inv = ""
+	if has_default_mod then
+		-- prepend background and slot styles from default if available
+		fancy_inv = default.gui_bg..default.gui_bg_img..default.gui_slots
+	end
 	meta:set_string(
 		"formspec", "size[11,10]"..fancy_inv..
 		"label[0,0;" ..F(S("Input\nmaterial")).. "]" ..
@@ -437,7 +443,7 @@ minetest.register_node("moreblocks:circular_saw",  {
 	sunlight_propagates = true,
 	paramtype2 = "facedir",
 	groups = {choppy = 2,oddly_breakable_by_hand = 2},
-	sounds = default.node_sound_wood_defaults(),
+	sounds = moreblocks.node_sound_wood_defaults(),
 	on_construct = circular_saw.on_construct,
 	can_dig = circular_saw.can_dig,
 	-- Set the owner of this circular saw.

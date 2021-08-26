@@ -10,7 +10,7 @@
 		description = "Wooden",
 		tiles = {"default_wood.png"},
 		groups = {oddly_breakabe_by_hand=1},
-		sounds = default.node_sound_wood_defaults(),
+		sounds = moreblocks.node_sound_wood_defaults(),
 	})
 	```
 The following register only a particular type of microblock.
