@@ -337,6 +337,10 @@ function circular_saw.on_metadata_inventory_take(
 	local input_stack = inv:get_stack(listname,  index)
 	if not input_stack:is_empty() and input_stack:get_name()~=stack:get_name() then
 		local player_inv = player:get_inventory()
+
+		-- Prevent arbitrary item duplication.
+		inv:remove_item(listname, input_stack)
+
 		if player_inv:room_for_item("main", input_stack) then
 			player_inv:add_item("main", input_stack)
 		end
