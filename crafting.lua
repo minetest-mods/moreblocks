@@ -554,7 +554,7 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "moreblocks:cactuschecker 4",
+	output = "moreblocks:cactus_checker 4",
 	recipe = {
 		{"default:stone", "default:cactus"},
 		{"default:cactus", "default:stone"},
