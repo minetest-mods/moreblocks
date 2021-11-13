@@ -15,7 +15,7 @@ local function register_slab(modname, subname, recipeitem, groups, images, descr
 		description = description,
 		drop = drop,
 		light_source = light,
-		sounds = default.node_sound_stone_defaults(),
+		sounds = moreblocks.node_sound_stone_defaults(),
 	})
 end
 

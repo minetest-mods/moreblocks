@@ -88,8 +88,9 @@ circular_saw.names = {
 }
 
 function circular_saw:get_cost(inv, stackname)
+	local name = minetest.registered_aliases[stackname] or stackname
 	for i, item in pairs(inv:get_list("output")) do
-		if item:get_name() == stackname then
+		if item:get_name() == name then
 			return circular_saw.cost_in_microblocks[i]
 		end
 	end
@@ -335,6 +336,10 @@ function circular_saw.on_metadata_inventory_take(
 	local input_stack = inv:get_stack(listname,  index)
 	if not input_stack:is_empty() and input_stack:get_name()~=stack:get_name() then
 		local player_inv = player:get_inventory()
+
+		-- Prevent arbitrary item duplication.
+		inv:remove_item(listname, input_stack)
+
 		if player_inv:room_for_item("main", input_stack) then
 			player_inv:add_item("main", input_stack)
 		end
@@ -361,9 +366,15 @@ function circular_saw.on_metadata_inventory_take(
 	-- The recycle field plays no role here since it is processed immediately.
 end
 
+local has_default_mod = minetest.get_modpath("default")
+
 function circular_saw.on_construct(pos)
 	local meta = minetest.get_meta(pos)
-	local fancy_inv = default.gui_bg..default.gui_bg_img..default.gui_slots
+	local fancy_inv = ""
+	if has_default_mod then
+		-- prepend background and slot styles from default if available
+		fancy_inv = default.gui_bg..default.gui_bg_img..default.gui_slots
+	end
 	meta:set_string(
 		--FIXME Not work with @n in this part bug in minetest/minetest#7450.
 		"formspec", "size[11,10]"..fancy_inv..
@@ -436,7 +447,7 @@ minetest.register_node("moreblocks:circular_saw",  {
 	sunlight_propagates = true,
 	paramtype2 = "facedir",
 	groups = {choppy = 2,oddly_breakable_by_hand = 2},
-	sounds = default.node_sound_wood_defaults(),
+	sounds = moreblocks.node_sound_wood_defaults(),
 	on_construct = circular_saw.on_construct,
 	can_dig = circular_saw.can_dig,
 	-- Set the owner of this circular saw.

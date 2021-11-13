@@ -7,6 +7,44 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.2.0] - 2021-06-28
+
+### Changed
+
+- Refactored recipe override mechanism to avoid re-coding recipes
+  when we only want to change the amount produced.
+- [Realigned rail recipe to the changes made in Minetest Game.](https://github.com/minetest-mods/moreblocks/pull/169)
+  - All rail recipes (standard, power, break) were boosted by 50%.
+
+### Fixed
+
+- [Shapeless crafting recipes are now handled in redefinitions.](https://github.com/minetest-mods/moreblocks/pull/171)
+- [Aliases are now resolved in Stairs+ circular saw cost calculation.](https://github.com/minetest-mods/moreblocks/pull/175)
+- [Fixed strange placement behavior for non-default Stairs+ nodes.](https://github.com/minetest-mods/moreblocks/pull/168)
+- [Fixed stairs placement over oddly-shaped nodes.](https://github.com/minetest-mods/moreblocks/pull/166)
+
+## [2.1.0] - 2020-12-14
+
+### Added
+
+- Clean Glass versions of Trap and (Super) Glowing Glass.
+- Compressed desert cobblestone.
+
+### Changed
+
+- Revised placing strategy that takes into account which side of the face
+  (top/bottom for horizontal, left/right for vertical placement) is being clicked.
+  Aux (sprint/special, default E) key can be used to place the node with the orientation
+  it would have if placed from the other side.
+  When placing nodes next to nodes of the same gategory (e.g.slab to slab) the other
+  node's orientation is copied, flipping it placing on top or below an upright or
+  upside-down node. In this case the aux key will disable the special processing of
+  same-category nodes.
+
+### Fixed
+
+- Revised minetest_game crafting recipe overrides to match Minetest 5.0.0 and later.
+
 ### Removed
 
 - Legacy Stairs+ conversion code.
@@ -95,7 +133,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Initial versioned release.
 
-[Unreleased]: https://github.com/minetest-mods/moreblocks/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/minetest-mods/moreblocks/compare/v2.2.0...HEAD
+[2.2.0]: https://github.com/minetest-mods/moreblocks/compare/v2.1.0...v2.2.0
+[2.1.0]: https://github.com/minetest-mods/moreblocks/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/minetest-mods/moreblocks/compare/v1.3.0...v2.0.0
 [1.3.0]: https://github.com/minetest-mods/moreblocks/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/minetest-mods/moreblocks/compare/v1.1.0...v1.2.0

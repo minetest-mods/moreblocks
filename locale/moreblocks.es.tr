@@ -18,7 +18,6 @@ Set=Establecer
 owned by @1=protegido por @1
 Circular Saw is empty=La sierra circular está vacia
 Circular Saw is working on @1=Sierra circular trabajando en @1
-#WARNING: mod @1 tried to add node @2 to the circular saw manually.=ADVERTENCIA: el mod @1 intentó agregar el nodo @2 a la sierra circular.
 
 #: nodes.lua
 
@@ -36,9 +35,15 @@ Circle Stone Bricks=Bloques de Piedra Circulares
 Clean Glass=Cristal Limpio
 Coal Checker=Cuadros de Carbón
 Coal Glass=Cristal con Carbón
+Clean Super Glow Glass=Cristal Súper Brillante Limpio
+Trap Clean Super Glow Glass=Cristal Súper Brillante Limpio Falso
+Trap Clean Glass=Cristal Limpio Falso
+Clean Glow Glass=Cristal Brillante Limpio
+Trap Clean Glow Glass=Cristal Brillante Limpio Falso
 Coal Stone=Carbón y Piedra
 Coal Stone Bricks=Ladrillos de Piedra de Carbon
-Compressed Cobblestone=Adoquin Comprimido
+Compressed Cobblestone=Adoquín Comprimido
+Compressed Desert Cobblestone=Adoquín del Desierto Comprimido
 Compressed Dirt=Tierra Comprimida
 Copper Patina Block=Bloque de Pátina de Cobre
 Empty Shelf=Estante vacio
@@ -84,9 +89,8 @@ someone=alguien
 @1 Panel=Panel de @1
 @1 Stairs=Escalera de @1
 
-#: registrations.lua
+#: stairsplus/registrations.lua
 
 Concrete=Concreto
 Cement=Cemento
 Brass Block=Bloque de latón
-#LBM replaced @1 at @2=LBM (Modificador de Bloque al Cargar) reemplazo @1 en @2

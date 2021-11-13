@@ -11,7 +11,6 @@ Set=
 owned by @1=
 Circular Saw is empty=
 Circular Saw is working on @1=
-#WARNING: mod @1 tried to add node @2 to the circular saw manually.=
 
 #: nodes.lua
 
@@ -29,9 +28,15 @@ Circle Stone Bricks=
 Clean Glass=
 Coal Checker=
 Coal Glass=
+Clean Super Glow Glass=
+Trap Clean Super Glow Glass=
+Trap Clean Glass=
+Clean Glow Glass=
+Trap Clean Glow Glass=
 Coal Stone=
 Coal Stone Bricks=
 Compressed Cobblestone=
+Compressed Desert Cobblestone=
 Compressed Dirt=
 Copper Patina Block=
 Empty Shelf=
@@ -77,9 +82,8 @@ someone=
 @1 Panel=
 @1 Stairs=
 
-#: registrations.lua
+#: stairsplus/registrations.lua
 
 Concrete=
 Cement=
 Brass Block=
-#LBM replaced @1 at @2=

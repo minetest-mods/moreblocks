@@ -1,4 +1,4 @@
-# More Blocks
+# More Blocks [![Build status](https://github.com/minetest-mods/moreblocks/workflows/build/badge.svg)](https://github.com/minetest-mods/moreblocks/actions)
 
 More Blocks for [Minetest](https://www.minetest.net/), a free and open source infinite
 world block sandbox game.
@@ -58,7 +58,7 @@ on that line.
 
 ## Version compatibility
 
-More Blocks is currently primarily tested with Minetest 5.1.0.
+More Blocks is currently primarily tested with Minetest 5.3.0.
 It may or may not work with newer or older versions. Issues arising in older
 versions than 5.0.0 will generally not be fixed.
 

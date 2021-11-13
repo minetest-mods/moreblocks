@@ -25,7 +25,7 @@ function stairsplus:prepare_groups(groups)
 	local result = {}
 	if groups then
 		for k, v in pairs(groups) do
-			if k ~= "wood" and k ~= "stone" then
+			if k ~= "wood" and k ~= "stone" and k ~= "wool" and k ~= "tree" then
 				result[k] = v
 			end
 		end

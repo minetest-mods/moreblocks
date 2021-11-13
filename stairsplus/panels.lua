@@ -15,7 +15,7 @@ local function register_panel(modname, subname, recipeitem, groups, images, desc
 		description = description,
 		drop = drop,
 		light_source = light,
-		sounds = default.node_sound_stone_defaults(),
+		sounds = moreblocks.node_sound_stone_defaults(),
 	})
 end
 
