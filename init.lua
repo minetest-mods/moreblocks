@@ -12,9 +12,7 @@ moreblocks = {}
 
 local modpath = minetest.get_modpath("moreblocks")
 
-local S, NS = dofile(modpath .. "/intllib.lua")
-moreblocks.S = S
-moreblocks.NS = NS
+moreblocks.S = minetest.get_translator("moreblocks")
 
 dofile(modpath .. "/config.lua")
 dofile(modpath .. "/circular_saw.lua")
