@@ -25,7 +25,6 @@ stds.minetest = {
 }
 
 read_globals = {
-	"intllib",
 	"protector",
 	"isprotect",
 	"IsPlayerNodeOwner",

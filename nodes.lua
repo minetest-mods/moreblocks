@@ -36,7 +36,7 @@ local function wood_tile_replace(itemstack, placer, pointed_thing)
 	return itemstack
 end
 
-local deprecated = (" (%s)"):format(S('Deprecated'))
+local deprecated = (" ("..S('Deprecated')..")")
 local nodes = {
 	["wood_tile"] = {
 		description = S("Wooden Tile"),
