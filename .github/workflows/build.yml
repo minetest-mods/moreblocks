@@ -18,7 +18,12 @@ jobs:
       - name: Install LuaCheck
         run: luarocks install --local luacheck
 
-      - name: Run LuaCheck using pre-commit
+      - name: Run LuaCheck using pre-commit on moreblocks
         run: |
           pre-commit run --all-files
-          $HOME/.luarocks/bin/luacheck .
+          $HOME/.luarocks/bin/luacheck ./moreblocks
+
+      - name: Run LuaCheck using pre-commit on stairsplus
+        run: |
+          pre-commit run --all-files
+          $HOME/.luarocks/bin/luacheck ./stairsplus
