@@ -1,0 +1,47 @@
+--[[
+=====================================================================
+** More Blocks **
+By Calinou, with the help of ShadowNinja and VanessaE.
+
+Copyright © 2011-2020 Hugo Locurcio and contributors.
+Licensed under the zlib license. See LICENSE.md for more information.
+=====================================================================
+--]]
+local modname = minetest.get_current_modname()
+local modpath = minetest.get_modpath(modname)
+local S = minetest.get_translator(modname)
+
+moreblocks = {
+	version = {3, 0, 0},
+	fork = "minetest_mods",
+
+	modname = modname,
+	modpath = modpath,
+
+	S = S,
+
+	has = {
+		bucket = minetest.get_modpath("bucket"),
+		default = minetest.get_modpath("default"),
+		stairsplus = minetest.get_modpath("stairsplus"),
+		vessels = minetest.get_modpath("vessels"),
+	},
+
+	log = function(level, messagefmt, ...)
+		return minetest.log(level, ("[%s] %s"):format(modname, messagefmt:format(...)))
+	end,
+
+	dofile = function(...)
+		return dofile(table.concat({modpath, ...}, DIR_DELIM) .. ".lua")
+	end,
+}
+
+moreblocks.dofile("settings")
+moreblocks.dofile("resources", "init")
+moreblocks.dofile("api", "init")
+
+moreblocks.dofile("items")
+moreblocks.dofile("nodes")
+moreblocks.dofile("redefinitions") -- FLUX TODO what is this doing and why
+moreblocks.dofile("crafting")
+moreblocks.dofile("aliases")

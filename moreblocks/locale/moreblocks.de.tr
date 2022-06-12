@@ -1,0 +1,49 @@
+# textdomain: moreblocks
+
+# German translation for More Blocks.
+# Copyright © 2011-2020 Hugo Locurcio and contributors
+# This file is distributed under the same license as the More Blocks package.
+# Xanthin, 2014.
+# CodeXP <codexp@gmx.net>, 2018.
+
+#: init.lua
+
+[moreblocks] loaded.=[moreblocks] geladen.
+
+#: nodes.lua
+
+All-faces @1=allseitiger @1
+Cactus Brick=Kaktusziegel
+Cactus Checker=Kaktus-Mosaik
+Centered Wooden Tile=Holzfliese mittig
+Checker Stone Tile=Stein-Mosaik
+Circle Stone Bricks=Kreissteinziegel
+Clean Glass=Klares Glas
+Coal Checker=Kohlen-Mosaik
+Coal Glass=Kohleglas
+Clean Super Glow Glass=
+Trap @1=@1falle
+Clean Glow Glass=
+Coal Stone=Kohlestein
+Coal Stone Bricks=Kohlesteinziegel
+Compressed Cobblestone=Gepresster Kopfsteinpflaster
+Compressed Desert Cobblestone=
+Compressed Dirt=Gepresste Erde
+Copper Patina Block=Kupfer Edelrostblock
+Empty Shelf=Leeres Regal
+Full Wooden Tile=Vollholzfliese
+Glow Glass=Leuchtglas
+Iron Checker=Metall-Mosaik
+Iron Glass=metallisiertes Glas
+Iron Stone=Eisenstein
+Iron Stone Bricks=Eisensteinziegel
+Plankstone=Brettstein
+Rope=Seil
+Split Stone Tile=Geteilte Steinfliese
+Stone Bricks=Steinziegel
+Stone Tile=Steinfliese
+Super Glow Glass=Superleuchtglas
+Sweeper=Besen
+Tar=Teer
+Wooden Tile=Holzfliese
+Offset Wooden Tile=Holzfliese versetzt

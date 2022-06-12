@@ -1,0 +1,49 @@
+# textdomain: moreblocks
+
+# Italian translation for More Blocks.
+# Copyright © 2011-2020 Hugo Locurcio and contributors
+# This file is distributed under the same license as the More Blocks package.
+# Emon, 2016.
+# CodeXP <codexp@gmx.net>, 2018.
+
+#: init.lua
+
+[moreblocks] loaded.=[moreblocks] caricato.
+
+#: nodes.lua
+
+All-faces @1=@1 su ogni lato
+Cactus Brick=Mattoni di cactus
+Cactus Checker=Scacchiera in cactus
+Centered Wooden Tile=Mattonella in legno centrata
+Checker Stone Tile=
+Circle Stone Bricks=Mattoni concentrici in pietra
+Clean Glass=Vetro pulito
+Coal Checker=Scacchiera in carbone
+Coal Glass=Vetro e carbone
+Clean Super Glow Glass=
+Trap @1=@1 trappola
+Clean Glow Glass=
+Coal Stone=Pietra in carbone
+Coal Stone Bricks=Mattoni di pietra in carbone
+Compressed Cobblestone=
+Compressed Desert Cobblestone=
+Compressed Dirt=
+Copper Patina Block=
+Empty Shelf=Scaffale Vuoto
+Full Wooden Tile=Mattonella in legno pieno
+Glow Glass=Vetro luminoso
+Iron Checker=Scacchiera in ferro
+Iron Glass=Vetro e ferro
+Iron Stone=Pietra in ferro
+Iron Stone Bricks=Mattoni di pietra in ferro
+Plankstone=Pietra e legno
+Rope=Corda
+Split Stone Tile=Mattonella in pietra divisa
+Stone Bricks=
+Stone Tile=Mattonella in pietra
+Super Glow Glass=Super vetro luminoso
+Sweeper=Spazzola
+Tar=
+Wooden Tile=Mattonella in legno
+Offset Wooden Tile=

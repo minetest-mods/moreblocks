@@ -1,0 +1,52 @@
+# textdomain: moreblocks
+
+# Russian translation for MOREBLOCKS minetest mod.
+# Copyright (C) 2018 Hugo Locurcio and contributors
+# This file is distributed under the same license as the MOREBLOCKS package.
+# CodeXP <codexp@gmx.net>, 2018.
+#
+#, fuzzy
+
+#: circular_saw.lua
+
+#: init.lua
+
+[MOD] moreblocks loaded.=[MOD] moreblocks загружен.
+
+#: nodes.lua
+
+All-faces @1=всестороннее бревно @1
+Cactus Brick=кирпич из кактуса
+Cactus Checker=мозаика из кактуса
+Centered Wooden Tile=деревянная мозаика (центр)
+Checker Stone Tile=каменная мозаика
+Circle Stone Bricks=кольцевой камень
+Clean Glass=чистое стекло
+Coal Checker=угольная мозаика
+Coal Glass=угольное стекло
+Clean Super Glow Glass=
+Trap @1=мнимое @1
+Clean Glow Glass=
+Coal Stone=угольный камень
+Coal Stone Bricks=угольно-каменный кирпич
+Compressed Cobblestone=прессованный булыжник
+Compressed Desert Cobblestone=
+Compressed Dirt=прессованная земля
+Copper Patina Block=медный патинированный блок
+Empty Shelf=пустые полки
+Full Wooden Tile=деревянная мозаика
+Glow Glass=светящееся стекло
+Iron Checker=стальная мозаика
+Iron Glass=металлизированное стекло
+Iron Stone=железный камень
+Iron Stone Bricks=железно-каменный кирпич
+Plankstone=дерево-каменная мозаика
+Rope=верёвка
+Split Stone Tile=каменная мозаика
+Stone Bricks=каменный кирпич
+Stone Tile=каменная плитка
+Super Glow Glass=супер светящееся стекло
+Sweeper=метёлка
+Tar=смола
+Wooden Tile=деревянная мозаика
+Offset Wooden Tile=деревянная мозаика (сверху)

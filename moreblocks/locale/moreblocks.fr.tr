@@ -1,0 +1,50 @@
+# textdomain: moreblocks
+
+# French translation for More Blocks.
+# Copyright © 2011-2020 Hugo Locurcio and contributors
+# This file is distributed under the same license as the More Blocks package.
+# Hugo Locurcio <hugo.locurcio@hugo.pro>, 2013-2019.
+# Jat15, 2013.
+# CodeXP <codexp@gmx.net>, 2018.
+
+#: init.lua
+
+[moreblocks] loaded.=[moreblocks] a été chargé.
+
+#: nodes.lua
+
+All-faces @1=@1 (toutes faces)
+Cactus Brick=Briques de cactus
+Cactus Checker=Damier en cactus
+Centered Wooden Tile=Dalle en bois centrée
+Checker Stone Tile=Damier de dalle en pierre
+Circle Stone Bricks=Briques en pierre circulaires
+Clean Glass=Verre propre
+Coal Checker=Damier en charbon
+Coal Glass=Verre de charbon
+Clean Super Glow Glass=
+Trap @1=@1 traversable
+Clean Glow Glass=
+Coal Stone=Pierre de charbon
+Coal Stone Bricks=Briques en pierre de charbon
+Compressed Cobblestone=Pierre taillée compressée
+Compressed Desert Cobblestone=
+Compressed Dirt=Terre compressée
+Copper Patina Block=Bloc de patine de cuivre
+Empty Shelf=Étagère vide
+Full Wooden Tile=Dalle en bois complète
+Glow Glass=Verre brillant
+Iron Checker=Damier de fer
+Iron Glass=Verre de fer
+Iron Stone=Pierre de fer
+Iron Stone Bricks=Briques en pierre de fer
+Plankstone=Pierre-bois
+Rope=Corde
+Split Stone Tile=Dalle en pierre découpée
+Stone Bricks=Briques en pierre
+Stone Tile=Dalle en pierre
+Super Glow Glass=Verre très brillant
+Sweeper=Balai
+Tar=Bitume
+Wooden Tile=Dalle en bois
+Offset Wooden Tile=Dalle en bois décalée

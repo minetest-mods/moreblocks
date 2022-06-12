@@ -1,0 +1,33 @@
+# textdomain: moreblocks
+
+# Polish translation for More Blocks.
+# Copyright © 2011-2020 Hugo Locurcio and contributors
+# This file is distributed under the same license as the More Blocks package.
+# mat9117, 2019
+# CodeXP <codexp@gmx.net>, 2018.
+
+#: circular_saw.lua
+
+Circular Saw=Piła tarczowa
+Input material=wejście@nmateriał
+Left-over=Resztki
+Max=Maks
+Recycle output=Przetwarzanie@nWyjście
+Set=Ustaw
+owned by @1=Należy do @1
+Circular Saw is empty=Piła tarczowa jest pusta
+Circular Saw is working on @1=Piła tarczowa pracuje na @1
+
+#: stairsplus/common.lua
+
+@1 Microblock=@1 Mikroblok
+@1 Slab=@1 Płyta
+@1 Slope=@1 Spad
+@1 Panel=@1 Panel
+@1 Stairs=@1 Schody
+
+#: stairsplus/registrations.lua
+
+Concrete=
+Cement=
+Brass Block=

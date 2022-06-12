@@ -1,0 +1,34 @@
+# textdomain: moreblocks
+
+# French translation for More Blocks.
+# Copyright © 2011-2020 Hugo Locurcio and contributors
+# This file is distributed under the same license as the More Blocks package.
+# Hugo Locurcio <hugo.locurcio@hugo.pro>, 2013-2019.
+# Jat15, 2013.
+# CodeXP <codexp@gmx.net>, 2018.
+
+#: circular_saw.lua
+
+Circular Saw=Scie circulaire
+Input material=Matériau@nd'entrée
+Left-over=Reste
+Max=Max
+Recycle output=Sortie à@nrecycler
+Set=Définir
+owned by @1=propriété de @1
+Circular Saw is empty=Scie circulaire vide
+Circular Saw is working on @1=Scie circulaire manipulant @1
+
+#: stairsplus/common.lua
+
+@1 Microblock=Microbloc en @1
+@1 Slab=Demi-dalle en @1
+@1 Slope=Pente en @1
+@1 Panel=Barre en @1
+@1 Stairs=Escaliers en @1
+
+#: stairsplus/registrations.lua
+
+Concrete=
+Cement=
+Brass Block=

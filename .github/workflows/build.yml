@@ -1,5 +1,5 @@
 name: build
-on: [push, pull_request]
+on: [ push, pull_request ]
 
 jobs:
   build:
@@ -10,8 +10,8 @@ jobs:
       - uses: actions/setup-python@master
 
       - run: |
-         sudo apt-get update -qq
-         sudo apt-get install -qqq luarocks
+          sudo apt-get update -qq
+          sudo apt-get install -qqq luarocks
       - name: Install pre-commit
         run: pip3 install pre-commit
 
@@ -20,5 +20,5 @@ jobs:
 
       - name: Run LuaCheck using pre-commit
         run: |
-         pre-commit run --all-files
-         $HOME/.luarocks/bin/luacheck .
+          pre-commit run --all-files
+          $HOME/.luarocks/bin/luacheck .

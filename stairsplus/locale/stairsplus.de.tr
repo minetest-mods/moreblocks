@@ -1,0 +1,33 @@
+# textdomain: moreblocks
+
+# German translation for More Blocks.
+# Copyright © 2011-2020 Hugo Locurcio and contributors
+# This file is distributed under the same license as the More Blocks package.
+# Xanthin, 2014.
+# CodeXP <codexp@gmx.net>, 2018.
+
+#: circular_saw.lua
+
+Circular Saw=Kreissäge
+Input material=Ausgangs-@nmaterial
+Left-over=Rest
+Max=Anzahl
+Recycle output=Wiederver-@nwerten
+Set=Ok
+owned by @1=gehört @1
+Circular Saw is empty=Kreissäge ist leer
+Circular Saw is working on @1=Kreissäge arbeitet mit @1
+
+#: stairsplus/common.lua
+
+@1 Microblock=@1mikroblock
+@1 Slab=@1platte
+@1 Slope=@1neigung
+@1 Panel=@1paneel
+@1 Stairs=@1treppe
+
+#: stairsplus/registrations.lua
+
+Concrete=
+Cement=
+Brass Block=

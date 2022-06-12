@@ -1,0 +1,27 @@
+# textdomain: moreblocks
+
+#: circular_saw.lua
+
+Circular Saw=
+Input material=
+Left-over=
+Max=
+Recycle output=
+Set=
+owned by @1=
+Circular Saw is empty=
+Circular Saw is working on @1=
+
+#: stairsplus/common.lua
+
+@1 Microblock=
+@1 Slab=
+@1 Slope=
+@1 Panel=
+@1 Stairs=
+
+#: stairsplus/registrations.lua
+
+Concrete=
+Cement=
+Brass Block=

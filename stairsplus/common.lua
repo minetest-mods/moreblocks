@@ -121,7 +121,7 @@ end
 stairsplus.register_single = function(category, alternate, info, modname, subname, recipeitem, fields)
 
 	local src_def = minetest.registered_nodes[recipeitem] or {}
-	local desc_base = S("@1 "..descriptions[category], fields.description)
+	local desc_base = S("@1 " .. descriptions[category], fields.description)
 	local def = {}
 
 	if category ~= "slab" then
@@ -153,7 +153,7 @@ stairsplus.register_single = function(category, alternate, info, modname, subnam
 		if type(info) ~= "table" then
 			def.node_box = {
 				type = "fixed",
-				fixed = {-0.5, -0.5, -0.5, 0.5, (info/16)-0.5, 0.5},
+				fixed = {-0.5, -0.5, -0.5, 0.5, (info / 16) - 0.5, 0.5},
 			}
 			def.description = ("%s (%d/16)"):format(desc_base, info)
 		else
@@ -161,7 +161,9 @@ stairsplus.register_single = function(category, alternate, info, modname, subnam
 				type = "fixed",
 				fixed = info,
 			}
-			def.description = desc_base .. alternate:gsub("_", " "):gsub("(%a)(%S*)", function(a, b) return a:upper() .. b end)
+			def.description = desc_base .. alternate:gsub("_", " "):gsub("(%a)(%S*)", function(a, b)
+				return a:upper() .. b
+			end)
 		end
 	else
 		def.description = desc_base
@@ -173,9 +175,9 @@ stairsplus.register_single = function(category, alternate, info, modname, subnam
 	end
 
 	if fields.drop and not (type(fields.drop) == "table") then
-		def.drop = modname.. ":" .. category .. "_" .. fields.drop .. alternate
+		def.drop = modname .. ":" .. category .. "_" .. fields.drop .. alternate
 	end
 
-	minetest.register_node(":" ..modname.. ":" .. category .. "_" .. subname .. alternate, def)
+	minetest.register_node(":" .. modname .. ":" .. category .. "_" .. subname .. alternate, def)
 	stairsplus.register_recipes(category, alternate, modname, subname, recipeitem)
 end

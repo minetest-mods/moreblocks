@@ -1,0 +1,34 @@
+# textdomain: moreblocks
+
+# Russian translation for MOREBLOCKS minetest mod.
+# Copyright (C) 2018 Hugo Locurcio and contributors
+# This file is distributed under the same license as the MOREBLOCKS package.
+# CodeXP <codexp@gmx.net>, 2018.
+#
+#, fuzzy
+
+#: circular_saw.lua
+
+Circular Saw=циркулярная пила
+Input material=Входной@nматериал
+Left-over=Остатки
+Max=Кол.
+Recycle output=Пере-@nобработка
+Set=ОК
+owned by @1=принадлежит @1
+Circular Saw is empty=циркулярная пила пустая
+Circular Saw is working on @1=циркулярная пила, @1 в обработке
+
+#: stairsplus/common.lua
+
+@1 Microblock=@1 (микроблок)
+@1 Slab=@1 (плита)
+@1 Slope=@1 (наклон)
+@1 Panel=@1 (панель)
+@1 Stairs=@1 (лестница)
+
+#: stairsplus/registrations.lua
+
+Concrete=
+Cement=
+Brass Block=

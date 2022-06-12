@@ -1,0 +1,32 @@
+# textdomain: moreblocks
+
+# zh_CN translation for More Blocks.
+# Copyright © 2011-2020 Hugo Locurcio and contributors
+# This file is distributed under the same license as the More Blocks package.
+# IFRFSX <IFRFSX@protonmail.com>, 2020.
+
+#: circular_saw.lua
+
+Circular Saw=圆锯
+Input material=输入@n材料
+Left-over=剩余材料
+Max=最大值
+Recycle output=回收@n输出物
+Set=设置
+owned by @1=属于@1所有
+Circular Saw is empty=圆锯是空的
+Circular Saw is working on @1=圆锯正在加工@1
+
+#: stairsplus/common.lua
+
+@1 Microblock=@1小方块
+@1 Slab=@1台阶
+@1 Slope=@1斜坡
+@1 Panel=@1嵌板
+@1 Stairs=@1楼梯
+
+#: stairsplus/registrations.lua
+
+Concrete=
+Cement=
+Brass Block=

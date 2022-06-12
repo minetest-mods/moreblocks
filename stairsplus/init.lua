@@ -7,7 +7,7 @@ Licensed under the zlib license. See LICENSE.md for more information.
 
 -- Nodes will be called <modname>:{stair,slab,panel,micro,slope}_<subname>
 
-local modpath = minetest.get_modpath("moreblocks").. "/stairsplus"
+local modpath = minetest.get_modpath("moreblocks") .. "/stairsplus"
 
 stairsplus = {}
 stairsplus.expect_infinite_stacks = false
@@ -15,7 +15,7 @@ stairsplus.expect_infinite_stacks = false
 stairsplus.shapes_list = {}
 
 if
-	not minetest.get_modpath("unified_inventory")
+not minetest.get_modpath("unified_inventory")
 	and minetest.settings:get_bool("creative_mode")
 then
 	stairsplus.expect_infinite_stacks = true

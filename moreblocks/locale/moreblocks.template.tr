@@ -1,0 +1,39 @@
+# textdomain: moreblocks
+
+#: nodes.lua
+
+All-faces @1=
+Cactus Brick=
+Cactus Checker=
+Centered Wooden Tile=
+Checker Stone Tile=
+Circle Stone Bricks=
+Clean Glass=
+Coal Checker=
+Coal Glass=
+Clean Super Glow Glass=
+Trap @1=
+Clean Glow Glass=
+Coal Stone=
+Coal Stone Bricks=
+Compressed Cobblestone=
+Compressed Desert Cobblestone=
+Compressed Dirt=
+Copper Patina Block=
+Empty Shelf=
+Full Wooden Tile=
+Glow Glass=
+Iron Checker=
+Iron Glass=
+Iron Stone=
+Iron Stone Bricks=
+Plankstone=
+Rope=
+Split Stone Tile=
+Stone Bricks=
+Stone Tile=
+Super Glow Glass=
+Sweeper=
+Tar=
+Wooden Tile=
+Offset Wooden Tile=

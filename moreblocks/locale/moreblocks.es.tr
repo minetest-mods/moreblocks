@@ -1,0 +1,46 @@
+# textdomain: moreblocks
+
+# Spanish translation for More Blocks.
+# Copyright © 2011-2020 Hugo Locurcio and contributors
+# This file is distributed under the same license as the More Blocks package.
+# kaeza, 2013.
+# CodeXP <codexp@gmx.net>, 2018.
+# Carlos Barraza 2020.
+
+#: nodes.lua
+
+All-faces @1=@1, todas las caras
+Cactus Brick=Ladrillos de Cactus
+Cactus Checker=Cuadros de Cactus
+Centered Wooden Tile=Parqué​ Centrado
+Checker Stone Tile=Cuadros de Baldosa de Piedra
+Circle Stone Bricks=Bloques de Piedra Circulares
+Clean Glass=Cristal Limpio
+Coal Checker=Cuadros de Carbón
+Coal Glass=Cristal con Carbón
+Clean Super Glow Glass=Cristal Súper Brillante Limpio
+Trap @1=@1 Falso
+Clean Glow Glass=Cristal Brillante Limpio
+Coal Stone=Carbón y Piedra
+Coal Stone Bricks=Ladrillos de Piedra de Carbon
+Compressed Cobblestone=Adoquín Comprimido
+Compressed Desert Cobblestone=Adoquín del Desierto Comprimido
+Compressed Dirt=Tierra Comprimida
+Copper Patina Block=Bloque de Pátina de Cobre
+Empty Shelf=Estante vacio
+Full Wooden Tile=Parqué​ Completo
+Glow Glass=Cristal Brillante
+Iron Checker=Cuadros de Hierro
+Iron Glass=Cristal con Hierro
+Iron Stone=Hierro y Piedra
+Iron Stone Bricks=Ladrillo de Piedra de Hierro
+Plankstone=Tablones de piedra
+Rope=Soga
+Split Stone Tile=Baldosas de Piedra Partida
+Stone Bricks=Ladrillos de Piedra
+Stone Tile=Baldosa de Piedra
+Super Glow Glass=Cristal Súper Brillante
+Sweeper=Limpiador
+Tar=Alquitrán
+Wooden Tile=Parqué​
+Offset Wooden Tile=Parqué​ Ajustado

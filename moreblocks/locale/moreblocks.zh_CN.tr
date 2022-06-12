@@ -1,0 +1,44 @@
+# textdomain: moreblocks
+
+# zh_CN translation for More Blocks.
+# Copyright © 2011-2020 Hugo Locurcio and contributors
+# This file is distributed under the same license as the More Blocks package.
+# IFRFSX <IFRFSX@protonmail.com>, 2020.
+
+#: nodes.lua
+
+All-faces @1=全切面@1树木方块
+Cactus Brick=仙人掌砖
+Cactus Checker=仙人掌棋盘方块
+Centered Wooden Tile=居中的木瓦
+Checker Stone Tile=棋盘石瓦
+Circle Stone Bricks=圆石砖
+Clean Glass=干净的玻璃
+Coal Checker=棋盘煤块
+Coal Glass=煤玻璃
+Clean Super Glow Glass=
+Trap @1=陷阱@1
+Clean Glow Glass=
+Coal Stone=煤炭石
+Coal Stone Bricks=煤炭石砖
+Compressed Cobblestone=压缩圆石
+Compressed Desert Cobblestone=
+Compressed Dirt=压缩土
+Copper Patina Block=铜绿方块
+Empty Shelf=空书架
+Full Wooden Tile=全木瓦
+Glow Glass=发光玻璃
+Iron Checker=棋盘铁方块
+Iron Glass=铁玻璃
+Iron Stone=铁石
+Iron Stone Bricks=铁石砖
+Plankstone=板石
+Rope=绳子
+Split Stone Tile=裂石砖
+Stone Bricks=石砖
+Stone Tile=石瓦
+Super Glow Glass=超级发光玻璃
+Sweeper=清扫器
+Tar=焦油
+Wooden Tile=木瓦
+Offset Wooden Tile=胶合木瓦

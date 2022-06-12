@@ -1,0 +1,34 @@
+# textdomain: moreblocks
+
+# Spanish translation for More Blocks.
+# Copyright © 2011-2020 Hugo Locurcio and contributors
+# This file is distributed under the same license as the More Blocks package.
+# kaeza, 2013.
+# CodeXP <codexp@gmx.net>, 2018.
+# Carlos Barraza 2020.
+
+#: circular_saw.lua
+
+Circular Saw=Sierra circular
+Input material=Material de@nentrada
+Left-over=Sobrante
+Max=Maximo
+Recycle output=Reciclar@nsalida
+Set=Establecer
+owned by @1=protegido por @1
+Circular Saw is empty=La sierra circular está vacia
+Circular Saw is working on @1=Sierra circular trabajando en @1
+
+#: stairsplus/common.lua
+
+@1 Microblock=Microbloque de @1
+@1 Slab=Losa de @1
+@1 Slope=Pendiente de @1
+@1 Panel=Panel de @1
+@1 Stairs=Escalera de @1
+
+#: stairsplus/registrations.lua
+
+Concrete=Concreto
+Cement=Cemento
+Brass Block=Bloque de latón

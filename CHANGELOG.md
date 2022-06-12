@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [3.0.0] - 2022-06-11
+
+### Changed
+
+- turned into a modpack (separate out stairsplus properly
+- refactored and rewrote a ton of stuff.)
+- a lot of cleanup.
+- got rid of some dead code ("ownership").
+- more API for creating node variants
+- allow registering new variants w/ this mod
+- parameterized resources (sounds, textures, craft materials) to make it easier to integrate w/ other games
+- actually implemented proper luachecking
+- fixed some unreported bugs (e.g. dependencies which weren't declared)
+
+### Fixed
+
+
 ## [2.2.0] - 2021-06-28
 
 ### Changed
@@ -134,9 +151,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Initial versioned release.
 
 [Unreleased]: https://github.com/minetest-mods/moreblocks/compare/v2.2.0...HEAD
+
 [2.2.0]: https://github.com/minetest-mods/moreblocks/compare/v2.1.0...v2.2.0
+
 [2.1.0]: https://github.com/minetest-mods/moreblocks/compare/v2.0.0...v2.1.0
+
 [2.0.0]: https://github.com/minetest-mods/moreblocks/compare/v1.3.0...v2.0.0
+
 [1.3.0]: https://github.com/minetest-mods/moreblocks/compare/v1.2.0...v1.3.0
+
 [1.2.0]: https://github.com/minetest-mods/moreblocks/compare/v1.1.0...v1.2.0
+
 [1.1.0]: https://github.com/minetest-mods/moreblocks/compare/v1.0.0...v1.1.0

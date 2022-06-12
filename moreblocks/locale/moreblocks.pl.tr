@@ -1,0 +1,49 @@
+# textdomain: moreblocks
+
+# Polish translation for More Blocks.
+# Copyright © 2011-2020 Hugo Locurcio and contributors
+# This file is distributed under the same license as the More Blocks package.
+# mat9117, 2019
+# CodeXP <codexp@gmx.net>, 2018.
+
+#: init.lua
+
+[moreblocks] loaded.=[moreblocks] załadowane.
+
+#: nodes.lua
+
+All-faces @1=Wielostronna tekstura @1
+Cactus Brick=Kaktusowa cegła
+Cactus Checker=Kaktusowa szachownica
+Centered Wooden Tile=Wyśrodkowany drewniany kafelek
+Checker Stone Tile=Kamienna szachownica
+Circle Stone Bricks=Okrągłe kamienne cegły
+Clean Glass=Czyste szkło
+Coal Checker=Węglowa szachownica
+Coal Glass=Szkło węglowe
+Clean Super Glow Glass=
+Trap @1=@1 pułapka
+Clean Glow Glass=
+Coal Stone=Kamień węglowy
+Coal Stone Bricks=Węglowe kamienne cegły
+Compressed Cobblestone=Skompresowany bruk
+Compressed Desert Cobblestone=
+Compressed Dirt=Skompresowana ziemia
+Copper Patina Block=Blok patynowanej miedzi
+Empty Shelf=Pusta półka
+Full Wooden Tile=Pełny drewniany kafelek
+Glow Glass=Świecące szkło
+Iron Checker=Żelazna szachownica
+Iron Glass=Żelazne szkło
+Iron Stone=Żelazny kamień
+Iron Stone Bricks=Żelazne kamienne cegły
+Plankstone=Deskokamień
+Rope=Lina
+Split Stone Tile=Kamienny blok kafelkowy
+Stone Bricks=Kamienne cegły
+Stone Tile=Kamienny kafelek
+Super Glow Glass=Super świecące szkło
+Sweeper=Miotła
+Tar=Smoła
+Wooden Tile=Drewniany kafelek
+Offset Wooden Tile=
