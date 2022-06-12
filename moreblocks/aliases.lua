@@ -4,29 +4,41 @@ More Blocks: alias definitions
 Copyright © 2011-2020 Hugo Locurcio and contributors.
 Licensed under the zlib license. See LICENSE.md for more information.
 --]]
+local cm = moreblocks.resources.craft_materials
 
 -- More Blocks aliases:
 minetest.register_alias("sweeper", "moreblocks:sweeper")
-minetest.register_alias("circular_saw", "moreblocks:circular_saw")
-minetest.register_alias("jungle_stick", "moreblocks:jungle_stick")
+
+if cm.stick then
+	minetest.register_alias("jungle_stick", cm.stick)
+	minetest.register_alias("moreblocks:jungle_stick", cm.stick)
+end
 
 -- Old block/item replacement:
-minetest.register_alias("moreblocks:oerkkiblock", "default:mossycobble")
-minetest.register_alias("moreblocks:screwdriver", "screwdriver:screwdriver")
+if cm.mossycobble then
+	minetest.register_alias("moreblocks:oerkkiblock", cm.mossycobble)
+end
+
+if cm.screwdriver then
+	minetest.register_alias("moreblocks:screwdriver", cm.screwdriver)
+end
 
 -- Node and item renaming:
-minetest.register_alias("moreblocks:stone_bricks", "default:stonebrick")
-minetest.register_alias("moreblocks:stonebrick", "default:stonebrick")
-minetest.register_alias("moreblocks:junglewood", "default:junglewood")
-minetest.register_alias("moreblocks:jungle_wood", "default:junglewood")
-minetest.register_alias("moreblocks:fence_junglewood", "default:fence_junglewood")
-minetest.register_alias("moreblocks:fence_jungle_wood", "default:fence_junglewood")
-minetest.register_alias("moreblocks:jungle_stick", "default:stick")
-
-for _, t in pairs(circular_saw.names) do
-	minetest.register_alias("moreblocks:" .. t[1] .. "_jungle_wood" .. t[2],
-		"moreblocks:" .. t[1] .. "_junglewood" .. t[2])
+if cm.stone_brick then
+	minetest.register_alias("moreblocks:stone_bricks", cm.stone_brick)
+	minetest.register_alias("moreblocks:stonebrick", cm.stone_brick)
 end
+
+if cm.jungle_wood then
+	minetest.register_alias("moreblocks:junglewood", cm.jungle_wood)
+	minetest.register_alias("moreblocks:jungle_wood", cm.jungle_wood)
+end
+
+if cm.fence_jungle_wood then
+	minetest.register_alias("moreblocks:fence_junglewood", cm.fence_jungle_wood)
+	minetest.register_alias("moreblocks:fence_jungle_wood", cm.fence_jungle_wood)
+end
+
 minetest.register_alias("moreblocks:horizontaltree", "moreblocks:horizontal_tree")
 minetest.register_alias("moreblocks:horizontaljungletree", "moreblocks:horizontal_jungle_tree")
 minetest.register_alias("moreblocks:stonesquare", "moreblocks:stone_tile")
@@ -59,31 +71,6 @@ minetest.register_alias("moreblocks:splitstonesquare", "moreblocks:split_stone_t
 minetest.register_alias("moreblocks:allfacestree", "moreblocks:all_faces_tree")
 minetest.register_alias("moreblocks:empty_bookshelf", "moreblocks:empty_shelf")
 minetest.register_alias("moreblocks:split_stone_tile_alt", "moreblocks:checker_stone_tile")
-minetest.register_alias("moreblocks:wood_tile_flipped", "moreblocks:wood_tile")
-minetest.register_alias("moreblocks:wood_tile_down", "moreblocks:wood_tile_offset")
-minetest.register_alias("moreblocks:wood_tile_left", "moreblocks:wood_tile_offset")
-minetest.register_alias("moreblocks:wood_tile_right", "moreblocks:wood_tile_offset")
-
--- ABM for horizontal trees (fix facedir):
-local horizontal_tree_convert_facedir = {7, 12, 9, 18}
-
-minetest.register_abm({
-	nodenames = {"moreblocks:horizontal_tree", "moreblocks:horizontal_jungle_tree"},
-	interval = 1,
-	chance = 1,
-	action = function(pos, node)
-		if node.name == "moreblocks:horizontal_tree" then
-			node.name = "default:tree"
-		else
-			node.name = "default:jungletree"
-		end
-		node.param2 = node.param2 < 3 and node.param2 or 0
-		minetest.set_node(pos, {
-			name = node.name,
-			param2 = horizontal_tree_convert_facedir[node.param2 + 1]
-		})
-	end,
-})
 
 minetest.register_lbm({
 	name = "moreblocks:reduce_wood_tile_redundancy",
@@ -94,17 +81,53 @@ minetest.register_lbm({
 		"moreblocks:wood_tile_flipped",
 	},
 	action = function(pos, node)
-		if node.name:find("left") then
+		if node.name == "moreblocks:wood_tile_left" then
 			minetest.set_node(pos, {name = "moreblocks:wood_tile_offset", param2 = 1})
-		elseif node.name:find("down") then
+		elseif node.name == "moreblocks:wood_tile_down" then
 			minetest.set_node(pos, {name = "moreblocks:wood_tile_offset", param2 = 2})
-		elseif node.name:find("right") then
+		elseif node.name == "moreblocks:wood_tile_right" then
 			minetest.set_node(pos, {name = "moreblocks:wood_tile_offset", param2 = 3})
 		else
 			-- wood_tile_flipped
 			minetest.set_node(pos, {name = "moreblocks:wood_tile", param2 = 1})
 		end
-		minetest.log('action', "LBM replaced " .. node.name ..
-			" at " .. minetest.pos_to_string(pos))
+		moreblocks.log("action", "LBM replaced %s at %s", node.name, minetest.pos_to_string(pos))
 	end,
 })
+
+local horizontal_tree_convert_facedir = {7, 12, 9, 18}
+if cm.tree then
+	minetest.register_lbm({
+		name = "moreblocks:reduce_horizontal_tree_redundancy",
+		nodenames = {
+			"moreblocks:horizontal_tree",
+		},
+		action = function(pos, node)
+			node.name = cm.tree
+			node.param2 = node.param2 < 3 and node.param2 or 0
+			minetest.set_node(pos, {
+				name = node.name,
+				param2 = horizontal_tree_convert_facedir[node.param2 + 1]
+			})
+			moreblocks.log("action", "LBM replaced %s at %s", node.name, minetest.pos_to_string(pos))
+		end,
+	})
+end
+
+if cm.jungle_tree then
+	minetest.register_lbm({
+		name = "moreblocks:reduce_horizontal_jungle_tree_redundancy",
+		nodenames = {
+			"moreblocks:horizontal_jungle_tree",
+		},
+		action = function(pos, node)
+			node.name = cm.jungle_tree
+			node.param2 = node.param2 < 3 and node.param2 or 0
+			minetest.set_node(pos, {
+				name = node.name,
+				param2 = horizontal_tree_convert_facedir[node.param2 + 1]
+			})
+			moreblocks.log("action", "LBM replaced %s at %s", node.name, minetest.pos_to_string(pos))
+		end,
+	})
+end

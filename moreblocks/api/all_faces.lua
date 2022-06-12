@@ -1,6 +1,6 @@
 local S = moreblocks.S
 
-function moreblocks.api.register_all_faces(mod, name, base, redef)
+function moreblocks.api.register_all_faces(itemstring, base, redef)
 	local def = table.copy(minetest.registered_nodes[base])
 
 	def.tiles = {def.tiles[1]}
@@ -15,8 +15,8 @@ function moreblocks.api.register_all_faces(mod, name, base, redef)
 		def[k] = v
 	end
 
-	local itemstring = ("%s:%s"):format(mod, name)
-	moreblocks.api.register_node_with_stairs(mod, name, def)
+	minetest.register_node(itemstring, def)
+
 	minetest.register_craft({
 		output = itemstring .. " 8",
 		recipe = {

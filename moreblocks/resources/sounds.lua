@@ -1,14 +1,9 @@
---[[
-More Blocks: sound definitions
-
-Copyright © 2011-2021 Hugo Locurcio and contributors.
-Licensed under the zlib license. See LICENSE.md for more information.
---]]
+local table_set_all = moreblocks.util.table_set_all
 
 moreblocks.resources.sounds = {}
 
 if moreblocks.has.default then
-	table.insert_all(moreblocks.resources.sounds, {
+	table_set_all(moreblocks.resources.sounds, {
 		dirt = default.node_sound_dirt_defaults(),
 		glass = default.node_sound_glass_defaults(),
 		leaves = default.node_sound_leaves_defaults(),

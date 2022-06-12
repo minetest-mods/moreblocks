@@ -25,6 +25,7 @@ stds.moreblocks = {
 	},
 	read_globals = {
 		"default",
+		"stairs",
 		"stairsplus",
 	},
 }

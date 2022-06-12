@@ -1,7 +1,7 @@
 local S = moreblocks.S
 local cm = moreblocks.resources.craft_materials
 
-function moreblocks.api.register_trap(mod, name, base, redef)
+function moreblocks.api.register_trap(itemstring, base, redef)
 	local def = table.copy(minetest.registered_nodes[base])
 
 	def.description = S("Trap @1", def.description)
@@ -27,7 +27,6 @@ function moreblocks.api.register_trap(mod, name, base, redef)
 		def[k] = v
 	end
 
-	local itemstring = ("%s:%s"):format(mod, name)
 	minetest.register_node(itemstring, def)
 
 	if cm.trap_material then

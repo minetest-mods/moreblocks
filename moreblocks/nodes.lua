@@ -10,6 +10,8 @@ local S = moreblocks.S
 local cm = moreblocks.resources.craft_materials
 local t = moreblocks.resources.textures
 
+local modname = moreblocks.modname
+
 local sound_dirt = moreblocks.resources.sounds.dirt
 local sound_wood = moreblocks.resources.sounds.wood
 local sound_stone = moreblocks.resources.sounds.stone
@@ -17,36 +19,79 @@ local sound_glass = moreblocks.resources.sounds.glass
 local sound_leaves = moreblocks.resources.sounds.leaves
 local sound_metal = moreblocks.resources.sounds.metal
 
+local function is_glasslike(def)
+	return #def.tiles > 1 and (
+		def.drawtype == "glasslike_framed" or
+		def.drawtype == "glasslike_framed_optional"
+	)
+end
+
+local function register_stairs(name, def)
+	local itemstring = ("%s:%s"):format(modname, name)
+
+	-- Use the primary tile for all sides of cut glasslike nodes.
+	-- This makes them easier to see
+	if is_glasslike(def) then
+		def = table.copy(def)
+		def.tiles = {def.tiles[1]}
+	end
+
+	if moreblocks.has.stairsplus then
+		stairsplus:register_all(modname, name, itemstring, {
+			description = def.description,
+			groups = def.groups,
+			tiles = def.tiles,
+			sunlight_propagates = def.sunlight_propagates,
+			light_source = def.light_source,
+			sounds = def.sounds,
+		})
+	elseif moreblocks.has.stairs then
+		stairs.register_stair_and_slab(
+			("%s_%s"):format(modname, name),
+			itemstring,
+			def.groups,
+			def.tiles,
+			S("@1 Stair", def.description),
+			S("@1 Slab", def.description),
+			def.sounds,
+			true
+		)
+	end
+end
+
+
 local function tile_tiles(tex)
 	return {tex, tex, tex, tex, tex .. "^[transformR90", tex .. "^[transformR90"}
 end
 
 local function register_with_stairs(name, def)
-	local itemstring = "moreblocks:" .. name
-	def.tiles = def.tiles or {"moreblocks_" .. name .. ".png"}
-	moreblocks.api.register_node_with_stairs("moreblocks", name, def)
+	local itemstring = ("%s:%s"):format(modname, name)
+	def.tiles = def.tiles or {("%s_%s.png"):format(modname, name)}
+	minetest.register_node(itemstring, def)
 	minetest.register_alias(name, itemstring)
+	register_stairs(name, def)
 end
 
 local function register_no_stairs(name, def)
-	local itemstring = "moreblocks:" .. name
-	def.tiles = def.tiles or {"moreblocks_" .. name .. ".png"}
+	local itemstring = ("%s:%s"):format(modname, name)
+	def.tiles = def.tiles or {("%s_%s.png"):format(modname, name)}
 	minetest.register_node(itemstring, def)
 	minetest.register_alias(name, itemstring)
 end
 
 local function register_all_faces(name, base)
 	name = "all_faces_" .. name
-	local itemstring = "moreblocks:" .. name
-	moreblocks.api.register_all_faces("moreblocks", name, base)
+	local itemstring = ("%s:%s"):format(modname, name)
+	moreblocks.api.register_all_faces(itemstring, base)
+	register_stairs(name, minetest.registered_nodes[itemstring])
 	minetest.register_alias(name, itemstring)
 end
 
 
 local function register_trap(name, base)
 	name = "trap_" .. name
-	local itemstring = "moreblocks:" .. name
-	moreblocks.api.register_trap("moreblocks", name, base)
+	local itemstring = ("%s:%s"):format(modname, name)
+	moreblocks.api.register_trap(itemstring, base)
 	minetest.register_alias(name, itemstring)
 end
 
