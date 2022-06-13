@@ -7,13 +7,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@master
-      - name: apt
+
+      - name: install luarocks
         run: sudo apt-get install -y luarocks
-      - name: luacheck install
+
+      - name: install luacheck via luarocks
         run: luarocks install --local luacheck
 
       - name: luacheck moreblocks
-        run: $HOME/.luarocks/bin/luacheck -q ./moreblocks
+        run: $HOME/.luarocks/bin/luacheck --config ./moreblocks/.luacheckrc -q ./moreblocks
 
       - name: luacheck stairsplus (expected to fail until more work is done)
-        run: $HOME/.luarocks/bin/luacheck -q ./stairsplus
+        run: $HOME/.luarocks/bin/luacheck --config ./stairsplus/.luacheckrc  -q ./stairsplus
