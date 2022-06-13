@@ -1,0 +1,5 @@
+stairsplus.dofile("shapes", "micros")
+stairsplus.dofile("shapes", "panels")
+stairsplus.dofile("shapes", "slabs")
+stairsplus.dofile("shapes", "slopes")
+stairsplus.dofile("shapes", "stairs")

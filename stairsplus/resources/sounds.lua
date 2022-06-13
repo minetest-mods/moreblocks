@@ -1,9 +1,9 @@
-local table_set_all = moreblocks.util.table_set_all
+local table_set_all = stairsplus.util.table_set_all
 
-moreblocks.resources.sounds = {}
+stairsplus.resources.sounds = {}
 
-if moreblocks.has.default then
-	table_set_all(moreblocks.resources.sounds, {
+if stairsplus.has.default then
+	table_set_all(stairsplus.resources.sounds, {
 		wood = default.node_sound_wood_defaults(),
 	})
 end

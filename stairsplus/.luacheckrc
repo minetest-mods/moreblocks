@@ -16,6 +16,7 @@ stds.minetest = {
 		"ItemStack",
 		"default",
 		"table",
+		"math",
 	}
 }
 
