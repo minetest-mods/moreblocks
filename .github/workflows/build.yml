@@ -13,11 +13,7 @@ jobs:
         run: luarocks install --local luacheck
 
       - name: luacheck moreblocks
-        run: |
-          pre-commit run --all-files
-          $HOME/.luarocks/bin/luacheck -q ./moreblocks
+        run: $HOME/.luarocks/bin/luacheck -q ./moreblocks
 
-      - name: luacheck stairsplus
-        run: |
-          pre-commit run --all-files
-          $HOME/.luarocks/bin/luacheck -q ./stairsplus
+      - name: luacheck stairsplus (expected to fail until more work is done)
+        run: $HOME/.luarocks/bin/luacheck -q ./stairsplus
