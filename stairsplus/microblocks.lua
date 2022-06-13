@@ -7,7 +7,6 @@ Licensed under the zlib license. See LICENSE.md for more information.
 
 -- Node will be called <modname>:micro_<subname>
 
--- luacheck: no unused
 local function register_micro(modname, subname, recipeitem, groups, images, description, drop, light)
 	stairsplus:register_micro(modname, subname, recipeitem, {
 		groups = groups,

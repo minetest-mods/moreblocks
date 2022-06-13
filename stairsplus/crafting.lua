@@ -1,4 +1,4 @@
-
+local cm = stairsplus.resources.craft_materials
 
 if cm.steel_ingot then
 	if moreblocks.settings.circular_saw_crafting then

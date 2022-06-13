@@ -68,6 +68,7 @@ Copyright © 2011-2020 Hugo Locurcio and contributors
 
 - More Blocks code is licensed under the zlib license, see
   [`LICENSE.md`](LICENSE.md) for details.
+- This is an altered version of the code which is not distributed by Hugo Locurcio.
 - Unless otherwise specified, More Blocks textures are licensed under
   [CC BY-SA 3.0 Unported](https://creativecommons.org/licenses/by-sa/3.0/).
 

@@ -1,0 +1,3 @@
+-- legacy: register all the expected variants for e.g. default, wool, gloopblocks, etc.
+-- provide a configuration option to *disable* legacy. it must be enabled by default, to prevent breaking
+-- existing servers

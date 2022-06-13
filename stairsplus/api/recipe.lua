@@ -1,0 +1,3 @@
+-- for registering recipe schemas
+-- should register schemas w/ unified_inventory and i3 and whatever else,
+-- and hide the recipes for the individual nodes (possibly a setting for such)

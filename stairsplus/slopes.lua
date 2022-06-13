@@ -7,7 +7,6 @@ Licensed under the zlib license. See LICENSE.md for more information.
 
 -- Node will be called <modname>:slope_<subname>
 
--- luacheck: no unused
 local function register_slope(modname, subname, recipeitem, groups, images, description, drop, light)
 	stairsplus:register_slope(modname, subname, recipeitem, {
 		groups = groups,

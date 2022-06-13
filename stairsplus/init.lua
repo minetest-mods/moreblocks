@@ -6,20 +6,40 @@ Licensed under the zlib license. See LICENSE.md for more information.
 --]]
 
 -- Nodes will be called <modname>:{stair,slab,panel,micro,slope}_<subname>
+local modname = minetest.get_current_modname()
+local modpath = minetest.get_modpath(modname)
+local S = minetest.get_translator(modname)
 
-local modpath = minetest.get_modpath("moreblocks") .. "/stairsplus"
+stairsplus = {
+	version = {3, 0, 0},
+	fork = "minetest_mods",
 
-stairsplus = {}
-stairsplus.expect_infinite_stacks = false
+	modname = modname,
+	modpath = modpath,
+
+	S = S,
+
+	has = {
+		basic_materials = minetest.get_modpath("basic_materials"),
+		default = minetest.get_modpath("default"),
+		gloopblocks = minetest.get_modpath("gloopblocks"),
+		stairs = minetest.get_modpath("stairs"),
+		technic = minetest.get_modpath("technic"),
+		prefab = minetest.get_modpath("prefab"),
+		wool = minetest.get_modpath("wool"),
+	},
+
+	log = function(level, messagefmt, ...)
+		return minetest.log(level, ("[%s] %s"):format(modname, messagefmt:format(...)))
+	end,
+
+	dofile = function(...)
+		return dofile(table.concat({modpath, ...}, DIR_DELIM) .. ".lua")
+	end,
+}
 
 stairsplus.shapes_list = {}
 
-if
-not minetest.get_modpath("unified_inventory")
-	and minetest.settings:get_bool("creative_mode")
-then
-	stairsplus.expect_infinite_stacks = true
-end
 
 function stairsplus:prepare_groups(groups)
 	local result = {}
@@ -30,9 +50,11 @@ function stairsplus:prepare_groups(groups)
 			end
 		end
 	end
-	if not moreblocks.config.stairsplus_in_creative_inventory then
+
+	if not stairsplus.settings.in_creative_inventory then
 		result.not_in_creative_inventory = 1
 	end
+
 	return result
 end
 
@@ -59,7 +81,6 @@ function stairsplus:register_alias_force_all(modname_old, subname_old, modname_n
 	self:register_micro_alias_force(modname_old, subname_old, modname_new, subname_new)
 end
 
--- luacheck: no unused
 local function register_stair_slab_panel_micro(modname, subname, recipeitem, groups, images, description, drop, light)
 	stairsplus:register_all(modname, subname, recipeitem, {
 		groups = groups,

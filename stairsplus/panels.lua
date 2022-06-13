@@ -7,7 +7,6 @@ Licensed under the zlib license. See LICENSE.md for more information.
 
 -- Node will be called <modname>:panel_<subname>
 
--- luacheck: no unused
 local function register_panel(modname, subname, recipeitem, groups, images, description, drop, light)
 	stairsplus:register_panel(modname, subname, recipeitem, {
 		groups = groups,

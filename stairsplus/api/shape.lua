@@ -1,0 +1,2 @@
+-- register shapes (e.g. 1/16 slab, 1/8 slab, 1/4 slab, etc)
+-- register shape groups (e.g. slab, stair, etc.)
