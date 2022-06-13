@@ -7,21 +7,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@master
-
-      - run: |
-          sudo apt-get update -qq
-          sudo apt-get install -qqq luarocks
-      - name: Install pre-commit
-
-      - name: Install LuaCheck
+      - name: apt
+        run: sudo apt-get install -y luarocks
+      - name: luacheck install
         run: luarocks install --local luacheck
 
-      - name: Run LuaCheck using pre-commit on moreblocks
+      - name: luacheck moreblocks
         run: |
           pre-commit run --all-files
-          $HOME/.luarocks/bin/luacheck ./moreblocks
+          $HOME/.luarocks/bin/luacheck -q ./moreblocks
 
-      - name: Run LuaCheck using pre-commit on stairsplus
+      - name: luacheck stairsplus
         run: |
           pre-commit run --all-files
-          $HOME/.luarocks/bin/luacheck ./stairsplus
+          $HOME/.luarocks/bin/luacheck -q ./stairsplus
