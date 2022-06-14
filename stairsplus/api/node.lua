@@ -33,39 +33,39 @@ end
 
 local function check_node_validity(node_def)
 	if node_def.type ~= "node" then
-		error(("cannot register non-node %q w/ stairsplus"):format(node))
+		error(("cannot register non-node %q w/ stairsplus"):format(node_def.name))
 	end
 
 	if (
 		node_def.drawtype == "airlike" or
-		node_def.drawtype == "liquid" or
-		node_def.drawtype == "flowingliquid" or
-		node_def.drawtype == "torchlike" or
-		node_def.drawtype == "signlike" or
-		node_def.drawtype == "plantlike" or
-		node_def.drawtype == "firelike" or
-		node_def.drawtype == "fencelike" or
-		node_def.drawtype == "raillike" or
-		node_def.drawtype == "nodebox" or
-		node_def.drawtype == "mesh" or
-		node_def.drawtype == "plantlike_rooted"
+			node_def.drawtype == "liquid" or
+			node_def.drawtype == "flowingliquid" or
+			node_def.drawtype == "torchlike" or
+			node_def.drawtype == "signlike" or
+			node_def.drawtype == "plantlike" or
+			node_def.drawtype == "firelike" or
+			node_def.drawtype == "fencelike" or
+			node_def.drawtype == "raillike" or
+			node_def.drawtype == "nodebox" or
+			node_def.drawtype == "mesh" or
+			node_def.drawtype == "plantlike_rooted"
 	) then
-		error(("cannot register %q w/ drawtype %q w/ stairsplus"):format(node, node_def.drawtype))
+		error(("cannot register %q w/ drawtype %q w/ stairsplus"):format(node_def.name, node_def.drawtype))
 	end
 
 	if (
 		node_def.paramtype2 == "flowingliquid" or
-		node_def.paramtype2 == "wallmounted" or
-		node_def.paramtype2 == "leveled" or
-		node_def.paramtype2 == "degrotate" or
-		node_def.paramtype2 == "meshoptions" or
-		node_def.paramtype2 == "color" or
-		node_def.paramtype2 == "colorfacedir" or
-		node_def.paramtype2 == "colorwallmounted" or
-		node_def.paramtype2 == "glasslikeliquidlevel" or
-		node_def.paramtype2 == "colordegrotate"
+			node_def.paramtype2 == "wallmounted" or
+			node_def.paramtype2 == "leveled" or
+			node_def.paramtype2 == "degrotate" or
+			node_def.paramtype2 == "meshoptions" or
+			node_def.paramtype2 == "color" or
+			node_def.paramtype2 == "colorfacedir" or
+			node_def.paramtype2 == "colorwallmounted" or
+			node_def.paramtype2 == "glasslikeliquidlevel" or
+			node_def.paramtype2 == "colordegrotate"
 	) then
-		error(("cannot register %q w/ paramtype2 %q w/ stairsplus"):format(node, node_def.paramtype2))
+		error(("cannot register %q w/ paramtype2 %q w/ stairsplus"):format(node_def.name, node_def.paramtype2))
 	end
 end
 
