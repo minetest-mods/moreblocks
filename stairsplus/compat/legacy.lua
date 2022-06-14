@@ -3,8 +3,14 @@
 -- existing servers
 local api = stairsplus.api
 
+local legacy_mode = stairsplus.settings.legacy_mode
+
 function stairsplus:register_all(modname, subname, recipeitem, fields)
-	api.register_all(recipeitem, fields)
+	if legacy_mode then
+		api.register_group(recipeitem, "legacy", fields)
+	else
+		api.register_group(recipeitem, "common", fields)
+	end
 
 	local old_name = ("%s:%s"):format(modname, subname)
 	if old_name ~= recipeitem then

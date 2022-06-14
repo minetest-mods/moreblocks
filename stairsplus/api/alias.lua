@@ -3,8 +3,8 @@ local api = stairsplus.api
 local table_is_empty = stairsplus.util.table_is_empty
 
 function api.register_alias_single(old_node, new_node, shape)
-	local old_shaped_node = api.format_name(shape, old_node)
-	local new_shaped_node = api.format_name(shape, new_node)
+	local old_shaped_node = api.format_name(old_node, shape)
+	local new_shaped_node = api.format_name(new_node, shape)
 
 	minetest.register_alias(old_shaped_node, new_shaped_node)
 end
@@ -16,8 +16,8 @@ function api.register_alias_all(old_node, new_node)
 end
 
 function api.register_alias_force_single(old_node, new_node, shape)
-	local old_shaped_node = api.format_name(shape, old_node)
-	local new_shaped_node = api.format_name(shape, new_node)
+	local old_shaped_node = api.format_name(old_node, shape)
+	local new_shaped_node = api.format_name(new_node, shape)
 
 	minetest.register_alias_force(old_shaped_node, new_shaped_node)
 

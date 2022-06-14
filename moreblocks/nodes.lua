@@ -37,7 +37,11 @@ local function register_stairs(name, def)
 	end
 
 	if moreblocks.has.stairsplus then
-		stairsplus.api.register_group(itemstring, "common")
+		if stairsplus.settings.legacy_mode then
+			stairsplus.api.register_group(itemstring, "legacy")
+		else
+			stairsplus.api.register_group(itemstring, "common")
+		end
 
 	elseif moreblocks.has.stairs then
 		stairs.register_stair_and_slab(

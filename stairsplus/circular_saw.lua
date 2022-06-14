@@ -8,13 +8,7 @@ local api = stairsplus.api
 local S = stairsplus.S
 local cm = stairsplus.resources.craft_materials
 
-api.register_station("stairsplus:circular_saw", {
-	micros = 1,
-	panels = 1,
-	slabs = 1,
-	slopes = 1,
-	stairs = 1,
-}, {
+api.register_station("stairsplus:circular_saw", {"legacy"}, {
 	description = S("Circular Saw"),
 	drawtype = "nodebox",
 	node_box = {

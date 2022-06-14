@@ -131,14 +131,14 @@ local function register_for_schema(node, shapes, schema)
 	local recipe = table.copy(schema)
 
 	if shapes[recipe.output] then
-		recipe.output = api.get_shaped_name(node, recipe.output)
+		recipe.output = api.get_shaped_node(node, recipe.output)
 	end
 
 	if recipe.replacements then
 		for _, replacement in ipairs(recipe.replacements) do
 			for i, item in ipairs(replacement) do
 				if shapes[item] then
-					replacement[i] = api.get_shaped_name(node, item)
+					replacement[i] = api.get_shaped_node(node, item)
 				end
 			end
 		end
@@ -147,7 +147,7 @@ local function register_for_schema(node, shapes, schema)
 	if recipe.type == "shapeless" then
 		for i, item in ipairs(recipe.recipe) do
 			if shapes[item] then
-				recipe.recipe[i] = api.get_shaped_name(node, item)
+				recipe.recipe[i] = api.get_shaped_node(node, item)
 			end
 		end
 
@@ -155,7 +155,7 @@ local function register_for_schema(node, shapes, schema)
 		for _, row in ipairs(schema.recipe) do
 			for i, item in ipairs(row) do
 				if shapes[item] then
-					row[i] = api.get_shaped_name(node, item)
+					row[i] = api.get_shaped_node(node, item)
 				end
 			end
 		end
@@ -202,9 +202,9 @@ function api.register_crafts_for_shapes(def)
 		for _, shape in ipairs(shapes) do
 			minetest.register_craft({
 				type = "cooking",
-				output = api.get_shaped_name(def.output, shape),
-				recipe = api.get_shaped_name(def.recipe, shape),
-				cooktime = def.cooktime(api.registered_shapes[shape].eigths),
+				output = api.get_shaped_node(def.output, shape),
+				recipe = api.get_shaped_node(def.recipe, shape),
+				cooktime = def.cooktime(api.registered_shapes[shape].eighths),
 			})
 		end
 
@@ -214,8 +214,8 @@ function api.register_crafts_for_shapes(def)
 		for _, shape in ipairs(shapes) do
 			minetest.register_craft({
 				type = "fuel",
-				recipe = api.get_shaped_name(def.recipe, shape),
-				burntime = def.burntime(api.registered_shapes[shape].eigths),
+				recipe = api.get_shaped_node(def.recipe, shape),
+				burntime = def.burntime(api.registered_shapes[shape].eighths),
 			})
 		end
 
