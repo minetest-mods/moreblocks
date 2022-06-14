@@ -6,7 +6,7 @@ local api = stairsplus.api
 function stairsplus:register_all(modname, subname, recipeitem, fields)
 	api.register_all(recipeitem, fields)
 
-    local old_name = ("%s:%s"):format(modname, subname)
+	local old_name = ("%s:%s"):format(modname, subname)
 	if old_name ~= recipeitem then
 		api.register_alias_all(old_name, recipeitem)
 	end

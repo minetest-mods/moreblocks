@@ -2,11 +2,11 @@
 
 local api = stairsplus.api
 
+local S = stairsplus.S
+
 function api.register_station(name, shape_groups, def)
 	minetest.register_node(name, def)
 end
-
-
 
 local F = minetest.formspec_escape
 
@@ -171,7 +171,7 @@ end
 function circular_saw.on_construct(pos)
 	local meta = minetest.get_meta(pos)
 	local fancy_inv = ""
-	if has_default_mod then
+	if stairsplus.has.default then
 		-- prepend background and slot styles from default if available
 		fancy_inv = default.gui_bg .. default.gui_bg_img .. default.gui_slots
 	end

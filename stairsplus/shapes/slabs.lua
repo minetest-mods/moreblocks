@@ -1,4 +1,3 @@
-
 stairsplus.api.register_shape("slab_1", {
 	name_format = "slab_%s_1",
 	description = "@1 1/16 Slab",

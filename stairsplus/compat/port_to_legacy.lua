@@ -4,7 +4,7 @@ More Blocks: registrations
 Copyright © 2011-2020 Hugo Locurcio and contributors.
 Licensed under the zlib license. See LICENSE.md for more information.
 --]]
-local S = moreblocks.S
+local S = stairsplus.S
 -- default registrations
 if minetest.get_modpath("default") then
 	local default_nodes = { -- Default stairs/slabs/panels/microblocks:
@@ -120,7 +120,7 @@ if minetest.get_modpath("basic_materials") then
 		description = S("Concrete"),
 		tiles = {"basic_materials_concrete_block.png", },
 		groups = {cracky = 1, level = 2, concrete = 1},
-		sounds = moreblocks.node_sound_stone_defaults(),
+		sounds = stairsplus.node_sound_stone_defaults(),
 	})
 
 	minetest.register_alias("prefab:concrete_stair", "technic:stair_concrete")
@@ -130,7 +130,7 @@ if minetest.get_modpath("basic_materials") then
 		description = S("Cement"),
 		tiles = {"basic_materials_cement_block.png"},
 		groups = {cracky = 2, not_in_creative_inventory = 1},
-		sounds = moreblocks.node_sound_stone_defaults(),
+		sounds = stairsplus.node_sound_stone_defaults(),
 		sunlight_propagates = true,
 	})
 

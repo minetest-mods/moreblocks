@@ -22,7 +22,7 @@ local sound_metal = moreblocks.resources.sounds.metal
 local function is_glasslike(def)
 	return #def.tiles > 1 and (
 		def.drawtype == "glasslike_framed" or
-		def.drawtype == "glasslike_framed_optional"
+			def.drawtype == "glasslike_framed_optional"
 	)
 end
 
@@ -37,14 +37,8 @@ local function register_stairs(name, def)
 	end
 
 	if moreblocks.has.stairsplus then
-		stairsplus:register_all(modname, name, itemstring, {
-			description = def.description,
-			groups = def.groups,
-			tiles = def.tiles,
-			sunlight_propagates = def.sunlight_propagates,
-			light_source = def.light_source,
-			sounds = def.sounds,
-		})
+		stairsplus.api.register_group(itemstring, "common")
+
 	elseif moreblocks.has.stairs then
 		stairs.register_stair_and_slab(
 			("%s_%s"):format(modname, name),
@@ -58,7 +52,6 @@ local function register_stairs(name, def)
 		)
 	end
 end
-
 
 local function tile_tiles(tex)
 	return {tex, tex, tex, tex, tex .. "^[transformR90", tex .. "^[transformR90"}
@@ -86,7 +79,6 @@ local function register_all_faces(name, base)
 	register_stairs(name, minetest.registered_nodes[itemstring])
 	minetest.register_alias(name, itemstring)
 end
-
 
 local function register_trap(name, base)
 	name = "trap_" .. name

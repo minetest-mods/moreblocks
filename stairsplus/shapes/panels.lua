@@ -1,4 +1,3 @@
-
 stairsplus.api.register_shape("panel_1", {
 	name_format = "panel_%s_1",
 	description = "@1 1/16 Panel",

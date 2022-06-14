@@ -354,7 +354,6 @@ if cm.glass then
 	})
 end
 
-
 minetest.register_craft({
 	output = "moreblocks:trap_clean_glass",
 	type = "shapeless",

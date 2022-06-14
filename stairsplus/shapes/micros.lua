@@ -1,4 +1,3 @@
-
 stairsplus.api.register_shape("micro_1", {
 	name_format = "micro_%s_1",
 	description = "@1 1/16 Microblock",
@@ -38,7 +37,7 @@ stairsplus.api.register_shape("micro_4", {
 stairsplus.api.register_shape("micro_8", {
 	name_format = "micro_%s_8",
 	aliases = {"micro_%s", "micro_%s_bottom"},
-	description = "@1 Microblock",  -- leave out the 1/2 to not confuse people too much...
+	description = "@1 Microblock", -- leave out the 1/2 to not confuse people too much...
 	shape_groups = {micro = 1, obligatory = 1, common = 1},
 	eighths = 1,
 	drawtype = "nodebox",

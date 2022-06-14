@@ -9,12 +9,12 @@ local S = stairsplus.S
 local cm = stairsplus.resources.craft_materials
 
 api.register_station("stairsplus:circular_saw", {
-		micros = 1,
-		panels = 1,
-		slabs = 1,
-		slopes = 1,
-		stairs = 1,
-	}, {
+	micros = 1,
+	panels = 1,
+	slabs = 1,
+	slopes = 1,
+	stairs = 1,
+}, {
 	description = S("Circular Saw"),
 	drawtype = "nodebox",
 	node_box = {
@@ -31,19 +31,19 @@ api.register_station("stairsplus:circular_saw", {
 		},
 	},
 	tiles = {
-		"moreblocks_circular_saw_top.png",
-		"moreblocks_circular_saw_bottom.png",
-		"moreblocks_circular_saw_side.png"
+		"stairsplus_circular_saw_top.png",
+		"stairsplus_circular_saw_bottom.png",
+		"stairsplus_circular_saw_side.png"
 	},
 	paramtype = "light",
 	sunlight_propagates = true,
 	paramtype2 = "facedir",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2},
-	sounds = moreblocks.resources.sounds.wood,
+	sounds = stairsplus.resources.sounds.wood,
 })
 
 if cm.steel_ingot then
-	if moreblocks.settings.circular_saw_crafting then
+	if stairsplus.settings.circular_saw_crafting then
 		minetest.register_craft({
 			output = "stairsplus:circular_saw",
 			recipe = {

@@ -5,13 +5,13 @@
 
 api.register_craft_schema({
 	output = "panel_8 6",
-	input = {{"node", "node", "node"}},
+	recipe = {{"node", "node", "node"}},
 })
 
 api.register_craft_schema({
 	type = "shapeless",
 	output = "micro_8 7",
-	input = {"stair_inner"},
+	recipe = {"stair_inner"},
 })
 
 api.register_schema_crafts_for_node("default:coalblock")
@@ -31,18 +31,11 @@ api.register_crafts_for_shapes({
 
 ]]
 local api = stairsplus.api
-error("TODO: ugh, forgot to handle when output has > 1 item")
 
-local function is_valid_shape(item)
-	return api.registered_shapes[item]
-end
+local function is_valid_item(item, shapes)
+	local item_name = ItemStack(item):get_name()
 
-local function is_normal_item(item)
-	return item == "" or item:match(":")
-end
-
-local function is_valid_item(item)
-	return is_valid_shape(item) or is_normal_item(item)
+	return shapes[item_name] or item_name == "" or item_name:match(":")
 end
 
 local function verify_schema(schema)
@@ -52,14 +45,14 @@ local function verify_schema(schema)
 		table.insert(problems, ("unimplemented schema type %q"):format(schema.type))
 	end
 
-	if not is_valid_item(schema.output) then
+	if not is_valid_item(schema.output, api.registered_shapes) then
 		table.insert(problems, ("don't know how to handle output %q"):format(schema.output))
 	end
 
 	if schema.replacements then
 		for _, replacement in ipairs(schema.replacements) do
 			for _, item in ipairs(replacement) do
-				if not is_valid_item(schema.output) then
+				if not is_valid_item(schema.output, api.registered_shapes) then
 					table.insert(problems, ("don't know how to handle replacement item %q"):format(item))
 				end
 			end
@@ -67,16 +60,16 @@ local function verify_schema(schema)
 	end
 
 	if schema.type == "shapeless" then
-		for _, item in ipairs(schema.input) do
-			if not is_valid_item(schema.output) then
+		for _, item in ipairs(schema.recipe) do
+			if not is_valid_item(schema.output, api.registered_shapes) then
 				table.insert(problems, ("don't know how to handle craft item %q"):format(item))
 			end
 		end
 
 	else
-		for _, row in ipairs(schema.input) do
+		for _, row in ipairs(schema.recipe) do
 			for _, item in ipairs(row) do
-				if not is_valid_item(schema.output) then
+				if not is_valid_item(schema.output, api.registered_shapes) then
 					table.insert(problems, ("don't know how to handle craft item %q"):format(item))
 				end
 			end
@@ -91,6 +84,7 @@ end
 api.registered_recipe_schemas = {}
 function api.register_craft_schema(schema)
 	local problems = verify_schema(schema)
+
 	if problems then
 		error(problems)
 	end
@@ -98,19 +92,15 @@ function api.register_craft_schema(schema)
 	table.insert(api.registered_recipe_schemas, schema)
 end
 
-local function has_the_right_shape(item, shapes)
-	return shapes[item] or item == "" or item:match(":")
-end
-
 local function has_the_right_shapes(schema, shapes)
-	if not has_the_right_shape(schema.output, shapes) then
+	if not is_valid_item(schema.output, shapes) then
 		return false
 	end
 
 	if schema.replacements then
 		for _, replacement in ipairs(schema.replacements) do
 			for _, item in ipairs(replacement) do
-				if not has_the_right_shape(item, shapes) then
+				if not is_valid_item(item, shapes) then
 					return false
 				end
 			end
@@ -118,16 +108,16 @@ local function has_the_right_shapes(schema, shapes)
 	end
 
 	if schema.type == "shapeless" then
-		for _, item in ipairs(schema.input) do
-			if not has_the_right_shape(item, shapes) then
+		for _, item in ipairs(schema.recipe) do
+			if not is_valid_item(item, shapes) then
 				return false
 			end
 		end
 
 	elseif schema.type == "shaped" or schema.type == nil then
-		for _, row in ipairs(schema.input) do
+		for _, row in ipairs(schema.recipe) do
 			for _, item in ipairs(row) do
-				if not has_the_right_shape(item, shapes) then
+				if not is_valid_item(item, shapes) then
 					return false
 				end
 			end
@@ -155,14 +145,14 @@ local function register_for_schema(node, shapes, schema)
 	end
 
 	if recipe.type == "shapeless" then
-		for i, item in ipairs(recipe.input) do
+		for i, item in ipairs(recipe.recipe) do
 			if shapes[item] then
-				recipe.input[i] = api.get_shaped_name(node, item)
+				recipe.recipe[i] = api.get_shaped_name(node, item)
 			end
 		end
 
 	elseif recipe.type == "shaped" or recipe.type == nil then
-		for _, row in ipairs(schema.input) do
+		for _, row in ipairs(schema.recipe) do
 			for i, item in ipairs(row) do
 				if shapes[item] then
 					row[i] = api.get_shaped_name(node, item)
