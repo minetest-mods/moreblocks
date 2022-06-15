@@ -76,6 +76,10 @@ if moreblocks.has.stairsplus and cm.jungle_wood then
 	stairsplus.api.register_alias_all("moreblocks:jungle_wood", cm.jungle_wood)
 end
 
+if moreblocks.has.stairsplus then
+	stairsplus.api.register_alias_all("moreblocks:split_stone_tile_alt", "moreblocks:checker_stone_tile")
+end
+
 minetest.register_lbm({
 	name = "moreblocks:reduce_wood_tile_redundancy",
 	nodenames = {

@@ -1,5 +1,8 @@
 # API documentation for Stairs+
 
+TODO: write new API docs
+
+
 # legacy API
 
 * `stairsplus:register_all(modname, subname, recipeitem, fields)`

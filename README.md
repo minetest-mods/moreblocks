@@ -9,8 +9,7 @@ world block sandbox game.
 
 ### Download the mod
 
-To install More Blocks, clone this Git repository into your Minetest's `mods/`
-directory:
+To install More Blocks, clone this Git repository into your Minetest's `mods/` directory:
 
 ```bash
 git clone https://github.com/minetest-mods/moreblocks.git
@@ -19,6 +18,8 @@ git clone https://github.com/minetest-mods/moreblocks.git
 You can also
 [download a ZIP archive](https://github.com/minetest-mods/moreblocks/archive/master.zip)
 of More Blocks.
+
+It is also available through the in-game `Content` tab.
 
 ### Enable the mod
 
@@ -58,19 +59,18 @@ on that line.
 
 ## Version compatibility
 
-More Blocks is currently primarily tested with Minetest 5.3.0.
+More Blocks is currently primarily tested with Minetest 5.5.0.
 It may or may not work with newer or older versions. Issues arising in older
 versions than 5.0.0 will generally not be fixed.
 
 ## License
 
-Copyright © 2011-2020 Hugo Locurcio and contributors
+Copyright © 2011-2022 Hugo Locurcio and contributors
 
 - More Blocks code is licensed under the zlib license, see
   [`LICENSE.md`](LICENSE.md) for details.
 - This is an altered version of the code which is not distributed by Hugo Locurcio.
 - Unless otherwise specified, More Blocks textures are licensed under
   [CC BY-SA 3.0 Unported](https://creativecommons.org/licenses/by-sa/3.0/).
-
-`moreblocks_copperpatina.png` was created by pithydon, and is licensed under
-[CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/).
+- `moreblocks_copperpatina.png` was created by pithydon, and is licensed under
+  [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/).

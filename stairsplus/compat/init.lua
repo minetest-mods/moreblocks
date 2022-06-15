@@ -1,3 +1,5 @@
+stairsplus.compat = {}
+
 stairsplus.dofile("compat", "stairs")
 stairsplus.dofile("compat", "legacy")
 

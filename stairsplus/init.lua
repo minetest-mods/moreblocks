@@ -20,13 +20,7 @@ stairsplus = {
 	S = S,
 
 	has = {
-		basic_materials = minetest.get_modpath("basic_materials"),
-		default = minetest.get_modpath("default"),
-		gloopblocks = minetest.get_modpath("gloopblocks"),
 		stairs = minetest.get_modpath("stairs"),
-		technic = minetest.get_modpath("technic"),
-		prefab = minetest.get_modpath("prefab"),
-		wool = minetest.get_modpath("wool"),
 	},
 
 	log = function(level, messagefmt, ...)
@@ -40,9 +34,12 @@ stairsplus = {
 
 stairsplus.dofile("settings")
 stairsplus.dofile("util")
-stairsplus.dofile("resources", "init")
 stairsplus.dofile("api", "init")
 stairsplus.dofile("shapes", "init")
-stairsplus.dofile("craft_schemas")
+stairsplus.dofile("groups", "init")
+stairsplus.dofile("craft_schemas", "init")
+
+stairsplus.dofile("resources", "init")
 stairsplus.dofile("circular_saw")
+
 stairsplus.dofile("compat", "init")

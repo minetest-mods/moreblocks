@@ -9,5 +9,8 @@ stairsplus.settings = {
 		s:get_bool("creative_mode", false)
 	),
 
+	default_align_style = s:get("stairsplus.default_align_style") or "user",
+
 	legacy_mode = s:get_bool("stairsplus.legacy_mode", true),
+	legacy_place_mechanic = s:get_bool("stairsplus.legacy_place_mechanic", true),
 }

@@ -17,5 +17,8 @@ jobs:
       - name: luacheck moreblocks
         run: $HOME/.luarocks/bin/luacheck --config ./moreblocks/.luacheckrc -q ./moreblocks
 
-      - name: luacheck stairsplus (expected to fail until more work is done)
+      - name: luacheck stairsplus
         run: $HOME/.luarocks/bin/luacheck --config ./stairsplus/.luacheckrc  -q ./stairsplus
+
+      - name: luacheck stairsplus_legacy
+        run: $HOME/.luarocks/bin/luacheck --config ./stairsplus/.luacheckrc  -q ./stairsplus_legacy

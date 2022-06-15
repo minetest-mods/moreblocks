@@ -18,6 +18,7 @@ api.registered_shapes = {}
 api.shapes_by_group = {}
 
 function api.register_shape(name, def)
+	stairsplus.log("info", "registering shape %q", name)
 	api.registered_shapes[name] = def
 
 	for group in pairs(def.shape_groups or {}) do

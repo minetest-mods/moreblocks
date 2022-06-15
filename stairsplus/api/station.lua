@@ -9,6 +9,11 @@ local default_stack_max = tonumber(minetest.settings:get("default_stack_max")) o
 
 local station = {}
 
+--[[
+TODO this isn't actually modular in the right way for adding different kinds of stations
+TODO e.g. some of this stuff is very particular to the saw itself
+]]
+
 local function get_cost(shaped_node)
 	if shaped_node == "" then
 		return 0

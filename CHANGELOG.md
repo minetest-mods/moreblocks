@@ -14,24 +14,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - turned into a modpack (i.e. properly separated moreblocks and stairsplus)
 - refactored and rewrote a ton of stuff
 - got rid of some dead code (e.g. "ownership.lua")
-- more API for creating node variants, e.g. trap nodes, all_faces, shapes
 - parameterized resources (sounds, textures, craft materials) to make it easier to integrate w/ other minetest "games"
 - actually implement luachecking - stop ignoring problems
 - fix some unreported bugs (e.g. dependencies which weren't declared, unused code)
-- i'm rewriting large parts of the mod and creating a sane API, i'm bumping the version
-- create a default-on "legacy" mode to allow new servers to not commit to creating so many useless shapes by default
+- i'm rewriting large parts of the mod and creating a saner API, i'm bumping the version
+- \[moreblocks] more API for creating node variants, e.g. trap nodes, all_faces, shapes
+- \[stairsplus] create a default-on "legacy" mode to allow new servers to not commit to creating so many useless nodes and shapes by default
 
 ### Fixed
 
 - [stairsplus:register_custom_subset computes the wrong "cost" for elements](https://github.com/minetest-mods/moreblocks/issues/190)
-- \* [Material disappears from Recycle output slot](https://github.com/minetest-mods/moreblocks/issues/189)
-- \* [Would it be possible to port to mineclone?](https://github.com/minetest-mods/moreblocks/issues/188) - no plan to
-  actually make moreblocks mineclone-aware, but will lay the groundwork to make this very easy.
+- [Material disappears from Recycle output slot](https://github.com/minetest-mods/moreblocks/issues/189)
+- [Would it be possible to port to mineclone?](https://github.com/minetest-mods/moreblocks/issues/188) - no plan to
+  actually make moreblocks mineclone-aware, but laid the groundwork to make this very easy.
 - [Minor issue causing warnings in MT 5.5.0 with texture alpha clipping](https://github.com/minetest-mods/moreblocks/issues/187)
 - maybe: [world aligned textures](https://github.com/minetest-mods/moreblocks/issues/179)
-- maybe: [Make microblocks work for nodes with layered textures](Make microblocks work for nodes with layered textures)
-- \* [Make variants of nodes that can burn also burnable](https://github.com/minetest-mods/moreblocks/issues/177)
-- [Add screenshot in README.md #151](https://github.com/minetest-mods/moreblocks/issues/151)
+- maybe: [Make microblocks work for nodes with layered textures](https://github.com/minetest-mods/moreblocks/issues/178)
+- [Make variants of nodes that can burn also burnable](https://github.com/minetest-mods/moreblocks/issues/177)
+- \* [Add screenshot in README.md](https://github.com/minetest-mods/moreblocks/issues/151)
+- \* [Slab back to full block](https://github.com/minetest-mods/moreblocks/issues/112)
+- [Conserve left-over microblocks](https://github.com/minetest-mods/moreblocks/pull/108)
 - maybe some of the other bugs/PRS, but they mostly either seem to be fixed or unfixable
 
 \* not yet fixed, but planned

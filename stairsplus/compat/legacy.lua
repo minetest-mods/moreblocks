@@ -1,4 +1,4 @@
--- legacy: register all the expected variants for e.g. default, wool, gloopblocks, etc.
+-- legacy: export old API for mods which depend on it
 -- provide a configuration option to *disable* legacy. it must be enabled by default, to prevent breaking
 -- existing servers
 local api = stairsplus.api
