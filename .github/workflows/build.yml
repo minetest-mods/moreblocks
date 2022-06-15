@@ -21,4 +21,4 @@ jobs:
         run: $HOME/.luarocks/bin/luacheck --config ./stairsplus/.luacheckrc  -q ./stairsplus
 
       - name: luacheck stairsplus_legacy
-        run: $HOME/.luarocks/bin/luacheck --config ./stairsplus/.luacheckrc  -q ./stairsplus_legacy
+        run: $HOME/.luarocks/bin/luacheck --config ./stairsplus_legacy/.luacheckrc  -q ./stairsplus_legacy
