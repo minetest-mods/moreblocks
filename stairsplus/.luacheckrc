@@ -23,6 +23,7 @@ stds.minetest = {
 stds.stairsplus = {
 	globals = {
 		"stairsplus",
+		"stairs", -- we take over control of stairs
 	},
 	read_globals = {
 		"default",
