@@ -20,6 +20,7 @@ stairsplus = {
 	S = S,
 
 	has = {
+		default = minetest.get_modpath("default"),
 		stairs = minetest.get_modpath("stairs"),
 	},
 

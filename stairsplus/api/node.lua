@@ -11,7 +11,6 @@ local S = stairsplus.S
 
 local legacy_mode = stairsplus.settings.legacy_mode
 local legacy_place_mechanic = stairsplus.settings.legacy_place_mechanic
-local in_creative_inventory = stairsplus.settings.in_creative_inventory
 local default_align_style = stairsplus.settings.default_align_style
 
 api.nodes_by_shape = {}
@@ -59,36 +58,12 @@ local function check_node_validity(node_def, meta)
 		paramtype2 == "degrotate" or
 		paramtype2 == "meshoptions" or
 		paramtype2 == "color" or
-		paramtype2 == "colorfacedir" or
 		paramtype2 == "colorwallmounted" or
 		paramtype2 == "glasslikeliquidlevel" or
 		paramtype2 == "colordegrotate"
 	) then
 		error(("cannot register %q w/ paramtype2 %q w/ stairsplus"):format(node_def.name, paramtype2))
 	end
-end
-
-local function build_groups(shape, node_groups)
-	local groups = {
-		[("shape_%s"):format(shape)] = 1,
-		not_in_creative_inventory = in_creative_inventory and 1 or 0,
-	}
-
-	local shape_def = api.registered_shapes[shape]
-
-	for group, value in pairs(node_groups) do
-		if api.passthrough_groups[group] then
-			groups[group] = value
-
-		elseif api.scale_groups[group] then
-			groups[group] = (shape_def.eighths / 8) * value
-
-		elseif not api.ignore_groups[group] then
-			groups[shape_def.name_format:format(group)] = value
-		end
-	end
-
-	return groups
 end
 
 local wall_right_dirmap = {9, 18, 7, 12}
@@ -190,6 +165,9 @@ function api.register_single(node, shape, overrides, meta)
 	stairsplus.log("info", "registering %s %s", shape, node)
 	meta = meta or {}
 	overrides = overrides or {}
+	if not minetest.registered_nodes[node] then
+		error(("%q is not defined"):format(node))
+	end
 	local node_def = table.copy(minetest.registered_nodes[node])
 	check_node_validity(node_def, meta)
 
@@ -204,6 +182,13 @@ function api.register_single(node, shape, overrides, meta)
 
 	local shape_def = api.registered_shapes[shape]
 
+	local paramtype2
+	if node_def.paramtype2 == "colorfacedir" then
+		paramtype2 = "colorfacedir"
+	else
+		paramtype2 = shape_def.paramtype2 or "facedir"
+	end
+
 	-- shaped_node definition
 	local def = {
 		description = S(shape_def.description, node_def.description or node),
@@ -214,15 +199,16 @@ function api.register_single(node, shape, overrides, meta)
 		collision_box = shape_def.collision_box,
 		selection_box = shape_def.selection_box,
 		paramtype = shape_def.paramtype or "light",
-		paramtype2 = shape_def.paramtype2 or "facedir",
+		paramtype2 = paramtype2,
 
 		light_source = scale_light(node_def.light_source, shape_def),
-		groups = build_groups(shape, node_def.groups),
+		groups = api.build_groups(node, shape),
 
 		tiles = node_def.tiles,
 		overlay_tiles = node_def.overlay_tiles,
 		use_texture_alpha = node_def.use_texture_alpha,
 		color = node_def.color,
+		palette = node_def.palette,  -- for coloredfacedir
 		stack_max = node_def.stack_max,
 		sound = node_def.sound,
 		is_ground_content = node_def.is_ground_content,
@@ -249,7 +235,7 @@ function api.register_single(node, shape, overrides, meta)
 	end
 
 	-- if there's a drop defined, and we can drop a shaped version, do so
-	if node_def.drop then
+	if node_def.drop and type(node_def.drop) == "string" then
 		local item = api.get_shaped_node(node_def.drop, shape)
 		if item then
 			def.drop = item
@@ -260,6 +246,7 @@ function api.register_single(node, shape, overrides, meta)
 		def.on_place = api.legacy_on_place
 	end
 
+	overrides.groups = nil
 	table_set_all(def, overrides)
 
 	-- set backface_culling and align_style
@@ -353,13 +340,14 @@ function api.get_shapes_hash(node)
 end
 
 function api.get_shaped_node(node, shape_or_item)
-	local name, count = shape_or_item:match("^([^ ]+) (%d+)")
-	if not name then
-		name = shape_or_item
+	if shape_or_item == "" then
+		return ""
 	end
 
-	if name == "" then
-		return ""
+	local name, count = shape_or_item:match("^([^ ]+) (%d+)")
+
+	if not name then
+		name = shape_or_item
 	end
 
 	count = tonumber(count)
@@ -396,8 +384,6 @@ end
 minetest.register_on_mods_loaded(function()
 	stairsplus.log("info", "registering schema crafts")
 	for node, shapes in pairs(api.shapes_by_node) do
-		api.register_schema_crafts_for_node(node)
-
 		for shape in pairs(shapes) do
 			local shaped_node = api.format_name(node, shape)
 			api.node_by_shaped_node[shaped_node] = node
@@ -406,5 +392,7 @@ minetest.register_on_mods_loaded(function()
 
 		api.node_by_shaped_node[node] = node
 		api.shape_by_shaped_node[node] = "node"
+
+		api.register_schema_crafts_for_node(node)
 	end
 end)

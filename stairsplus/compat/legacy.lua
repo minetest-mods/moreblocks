@@ -3,13 +3,19 @@
 -- existing servers
 local api = stairsplus.api
 
+local is_legacy_drawtype = stairsplus.compat.is_legacy_drawtype
 local legacy_mode = stairsplus.settings.legacy_mode
 
 function stairsplus:register_all(modname, subname, recipeitem, fields)
+	local meta = {}
+	if is_legacy_drawtype(recipeitem) then
+		meta.ignore_drawtype = true
+	end
+
 	if legacy_mode then
-		api.register_group(recipeitem, "legacy", fields)
+		api.register_group(recipeitem, "legacy", fields, meta)
 	else
-		api.register_group(recipeitem, "common", fields)
+		api.register_group(recipeitem, "common", fields, meta)
 	end
 
 	local old_name = ("%s:%s"):format(modname, subname)

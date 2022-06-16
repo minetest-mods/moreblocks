@@ -76,7 +76,7 @@ for _, shape in ipairs({"micro", "panel", "slab"}) do
 		local shape2 = ("%s_%s"):format(shape, slice2)
 		local def1 = api.registered_shapes[shape1]
 		local def2 = api.registered_shapes[shape2]
-		local n = math.floor(def1.eighths / def2.eighths)
+		local n = math.floor(3 * def1.eighths / def2.eighths)
 
 		register_craft_schema({
 			output = ("%s %s"):format(shape2, n),
@@ -95,7 +95,7 @@ for _, shape in ipairs({"panel", "slab"}) do
 		local shape2 = ("%s_%s"):format(demotion[shape], slice)
 		local def1 = api.registered_shapes[shape1]
 		local def2 = api.registered_shapes[shape2]
-		local n = math.floor(def1.eighths / def2.eighths)
+		local n = math.floor(3 * def1.eighths / def2.eighths)
 
 		register_craft_schema({
 			output = ("%s %s"):format(shape2, n),

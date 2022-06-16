@@ -63,7 +63,7 @@ stairsplus.api.register_shape("stair_outer", {
 	name_format = "stair_%s_outer",
 	description = "@1 Outer Stair",
 	shape_groups = {stair = 1, common = 1, legacy = 1, basic = 1},
-	eighths = 5,
+	eighths = 7,
 	drawtype = "nodebox",
 	node_box = {
 		type = "fixed",

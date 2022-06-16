@@ -19,4 +19,5 @@ stairsplus.api.register_ignore_groups({
 	"attached_node",
 	"connect_to_raillike",
 	"tool",
+	"type_node",
 })
