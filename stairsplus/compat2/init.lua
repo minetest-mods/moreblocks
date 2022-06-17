@@ -3,7 +3,8 @@ stairsplus.compat = {
 		local def = minetest.registered_nodes[node]
 		return (
 			def.drawtype == "mesh" or
-			def.drawtype == "plantlike"
+			def.drawtype == "plantlike" or
+			def.drawtype == "nodebox"
 		)
 	end
 }
