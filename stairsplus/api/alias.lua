@@ -7,6 +7,15 @@ function api.register_alias_single(old_node, new_node, shape)
 	local new_shaped_node = api.format_name(new_node, shape)
 
 	minetest.register_alias(old_shaped_node, new_shaped_node)
+
+	local shape_def = api.registered_shapes[shape]
+	if shape_def.aliases then
+		local old_mod, old_name = old_node:match("^([^:]+):(.*)$")
+		for _, alias in ipairs(shape_def.aliases) do
+			old_shaped_node = ("%s:%s"):format(old_mod, alias:format(old_name))
+			minetest.register_alias(old_shaped_node, new_shaped_node)
+		end
+	end
 end
 
 function api.register_alias_all(old_node, new_node)
@@ -38,6 +47,15 @@ function api.register_alias_force_single(old_node, new_node, shape)
 	local new_shaped_node = api.format_name(new_node, shape)
 
 	minetest.register_alias_force(old_shaped_node, new_shaped_node)
+
+	local shape_def = api.registered_shapes[shape]
+	if shape_def.aliases then
+		local old_mod, old_name = old_node:match("^([^:]+):(.*)$")
+		for _, alias in ipairs(shape_def.aliases) do
+			old_shaped_node = ("%s:%s"):format(old_mod, alias:format(old_name))
+			minetest.register_alias_force(old_shaped_node, new_shaped_node)
+		end
+	end
 
 	local nodes = api.nodes_by_shape[shape] or {}
 	if nodes[old_node] then

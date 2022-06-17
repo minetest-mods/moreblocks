@@ -34,7 +34,7 @@ stairsplus_legacy = {
 stairsplus_legacy.dofile("settings")
 
 function stairsplus_legacy.register_legacy(node, overrides, meta)
-	if stairsplus_legacy.settings.stairsplus_legacy_mode then
+	if stairsplus.settings.legacy_mode then
 		stairsplus.api.register_group(node, "legacy", overrides, meta)
 	else
 		stairsplus.api.register_group(node, "common", overrides, meta)

@@ -21,5 +21,20 @@ stairsplus.util = {
 			table.sort(sorted)
 		end
 		return sorted
+	end,
+
+	check_call = function(func)
+		-- wrap a function w/ logic to avoid crashing the game
+		local f = function(...)
+			local status, out = pcall(func, ...)
+			if status then
+				return out
+			else
+				local message = ("Error (func): %s %s"):format(out, dump({...}))
+				stairsplus.log("error", message)
+				error(message)
+			end
+		end
+		return f
 	end
 }

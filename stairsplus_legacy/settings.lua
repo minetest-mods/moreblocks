@@ -8,6 +8,4 @@ stairsplus_legacy.settings = {
 	technic = s:get_bool("stairsplus_legacy.technic", true),
 	prefab = s:get_bool("stairsplus_legacy.prefab", true),
 	wool = s:get_bool("stairsplus_legacy.wool", true),
-
-	stairsplus_legacy_mode = s:get_bool("stairsplus.legacy_mode")
 }

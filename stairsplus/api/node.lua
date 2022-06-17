@@ -179,6 +179,11 @@ function api.register_single(node, shape, overrides, meta)
 
 	-- register node
 	local shaped_name = api.format_name(node, shape)
+	for k, v in pairs(def.groups) do
+		if type(v) ~= "number" then
+			error(("%s %s group:%s = %s"):format(node, shape, k, v))
+		end
+	end
 	minetest.register_node(":" .. shaped_name, def)
 
 	-- alias old name formats
@@ -228,7 +233,9 @@ function api.register_groups(node, groups, overrides, meta)
 end
 
 function api.get_shapes(node)
-	return table_sort_keys(api.shapes_by_node[node])
+	if api.shapes_by_node[node] then
+		return table_sort_keys(api.shapes_by_node[node])
+	end
 end
 
 -- warning: don't mutate the return value

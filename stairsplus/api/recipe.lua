@@ -62,7 +62,7 @@ local function verify_schema(schema)
 end
 
 function api.register_on_register_craft_schema(func)
-	table.insert(api.registered_on_register_craft_schema, func)
+	table.insert(api.registered_on_register_craft_schemas, func)
 end
 
 function api.register_craft_schema(schema)
@@ -157,7 +157,7 @@ function api.register_schema_crafts_for_node(node)
 	local shapes = api.get_shapes_hash(node)
 	for _, schema in ipairs(api.registered_recipe_schemas) do
 		if has_the_right_shapes(schema, shapes) then
-			stairsplus.log("debug", "using schema %q", minetest.serialize(schema):sub(#("return ")))
+			stairsplus.log("verbose", "using schema %s", minetest.serialize(schema):sub(#("return ")))
 			register_for_schema(node, schema)
 		end
 	end
@@ -195,7 +195,7 @@ function api.register_crafts_for_shapes(def)
 				output = api.get_schema_recipe_item(def.output, shape),
 				recipe = api.get_schema_recipe_item(def.recipe, shape),
 				cooktime = def.cooktime(api.registered_shapes[shape].eighths),
-				groups = (not recipes_in_creative_inventory) and {not_in_creative_inventory = 1}
+				groups = (not recipes_in_creative_inventory) and {not_in_creative_inventory = 1} or nil
 			})
 		end
 
@@ -207,7 +207,7 @@ function api.register_crafts_for_shapes(def)
 				type = "fuel",
 				recipe = api.get_schema_recipe_item(def.recipe, shape),
 				burntime = def.burntime(api.registered_shapes[shape].eighths),
-				groups = (not recipes_in_creative_inventory) and {not_in_creative_inventory = 1}
+				groups = (not recipes_in_creative_inventory) and {not_in_creative_inventory = 1} or nil
 			})
 		end
 
