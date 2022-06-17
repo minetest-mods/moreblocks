@@ -1,3 +1,6 @@
+-- stairs compat: override what stairs does
+-- in stairsplus_legacy, "fix" any stairs which were already registered
+
 if not stairsplus.has.stairs then
 	return
 end
@@ -8,8 +11,6 @@ local S = stairsplus.S
 
 local default_align_style = stairsplus.settings.default_align_style
 local is_legacy_drawtype = stairsplus.compat.is_legacy_drawtype
-
--- stairs compat: override what stairs does, and "fix" any stairs which were already registered...
 
 function stairs.register_stair(subname, node, groups, tiles, description, sounds, worldaligntex)
 	local meta = {
@@ -81,4 +82,22 @@ function stairs.register_stair_outer(subname, node, groups, tiles, description, 
 	}, meta)
 
 	minetest.register_alias(("stairs:stair_outer_%s"):format(subname), api.format_name(node, "stair_outer"))
+end
+
+local stair_name_formats = {
+	stair = "stairs:stair_%s",
+	slab_8 = "stairs:slab_%s",
+	stair_inner = "stairs:stair_inner_%s",
+	stair_outer = "stairs:stair_outer_%s",
+}
+
+function stairsplus.compat.override_stairs(name, node, overrides, meta)
+	for shape, name_format in pairs(stair_name_formats) do
+		local stair_name = name_format:format(name)
+		if minetest.registered_nodes[stair_name] then
+			api.register_single(node, shape, overrides, meta)
+			local shaped_name = api.format_name(node, shape)
+			minetest.register_alias_force(stair_name, shaped_name)
+		end
+	end
 end

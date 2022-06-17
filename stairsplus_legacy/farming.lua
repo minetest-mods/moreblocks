@@ -1,5 +1,5 @@
 if stairsplus_legacy.has.stairs then
-	stairsplus_legacy.override_stairs("straw", "farming:straw")
+	stairsplus.compat.override_stairs("straw", "farming:straw")
 end
 
 local farming_nodes = {"straw"}

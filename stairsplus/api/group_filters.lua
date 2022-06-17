@@ -41,7 +41,7 @@ function api.build_groups(node, shape)
 
 	local groups = {
 		[("shape_%s"):format(shape)] = 1,
-		not_in_creative_inventory = in_creative_inventory and 1 or 0,
+		not_in_creative_inventory = in_creative_inventory and 1,
 	}
 
 	local shape_def = api.registered_shapes[shape]

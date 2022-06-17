@@ -41,26 +41,6 @@ function stairsplus_legacy.register_legacy(node, overrides, meta)
 	end
 end
 
-if stairsplus_legacy.has.stairs then
-	local stair_name_formats = {
-		stair = "stairs:stair_%s",
-		slab_8 = "stairs:slab_%s",
-		stair_inner = "stairs:stair_inner_%s",
-		stair_outer = "stairs:stair_outer_%s",
-	}
-
-	function stairsplus_legacy.override_stairs(name, node, overrides, meta)
-		for shape, name_format in pairs(stair_name_formats) do
-			local stair_name = name_format:format(name)
-			if minetest.registered_nodes[stair_name] then
-				stairsplus.api.register_single(node, shape, overrides, meta)
-				local shaped_name = stairsplus.api.format_name(node, shape)
-				minetest.register_alias_force(stair_name, shaped_name)
-			end
-		end
-	end
-end
-
 if stairsplus_legacy.has.basic_materials and stairsplus_legacy.settings.basic_materials then
 	stairsplus_legacy.dofile("basic_materials")
 end

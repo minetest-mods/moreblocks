@@ -1,4 +1,4 @@
-std = "lua51+luajit+minetest+moreblocks"
+std = "lua51+luajit+minetest+stairsplus_legacy"
 unused_args = false
 max_line_length = 120
 
@@ -19,7 +19,7 @@ stds.minetest = {
 	}
 }
 
-stds.moreblocks = {
+stds.stairsplus_legacy = {
 	globals = {
 		"stairsplus_legacy",
 	},

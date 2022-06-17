@@ -1,36 +1,12 @@
 -- for registering recipe schemas
--- should register schemas w/ unified_inventory and i3 and whatever else,
--- and hide the recipes for the individual nodes (possibly a setting for such)
---[[
-
-api.register_craft_schema({
-	output = "panel_8 6",
-	recipe = {{"node", "node", "node"}},
-})
-
-api.register_craft_schema({
-	type = "shapeless",
-	output = "micro_8 7",
-	recipe = {"stair_inner"},
-})
-
-api.register_schema_crafts_for_node("default:coalblock")
-
-api.register_crafts_for_shapes({
-	type = "cooking",
-	output = "default:stone",
-	recipe = "default:cobblestone",
-	cooktime = function(eights) return 3 * eights / 8 end,
-})
-
-api.register_crafts_for_shapes({
-	type = "fuel",
-	recipe = "default:coalblock",
-	burntime = function(eights) return 370 * eights / 8 end,
-})
-
-]]
+-- TODO: should register schemas w/ unified_inventory and i3 and whatever else,
+--       and hide the recipes for the individual nodes (possibly a setting for such)
 local api = stairsplus.api
+
+local recipes_in_creative_inventory = stairsplus.settings.recipes_in_creative_inventory
+
+api.registered_recipe_schemas = {}
+api.registered_on_register_craft_schemas = {}
 
 local function is_valid_output(item, shapes)
 	local item_name = item:match("^([^ ]+)")
@@ -85,7 +61,10 @@ local function verify_schema(schema)
 	end
 end
 
-api.registered_recipe_schemas = {}
+function api.register_on_register_craft_schema(func)
+	table.insert(api.registered_on_register_craft_schema, func)
+end
+
 function api.register_craft_schema(schema)
 	local problems = verify_schema(schema)
 
@@ -93,9 +72,13 @@ function api.register_craft_schema(schema)
 		error(problems)
 	end
 
-	stairsplus.log("info", "registering craft schema %s", minetest.write_json(schema))
+	stairsplus.log("info", "registering craft schema %s", minetest.serialize(schema):sub(#("return ")))
 
 	table.insert(api.registered_recipe_schemas, schema)
+
+	for _, func in ipairs(api.registered_on_register_craft_schemas) do
+		func(schema)
+	end
 end
 
 local function has_the_right_shapes(schema, shapes)
@@ -136,30 +119,35 @@ end
 local function register_for_schema(node, schema)
 	local recipe = table.copy(schema)
 
-	recipe.output = api.get_shaped_node(node, recipe.output)
+	recipe.output = api.get_schema_recipe_item(node, recipe.output)
 
 	if recipe.replacements then
 		for _, replacement in ipairs(recipe.replacements) do
 			for i, item in ipairs(replacement) do
-				replacement[i] = api.get_shaped_node(node, item)
+				replacement[i] = api.get_schema_recipe_item(node, item)
 			end
 		end
 	end
 
 	if recipe.type == "shapeless" then
 		for i, item in ipairs(recipe.recipe) do
-			recipe.recipe[i] = api.get_shaped_node(node, item)
+			recipe.recipe[i] = api.get_schema_recipe_item(node, item)
 		end
 
 	elseif recipe.type == "shaped" or recipe.type == nil then
 		for _, row in ipairs(recipe.recipe) do
 			for i, item in ipairs(row) do
-				row[i] = api.get_shaped_node(node, item)
+				row[i] = api.get_schema_recipe_item(node, item)
 			end
 		end
 	end
 
 	stairsplus.log("info", "registering recipe %s", minetest.serialize(recipe):sub(#("return ")))
+
+	if not recipes_in_creative_inventory then
+		-- i don't think anything supports this but...
+		recipe.groups = {not_in_creative_inventory = 1}
+	end
 
 	minetest.register_craft(recipe)
 end
@@ -204,9 +192,10 @@ function api.register_crafts_for_shapes(def)
 		for _, shape in ipairs(shapes) do
 			minetest.register_craft({
 				type = "cooking",
-				output = api.get_shaped_node(def.output, shape),
-				recipe = api.get_shaped_node(def.recipe, shape),
+				output = api.get_schema_recipe_item(def.output, shape),
+				recipe = api.get_schema_recipe_item(def.recipe, shape),
 				cooktime = def.cooktime(api.registered_shapes[shape].eighths),
+				groups = (not recipes_in_creative_inventory) and {not_in_creative_inventory = 1}
 			})
 		end
 
@@ -216,8 +205,9 @@ function api.register_crafts_for_shapes(def)
 		for _, shape in ipairs(shapes) do
 			minetest.register_craft({
 				type = "fuel",
-				recipe = api.get_shaped_node(def.recipe, shape),
+				recipe = api.get_schema_recipe_item(def.recipe, shape),
 				burntime = def.burntime(api.registered_shapes[shape].eighths),
+				groups = (not recipes_in_creative_inventory) and {not_in_creative_inventory = 1}
 			})
 		end
 

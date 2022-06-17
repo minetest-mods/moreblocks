@@ -17,7 +17,9 @@ stairsplus/API.md
 
 ### other things
 
+* finish documentation
+* unified_inventory / sfinv / i3 support
 * finish legacy support
 * finish compatability support
 * create a way to analyze and reduce node_count
-* ? create a way for players to request nodes or groups?
+* ? create a way for admins to execute a command to create a config option to register a shaped node?
