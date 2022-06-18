@@ -40,13 +40,13 @@ stairsplus.util = {
 		end
 
 		for k1, v1 in pairs(t1) do
-			if not v1 == t2[k1] then
+			if v1 ~= t2[k1] then
 				return false
 			end
 		end
 
 		for k2, v2 in pairs(t2) do
-			if not t1[k2] == v2 then
+			if t1[k2] ~= v2 then
 				return false
 			end
 		end
