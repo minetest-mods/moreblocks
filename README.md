@@ -3,9 +3,9 @@
 More Blocks for [Minetest](https://www.minetest.net/), a free and open source infinite
 world block sandbox game.
 
-![Screenshot](./raw/bugfixes/screenshot.png)
+![Screenshot](https://github.com/fluxionary/minetest-moreblocks/raw/bugfixes/screenshot.png)
 
-![Screenshot](./raw/bugfixes/screenshot2.png)
+![Screenshot](https://github.com/fluxionary/minetest-moreblocks/raw/bugfixes/screenshot2.png)
 
 [Forum topic](https://forum.minetest.net/viewtopic.php?f=11&t=509)
 
