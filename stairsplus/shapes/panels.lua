@@ -38,7 +38,7 @@ stairsplus.api.register_shape("panel_8", {
 	name_format = "panel_%s_8",
 	aliases = {"panel_%s", "panel_bottom_%s"},
 	description = "@1 1/2 Panel",
-	shape_groups = {panel = 1, common = 1, legacy = 1},
+	shape_groups = {panel = 1, legacy = 1},
 	eighths = 2,
 	drawtype = "nodebox",
 	node_box = {

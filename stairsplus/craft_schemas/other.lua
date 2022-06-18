@@ -46,7 +46,6 @@ register_craft_schema({
 	recipe = {"slab_1", "slab_1", "slab_1", "slab_1"},
 })
 
-
 register_craft_schema({
 	type = "shapeless",
 	output = "slab_12",

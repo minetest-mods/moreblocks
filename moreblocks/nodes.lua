@@ -1,10 +1,3 @@
---[[
-More Blocks: node definitions
-
-Copyright © 2011-2020 Hugo Locurcio and contributors.
-Licensed under the zlib license. See LICENSE.md for more information.
---]]
-
 local S = moreblocks.S
 
 local cm = moreblocks.resources.craft_materials
@@ -80,6 +73,14 @@ local function register_all_faces(name, base)
 	name = "all_faces_" .. name
 	local itemstring = ("%s:%s"):format(modname, name)
 	moreblocks.api.register_all_faces(itemstring, base)
+	register_stairs(name, minetest.registered_nodes[itemstring])
+	minetest.register_alias(name, itemstring)
+end
+
+local function register_no_faces(name, base)
+	name = "no_faces_" .. name
+	local itemstring = ("%s:%s"):format(modname, name)
+	moreblocks.api.register_no_faces(itemstring, base)
 	register_stairs(name, minetest.registered_nodes[itemstring])
 	minetest.register_alias(name, itemstring)
 end
@@ -462,20 +463,25 @@ end
 
 if cm.tree then
 	register_all_faces("tree", cm.tree)
+	register_no_faces("tree", cm.tree)
 end
 
 if cm.jungle_tree then
 	register_all_faces("jungle_tree", cm.jungle_tree)
+	register_no_faces("jungle_tree", cm.jungle_tree)
 end
 
 if cm.pine_tree then
 	register_all_faces("pine_tree", cm.pine_tree)
+	register_no_faces("pine_tree", cm.pine_tree)
 end
 
 if cm.acacia_tree then
 	register_all_faces("acacia_tree", cm.acacia_tree)
+	register_no_faces("acacia_tree", cm.acacia_tree)
 end
 
 if cm.aspen_tree then
 	register_all_faces("aspen_tree", cm.aspen_tree)
+	register_no_faces("aspen_tree", cm.aspen_tree)
 end

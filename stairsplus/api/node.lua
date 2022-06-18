@@ -1,6 +1,7 @@
 -- for registering variants of a specific node
 local api = stairsplus.api
 
+local table_equals = stairsplus.util.table_equals
 local table_set_all = stairsplus.util.table_set_all
 local table_sort_keys = stairsplus.util.table_sort_keys
 
@@ -13,6 +14,12 @@ api.shapes_by_node = {}
 
 api.node_by_shaped_node = {}
 api.shape_by_shaped_node = {}
+
+api.registered_on_register_singles = {}
+
+function api.register_on_register_single(func)
+	table.insert(api.registered_on_register_singles, func)
+end
 
 local function check_node_validity(node_def, meta)
 	local type_ = node_def.type
@@ -64,9 +71,11 @@ function api.register_single(node, shape, overrides, meta)
 	stairsplus.log("info", "registering %s %s", shape, node)
 	meta = meta or {}
 	overrides = overrides or {}
+
 	if not minetest.registered_nodes[node] then
-		error(("%q is not defined"):format(node))
+		error(("node %q is not defined"):format(node))
 	end
+
 	local node_def = table.copy(minetest.registered_nodes[node])
 	check_node_validity(node_def, meta)
 
@@ -117,7 +126,7 @@ function api.register_single(node, shape, overrides, meta)
 		climbable = node_def.climbable,
 		move_resistance = node_def.move_resistance,
 
-		on_place = api.on_place,
+		on_place = function(...) return api.on_place(...) end,
 	}
 
 	-- see-through nodes tend to look better if we just use the first tile
@@ -143,7 +152,11 @@ function api.register_single(node, shape, overrides, meta)
 		end
 	end
 
-	overrides.groups = nil
+	if not table_equals(overrides.groups, node_def.groups) then
+		overrides = table.copy(overrides)
+		overrides.groups = nil
+	end
+
 	table_set_all(def, overrides)
 
 	-- set backface_culling and align_style
@@ -205,6 +218,10 @@ function api.register_single(node, shape, overrides, meta)
 	shapes[shape] = true
 	api.shapes_by_node[node] = shapes
 
+	for _, func in ipairs(api.registered_on_register_singles) do
+		func(node, shaped_name)
+	end
+
 	return shaped_name
 end
 
@@ -262,6 +279,9 @@ function api.get_schema_recipe_item(node, shape_or_item)
 
 	elseif name == "node" then
 		name = node
+
+	elseif not name:match(":") then
+		return
 	end
 
 	if count then

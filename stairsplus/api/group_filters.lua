@@ -1,6 +1,7 @@
 local api = stairsplus.api
 
 local in_creative_inventory = stairsplus.settings.in_creative_inventory
+local in_craft_guide = stairsplus.settings.in_craft_guide
 
 api.passthrough_groups = {}
 api.scale_groups = {}
@@ -41,7 +42,8 @@ function api.build_groups(node, shape)
 
 	local groups = {
 		[("shape_%s"):format(shape)] = 1,
-		not_in_creative_inventory = in_creative_inventory and 1 or nil,
+		not_in_creative_inventory = (not in_creative_inventory) and 1 or nil,
+		not_in_craft_guide = (not in_craft_guide) and 1 or nil,
 	}
 
 	local shape_def = api.registered_shapes[shape]

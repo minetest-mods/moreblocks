@@ -1,9 +1,5 @@
 -- for registering recipe schemas
--- TODO: should register schemas w/ unified_inventory and i3 and whatever else,
---       and hide the recipes for the individual nodes (possibly a setting for such)
 local api = stairsplus.api
-
-local recipes_in_creative_inventory = stairsplus.settings.recipes_in_creative_inventory
 
 api.registered_recipe_schemas = {}
 api.registered_on_register_craft_schemas = {}
@@ -144,11 +140,6 @@ local function register_for_schema(node, schema)
 
 	stairsplus.log("info", "registering recipe %s", minetest.serialize(recipe):sub(#("return ")))
 
-	if not recipes_in_creative_inventory then
-		-- i don't think anything supports this but...
-		recipe.groups = {not_in_creative_inventory = 1}
-	end
-
 	minetest.register_craft(recipe)
 end
 
@@ -180,38 +171,36 @@ local function shapes_match(a, b)
 	return true
 end
 
-function api.register_crafts_for_shapes(def)
-	if def.type == "cooking" then
+function api.register_crafts_for_shapes(recipe)
+	if recipe.type == "cooking" then
 		assert(
-			shapes_match(def.output, def.recipe),
-			("error: shapes of %s and %s do not match"):format(def.output, def.recipe)
+			shapes_match(recipe.output, recipe.recipe),
+			("error: shapes of %s and %s do not match"):format(recipe.output, recipe.recipe)
 		)
 
-		local shapes = api.get_shapes(def.recipe)
+		local shapes = api.get_shapes(recipe.recipe)
 
 		for _, shape in ipairs(shapes) do
 			minetest.register_craft({
 				type = "cooking",
-				output = api.get_schema_recipe_item(def.output, shape),
-				recipe = api.get_schema_recipe_item(def.recipe, shape),
-				cooktime = def.cooktime(api.registered_shapes[shape].eighths),
-				groups = (not recipes_in_creative_inventory) and {not_in_creative_inventory = 1} or nil
+				output = api.get_schema_recipe_item(recipe.output, shape),
+				recipe = api.get_schema_recipe_item(recipe.recipe, shape),
+				cooktime = recipe.cooktime(api.registered_shapes[shape].eighths),
 			})
 		end
 
-	elseif def.type == "fuel" then
-		local shapes = api.get_shapes(def.recipe)
+	elseif recipe.type == "fuel" then
+		local shapes = api.get_shapes(recipe.recipe)
 
 		for _, shape in ipairs(shapes) do
 			minetest.register_craft({
 				type = "fuel",
-				recipe = api.get_schema_recipe_item(def.recipe, shape),
-				burntime = def.burntime(api.registered_shapes[shape].eighths),
-				groups = (not recipes_in_creative_inventory) and {not_in_creative_inventory = 1} or nil
+				recipe = api.get_schema_recipe_item(recipe.recipe, shape),
+				burntime = recipe.burntime(api.registered_shapes[shape].eighths),
 			})
 		end
 
 	else
-		error(("unsupported recipe type %s"):format(def.type))
+		error(("unsupported recipe type %s"):format(recipe.type))
 	end
 end

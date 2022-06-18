@@ -1,9 +1,3 @@
---[[
-More Blocks: crafting recipes
-
-Copyright © 2011-2020 Hugo Locurcio and contributors.
-Licensed under the zlib license. See LICENSE.md for more information.
---]]
 local cm = moreblocks.resources.craft_materials
 
 if cm.stick and cm.dry_shrub then

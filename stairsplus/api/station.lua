@@ -2,19 +2,23 @@
 
 local api = stairsplus.api
 
-local S = stairsplus.S
-local F = minetest.formspec_escape
-
 local default_stack_max = tonumber(minetest.settings:get("default_stack_max")) or 99
 
 local station = {}
 
---[[
-TODO this isn't actually modular in the right way for adding different kinds of stations
-TODO e.g. some of this stuff is very particular to the saw itself
-]]
+function station.update_infotext(pos)
+	local node = minetest.get_node(pos)
+	local def = minetest.registered_nodes[node.name]
+	return def.update_infotext(pos)
+end
 
-local function get_cost(shaped_node)
+function station.build_formspec(pos)
+	local node = minetest.get_node(pos)
+	local def = minetest.registered_nodes[node.name]
+	return def.build_formspec(pos)
+end
+
+function station.get_cost(shaped_node)
 	if shaped_node == "" then
 		return 0
 	end
@@ -28,7 +32,7 @@ local function get_cost(shaped_node)
 	return shape_def and shape_def.eighths
 end
 
-local function get_current_node(pos)
+function station.get_current_node(pos)
 	local meta = minetest.get_meta(pos)
 	local inv = meta:get_inventory()
 
@@ -48,29 +52,28 @@ local function get_current_node(pos)
 	end
 end
 
-function station.update_infotext(pos)
+function station.can_dig(pos)
 	local meta = minetest.get_meta(pos)
-
-	local parts = {}
-	if station.can_dig(pos) then
-		table.insert(parts, S("Circular Saw is empty"))
-	end
-
-	local owner = meta:get_string("owner")
-	if owner ~= "" then
-		table.insert(parts, S("(owned by @1)", meta:get_string("owner")))
-	end
-
-	meta:set_string("infotext", table.concat(parts, " "))
+	local inv = meta:get_inventory()
+	return inv:is_empty("input") and inv:is_empty("micro")
 end
 
--- Player has taken something out of the box or placed something inside
--- that amounts to count microblocks:
+function station.on_receive_fields(pos, formname, fields, sender)
+	local meta = minetest.get_meta(pos)
+	local max = tonumber(fields.max_offered)
+	if max and max > 0 then
+		meta:set_int("max_offered", max)
+		-- Update to show the correct number of items:
+		station.update_inventory(pos)
+		station.update_infotext(pos)
+	end
+end
+
 function station.update_inventory(pos, taken_stack)
 	local meta = minetest.get_meta(pos)
 	local inv = meta:get_inventory()
 
-	local node = get_current_node(pos)
+	local node = station.get_current_node(pos)
 
 	if not node then
 		for i = 1, inv:get_size("output") do
@@ -84,9 +87,9 @@ function station.update_inventory(pos, taken_stack)
 	local recycle_stack = inv:get_stack("recycle", 1)
 
 	local current_value = 8 * input_stack:get_count() + micro_stack:get_count()
-	local new_value = current_value + get_cost(recycle_stack:get_name()) * recycle_stack:get_count()
+	local new_value = current_value + station.get_cost(recycle_stack:get_name()) * recycle_stack:get_count()
 	if taken_stack then
-		new_value = new_value - get_cost(taken_stack:get_name()) * taken_stack:get_count()
+		new_value = new_value - station.get_cost(taken_stack:get_name()) * taken_stack:get_count()
 	end
 	local new_micros = new_value % 8
 	local new_blocks = math.floor(new_value / 8)
@@ -132,16 +135,19 @@ function station.update_inventory(pos, taken_stack)
 	end
 end
 
--- The amount of items offered per shape can be configured:
-function station.on_receive_fields(pos, formname, fields, sender)
-	local meta = minetest.get_meta(pos)
-	local max = tonumber(fields.max_offered)
-	if max and max > 0 then
-		meta:set_int("max_offered", max)
-		-- Update to show the correct number of items:
+function station.on_metadata_inventory_put(pos, listname, index, stack, player)
+	station.update_inventory(pos)
+	station.update_infotext(pos)
+end
+
+function station.on_metadata_inventory_take(pos, listname, index, stack, player)
+	if listname == "output" then
+		station.update_inventory(pos, stack)
+	else
 		station.update_inventory(pos)
-		station.update_infotext(pos)
 	end
+
+	station.update_infotext(pos)
 end
 
 -- Moving the inventory of the station around is not allowed because it
@@ -166,14 +172,14 @@ function station.allow_metadata_inventory_put(pos, listname, index, stack, playe
 
 	local meta = minetest.get_meta(pos)
 	local inv = meta:get_inventory()
-	local current_node = get_current_node(pos)
+	local current_node = station.get_current_node(pos)
 
 	if current_node and node ~= current_node then
 		return 0
 	end
 
 	local count = stack:get_count()
-	local cost = get_cost(shaped_node)
+	local cost = station.get_cost(shaped_node)
 
 	local input_stack = inv:get_stack("input", 1)
 	local micro_stack = inv:get_stack("micro", 1)
@@ -187,61 +193,10 @@ function station.allow_metadata_inventory_put(pos, listname, index, stack, playe
 	return math.min(count, available_count)
 end
 
-function station.on_metadata_inventory_put(pos, listname, index, stack, player)
-	station.update_inventory(pos)
-	station.update_infotext(pos)
-end
-
-function station.on_metadata_inventory_take(pos, listname, index, stack, player)
-	if listname == "output" then
-		station.update_inventory(pos, stack)
-	else
-		station.update_inventory(pos)
-	end
-
-	station.update_infotext(pos)
-end
-
-function station.build_formspec()
-	local fancy_inv = ""
-	if stairsplus.has.default then
-		-- prepend background and slot styles from default if available
-		fancy_inv = default.gui_bg .. default.gui_bg_img .. default.gui_slots
-	end
-
-	return ([[
-		size[11,10]
-		%s
-		label[0,0;%s]
-		list[current_name;input;1.7,0;1,1;]
-		label[0,1;%s]
-		list[current_name;micro;1.7,1;1,1;]
-		label[0,2;%s]
-		list[current_name;recycle;1.7,2;1,1;]
-		field[0.3,3.5;1,1;max_offered;%s:;${max_offered}]
-		button[1,3.2;1.7,1;Set;%s]
-
-		list[current_name;output;2.8,0;8,6;]
-		list[current_player;main;1.5,6.25;8,4;]
-
-		listring[current_name;output]
-		listring[current_player;main]
-		listring[current_name;recycle]
-
-		listring[current_name;micro]
-		listring[current_player;main]
-
-		listring[current_name;input]
-		listring[current_player;main]
-	]]):format(
-		fancy_inv, S("Nodes"), F(S("Microblocks")), F(S("Input")), F(S("Max")), F(S("Set"))
-	)
-end
-
 function station.on_construct(pos)
 	local meta = minetest.get_meta(pos)
 
-	meta:set_string("formspec", station.build_formspec())
+	meta:set_string("formspec", station.build_formspec(pos))
 	meta:set_string("max_offered", default_stack_max) -- How many items of this kind are offered by default?
 
 	local inv = meta:get_inventory()
@@ -249,7 +204,7 @@ function station.on_construct(pos)
 	inv:set_size("input", 1)    -- Input slot for full blocks of material x.
 	inv:set_size("micro", 1)    -- Storage for 1-7 surplus microblocks.
 	inv:set_size("recycle", 1)  -- Surplus partial blocks can be placed here.
-	inv:set_size("output", 6 * 8) -- 6x8 versions of stair-parts of material x.
+	inv:set_size("output", 6 * 9) -- 6x9 versions of stair-parts of material x.
 
 	station.update_infotext(pos)
 end
@@ -259,12 +214,6 @@ function station.after_place_node(pos, placer)
 	if minetest.is_player(placer) then
 		meta:set_string("owner", placer:get_player_name())
 	end
-end
-
-function station.can_dig(pos)
-	local meta = minetest.get_meta(pos)
-	local inv = meta:get_inventory()
-	return inv:is_empty("input") and inv:is_empty("micro")
 end
 
 function api.register_station(name, shape_groups, def)

@@ -97,7 +97,6 @@ else
 	api.on_place = minetest.item_place
 end
 
-
 function api.scale_light(light_source, shape_def)
 	if not light_source or light_source == 0 then
 		return 0

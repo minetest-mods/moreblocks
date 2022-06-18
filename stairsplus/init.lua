@@ -1,11 +1,3 @@
---[[
-More Blocks: Stairs+
-
-Copyright © 2011-2020 Hugo Locurcio and contributors.
-Licensed under the zlib license. See LICENSE.md for more information.
---]]
-
--- Nodes will be called <modname>:{stair,slab,panel,micro,slope}_<subname>
 local modname = minetest.get_current_modname()
 local modpath = minetest.get_modpath(modname)
 local S = minetest.get_translator(modname)
@@ -35,7 +27,7 @@ stairsplus = {
 	end,
 }
 
--- order matters TODO document that... though i probably won't
+-- please don't change the order in which things are loaded, without understanding why they're ordered like this
 stairsplus.dofile("settings")
 stairsplus.dofile("util")
 

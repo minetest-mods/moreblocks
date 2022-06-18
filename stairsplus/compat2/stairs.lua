@@ -77,7 +77,7 @@ function stairs.register_stair_outer(subname, node, groups, tiles, description, 
 	api.register_single(node, "stair_outer", {
 		groups = groups,
 		tiles = tiles,
-		description = full_description or S("Inner @1", description),
+		description = full_description or S("Outer @1", description),
 		sounds = sounds,
 	}, meta)
 

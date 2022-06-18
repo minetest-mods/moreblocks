@@ -3,65 +3,41 @@
 More Blocks for [Minetest](https://www.minetest.net/), a free and open source infinite
 world block sandbox game.
 
-[**Forum topic**](https://forum.minetest.net/viewtopic.php?f=11&t=509)
+![Screenshot](./raw/master/screenshot.png)
 
-## Installation
+![Screenshot](./raw/master/screenshot2.png)
 
-### Download the mod
+[Forum topic](https://forum.minetest.net/viewtopic.php?f=11&t=509)
 
-To install More Blocks, clone this Git repository into your Minetest's `mods/` directory:
+[Content DB entry](https://content.minetest.net/packages/Calinou/moreblocks/)
 
-```bash
-git clone https://github.com/minetest-mods/moreblocks.git
-```
-
-You can also
-[download a ZIP archive](https://github.com/minetest-mods/moreblocks/archive/master.zip)
-of More Blocks.
-
-It is also available through the in-game `Content` tab.
-
-### Enable the mod
-
-Once you have installed More Blocks, you need to enable it in Minetest.
-The procedure is as follows:
-
-#### Using the client's main menu
-
-This is the easiest way to enable More Blocks when playing in singleplayer
-(or on a server hosted from a client).
-
-1. Start Minetest and switch to the **Local Game** tab.
-2. Select the world you want to enable More Blocks in.
-3. Click **Configure**, then enable `moreblocks` by double-clicking it
-   (or ticking the **Enabled** checkbox).
-4. Save the changes, then start a game on the world you enabled More Blocks on.
-5. More Blocks should now be running on your world.
-
-#### Using a text editor
-
-This is the recommended way to enable the mod on a server without using a GUI.
-
-1. Make sure Minetest is not currently running (otherwise, it will overwrite
-   the changes when exiting).
-2. Open the world's `world.mt` file using a text editor.
-3. Add the following line at the end of the file:
-
-```text
-load_mod_moreblocks = true
-```
-
-If the line is already present in the file, then replace `false` with `true`
-on that line.
-
-4. Save the file, then start a game on the world you enabled More Blocks on.
-5. More Blocks should now be running on your world.
+[Source repo](https://github.com/minetest-mods/moreblocks/)
 
 ## Version compatibility
 
-More Blocks is currently primarily tested with Minetest 5.5.0.
+More Blocks is currently primarily tested with Minetest 5.5.0+.
 It may or may not work with newer or older versions. Issues arising in older
 versions than 5.0.0 will generally not be fixed.
+
+## Legacy mode
+
+The 3.0.0 release of moreblocks introduces a "legacy" mode, which is on by default, and is meant to
+allow new servers to not commit to creating as many nodes as older versions, while not breaking anything
+on existing servers. See `settingtypes.txt` for available settings.
+
+## Mods in the pack
+
+### moreblocks
+
+Defines a bunch of new kinds of nodes. Provides an API for creating variants of some nodes.
+
+### stairsplus
+
+Allows the creation of 49 new shapes for registered nodes.
+
+### stairsplus_legacy
+
+Stairs+ registrations for various mods which were formerly done automatically as part of moreblocks.
 
 ## License
 

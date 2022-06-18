@@ -1,3 +1,48 @@
+stairsplus.circular_saw_crafting (Allow crafting the circular saw) bool true
+
+# Defaults to true if creative_mode is enabled.
+stairsplus.ex_nihilo (Saw gives infinite nodes) bool false
+
 # If enabled, Stairs+ nodes will be displayed in the inventory when playing in creative mode.
 # Disabling this can speed up loading times for clients as fewer nodes need to be registered in the creative inventory.
-moreblocks.stairsplus_in_creative_inventory (Display Stairs+ nodes in creative inventory) bool true
+stairsplus.in_creative_inventory (Display Stairs+ nodes in creative inventory) bool true
+
+# Whether to show crafting recipes involving Stairs+ nodes (in compatible inventory managers)
+stairsplus.in_craft_guide (Show crafting recipes) bool false
+
+# "user" or "world" cause things to look nicer in general, but some nodes look better w/ the "node" style
+stairsplus.default_align_style (World align style) enum user node,user,world
+
+# regular stairs shapes
+stairsplus.basic_shapes (basic shapes) flags micro_8,slab_8,stair,stair_inner,stair_outer panel_1,slope,slope_half,slope_half_raised,panel_2,slope_inner_cut,slope_inner_half,panel_4,slope_inner_half_raised,slope_inner_cut_half_raised,slope_outer,slope_outer_cut,slope_cut,slope_outer_half,panel_12,slope_outer_half_raised,slope_outer_cut_half_raised,panel_14,panel_15,micro_1,slab_15,slab_two_sides,stair_half,slab_three_sides,stair_right_half,slab_three_sides_u,micro_12,micro_14,slab_2,micro_15,slab_4,micro_2,stair_alt_4,stair_alt_2,stair_alt_1,stair_alt_8,slab_1,slab_12,stair,slope_outer_cut_half,slope_inner_cut_half,slab_14,micro_4,micro_8,slab_8,stair_inner,stair_outer,slope_inner,panel_8
+
+# the most commonly used variants
+stairsplus.common_shapes (common shapes) flags micro_8,panel_8,slab_1,slab_8,stair,stair_inner,stair_outer,slope,slope_half,slope_half_raised,slope_inner,slope_inner_cut,slope_inner_half,slope_inner_cut_half,slope_inner_half_raised,slope_inner_cut_half_raised,slope_outer,slope_outer_cut,slope_cut,slope_outer_half,slope_outer_cut_half,slope_outer_half_raised,slope_outer_cut_half_raised panel_1,slope,slope_half,slope_half_raised,panel_2,slope_inner_cut,slope_inner_half,panel_4,slope_inner_half_raised,slope_inner_cut_half_raised,slope_outer,slope_outer_cut,slope_cut,slope_outer_half,panel_12,slope_outer_half_raised,slope_outer_cut_half_raised,panel_14,panel_15,micro_1,slab_15,slab_two_sides,stair_half,slab_three_sides,stair_right_half,slab_three_sides_u,micro_12,micro_14,slab_2,micro_15,slab_4,micro_2,stair_alt_4,stair_alt_2,stair_alt_1,stair_alt_8,slab_1,slab_12,stair,slope_outer_cut_half,slope_inner_cut_half,slab_14,micro_4,micro_8,slab_8,stair_inner,stair_outer,slope_inner,panel_8
+
+# default to registering *all* variants, and some other stuff.
+# it is only "safe" to disable this on new servers.
+stairsplus.legacy_mode (legacy mode) bool true
+
+# automatically try to rotate nodes when placed. the mechanic is sometimes confusing.
+stairsplus.legacy_place_mechanic (use legacy place mecahnic) bool true
+
+# enable registering stairsplus nodes for basic_materials
+stairsplus_legacy.basic_materials () bool true
+
+# enable registering stairsplus nodes for default
+stairsplus_legacy.default () bool true
+
+# enable registering stairsplus nodes for farming
+stairsplus_legacy.farming () bool true
+
+# enable registering stairsplus nodes for gloopblocks
+stairsplus_legacy.gloopblocks () bool true
+
+# enable registering stairsplus nodes for technic
+stairsplus_legacy.technic () bool true
+
+# enable registering stairsplus nodes for prefab
+stairsplus_legacy.prefab () bool true
+
+# enable registering stairsplus nodes for wool
+stairsplus_legacy.wool () bool true

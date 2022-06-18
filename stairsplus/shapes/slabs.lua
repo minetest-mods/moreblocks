@@ -1,7 +1,7 @@
 stairsplus.api.register_shape("slab_1", {
 	name_format = "slab_%s_1",
 	description = "@1 1/16 Slab",
-	shape_groups = {slab = 1, common = 1, legacy = 1},
+	shape_groups = {slab = 1, legacy = 1},
 	eighths = 1,
 	drawtype = "nodebox",
 	node_box = {
@@ -39,7 +39,7 @@ stairsplus.api.register_shape("slab_8", {
 	name_format = "slab_%s_8",
 	aliases = {"slab_%s"},
 	description = "@1 1/2 Slab",
-	shape_groups = {slab = 1, common = 1, legacy = 1, basic = 1},
+	shape_groups = {slab = 1, legacy = 1},
 	eighths = 4,
 	drawtype = "nodebox",
 	node_box = {

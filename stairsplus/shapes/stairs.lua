@@ -1,7 +1,7 @@
 stairsplus.api.register_shape("stair", {
 	name_format = "stair_%s",
 	description = "@1 Stair",
-	shape_groups = {stair = 1, common = 1, legacy = 1, basic = 1},
+	shape_groups = {stair = 1, legacy = 1},
 	eighths = 6,
 	drawtype = "nodebox",
 	node_box = {
@@ -46,7 +46,7 @@ stairsplus.api.register_shape("stair_right_half", {
 stairsplus.api.register_shape("stair_inner", {
 	name_format = "stair_%s_inner",
 	description = "@1 Inner Stair",
-	shape_groups = {stair = 1, common = 1, legacy = 1, basic = 1},
+	shape_groups = {stair = 1, legacy = 1},
 	eighths = 7,
 	drawtype = "nodebox",
 	node_box = {
@@ -62,7 +62,7 @@ stairsplus.api.register_shape("stair_inner", {
 stairsplus.api.register_shape("stair_outer", {
 	name_format = "stair_%s_outer",
 	description = "@1 Outer Stair",
-	shape_groups = {stair = 1, common = 1, legacy = 1, basic = 1},
+	shape_groups = {stair = 1, legacy = 1},
 	eighths = 5,
 	drawtype = "nodebox",
 	node_box = {

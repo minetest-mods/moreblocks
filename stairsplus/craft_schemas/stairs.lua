@@ -8,6 +8,12 @@ register_craft_schema({
 })
 
 register_craft_schema({
+	type = "shapeless",
+	output = "node 3",
+	recipe = {"stair", "stair", "stair", "stair"},
+})
+
+register_craft_schema({
 	output = "stair 8",
 	recipe = {
 		{"node", "", ""},
@@ -79,7 +85,55 @@ register_craft_schema({
 	recipe = {"panel_8", "micro_8"},
 })
 
-register_craft_schema({ -- See mirrored variation of the recipe below.
+register_craft_schema({
+	output = "stair_alt_1",
+	recipe = {
+		{"panel_1", ""},
+		{"", "panel_1"},
+	},
+})
+
+register_craft_schema({
+	output = "stair_alt_1",
+	recipe = {
+		{"", "panel_1"},
+		{"panel_1", ""},
+	},
+})
+
+register_craft_schema({
+	output = "stair_alt_2",
+	recipe = {
+		{"panel_2", ""},
+		{"", "panel_2"},
+	},
+})
+
+register_craft_schema({
+	output = "stair_alt_2",
+	recipe = {
+		{"", "panel_2"},
+		{"panel_2", ""},
+	},
+})
+
+register_craft_schema({
+	output = "stair_alt_4",
+	recipe = {
+		{"panel_4", ""},
+		{"", "panel_4"},
+	},
+})
+
+register_craft_schema({
+	output = "stair_alt_4",
+	recipe = {
+		{"", "panel_4"},
+		{"panel_4", ""},
+	},
+})
+
+register_craft_schema({
 	output = "stair_alt_8",
 	recipe = {
 		{"panel_8", ""},
@@ -87,7 +141,7 @@ register_craft_schema({ -- See mirrored variation of the recipe below.
 	},
 })
 
-register_craft_schema({ -- Mirrored variation of the recipe above.
+register_craft_schema({
 	output = "stair_alt_8",
 	recipe = {
 		{"", "panel_8"},

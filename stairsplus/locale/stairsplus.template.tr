@@ -3,25 +3,75 @@
 #: circular_saw.lua
 
 Circular Saw=
-Input material=
-Left-over=
-Max=
-Recycle output=
-Set=
-owned by @1=
 Circular Saw is empty=
-Circular Saw is working on @1=
+Microblocks=
+Nodes=
+Input=
+Max=
+(owned by @1)=
+Set=
 
-#: stairsplus/common.lua
-
+#: shapes/micros.lua
+@1 1/16 Microblock=
+@1 1/8 Microblock=
+@1 1/4 Microblock=
 @1 Microblock=
-@1 Slab=
+@1 3/4 Microblock=
+@1 7/8 Microblock=
+@1 15/16 Microblock=
+
+#: shapes/panels.lua
+@1 1/16 Panel=
+@1 1/8 Panel=
+@1 1/4 Panel=
+@1 1/2 Panel=
+@1 3/4 Panel=
+@1 7/8 Panel=
+@1 15/16 Panel=
+
+#: shapes/slabs.lua
+@1 1/16 Slab=
+@1 1/8 Slab=
+@1 1/4 Slab=
+@1 1/2 Slab=
+@1 3/4 Slab=
+@1 7/8 Slab=
+@1 15/16 Slab=
+@1 1/16 Slab Three Sides=
+@1 1/16 Slab Three Sides U=
+@1 1/16 Slab Two Sides=
+
+#: shapes/slopes.lua
+@1 1/2 Slope=
+@1 1/2 Slope Raised=
 @1 Slope=
-@1 Panel=
-@1 Stairs=
+@1 Slope Cut=
+@1 Slope Inner=
+@1 Slope Inner Cut=
+@1 Slope Inner Cut Half=
+@1 Slope Inner Cut Half Raised=
+@1 Slope Inner Half=
+@1 Slope Inner Half Raised=
+@1 Slope Outer=
+@1 Slope Outer Cut=
+@1 Slope Outer Cut Half=
+@1 Slope Outer Cut Half Raised=
+@1 Slope Outer Half=
+@1 Slope Outer Half Raised=
 
-#: stairsplus/registrations.lua
+#: shapes/stairs.lua
+@1 Stair=
+@1 1/16 Alt Stair=
+@1 1/8 Alt Stair=
+@1 1/4 Alt Stair=
+@1 1/2 Alt Stair=
+@1 Inner Stair=
+@1 Outer Stair=
+@1 Half Stair=
+@1 Right Half Stair=
 
-Concrete=
-Cement=
-Brass Block=
+
+# compat2/stairs.lua
+
+Inner @1=
+Outer @1=

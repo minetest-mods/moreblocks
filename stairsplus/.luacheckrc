@@ -17,6 +17,7 @@ stds.minetest = {
 		"default",
 		"table",
 		"math",
+		"string",
 	}
 }
 

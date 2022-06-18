@@ -1,12 +1,3 @@
---[[
-=====================================================================
-** More Blocks **
-By Calinou, with the help of ShadowNinja and VanessaE.
-
-Copyright © 2011-2020 Hugo Locurcio and contributors.
-Licensed under the zlib license. See LICENSE.md for more information.
-=====================================================================
---]]
 local modname = minetest.get_current_modname()
 local modpath = minetest.get_modpath(modname)
 local S = minetest.get_translator(modname)
