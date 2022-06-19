@@ -1,5 +1,3 @@
-local station = stairsplus.api.station
-
 function invsaw.has_saw_in_inventory(player)
 	local inv = player:get_inventory()
 	return inv:contains_item("main", invsaw.settings.saw_item)
@@ -19,16 +17,13 @@ function invsaw.allow_use_saw(player)
 	)
 end
 
-function invsaw.on_join(player)
-	local meta = player:get_meta()
-	local inv = player:get_inventory()
+function invsaw.check_use_status(player)
 	if invsaw.can_use_saw(player) then
-		station.initialize_metadata(meta, inv, {"legacy"})
-		station.initialize_inventory(inv)
+		invsaw.initialize_inventory(player)
 
 	else
 		invsaw.drop_inventory(player)
 	end
 end
 
-minetest.register_on_joinplayer(invsaw.on_join)
+minetest.register_on_joinplayer(invsaw.check_use_status)

@@ -1,10 +1,12 @@
+-- luacheck: globals minetest
+
 local creative_priv = invsaw.settings.creative_priv
 local priv = invsaw.settings.priv
 
 local function on_priv_change(name)
 	local player = minetest.get_player_by_name(name)
 	if player then
-		invsaw.on_join(player)
+		invsaw.check_use_status(player)
 	end
 end
 

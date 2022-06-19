@@ -19,7 +19,7 @@ stds.minetest = {
 	}
 }
 
-stds.moreblocks = {
+stds.invsaw = {
 	globals = {
 		"invsaw",
 	},
