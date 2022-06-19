@@ -31,8 +31,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - maybe: [world aligned textures](https://github.com/minetest-mods/moreblocks/issues/179)
 - maybe: [Make microblocks work for nodes with layered textures](https://github.com/minetest-mods/moreblocks/issues/178)
 - [Make variants of nodes that can burn also burnable](https://github.com/minetest-mods/moreblocks/issues/177)
-- \* [Add screenshot in README.md](https://github.com/minetest-mods/moreblocks/issues/151)
-- \* [Slab back to full block](https://github.com/minetest-mods/moreblocks/issues/112)
+- [Add screenshot in README.md](https://github.com/minetest-mods/moreblocks/issues/151)
+- [Slab back to full block](https://github.com/minetest-mods/moreblocks/issues/112)
 - [Conserve left-over microblocks](https://github.com/minetest-mods/moreblocks/pull/108)
 - maybe some of the other bugs/PRS, but they mostly either seem to be fixed or unfixable
 

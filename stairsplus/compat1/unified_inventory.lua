@@ -10,7 +10,7 @@ unified_inventory.register_craft_type("stairsplus:craft_schema", {
 	-- ^ Unique identifier for `register_craft`
 	description = "Stairs+ craft schema",
 	-- ^ Text shown below the crafting arrow
-	icon = "stairsplus_circular_saw_top.png",
+	icon = "stairsplus_saw_button.png",
 	-- ^ Image shown above the crafting arrow
 	width = 3,
 	height = 3,
@@ -22,7 +22,7 @@ unified_inventory.register_craft_type("stairsplus:circular_saw", {
 	-- ^ Unique identifier for `register_craft`
 	description = "Stairs+ circular saw",
 	-- ^ Text shown below the crafting arrow
-	icon = "stairsplus_circular_saw_top.png",
+	icon = "stairsplus_saw_button.png",
 	-- ^ Image shown above the crafting arrow
 	width = 1,
 	height = 1,

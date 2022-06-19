@@ -8,12 +8,12 @@ local api = stairsplus.api
 
 i3.register_craft_type("stairsplus:craft_schema", {
 	description = "Stairs+ craft schema",
-	icon = "stairsplus_circular_saw_top.png",
+	icon = "stairsplus_saw_button.png",
 })
 
 i3.register_craft_type("stairsplus:craft_schema", {
 	description = "Stairs+ circular saw",
-	icon = "stairsplus_circular_saw_top.png",
+	icon = "stairsplus_saw_button.png",
 })
 
 local function convert_schema_recipe_item(item)

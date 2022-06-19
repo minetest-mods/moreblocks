@@ -1,3 +1,13 @@
+# will be created if it doesn't already exist
+invsaw.priv (Priv to use the inventory saw) string interact
+
+# will be created if it doesn't already exist
+invsaw.creative_priv (Priv to use the inventory saw w/out a saw item) string creative
+
+# The item that a normal player has to have to use the saw in inventory
+invsaw.saw_item (Saw item) string stairsplus:circular_saw
+
+#
 stairsplus.circular_saw_crafting (Allow crafting the circular saw) bool true
 
 # Defaults to true if creative_mode is enabled.

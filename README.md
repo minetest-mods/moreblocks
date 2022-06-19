@@ -13,7 +13,7 @@ world block sandbox game.
 
 [Source repo](https://github.com/minetest-mods/moreblocks/)
 
-## Version compatibility
+## Minetest Version compatibility
 
 More Blocks is currently primarily tested with Minetest 5.5.0+.
 It may or may not work with newer or older versions. Issues arising in older
@@ -25,28 +25,53 @@ The 3.0.0 release of moreblocks introduces a "legacy" mode, which is on by defau
 allow new servers to not commit to creating as many nodes as older versions, while not breaking anything
 on existing servers. See `settingtypes.txt` for available settings.
 
-## Mods in the pack
+# Mods in the pack
 
-### moreblocks
+## moreblocks
 
 Defines a bunch of new kinds of nodes. Provides an API for creating variants of some nodes.
 
-### stairsplus
+## stairsplus
 
 Allows the creation of 49 new shapes for registered nodes.
 
-### stairsplus_legacy
+## stairsplus_legacy
 
 Stairs+ registrations for various mods which were formerly done automatically as part of moreblocks.
 
-## License
+## invsaw
 
+
+
+# Documentation
+
+## for plaers
+
+## for admins
+
+## for mod makers
+
+see moreblocks/API.md and stairsplus/API.md
+
+# License
+
+## moreblocks, stairsplus, stairsplus legacy
 Copyright © 2011-2022 Hugo Locurcio and contributors
 
 - More Blocks code is licensed under the zlib license, see
   [`LICENSE.md`](LICENSE.md) for details.
 - This is an altered version of the code which is not distributed by Hugo Locurcio.
+
 - Unless otherwise specified, More Blocks textures are licensed under
   [CC BY-SA 3.0 Unported](https://creativecommons.org/licenses/by-sa/3.0/).
 - `moreblocks_copperpatina.png` was created by pithydon, and is licensed under
   [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/).
+- `stairsplus_saw_button.png` CC BY-SA 3.0 Unported
+
+## invsaw
+
+Copyright © ?-2022 cheapie and contributors
+
+- invsaw code is licensed under the zlib license, see
+  [`LICENSE.md`](LICENSE.md) for details.
+- This is an altered version of the code which is not distributed by cheapie.
