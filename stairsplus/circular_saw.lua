@@ -14,7 +14,7 @@ local formspec_style = stairsplus.resources.formspec_style
 function circular_saw.build_formspec(meta, inv)
 	local inv_location = get_location_string(inv)
 	return ([[
-		size[12,11]
+		size[10,11]
 		%s
 		label[0,0;%s]
 		list[%s;stairsplus:input;1.7,0;1,1;]

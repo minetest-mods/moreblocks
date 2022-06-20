@@ -1,18 +1,3 @@
-stairsplus.api.register_shape("stair", {
-	name_format = "stair_%s",
-	description = "@1 Stair",
-	shape_groups = {stair = 1, legacy = 1},
-	eighths = 6,
-	drawtype = "nodebox",
-	node_box = {
-		type = "fixed",
-		fixed = {
-			{-0.5, -0.5, -0.5, 0.5, 0, 0.5},
-			{-0.5, 0, 0, 0.5, 0.5, 0.5},
-		},
-	},
-})
-
 stairsplus.api.register_shape("stair_half", {
 	name_format = "stair_%s_half",
 	description = "@1 Half Stair",
@@ -39,6 +24,21 @@ stairsplus.api.register_shape("stair_right_half", {
 		fixed = {
 			{0, -0.5, -0.5, 0.5, 0, 0.5},
 			{0, 0, 0, 0.5, 0.5, 0.5},
+		},
+	},
+})
+
+stairsplus.api.register_shape("stair", {
+	name_format = "stair_%s",
+	description = "@1 Stair",
+	shape_groups = {stair = 1, legacy = 1},
+	eighths = 6,
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.5, 0.5, 0, 0.5},
+			{-0.5, 0, 0, 0.5, 0.5, 0.5},
 		},
 	},
 })
