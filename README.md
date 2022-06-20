@@ -17,18 +17,6 @@ Stairsplus adds a large variety of new shapes for registered nodes:
 
 [Source repo](https://github.com/minetest-mods/moreblocks/)
 
-## Minetest Version compatibility
-
-More Blocks is currently primarily tested with Minetest 5.5.0+.
-It may or may not work with newer or older versions. Issues arising in older
-versions than 5.0.0 will generally not be fixed.
-
-## Legacy mode
-
-The 3.0.0 release of moreblocks introduces a "legacy" mode, which is on by default, and is meant to
-allow new servers to not commit to creating as many nodes as older versions, while not breaking anything
-on existing servers. See `settingtypes.txt` for available settings.
-
 # Mods in the pack
 
 ## moreblocks
@@ -41,7 +29,7 @@ Allows the creation of 49 new shapes for registered nodes.
 
 ## stairsplus_legacy
 
-Stairs+ registrations for various mods which were formerly done automatically as part of moreblocks.
+Stairsplus registrations for various mods which were formerly done automatically as part of moreblocks.
 
 ## invsaw
 
@@ -55,13 +43,47 @@ needed to be fully rewritten to be compatible w/ their modifications to the stai
 
 # Documentation
 
-## for players
+## For players
 
-## for admins
+Use of a decent inventory manager (e.g.
+[unified_inventory](https://content.minetest.net/packages/RealBadAngel/unified_inventory/) or
+[i3](https://content.minetest.net/packages/jp/i3/)) will help you figure out how to craft various nodes.
 
-## for mod makers
+## For admins
 
-see moreblocks/API.md and stairsplus/API.md
+### Minetest Version compatibility
+
+More Blocks is currently primarily tested with Minetest 5.5.0+. It may or may not work with newer or
+older versions. Issues arising in older versions will generally not be fixed.
+
+### Legacy mode
+
+The 3.0.0 release of moreblocks introduces a "legacy" mode, which is on by default, and is meant to
+allow new servers to not commit to creating as many nodes as older versions, while not breaking anything
+on existing servers. See `settingtypes.txt` for available settings.
+
+### Settings
+
+See `settingtypes.txt` for available settings.
+
+### Dependencies
+
+Moreblocks and stairsplus do not have hard dependencies on other mods. Invsaw depends on `unified_inventory`
+and stairsplus.
+
+### Compatability
+
+Moreblocks currently supports resources from a number of mods and minetest_game. Without these installed,
+some things may not be craftable, may have low-quality textures, or may not have "node sounds" registered.
+If available, resources will be used from `bucket`, `default`, `rhotator`, `screwdriver`, and `vessels`.
+
+If the `stairsplus_legacy` mod is enabled, stairsplus nodes will automatically be registered for the following
+mods, if they are available: `basic_materials`, `default`, `farming`, `gloopblocks`, `prefab`, `technic`,
+and `wool`.
+
+## For mod makers
+
+See moreblocks/API.md and stairsplus/API.md.
 
 # License
 

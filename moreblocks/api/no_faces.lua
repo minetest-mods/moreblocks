@@ -18,10 +18,10 @@ function moreblocks.api.register_no_faces(itemstring, base, redef)
 	minetest.register_node(itemstring, def)
 
 	minetest.register_craft({
-		output = itemstring .. " 8",
+		output = itemstring .. " 9",
 		recipe = {
 			{base, base, base},
-			{base, "", base},
+			{base, base, base},
 			{base, base, base},
 		}
 	})

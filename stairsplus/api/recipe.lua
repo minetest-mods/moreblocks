@@ -185,7 +185,7 @@ function api.register_crafts_for_shapes(recipe)
 				type = "cooking",
 				output = api.get_schema_recipe_item(recipe.output, shape),
 				recipe = api.get_schema_recipe_item(recipe.recipe, shape),
-				cooktime = recipe.cooktime(api.registered_shapes[shape].eighths),
+				cooktime = recipe.cooktime * (api.registered_shapes[shape].eighths / 8),
 			})
 		end
 
@@ -196,7 +196,7 @@ function api.register_crafts_for_shapes(recipe)
 			minetest.register_craft({
 				type = "fuel",
 				recipe = api.get_schema_recipe_item(recipe.recipe, shape),
-				burntime = recipe.burntime(api.registered_shapes[shape].eighths),
+				burntime = recipe.burntime * (api.registered_shapes[shape].eighths / 8),
 			})
 		end
 

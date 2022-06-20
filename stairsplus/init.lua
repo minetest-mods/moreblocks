@@ -43,3 +43,5 @@ stairsplus.dofile("resources", "init")
 stairsplus.dofile("circular_saw")
 
 stairsplus.dofile("compat2", "init")
+
+stairsplus.dofile("aliases")

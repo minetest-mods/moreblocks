@@ -1,6 +1,8 @@
 local S = moreblocks.S
 local cm = moreblocks.resources.craft_materials
 
+local outline_trap_nodes = moreblocks.settings.outline_trap_nodes
+
 function moreblocks.api.register_trap(itemstring, base, redef)
 	local def = table.copy(minetest.registered_nodes[base])
 
@@ -10,8 +12,10 @@ function moreblocks.api.register_trap(itemstring, base, redef)
 		def.short_description = S("Trap @1", def.short_description)
 	end
 
-	for i, tile in ipairs(def.tiles) do
-		def.tiles[i] = tile .. "^moreblocks_trap_box.png"
+	if outline_trap_nodes then
+		for i, tile in ipairs(def.tiles) do
+			def.tiles[i] = tile .. "^moreblocks_trap_box.png"
+		end
 	end
 
 	if def.drawtype ~= "glasslike_framed_optional" then

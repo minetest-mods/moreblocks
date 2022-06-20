@@ -231,20 +231,20 @@ function api.register_all(node, overrides, meta)
 	end
 end
 
-function api.register_custom(node, list, overrides, meta)
-	for _, shape in ipairs(list) do
+function api.register_custom(node, shapes, overrides, meta)
+	for _, shape in ipairs(shapes) do
 		api.register_single(node, shape, overrides, meta)
 	end
 end
 
-function api.register_group(node, group, overrides, meta)
-	for _, shape in ipairs(api.shapes_by_group[group] or {}) do
+function api.register_group(node, shape_group, overrides, meta)
+	for _, shape in ipairs(api.shapes_by_group[shape_group] or {}) do
 		api.register_single(node, shape, overrides, meta)
 	end
 end
 
-function api.register_groups(node, groups, overrides, meta)
-	for _, group in ipairs(groups) do
+function api.register_groups(node, shape_groups, overrides, meta)
+	for _, group in ipairs(shape_groups) do
 		api.register_group(node, group, overrides, meta)
 	end
 end

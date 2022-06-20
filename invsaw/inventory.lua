@@ -5,7 +5,7 @@ function invsaw.initialize_inventory(player)
 	local inv = player:get_inventory()
 
 	station.initialize_metadata(meta, inv, {"legacy"})
-	station.initialize_inventory(inv)
+	station.initialize_inventory(inv, {"legacy"})
 end
 
 function invsaw.drop_inventory(player)

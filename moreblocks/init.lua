@@ -30,6 +30,7 @@ moreblocks = {
 	end,
 }
 
+moreblocks.dofile("settings")
 moreblocks.dofile("util")
 moreblocks.dofile("resources", "init")
 moreblocks.dofile("api", "init")

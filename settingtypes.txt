@@ -1,13 +1,16 @@
-# will be created if it doesn't already exist
+# Will be created if it doesn't already exist
 invsaw.priv (Priv to use the inventory saw) string interact
 
-# will be created if it doesn't already exist
+# Will be created if it doesn't already exist
 invsaw.creative_priv (Priv to use the inventory saw w/out a saw item) string creative
 
 # The item that a normal player has to have to use the saw in inventory
 invsaw.saw_item (Saw item) string stairsplus:circular_saw
 
-#
+# Add a yellow outline around trap nodes, to make them visibly distinct
+moreblocks.outline_trap_nodes (Outline trap nodes) bool true
+
+# I guess if you want the saw to be creative-only?
 stairsplus.circular_saw_crafting (Allow crafting the circular saw) bool true
 
 # Defaults to true if creative_mode is enabled.

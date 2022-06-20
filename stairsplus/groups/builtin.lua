@@ -9,7 +9,7 @@ stairsplus.api.register_passthrough_groups({
 	"disable_jump",
 })
 
-stairsplus.api.register_scale_groups({
+stairsplus.api.register_scaling_groups({
 	"bouncy",
 	"fall_damage_add_percent",
 	"slippery",

@@ -4,5 +4,5 @@ stairsplus.dofile("shapes", "slabs")
 stairsplus.dofile("shapes", "slopes")
 stairsplus.dofile("shapes", "stairs")
 
-stairsplus.api.shapes_by_group.basic = table.copy(stairsplus.settings.basic_shapes)
-stairsplus.api.shapes_by_group.common = table.copy(stairsplus.settings.common_shapes)
+stairsplus.api.register_shape_group("basic", stairsplus.settings.basic_shapes)
+stairsplus.api.register_shape_group("common", stairsplus.settings.common_shapes)

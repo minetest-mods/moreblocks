@@ -56,7 +56,7 @@ function circular_saw.build_formspec(meta, inv)
 	)
 end
 
-function circular_saw.update_infotext(meta, inv)
+function circular_saw.update_metadata(meta, inv)
 	local parts = {}
 	if station.can_dig(meta, inv) then
 		table.insert(parts, S("Circular Saw is empty"))
@@ -70,7 +70,7 @@ function circular_saw.update_infotext(meta, inv)
 	meta:set_string("infotext", table.concat(parts, " "))
 end
 
-api.register_station("stairsplus:circular_saw", {"legacy"}, {
+api.register_station("stairsplus:circular_saw", {
 	description = S("Circular Saw"),
 	drawtype = "nodebox",
 	node_box = {
@@ -97,8 +97,9 @@ api.register_station("stairsplus:circular_saw", {"legacy"}, {
 	groups = {choppy = 2, oddly_breakable_by_hand = 2},
 	sounds = stairsplus.resources.sounds.wood,
 
+	shape_groups = {"legacy"},
 	build_formspec = circular_saw.build_formspec,
-	update_infotext = circular_saw.update_infotext,
+	update_metadata = circular_saw.update_metadata,
 })
 
 local cm = stairsplus.resources.craft_materials
@@ -121,6 +122,6 @@ minetest.register_lbm({
 	run_at_every_load = false,
 	action = function(pos, node)
 		local def = minetest.registered_nodes[node.name]
-		def.on_construct(pos)
+		def.on_construct(pos, {"legacy"}, circular_saw.build_formspec, circular_saw.update_metadata)
 	end,
 })
