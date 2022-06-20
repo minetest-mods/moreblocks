@@ -41,11 +41,17 @@ Stairs+ registrations for various mods which were formerly done automatically as
 
 ## invsaw
 
+Adds a button in unified_inventory that allows you to use the circular saw interface if you are
+playing creatively, or have a circular saw item in your inventory and have the right priv
+(`interact`, by default).
 
+Invsaw was taken from [cheapie's invsaw mod](https://forum.minetest.net/viewtopic.php?t=14736), which
+itself borrowed heavily from an older version of this mod. Flux decided to just add it here because it
+needed to be fully rewritten to be compatible w/ their modifications to the stairsplus API.
 
 # Documentation
 
-## for plaers
+## for players
 
 ## for admins
 

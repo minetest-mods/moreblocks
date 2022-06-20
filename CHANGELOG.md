@@ -164,7 +164,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Initial versioned release.
 
-[Unreleased]: https://github.com/minetest-mods/moreblocks/compare/v2.2.0...HEAD
+[Unreleased]: https://github.com/minetest-mods/moreblocks/compare/v3.0.0...HEAD
+
+[3.0.0]: https://github.com/minetest-mods/moreblocks/compare/v2.2.0...v3.0.0
 
 [2.2.0]: https://github.com/minetest-mods/moreblocks/compare/v2.1.0...v2.2.0
 

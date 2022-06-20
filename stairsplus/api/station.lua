@@ -200,7 +200,15 @@ function station.initialize_inventory(inv)
 	inv:set_size("stairsplus:input", 1)
 	inv:set_size("stairsplus:micro", 1)
 	inv:set_size("stairsplus:recycle", 1)
-	inv:set_size("stairsplus:output", 6 * 9)
+	inv:set_size("stairsplus:output", 7 * 7)
+
+	-- get rid of old lists
+	for _, listname in ipairs({"input", "micro", "recycle", "output"}) do
+		if inv:get_size(listname) > 0 then
+			inv:set_list(("stairsplus:%s"):format(listname), inv:get_list(listname))
+			inv:set_size(listname, 0)
+		end
+	end
 end
 
 function station.on_construct(pos, shape_groups, build_formspec, update_infotext)
@@ -270,6 +278,9 @@ function api.register_station(name, shape_groups, def)
 		end
 
 	def._stairsplus_shape_groups = shape_groups
+
+	def.groups = table.copy(def.groups or {})
+	def.groups.stairsplus_station = 1
 
 	minetest.register_node(name, def)
 end

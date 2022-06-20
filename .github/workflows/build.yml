@@ -14,6 +14,9 @@ jobs:
       - name: install luacheck via luarocks
         run: luarocks install --local luacheck
 
+      - name: luacheck invsaw
+        run: $HOME/.luarocks/bin/luacheck --config ./invsaw/.luacheckrc -q ./invsaw
+
       - name: luacheck moreblocks
         run: $HOME/.luarocks/bin/luacheck --config ./moreblocks/.luacheckrc -q ./moreblocks
 
