@@ -1,33 +1,77 @@
 # textdomain: stairsplus
 
-# Italian translation for More Blocks.
-# Copyright © 2011-2020 Hugo Locurcio and contributors
-# This file is distributed under the same license as the More Blocks package.
-# Emon, 2016.
-# CodeXP <codexp@gmx.net>, 2018.
-
 #: circular_saw.lua
 
 Circular Saw=Sega circolare
-Input material=Materiale@niniziale
-Left-over=Scarto
+Empty=vuota
+Input=ingresso
 Max=Max.
-Recycle output=Ricicla@nfinale
+Microblocks=Microblocco @1
+Nodes=
+(owned by @1)=
 Set=Imp.
-owned by @1=
-Circular Saw is empty=Sega circolare, vuota
-Circular Saw is working on @1=Sega circolare, in funzione su @1
+Working on @1=in funzione su @1
 
-#: stairsplus/common.lua
-
+#: shapes/micros.lua
+@1 1/16 Microblock=Microblocco @1
+@1 1/8 Microblock=Microblocco @1
+@1 1/4 Microblock=Microblocco @1
 @1 Microblock=Microblocco @1
-@1 Slab=Lastra - @1
+@1 3/4 Microblock=Microblocco @1
+@1 7/8 Microblock=Microblocco @1
+@1 15/16 Microblock=Microblocco @1
+
+#: shapes/panels.lua
+@1 1/16 Panel=Pannello - @1
+@1 1/8 Panel=Pannello - @1
+@1 1/4 Panel=Pannello - @1
+@1 1/2 Panel=Pannello - @1
+@1 3/4 Panel=Pannello - @1
+@1 7/8 Panel=Pannello - @1
+@1 15/16 Panel=Pannello - @1
+
+#: shapes/slabs.lua
+@1 1/16 Slab=Lastra - @1
+@1 1/8 Slab=Lastra - @1
+@1 1/4 Slab=Lastra - @1
+@1 1/2 Slab=Lastra - @1
+@1 3/4 Slab=Lastra - @1
+@1 7/8 Slab=Lastra - @1
+@1 15/16 Slab=Lastra - @1
+@1 1/16 Slab Three Sides=Lastra - @1
+@1 1/16 Slab Three Sides U=Lastra - @1
+@1 1/16 Slab Two Sides=Lastra - @1
+
+#: shapes/slopes.lua
+@1 1/2 Slope=
+@1 1/2 Slope Raised=
 @1 Slope=
-@1 Panel=Pannello - @1
-@1 Stairs=Scale - @1
+@1 Slope Cut=
+@1 Slope Inner=
+@1 Slope Inner Cut=
+@1 Slope Inner Cut Half=
+@1 Slope Inner Cut Half Raised=
+@1 Slope Inner Half=
+@1 Slope Inner Half Raised=
+@1 Slope Outer=
+@1 Slope Outer Cut=
+@1 Slope Outer Cut Half=
+@1 Slope Outer Cut Half Raised=
+@1 Slope Outer Half=
+@1 Slope Outer Half Raised=
 
-#: stairsplus/registrations.lua
+#: shapes/stairs.lua
+@1 Stair=Scale - @1
+@1 1/16 Alt Stair=Scale - @1
+@1 1/8 Alt Stair=Scale - @1
+@1 1/4 Alt Stair=Scale - @1
+@1 1/2 Alt Stair=Scale - @1
+@1 Inner Stair=Scale - @1
+@1 Outer Stair=Scale - @1
+@1 Half Stair=Scale - @1
+@1 Right Half Stair=Scale - @1
 
-Concrete=
-Cement=
-Brass Block=
+# compat2/stairs.lua
+
+Inner @1=
+Outer @1=

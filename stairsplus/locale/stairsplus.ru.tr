@@ -1,34 +1,77 @@
 # textdomain: stairsplus
 
-# Russian translation for MOREBLOCKS minetest mod.
-# Copyright (C) 2018 Hugo Locurcio and contributors
-# This file is distributed under the same license as the MOREBLOCKS package.
-# CodeXP <codexp@gmx.net>, 2018.
-#
-#, fuzzy
-
 #: circular_saw.lua
 
 Circular Saw=циркулярная пила
-Input material=Входной@nматериал
-Left-over=Остатки
+Empty=пустая
+Input=вход
 Max=Кол.
-Recycle output=Пере-@nобработка
+Microblocks=@1 (микроблок)
+Nodes=
+(owned by @1)=принадлежит @1
 Set=ОК
-owned by @1=принадлежит @1
-Circular Saw is empty=циркулярная пила пустая
-Circular Saw is working on @1=циркулярная пила, @1 в обработке
+Working on @1=@1 в обработке
 
-#: stairsplus/common.lua
-
+#: shapes/micros.lua
+@1 1/16 Microblock=@1 (микроблок)
+@1 1/8 Microblock=@1 (микроблок)
+@1 1/4 Microblock=@1 (микроблок)
 @1 Microblock=@1 (микроблок)
-@1 Slab=@1 (плита)
+@1 3/4 Microblock=@1 (микроблок)
+@1 7/8 Microblock=@1 (микроблок)
+@1 15/16 Microblock=@1 (микроблок)
+
+#: shapes/panels.lua
+@1 1/16 Panel=@1 (панель)
+@1 1/8 Panel=@1 (панель)
+@1 1/4 Panel=@1 (панель)
+@1 1/2 Panel=@1 (панель)
+@1 3/4 Panel=@1 (панель)
+@1 7/8 Panel=@1 (панель)
+@1 15/16 Panel=@1 (панель)
+
+#: shapes/slabs.lua
+@1 1/16 Slab=@1 (плита)
+@1 1/8 Slab=@1 (плита)
+@1 1/4 Slab=@1 (плита)
+@1 1/2 Slab=@1 (плита)
+@1 3/4 Slab=@1 (плита)
+@1 7/8 Slab=@1 (плита)
+@1 15/16 Slab=@1 (плита)
+@1 1/16 Slab Three Sides=@1 (плита)
+@1 1/16 Slab Three Sides U=@1 (плита)
+@1 1/16 Slab Two Sides=@1 (плита)
+
+#: shapes/slopes.lua
+@1 1/2 Slope=@1 (наклон)
+@1 1/2 Slope Raised=@1 (наклон)
 @1 Slope=@1 (наклон)
-@1 Panel=@1 (панель)
-@1 Stairs=@1 (лестница)
+@1 Slope Cut=@1 (наклон)
+@1 Slope Inner=@1 (наклон)
+@1 Slope Inner Cut=@1 (наклон)
+@1 Slope Inner Cut Half=@1 (наклон)
+@1 Slope Inner Cut Half Raised=@1 (наклон)
+@1 Slope Inner Half=@1 (наклон)
+@1 Slope Inner Half Raised=@1 (наклон)
+@1 Slope Outer=@1 (наклон)
+@1 Slope Outer Cut=@1 (наклон)
+@1 Slope Outer Cut Half=@1 (наклон)
+@1 Slope Outer Cut Half Raised=@1 (наклон)
+@1 Slope Outer Half=@1 (наклон)
+@1 Slope Outer Half Raised=@1 (наклон)
 
-#: stairsplus/registrations.lua
+#: shapes/stairs.lua
+@1 Stair=@1 (лестница)
+@1 1/16 Alt Stair=@1 (лестница)
+@1 1/8 Alt Stair=@1 (лестница)
+@1 1/4 Alt Stair=@1 (лестница)
+@1 1/2 Alt Stair=@1 (лестница)
+@1 Inner Stair=@1 (лестница)
+@1 Outer Stair=@1 (лестница)
+@1 Half Stair=@1 (лестница)
+@1 Right Half Stair=@1 (лестница)
 
-Concrete=
-Cement=
-Brass Block=
+# compat2/stairs.lua
+
+Inner @1=
+Outer @1=

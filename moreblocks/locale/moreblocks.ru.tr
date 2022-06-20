@@ -16,6 +16,7 @@
 #: nodes.lua
 
 All-faces @1=всестороннее бревно @1
+No-faces @1=
 Cactus Brick=кирпич из кактуса
 Cactus Checker=мозаика из кактуса
 Centered Wooden Tile=деревянная мозаика (центр)

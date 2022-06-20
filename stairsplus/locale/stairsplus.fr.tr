@@ -1,34 +1,77 @@
 # textdomain: stairsplus
 
-# French translation for More Blocks.
-# Copyright © 2011-2020 Hugo Locurcio and contributors
-# This file is distributed under the same license as the More Blocks package.
-# Hugo Locurcio <hugo.locurcio@hugo.pro>, 2013-2019.
-# Jat15, 2013.
-# CodeXP <codexp@gmx.net>, 2018.
-
 #: circular_saw.lua
 
 Circular Saw=Scie circulaire
-Input material=Matériau@nd'entrée
-Left-over=Reste
+Empty=vide
+Input=saisir
 Max=Max
-Recycle output=Sortie à@nrecycler
+Microblocks=Microbloc en @1
+Nodes=
+(owned by @1)=propriété de @1
 Set=Définir
-owned by @1=propriété de @1
-Circular Saw is empty=Scie circulaire vide
-Circular Saw is working on @1=Scie circulaire manipulant @1
+Working on @1=manipulant @1
 
-#: stairsplus/common.lua
-
+#: shapes/micros.lua
+@1 1/16 Microblock=Microbloc en @1
+@1 1/8 Microblock=Microbloc en @1
+@1 1/4 Microblock=Microbloc en @1
 @1 Microblock=Microbloc en @1
-@1 Slab=Demi-dalle en @1
+@1 3/4 Microblock=Microbloc en @1
+@1 7/8 Microblock=Microbloc en @1
+@1 15/16 Microblock=Microbloc en @1
+
+#: shapes/panels.lua
+@1 1/16 Panel=Barre en @1
+@1 1/8 Panel=Barre en @1
+@1 1/4 Panel=Barre en @1
+@1 1/2 Panel=Barre en @1
+@1 3/4 Panel=Barre en @1
+@1 7/8 Panel=Barre en @1
+@1 15/16 Panel=Barre en @1
+
+#: shapes/slabs.lua
+@1 1/16 Slab=Demi-dalle en @1
+@1 1/8 Slab=Demi-dalle en @1
+@1 1/4 Slab=Demi-dalle en @1
+@1 1/2 Slab=Demi-dalle en @1
+@1 3/4 Slab=Demi-dalle en @1
+@1 7/8 Slab=Demi-dalle en @1
+@1 15/16 Slab=Demi-dalle en @1
+@1 1/16 Slab Three Sides=Demi-dalle en @1
+@1 1/16 Slab Three Sides U=Demi-dalle en @1
+@1 1/16 Slab Two Sides=Demi-dalle en @1
+
+#: shapes/slopes.lua
+@1 1/2 Slope=Pente en @1
+@1 1/2 Slope Raised=Pente en @1
 @1 Slope=Pente en @1
-@1 Panel=Barre en @1
-@1 Stairs=Escaliers en @1
+@1 Slope Cut=Pente en @1
+@1 Slope Inner=Pente en @1
+@1 Slope Inner Cut=Pente en @1
+@1 Slope Inner Cut Half=Pente en @1
+@1 Slope Inner Cut Half Raised=Pente en @1
+@1 Slope Inner Half=Pente en @1
+@1 Slope Inner Half Raised=Pente en @1
+@1 Slope Outer=Pente en @1
+@1 Slope Outer Cut=Pente en @1
+@1 Slope Outer Cut Half=Pente en @1
+@1 Slope Outer Cut Half Raised=Pente en @1
+@1 Slope Outer Half=Pente en @1
+@1 Slope Outer Half Raised=Pente en @1
 
-#: stairsplus/registrations.lua
+#: shapes/stairs.lua
+@1 Stair=Escaliers en @1
+@1 1/16 Alt Stair=Escaliers en @1
+@1 1/8 Alt Stair=Escaliers en @1
+@1 1/4 Alt Stair=Escaliers en @1
+@1 1/2 Alt Stair=Escaliers en @1
+@1 Inner Stair=Escaliers en @1
+@1 Outer Stair=Escaliers en @1
+@1 Half Stair=Escaliers en @1
+@1 Right Half Stair=Escaliers en @1
 
-Concrete=
-Cement=
-Brass Block=
+# compat2/stairs.lua
+
+Inner @1=
+Outer @1=

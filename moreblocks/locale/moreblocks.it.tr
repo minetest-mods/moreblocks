@@ -13,6 +13,7 @@
 #: nodes.lua
 
 All-faces @1=@1 su ogni lato
+No-faces @1=
 Cactus Brick=Mattoni di cactus
 Cactus Checker=Scacchiera in cactus
 Centered Wooden Tile=Mattonella in legno centrata

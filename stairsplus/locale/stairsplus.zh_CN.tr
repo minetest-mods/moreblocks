@@ -1,32 +1,77 @@
 # textdomain: stairsplus
 
-# zh_CN translation for More Blocks.
-# Copyright © 2011-2020 Hugo Locurcio and contributors
-# This file is distributed under the same license as the More Blocks package.
-# IFRFSX <IFRFSX@protonmail.com>, 2020.
-
 #: circular_saw.lua
 
 Circular Saw=圆锯
-Input material=输入@n材料
-Left-over=剩余材料
+Empty=是空的
+Input=输入
 Max=最大值
-Recycle output=回收@n输出物
+Microblocks=@1小方块
+Nodes=
+(owned by @1)=属于@1所有
 Set=设置
-owned by @1=属于@1所有
-Circular Saw is empty=圆锯是空的
-Circular Saw is working on @1=圆锯正在加工@1
+Working on @1=正在加工@1
 
-#: stairsplus/common.lua
-
+#: shapes/micros.lua
+@1 1/16 Microblock=@1小方块
+@1 1/8 Microblock=@1小方块
+@1 1/4 Microblock=@1小方块
 @1 Microblock=@1小方块
-@1 Slab=@1台阶
+@1 3/4 Microblock=@1小方块
+@1 7/8 Microblock=@1小方块
+@1 15/16 Microblock=@1小方块
+
+#: shapes/panels.lua
+@1 1/16 Panel=@1嵌板
+@1 1/8 Panel=@1嵌板
+@1 1/4 Panel=@1嵌板
+@1 1/2 Panel=@1嵌板
+@1 3/4 Panel=@1嵌板
+@1 7/8 Panel=@1嵌板
+@1 15/16 Panel=@1嵌板
+
+#: shapes/slabs.lua
+@1 1/16 Slab=@1台阶
+@1 1/8 Slab=@1台阶
+@1 1/4 Slab=@1台阶
+@1 1/2 Slab=@1台阶
+@1 3/4 Slab=@1台阶
+@1 7/8 Slab=@1台阶
+@1 15/16 Slab=@1台阶
+@1 1/16 Slab Three Sides=@1台阶
+@1 1/16 Slab Three Sides U=@1台阶
+@1 1/16 Slab Two Sides=@1台阶
+
+#: shapes/slopes.lua
+@1 1/2 Slope=@1斜坡
+@1 1/2 Slope Raised=@1斜坡
 @1 Slope=@1斜坡
-@1 Panel=@1嵌板
-@1 Stairs=@1楼梯
+@1 Slope Cut=@1斜坡
+@1 Slope Inner=@1斜坡
+@1 Slope Inner Cut=@1斜坡
+@1 Slope Inner Cut Half=@1斜坡
+@1 Slope Inner Cut Half Raised=@1斜坡
+@1 Slope Inner Half=@1斜坡
+@1 Slope Inner Half Raised=@1斜坡
+@1 Slope Outer=@1斜坡
+@1 Slope Outer Cut=@1斜坡
+@1 Slope Outer Cut Half=@1斜坡
+@1 Slope Outer Cut Half Raised=@1斜坡
+@1 Slope Outer Half=@1斜坡
+@1 Slope Outer Half Raised=@1斜坡
 
-#: stairsplus/registrations.lua
+#: shapes/stairs.lua
+@1 Stair=@1楼梯
+@1 1/16 Alt Stair=@1楼梯
+@1 1/8 Alt Stair=@1楼梯
+@1 1/4 Alt Stair=@1楼梯
+@1 1/2 Alt Stair=@1楼梯
+@1 Inner Stair=@1楼梯
+@1 Outer Stair=@1楼梯
+@1 Half Stair=@1楼梯
+@1 Right Half Stair=@1楼梯
 
-Concrete=
-Cement=
-Brass Block=
+# compat2/stairs.lua
+
+Inner @1=
+Outer @1=

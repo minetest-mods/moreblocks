@@ -13,6 +13,7 @@
 #: nodes.lua
 
 All-faces @1=allseitiger @1
+No-faces @1=
 Cactus Brick=Kaktusziegel
 Cactus Checker=Kaktus-Mosaik
 Centered Wooden Tile=Holzfliese mittig

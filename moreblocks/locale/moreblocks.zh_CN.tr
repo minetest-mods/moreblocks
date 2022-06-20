@@ -8,6 +8,7 @@
 #: nodes.lua
 
 All-faces @1=全切面@1树木方块
+No-faces @1=
 Cactus Brick=仙人掌砖
 Cactus Checker=仙人掌棋盘方块
 Centered Wooden Tile=居中的木瓦

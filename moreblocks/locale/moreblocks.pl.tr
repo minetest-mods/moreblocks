@@ -13,6 +13,7 @@
 #: nodes.lua
 
 All-faces @1=Wielostronna tekstura @1
+No-faces @1=
 Cactus Brick=Kaktusowa cegła
 Cactus Checker=Kaktusowa szachownica
 Centered Wooden Tile=Wyśrodkowany drewniany kafelek

@@ -14,6 +14,7 @@
 #: nodes.lua
 
 All-faces @1=@1 (toutes faces)
+No-faces @1=
 Cactus Brick=Briques de cactus
 Cactus Checker=Damier en cactus
 Centered Wooden Tile=Dalle en bois centrée

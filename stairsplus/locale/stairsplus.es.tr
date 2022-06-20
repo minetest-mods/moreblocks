@@ -1,34 +1,77 @@
 # textdomain: stairsplus
 
-# Spanish translation for More Blocks.
-# Copyright © 2011-2020 Hugo Locurcio and contributors
-# This file is distributed under the same license as the More Blocks package.
-# kaeza, 2013.
-# CodeXP <codexp@gmx.net>, 2018.
-# Carlos Barraza 2020.
-
 #: circular_saw.lua
 
 Circular Saw=Sierra circular
-Input material=Material de@nentrada
-Left-over=Sobrante
+Empty=vacia
+Input=aporte
 Max=Maximo
-Recycle output=Reciclar@nsalida
+Microblocks=Microbloque de @1
+Nodes=
+(owned by @1)=protegido por @1
 Set=Establecer
-owned by @1=protegido por @1
-Circular Saw is empty=La sierra circular está vacia
-Circular Saw is working on @1=Sierra circular trabajando en @1
+Working on @1=trabajando en @1
 
-#: stairsplus/common.lua
-
+#: shapes/micros.lua
+@1 1/16 Microblock=Microbloque de @1
+@1 1/8 Microblock=Microbloque de @1
+@1 1/4 Microblock=Microbloque de @1
 @1 Microblock=Microbloque de @1
-@1 Slab=Losa de @1
+@1 3/4 Microblock=Microbloque de @1
+@1 7/8 Microblock=Microbloque de @1
+@1 15/16 Microblock=Microbloque de @1
+
+#: shapes/panels.lua
+@1 1/16 Panel=Panel de @1
+@1 1/8 Panel=Panel de @1
+@1 1/4 Panel=Panel de @1
+@1 1/2 Panel=Panel de @1
+@1 3/4 Panel=Panel de @1
+@1 7/8 Panel=Panel de @1
+@1 15/16 Panel=Panel de @1
+
+#: shapes/slabs.lua
+@1 1/16 Slab=Losa de @1
+@1 1/8 Slab=Losa de @1
+@1 1/4 Slab=Losa de @1
+@1 1/2 Slab=Losa de @1
+@1 3/4 Slab=Losa de @1
+@1 7/8 Slab=Losa de @1
+@1 15/16 Slab=Losa de @1
+@1 1/16 Slab Three Sides=Losa de @1
+@1 1/16 Slab Three Sides U=Losa de @1
+@1 1/16 Slab Two Sides=Losa de @1
+
+#: shapes/slopes.lua
+@1 1/2 Slope=Pendiente de @1
+@1 1/2 Slope Raised=Pendiente de @1
 @1 Slope=Pendiente de @1
-@1 Panel=Panel de @1
-@1 Stairs=Escalera de @1
+@1 Slope Cut=Pendiente de @1
+@1 Slope Inner=Pendiente de @1
+@1 Slope Inner Cut=Pendiente de @1
+@1 Slope Inner Cut Half=Pendiente de @1
+@1 Slope Inner Cut Half Raised=Pendiente de @1
+@1 Slope Inner Half=Pendiente de @1
+@1 Slope Inner Half Raised=Pendiente de @1
+@1 Slope Outer=Pendiente de @1
+@1 Slope Outer Cut=Pendiente de @1
+@1 Slope Outer Cut Half=Pendiente de @1
+@1 Slope Outer Cut Half Raised=Pendiente de @1
+@1 Slope Outer Half=Pendiente de @1
+@1 Slope Outer Half Raised=Pendiente de @1
 
-#: stairsplus/registrations.lua
+#: shapes/stairs.lua
+@1 Stair=Escalera de @1
+@1 1/16 Alt Stair=Escalera de @1
+@1 1/8 Alt Stair=Escalera de @1
+@1 1/4 Alt Stair=Escalera de @1
+@1 1/2 Alt Stair=Escalera de @1
+@1 Inner Stair=Escalera de @1
+@1 Outer Stair=Escalera de @1
+@1 Half Stair=Escalera de @1
+@1 Right Half Stair=Escalera de @1
 
-Concrete=Concreto
-Cement=Cemento
-Brass Block=Bloque de latón
+# compat2/stairs.lua
+
+Inner @1=
+Outer @1=

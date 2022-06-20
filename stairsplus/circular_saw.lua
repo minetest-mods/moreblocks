@@ -57,14 +57,19 @@ function circular_saw.build_formspec(meta, inv)
 end
 
 function circular_saw.update_metadata(meta, inv)
-	local parts = {}
-	if station.can_dig(meta, inv) then
-		table.insert(parts, S("Circular Saw is empty"))
-	end
+	local parts = {S("Circular Saw")}
 
 	local owner = meta:get_string("owner")
 	if owner ~= "" then
 		table.insert(parts, S("(owned by @1)", owner))
+	end
+
+	local working_on = station.get_current_node(inv)
+	if working_on then
+		local stack = ItemStack(working_on)
+		table.insert(parts, S("Working on @1", stack:get_short_description() or stack:get_description()))
+	else
+		table.insert(parts, S("Empty"))
 	end
 
 	meta:set_string("infotext", table.concat(parts, " "))
