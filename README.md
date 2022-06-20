@@ -5,7 +5,11 @@ world block sandbox game.
 
 ![Screenshot](https://github.com/fluxionary/minetest-moreblocks/raw/bugfixes/screenshot.png)
 
+Stairsplus adds a large variety of new shapes for registered nodes:
+
 ![Screenshot](https://github.com/fluxionary/minetest-moreblocks/raw/bugfixes/screenshot2.png)
+
+![Screenshot](https://github.com/fluxionary/minetest-moreblocks/raw/bugfixes/screenshot3.png)
 
 [Forum topic](https://forum.minetest.net/viewtopic.php?f=11&t=509)
 
