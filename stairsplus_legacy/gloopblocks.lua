@@ -1,6 +1,8 @@
-if stairsplus_legacy.has.basic_materials and stairsplus_legacy.settings.basic_materials then
-	stairsplus.api.register_alias_force_all("gloopblocks:cement", "basic_materials:cement_block")
+local materials = stairsplus_legacy.materials
 
-else
+if materials.cement_block and materials.cement_block ~= "gloopblocks:cement" then
+	stairsplus.api.register_alias_all("gloopblocks:cement", materials.cement_block)
+elseif minetest.registered_nodes["gloopblocks:cement"] then
 	stairsplus_legacy.register_legacy("gloopblocks:cement")
 end
+

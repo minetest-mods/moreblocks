@@ -32,6 +32,7 @@ stairsplus_legacy = {
 }
 
 stairsplus_legacy.dofile("settings")
+stairsplus_legacy.dofile("resources")
 
 function stairsplus_legacy.register_legacy(node, overrides, meta)
 	if stairsplus.settings.legacy_mode then
@@ -41,30 +42,8 @@ function stairsplus_legacy.register_legacy(node, overrides, meta)
 	end
 end
 
-if stairsplus_legacy.has.basic_materials and stairsplus_legacy.settings.basic_materials then
-	stairsplus_legacy.dofile("basic_materials")
-end
-
-if stairsplus_legacy.has.default and stairsplus_legacy.settings.default then
-	stairsplus_legacy.dofile("default")
-end
-
-if stairsplus_legacy.has.farming and stairsplus_legacy.settings.farming then
-	stairsplus_legacy.dofile("farming")
-end
-
-if stairsplus_legacy.has.gloopblocks and stairsplus_legacy.settings.gloopblocks then
-	stairsplus_legacy.dofile("gloopblocks")
-end
-
-if stairsplus_legacy.has.technic and stairsplus_legacy.settings.technic then
-	stairsplus_legacy.dofile("technic")
-end
-
-if stairsplus_legacy.has.prefab and stairsplus_legacy.settings.prefab then
-	stairsplus_legacy.dofile("prefab")
-end
-
-if stairsplus_legacy.has.wool and stairsplus_legacy.settings.wool then
-	stairsplus_legacy.dofile("wool")
+for mod, enabled in pairs(stairsplus_legacy.settings) do
+	if enabled then
+		stairsplus_legacy.dofile(mod)
+	end
 end

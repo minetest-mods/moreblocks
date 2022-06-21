@@ -72,7 +72,8 @@ stairsplus.api.register_shape("micro_14", {
 })
 
 stairsplus.api.register_shape("micro_15", {
-	name_format = "micro_%s_5",
+	name_format = "micro_%s_15",
+	aliases = {"micro_%s_5"},
 	description = "@1 15/16 Microblock",
 	shape_groups = {micro = 1, legacy = 1},
 	eighths = 2,

@@ -81,4 +81,17 @@ stairsplus.util = {
 			error(("unexpected location? %s"):format(dump(location)))
 		end
 	end,
+
+	resolve_aliases = function(node, seen)
+		seen = seen or {}
+		if seen[node] then
+			error(("alias loop on %s"):format(node))
+		end
+		local aliased_to = minetest.registered_aliases[node]
+		if aliased_to then
+			seen[node] = true
+			return stairsplus.util.resolve_aliases(aliased_to, seen)
+		end
+		return node
+	end,
 }

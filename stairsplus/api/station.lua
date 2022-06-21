@@ -2,6 +2,8 @@
 
 local api = stairsplus.api
 
+local resolve_aliases = stairsplus.util.resolve_aliases
+
 local default_stack_max = tonumber(minetest.settings:get("default_stack_max")) or 99
 
 local station = {}
@@ -59,10 +61,36 @@ function station.on_receive_fields(meta, inv, formname, fields, sender, build_fo
 	return not not fields.max_offered
 end
 
-function station.update_inventory(meta, inv, taken_stack)
-	local node = station.get_current_node(inv)
+local function fix_aliases(inv)
+	local input = inv:get_stack("stairsplus:input", 1)
+	input:set_name(resolve_aliases(input:get_name()))
+	inv:set_stack("stairsplus:input", 1, input)
 
-	if not node then
+	local micro = inv:get_stack("stairsplus:micro", 1)
+	micro:set_name(resolve_aliases(micro:get_name()))
+	inv:set_stack("stairsplus:micro", 1, micro)
+
+	local recycle = inv:get_stack("stairsplus:recycle", 1)
+	recycle:set_name(resolve_aliases(recycle:get_name()))
+	inv:set_stack("stairsplus:recycle", 1, recycle)
+
+	for i = 1, inv:get_size("stairsplus:output") do
+		local output = inv:get_stack("stairsplus:output", i)
+		output:set_name(resolve_aliases(output:get_name()))
+		inv:set_stack("stairsplus:output", i, output)
+	end
+end
+
+function station.update_inventory(meta, inv, taken_stack)
+	fix_aliases(inv)
+
+	local node = station.get_current_node(inv)
+	local valid_shapes = api.shapes_by_node[node]
+
+	if not (node and valid_shapes) then
+		inv:set_stack("stairsplus:input", 1, ItemStack())
+		inv:set_stack("stairsplus:micro", 1, ItemStack())
+		inv:set_stack("stairsplus:recycle", 1, ItemStack())
 		for i = 1, inv:get_size("stairsplus:output") do
 			inv:set_stack("stairsplus:output", i, ItemStack())
 		end
@@ -92,7 +120,6 @@ function station.update_inventory(meta, inv, taken_stack)
 		return
 	end
 
-	local valid_shapes = api.shapes_by_node[node]
 	local max_offered = meta:get_int("stairsplus:max_offered")
 	local shape_groups = minetest.parse_json(meta:get_string("stairsplus:shape_groups"))
 
@@ -152,7 +179,7 @@ function station.allow_inventory_put(meta, inv, listname, index, stack, player)
 		return 0
 	end
 
-	local shaped_node = stack:get_name()
+	local shaped_node = resolve_aliases(stack:get_name())
 	local node = api.get_node_of_shaped_node(shaped_node)
 	local shape = api.get_shape_of_shaped_node(shaped_node)
 

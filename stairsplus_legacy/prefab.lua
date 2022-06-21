@@ -1,9 +1,9 @@
-if stairsplus_legacy.has.basic_materials and stairsplus_legacy.settings.basic_materials then
-	stairsplus.api.register_alias_force_all("prefab:concrete", "basic_materials:concrete_block")
+local materials = stairsplus_legacy.materials
 
-elseif stairsplus_legacy.has.technic and stairsplus_legacy.settings.technic then
-	stairsplus.api.register_alias_force_all("prefab:concrete", "technic:concrete")
+if materials.concrete_block and materials.concrete_block ~= "prefab:concrete" then
+	local slab_name = stairsplus.api.format_name(materials.concrete_block, "slab_8")
+	local stair_name = stairsplus.api.format_name(materials.concrete_block, "stair")
 
-else
-	stairsplus_legacy.register_legacy("prefab:concrete")
+	minetest.register_alias_force("prefab:concrete_slab", slab_name)
+	minetest.register_alias_force("prefab:concrete_stair", stair_name)
 end
