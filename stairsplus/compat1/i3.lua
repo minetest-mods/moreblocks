@@ -45,7 +45,6 @@ local function convert_schema_recipe_item(item)
 end
 
 api.register_on_register_craft_schema(function(schema)
-	stairsplus.log("action", "register unified_inventory recipe")
 	local recipe = table.copy(schema)
 
 	recipe.output = convert_schema_recipe_item(recipe.output)
