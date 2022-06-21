@@ -1,7 +1,6 @@
 -- for registering variants of a specific node
 local api = stairsplus.api
 
-local table_equals = stairsplus.util.table_equals
 local table_set_all = stairsplus.util.table_set_all
 local table_sort_keys = stairsplus.util.table_sort_keys
 
@@ -68,21 +67,25 @@ function api.format_name(node, shape)
 end
 
 function api.register_single(node, shape, overrides, meta)
-	stairsplus.log("info", "registering %s %s", shape, node)
-	meta = meta or {}
-	overrides = overrides or {}
-
 	if not minetest.registered_nodes[node] then
 		error(("node %q is not defined"):format(node))
 	end
-
-	local node_def = table.copy(minetest.registered_nodes[node])
-	check_node_validity(node_def, meta)
 
 	if shape ~= "micro_8" and not (api.nodes_by_shape.micro_8 or {})[node] then
 		-- always make sure a microblock exists
 		api.register_single(node, "micro_8", overrides, meta)
 	end
+
+	local shaped_name = api.format_name(node, shape)
+
+	stairsplus.log("info", "registering %s", shaped_name)
+
+	meta = meta or {}
+	overrides = table.copy(overrides or {})
+
+	local node_def = table.copy(minetest.registered_nodes[node])
+
+	check_node_validity(node_def, meta)
 
 	if (api.nodes_by_shape[shape] or {})[node] then
 		return -- already registered
@@ -152,9 +155,19 @@ function api.register_single(node, shape, overrides, meta)
 		end
 	end
 
-	if not table_equals(overrides.groups, node_def.groups) then
-		overrides = table.copy(overrides)
+	if not meta.allow_override_groups and overrides.groups then
+		stairsplus.log("warning", "removing group overrides from %s", shaped_name)
 		overrides.groups = nil
+	end
+
+	if not meta.allow_override_drawtype and overrides.drawtype then
+		stairsplus.log("warning", "removing drawtype override %s from %s", overrides.drawtype, shaped_name)
+		overrides.drawtype = nil
+	end
+
+	if not meta.allow_override_paramtype2 and overrides.paramtype2 then
+		stairsplus.log("warning", "removing paramtype2 override %s from %s", overrides.paramtype2, shaped_name)
+		overrides.paramtype2 = nil
 	end
 
 	table_set_all(def, overrides)
@@ -191,12 +204,6 @@ function api.register_single(node, shape, overrides, meta)
 	end
 
 	-- register node
-	local shaped_name = api.format_name(node, shape)
-	for k, v in pairs(def.groups) do
-		if type(v) ~= "number" then
-			error(("%s %s group:%s = %s"):format(node, shape, k, v))
-		end
-	end
 	minetest.register_node(":" .. shaped_name, def)
 
 	-- alias old name formats

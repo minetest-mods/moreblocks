@@ -86,6 +86,12 @@ These are for registering shapes of a node
   * `align_style = "node" | "user" | "world"`
     Whether to override the align_style for the textures used to draw the shaped node. The default behavior
     is to use the value defined by the `stairsplus.default_align_style` setting, which defaults to `"user"`.
+  * `allow_override_groups = true`
+    Whether to allow groups to be specified in the overrides (otherwise, they are ignored).
+  * `allow_override_drawtype = true`
+    Whether to allow a drawtype to be specified in the overrides (otherwise, it is ignored).
+  * `allow_override_paramtype2 = true`
+    Whether to allow a paramtype2 to be specified in the overrides (otherwise, it is ignored).
 
 * `stairsplus.api.register_all(node, [overrides], [meta])`
   Register all registered shapes for a node. we do not recommend using this, due to the 32767 node limit.
