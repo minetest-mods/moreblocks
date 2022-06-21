@@ -238,7 +238,7 @@ function api.register_all(node, overrides, meta)
 	end
 end
 
-function api.register_custom(node, shapes, overrides, meta)
+function api.register_singles(node, shapes, overrides, meta)
 	for _, shape in ipairs(shapes) do
 		api.register_single(node, shape, overrides, meta)
 	end

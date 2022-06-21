@@ -1,17 +1,3 @@
--- register shapes (e.g. 1/16 slab, 1/8 slab, 1/4 slab, etc)
---[[
-stairsplus.api.register_shape("micro_1", {
-	name_format = "micro_%s_1",
-	description = "@1 1/16 Microblock",
-	shape_groups = {micro = 1},
-	eighths = 1,
-	drawtype = "nodebox",
-	node_box = {
-		type = "fixed",
-		fixed = {-0.5, -0.5, 0, 0, -0.4375, 0.5},
-	},
-})
-]]
 local api = stairsplus.api
 
 api.registered_shapes = {}

@@ -97,7 +97,7 @@ These are for registering shapes of a node
   Register all registered shapes for a node. we do not recommend using this, due to the 32767 node limit.
   we recommend using
 
-* `stairsplus.api.register_custom(node, shapes, [overrides], [meta])`
+* `stairsplus.api.register_shapes(node, shapes, [overrides], [meta])`
   Register variants for a custom list of shapes.
 * `stairsplus.api.register_group(node, shape_group, [overrides], [meta])`
   Register variants for a defined shape group.
@@ -141,7 +141,7 @@ These are for registering shapes of a node
 * `stairsplus.api.register_alias_single(old_node, new_node, shape)`
   Hopefully this is self-explanatory.
 * `stairsplus.api.register_alias_all(old_node, new_node)`
-* `stairsplus.api.register_alias_custom(old_node, new_node, list)`
+* `stairsplus.api.register_alias_shapes(old_node, new_node, shapes)`
 * `stairsplus.api.register_alias_group(old_node, new_node, group)`
 * `stairsplus.api.register_alias_groups(old_node, new_node, groups)`
 
@@ -149,7 +149,7 @@ These are for registering shapes of a node
   `alias_force` implies that the shapes for the "old_node" already exist, so after aliasing them,
   we remove them from internal data structures.
 * `stairsplus.api.register_alias_force_all(old_node, new_node)`
-* `stairsplus.api.register_alias_force_custom(old_node, new_node, list)`
+* `stairsplus.api.register_alias_force_shapes(old_node, new_node, shape)`
 * `stairsplus.api.register_alias_force_group(old_node, new_node, group)`
 * `stairsplus.api.register_alias_force_groups(old_node, new_node, groups)`
 
