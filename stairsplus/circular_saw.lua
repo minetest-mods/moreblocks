@@ -16,6 +16,7 @@ function circular_saw.build_formspec(meta, inv)
 	return ([[
 		size[10,11]
 		%s
+		label[0,0;]
 		label[0,0;%s]
 		list[%s;stairsplus:input;1.7,0;1,1;]
 		label[0,1;%s]
