@@ -59,7 +59,7 @@ if legacy_place_mechanic then
 				aux = not aux
 			end
 
-			local remap = nil
+			local remap
 
 			-- standard placement against the wall
 			local use_wallmap = (wallmounted > 1 and not sneak) or (wallmounted < 2 and sneak)

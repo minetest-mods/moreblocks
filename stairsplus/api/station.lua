@@ -25,7 +25,7 @@ end
 function station.get_current_node(inv)
 	local input_stack = inv:get_stack("stairsplus:input", 1)
 	if not input_stack:is_empty() then
-		return input_stack:get_name()
+		return api.get_node_of_shaped_node(input_stack:get_name())
 	end
 
 	local micro_stack = inv:get_stack("stairsplus:micro", 1)
@@ -101,19 +101,30 @@ function station.update_inventory(meta, inv, taken_stack)
 	local micro_stack = inv:get_stack("stairsplus:micro", 1)
 	local recycle_stack = inv:get_stack("stairsplus:recycle", 1)
 
-	local current_value = 8 * input_stack:get_count() + micro_stack:get_count()
-	local new_value = current_value + station.get_cost(recycle_stack:get_name()) * recycle_stack:get_count()
+	local input_cost = station.get_cost(input_stack:get_name())
+	local micro_cost = station.get_cost(micro_stack:get_name())
+	local recycle_cost = station.get_cost(recycle_stack:get_name())
+
+	local total_value = (
+		(input_stack:get_count() * input_cost) +
+		(micro_stack:get_count() * micro_cost) +
+		(recycle_stack:get_count() * recycle_cost)
+	)
+
 	if taken_stack then
-		new_value = new_value - station.get_cost(taken_stack:get_name()) * taken_stack:get_count()
+		total_value = total_value - station.get_cost(taken_stack:get_name()) * taken_stack:get_count()
 	end
-	local new_micros = new_value % 8
-	local new_blocks = math.floor(new_value / 8)
+
+	local new_micros = total_value % 8
+	local new_blocks = math.floor(total_value / 8)
+
+	local micronode = api.get_micronode(node)
 
 	inv:set_stack("stairsplus:input", 1, ItemStack({name = node, count = new_blocks}))
-	inv:set_stack("stairsplus:micro", 1, ItemStack({name = api.get_micronode(node), count = new_micros}))
+	inv:set_stack("stairsplus:micro", 1, ItemStack({name = micronode, count = new_micros}))
 	inv:set_stack("stairsplus:recycle", 1, ItemStack())
 
-	if new_value == 0 then
+	if total_value == 0 then
 		for i = 1, inv:get_size("stairsplus:output") do
 			inv:set_stack("stairsplus:output", i, "")
 		end
@@ -130,7 +141,7 @@ function station.update_inventory(meta, inv, taken_stack)
 				local shape_def = api.registered_shapes[shape]
 				local shaped_node = api.format_name(node, shape)
 				local stack_max = math.min(max_offered, ItemStack(shaped_node):get_stack_max())
-				local count = math.min(stack_max, math.floor(new_value / shape_def.eighths))
+				local count = math.min(stack_max, math.floor(total_value / shape_def.eighths))
 				local stack
 				if count > 0 then
 					stack = ItemStack({name = shaped_node, count = count})
@@ -146,6 +157,54 @@ function station.update_inventory(meta, inv, taken_stack)
 	for j = i, inv:get_size("stairsplus:output") do
 		inv:set_stack("stairsplus:output", j, "")
 	end
+end
+
+-- Moving the inventory of the station around is not allowed because it
+-- is a fictional inventory. Moving inventory around would be rather
+-- impractical and make things more difficult to calculate:
+function station.allow_inventory_move(meta, inv, from_list, from_index, to_list, to_index, count, player)
+	return 0
+end
+
+function station.allow_inventory_put(meta, inv, listname, index, stack, player)
+	if listname == "stairsplus:output" then
+		return 0
+	end
+
+	local to_put_node = resolve_aliases(stack:get_name())
+	local node = api.get_node_of_shaped_node(to_put_node)
+	local shape = api.get_shape_of_shaped_node(to_put_node)
+
+	if not (node and shape) then
+		return 0
+	end
+
+	local current_node = station.get_current_node(inv)
+
+	local input_stack = inv:get_stack("stairsplus:input", 1)
+	local micro_stack = inv:get_stack("stairsplus:micro", 1)
+
+	if current_node and node ~= current_node then
+		if (
+			(input_stack:is_empty() and listname == "stairsplus:micro") or
+			(micro_stack:is_empty() and listname == "stairsplus:input")
+		) then
+			return stack:get_count()
+		else
+			return 0
+		end
+	end
+
+	local count = stack:get_count()
+	local cost = station.get_cost(to_put_node)
+
+	local current_value = 8 * input_stack:get_count() + micro_stack:get_count()
+	local max_value = 8 * ItemStack(node):get_stack_max() + 7
+
+	local available_value = max_value - current_value
+	local available_count = math.floor(available_value / cost)
+
+	return math.min(count, available_count)
 end
 
 function station.on_inventory_put(meta, inv, listname, index, stack, player, update_metadata)
@@ -165,47 +224,6 @@ function station.on_inventory_take(meta, inv, listname, index, stack, player, up
 	if update_metadata then
 		update_metadata(meta, inv)
 	end
-end
-
--- Moving the inventory of the station around is not allowed because it
--- is a fictional inventory. Moving inventory around would be rather
--- impractical and make things more difficult to calculate:
-function station.allow_inventory_move()
-	return 0
-end
-
-function station.allow_inventory_put(meta, inv, listname, index, stack, player)
-	if listname ~= "stairsplus:recycle" then
-		return 0
-	end
-
-	local shaped_node = resolve_aliases(stack:get_name())
-	local node = api.get_node_of_shaped_node(shaped_node)
-	local shape = api.get_shape_of_shaped_node(shaped_node)
-
-	if not (node and shape) then
-		return 0
-	end
-
-	local current_node = station.get_current_node(inv)
-
-	if current_node and node ~= current_node then
-		return 0
-	end
-
-	local count = stack:get_count()
-	local cost = station.get_cost(shaped_node)
-
-	local input_stack = inv:get_stack("stairsplus:input", 1)
-	local micro_stack = inv:get_stack("stairsplus:micro", 1)
-
-	local current_value = 8 * input_stack:get_count() + micro_stack:get_count()
-	local max_value = 8 * ItemStack(node):get_stack_max() + 7
-
-	local available_value = max_value - current_value
-	local available_count = math.floor(available_value / cost)
-
-	return math.min(count, available_count)
 end
 
 function station.initialize_metadata(meta, inv, shape_groups, build_formspec, update_metadata)
