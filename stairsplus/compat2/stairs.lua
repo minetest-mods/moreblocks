@@ -9,8 +9,10 @@ local api = stairsplus.api
 
 local S = stairsplus.S
 
-local default_align_style = stairsplus.settings.default_align_style
 local is_legacy_drawtype = stairsplus.compat.is_legacy_drawtype
+local is_legacy_paramtype2 = stairsplus.compat.is_legacy_paramtype2
+
+local default_align_style = stairsplus.settings.default_align_style
 
 function stairs.register_stair(subname, node, groups, tiles, description, sounds, worldaligntex)
 	local meta = {
@@ -18,6 +20,9 @@ function stairs.register_stair(subname, node, groups, tiles, description, sounds
 	}
 	if is_legacy_drawtype(node) then
 		meta.ignore_drawtype = true
+	end
+	if is_legacy_paramtype2(node) then
+		meta.ignore_paramtype2 = true
 	end
 
 	api.register_single(node, "stair", {
@@ -37,6 +42,9 @@ function stairs.register_slab(subname, node, groups, images, description, sounds
 	if is_legacy_drawtype(node) then
 		meta.ignore_drawtype = true
 	end
+	if is_legacy_paramtype2(node) then
+		meta.ignore_paramtype2 = true
+	end
 
 	api.register_single(node, "slab_8", {
 		groups = groups,
@@ -55,6 +63,9 @@ function stairs.register_stair_inner(subname, node, groups, tiles, description, 
 	if is_legacy_drawtype(node) then
 		meta.ignore_drawtype = true
 	end
+	if is_legacy_paramtype2(node) then
+		meta.ignore_paramtype2 = true
+	end
 
 	api.register_single(node, "stair_inner", {
 		groups = groups,
@@ -72,6 +83,9 @@ function stairs.register_stair_outer(subname, node, groups, tiles, description, 
 	}
 	if is_legacy_drawtype(node) then
 		meta.ignore_drawtype = true
+	end
+	if is_legacy_paramtype2(node) then
+		meta.ignore_paramtype2 = true
 	end
 
 	api.register_single(node, "stair_outer", {

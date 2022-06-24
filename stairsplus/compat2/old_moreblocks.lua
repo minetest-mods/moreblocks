@@ -4,6 +4,8 @@
 local api = stairsplus.api
 
 local is_legacy_drawtype = stairsplus.compat.is_legacy_drawtype
+local is_legacy_paramtype2 = stairsplus.compat.is_legacy_paramtype2
+
 local legacy_mode = stairsplus.settings.legacy_mode
 
 local function clean_legacy_fields(fields)
@@ -51,10 +53,16 @@ local function clean_legacy_fields(fields)
 end
 
 local function register_group(modname, subname, recipeitem, fields, group)
+	if not minetest.registered_nodes[recipeitem] then
+		error(("cannot register stairs for %s before the node is defined"):format(recipeitem))
+	end
 	fields = clean_legacy_fields(fields)
 	local meta = {}
 	if is_legacy_drawtype(recipeitem) then
 		meta.ignore_drawtype = true
+	end
+	if is_legacy_paramtype2(recipeitem) then
+		meta.ignore_paramtype2 = true
 	end
 
 	api.register_group(recipeitem, group, fields, meta)
