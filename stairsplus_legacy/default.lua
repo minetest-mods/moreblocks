@@ -33,10 +33,8 @@ if stairsplus_legacy.has.stairs then
 	stairsplus.compat.override_stairs("goldblock", "default:goldblock")
 	stairsplus.compat.override_stairs("ice", "default:ice")
 	stairsplus.compat.override_stairs("snowblock", "default:snowblock")
-	stairsplus.compat.override_stairs("glass", "default:glass",
-		{tiles = {"stairs_glass_split.png"}}, {ignore_paramtype2 = true})
-	stairsplus.compat.override_stairs("obsidian_glass", "default:obsidian_glass",
-		{tiles = {"stairs_obsidian_glass_split.png"}}, {ignore_paramtype2 = true})
+	stairsplus.compat.override_stairs("glass", "default:glass", nil, {ignore_paramtype2 = true})
+	stairsplus.compat.override_stairs("obsidian_glass", "default:obsidian_glass", nil, {ignore_paramtype2 = true})
 end
 
 local default_nodes = { -- Default stairs/slabs/panels/microblocks:
