@@ -79,6 +79,7 @@ local default_nodes = { -- Default stairs/slabs/panels/microblocks:
 	"sandstone_block",
 	"coral_skeleton",
 	"ice",
+	"sand",  -- TODO tmp remove
 }
 
 for _, name in ipairs(default_nodes) do
@@ -98,3 +99,99 @@ for _, name in ipairs(glass) do
 	stairsplus_legacy.register_legacy(node, nil, {ignore_paramtype2 = true})
 	stairsplus.api.register_alias_all(("moreblocks:%s"):format(name), node)
 end
+
+stairsplus.api.register_crafts_for_shapes({
+        type = "cooking",
+        output = "default:glass",
+        recipe = "group:sand",
+})
+
+stairsplus.api.register_crafts_for_shapes({
+        type = "cooking",
+        output = "default:stone",
+        recipe = "default:cobble",
+})
+
+stairsplus.api.register_crafts_for_shapes({
+        type = "cooking",
+        output = "default:stone",
+        recipe = "default:mossycobble",
+})
+
+stairsplus.api.register_crafts_for_shapes({
+        type = "cooking",
+        output = "default:desert_stone",
+        recipe = "default:desert_cobble",
+})
+
+stairsplus.api.register_crafts_for_shapes({
+        type = "fuel",
+        recipe = "group:tree",
+        burntime = 30,
+})
+
+stairsplus.api.register_crafts_for_shapes({
+        type = "fuel",
+        recipe = "default:tree",
+        burntime = 30,
+})
+
+stairsplus.api.register_crafts_for_shapes({
+        type = "fuel",
+        recipe = "default:aspen_tree",
+        burntime = 22,
+})
+
+stairsplus.api.register_crafts_for_shapes({
+        type = "fuel",
+        recipe = "default:pine_tree",
+        burntime = 26,
+})
+
+stairsplus.api.register_crafts_for_shapes({
+        type = "fuel",
+        recipe = "default:acacia_tree",
+        burntime = 34,
+})
+
+stairsplus.api.register_crafts_for_shapes({
+        type = "fuel",
+        recipe = "default:jungletree",
+        burntime = 38,
+})
+
+stairsplus.api.register_crafts_for_shapes({
+        type = "fuel",
+        recipe = "group:wood",
+        burntime = 7,
+})
+
+stairsplus.api.register_crafts_for_shapes({
+        type = "fuel",
+        recipe = "default:wood",
+        burntime = 7,
+})
+
+stairsplus.api.register_crafts_for_shapes({
+        type = "fuel",
+        recipe = "default:aspen_wood",
+        burntime = 5,
+})
+
+stairsplus.api.register_crafts_for_shapes({
+        type = "fuel",
+        recipe = "default:pine_wood",
+        burntime = 6,
+})
+
+stairsplus.api.register_crafts_for_shapes({
+        type = "fuel",
+        recipe = "default:acacia_wood",
+        burntime = 8,
+})
+
+stairsplus.api.register_crafts_for_shapes({
+        type = "fuel",
+        recipe = "default:junglewood",
+        burntime = 9,
+})

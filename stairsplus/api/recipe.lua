@@ -171,34 +171,69 @@ local function shapes_match(a, b)
 	return true
 end
 
+local function register_cooking_for_shapes(recipe)
+	local mod, name = recipe.recipe:match("^([^:]+):(.*)$")
+
+	if mod ~= "group" and not shapes_match(recipe.output, recipe.recipe) then
+		error(("error: shapes of %s and %s do not match"):format(recipe.output, recipe.recipe))
+	end
+
+	local shapes = api.get_shapes(recipe.output)
+
+	for _, shape in ipairs(shapes) do
+		local shape_def = api.registered_shapes[shape]
+		local input
+		if mod == "group" then
+			input = "group:" .. shape_def.name_format:format(name)
+		else
+			input = api.get_schema_recipe_item(recipe.recipe, shape)
+		end
+
+		minetest.register_craft({
+			type = "cooking",
+			output = api.get_schema_recipe_item(recipe.output, shape),
+			recipe = input,
+			cooktime = math.max(1.0, (recipe.cooktime or 3) * (shape_def.eighths / 8)),
+		})
+	end
+end
+
+local function register_fuel_for_shapes(recipe)
+	local mod, name = recipe.recipe:match("^([^:]+):(.*)$")
+	local shapes
+	if mod == "group" then
+		shapes = api.registered_shapes
+	else
+		shapes = api.get_shapes_hash(recipe.recipe)
+	end
+
+	if not shapes then
+		error(("don't know how to handle fuel %s"):format(recipe.recipe))
+	end
+
+	for shape in pairs(shapes) do
+		local shape_def = api.registered_shapes[shape]
+		local input
+		if mod == "group" then
+			input = "group:" .. shape_def.name_format:format(name)
+		else
+			input = api.get_schema_recipe_item(recipe.recipe, shape)
+		end
+
+		minetest.register_craft({
+			type = "fuel",
+			recipe = input,
+			burntime = math.max(1.0, (recipe.burntime or 1) * (shape_def.eighths / 8)),
+		})
+	end
+end
+
 function api.register_crafts_for_shapes(recipe)
 	if recipe.type == "cooking" then
-		assert(
-			shapes_match(recipe.output, recipe.recipe),
-			("error: shapes of %s and %s do not match"):format(recipe.output, recipe.recipe)
-		)
-
-		local shapes = api.get_shapes(recipe.recipe)
-
-		for _, shape in ipairs(shapes) do
-			minetest.register_craft({
-				type = "cooking",
-				output = api.get_schema_recipe_item(recipe.output, shape),
-				recipe = api.get_schema_recipe_item(recipe.recipe, shape),
-				cooktime = recipe.cooktime * (api.registered_shapes[shape].eighths / 8),
-			})
-		end
+		register_cooking_for_shapes(recipe)
 
 	elseif recipe.type == "fuel" then
-		local shapes = api.get_shapes(recipe.recipe)
-
-		for _, shape in ipairs(shapes) do
-			minetest.register_craft({
-				type = "fuel",
-				recipe = api.get_schema_recipe_item(recipe.recipe, shape),
-				burntime = recipe.burntime * (api.registered_shapes[shape].eighths / 8),
-			})
-		end
+		register_fuel_for_shapes(recipe)
 
 	else
 		error(("unsupported recipe type %s"):format(recipe.type))
