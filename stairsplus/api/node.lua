@@ -158,7 +158,7 @@ function api.register_single(node, shape, overrides, meta)
 
 	if not meta.allow_override_groups and overrides.groups then
 		stairsplus.log("warning", "removing group overrides from %s (was %s, will be %s)",
-			shaped_name, minetest.serialize(overrides.groups):sub(8), minetest.serialize(def.groups):sub(8)
+			shaped_name, minetest.write_json(overrides.groups), minetest.write_json(def.groups)
 		)
 		overrides.groups = nil
 	end

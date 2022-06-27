@@ -68,7 +68,7 @@ function api.register_craft_schema(schema)
 		error(problems)
 	end
 
-	stairsplus.log("info", "registering craft schema %s", minetest.serialize(schema):sub(#("return ")))
+	stairsplus.log("info", "registering craft schema %s", minetest.write_json(schema))
 
 	table.insert(api.registered_recipe_schemas, schema)
 
@@ -138,7 +138,7 @@ local function register_for_schema(node, schema)
 		end
 	end
 
-	stairsplus.log("info", "registering recipe %s", minetest.serialize(recipe):sub(#("return ")))
+	stairsplus.log("info", "registering recipe %s", minetest.write_json(recipe))
 
 	minetest.register_craft(recipe)
 end
@@ -148,7 +148,7 @@ function api.register_schema_crafts_for_node(node)
 	local shapes = api.get_shapes_hash(node)
 	for _, schema in ipairs(api.registered_recipe_schemas) do
 		if has_the_right_shapes(schema, shapes) then
-			stairsplus.log("verbose", "using schema %s", minetest.serialize(schema):sub(#("return ")))
+			stairsplus.log("verbose", "using schema %s", minetest.write_json(schema))
 			register_for_schema(node, schema)
 		end
 	end

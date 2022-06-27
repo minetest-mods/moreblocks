@@ -13,10 +13,15 @@ local valid_slice = {
 	[15] = true,
 }
 
-local promotion = {
+local full_promotion = {
 	micro = "panel_8",
 	panel = "slab_8",
 	slab = "node",
+}
+
+local half_promotion = {
+	micro = "panel",
+	panel = "slab",
 }
 
 local demotion = {
@@ -25,6 +30,7 @@ local demotion = {
 	panel = "micro",
 }
 
+-- stack things on top of each other
 for _, shape in ipairs({"micro", "panel", "slab"}) do
 	for _, slice1 in ipairs(slices) do
 		local shape1 = ("%s_%s"):format(shape, slice1)
@@ -51,7 +57,7 @@ for _, shape in ipairs({"micro", "panel", "slab"}) do
 
 			elseif slice3 == 16 then
 				register_craft_schema({
-					output = ("%s"):format(promotion[shape]),
+					output = ("%s"):format(full_promotion[shape]),
 					recipe = {
 						{shape1},
 						{shape2},
@@ -59,6 +65,24 @@ for _, shape in ipairs({"micro", "panel", "slab"}) do
 				})
 			end
 		end
+	end
+end
+
+-- stack things next to each other
+for _, shape in ipairs({"micro", "panel"}) do
+	for _, slice in ipairs(slices) do
+		local shape1 = ("%s_%s"):format(shape, slice)
+		local def1 = api.registered_shapes[shape1]
+		local shape2 = ("%s_%s"):format(half_promotion[shape], slice)
+		local def2 = api.registered_shapes[shape2]
+		local n = math.floor(2 * def1.eighths / def2.eighths)
+
+		register_craft_schema({
+			output = ("%s %s"):format(shape2, n),
+			recipe = {
+				{shape1, shape1},
+			},
+		})
 	end
 end
 
