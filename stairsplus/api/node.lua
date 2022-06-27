@@ -14,6 +14,7 @@ api.shapes_by_node = {}
 api.node_by_shaped_node = {}
 api.shape_by_shaped_node = {}
 
+api.registered_singles = {}
 api.registered_on_register_singles = {}
 
 function api.register_on_register_single(func)
@@ -226,6 +227,8 @@ function api.register_single(node, shape, overrides, meta)
 	local shapes = api.shapes_by_node[node] or {}
 	shapes[shape] = true
 	api.shapes_by_node[node] = shapes
+
+	table.insert(api.registered_singles, {node, shaped_name})
 
 	for _, func in ipairs(api.registered_on_register_singles) do
 		func(node, shaped_name)

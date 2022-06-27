@@ -17,9 +17,9 @@ stairsplus.compat = {
 	end,
 }
 
-stairsplus.dofile("compat2", "stairs")
-stairsplus.dofile("compat2", "old_moreblocks")
+stairsplus.dofile("compat", "i3")
+stairsplus.dofile("compat", "unified_inventory")
 
--- stairsplus.dofile("compat", "inventory_managers")
--- unified_inventory, sfinv, i3
+stairsplus.dofile("compat", "stairs")
+stairsplus.dofile("compat", "old_moreblocks")
 

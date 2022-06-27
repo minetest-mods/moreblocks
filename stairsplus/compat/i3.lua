@@ -11,7 +11,7 @@ i3.register_craft_type("stairsplus:craft_schema", {
 	icon = "stairsplus_saw_button.png",
 })
 
-i3.register_craft_type("stairsplus:craft_schema", {
+i3.register_craft_type("stairsplus:circular_saw", {
 	description = "Stairs+ circular saw",
 	icon = "stairsplus_saw_button.png",
 })
@@ -44,7 +44,7 @@ local function convert_schema_recipe_item(item)
 	end
 end
 
-api.register_on_register_craft_schema(function(schema)
+local function on_register_craft_schema(schema)
 	local recipe = table.copy(schema)
 
 	recipe.output = convert_schema_recipe_item(recipe.output)
@@ -77,14 +77,27 @@ api.register_on_register_craft_schema(function(schema)
 		result = recipe.output,
 		items = recipe.recipe,
 	})
-end)
+end
 
-api.register_on_register_single(function(node, shaped_name)
+for _, schema in ipairs(api.registered_recipe_schemas) do
+	on_register_craft_schema(schema)
+end
+
+api.register_on_register_craft_schema(on_register_craft_schema)
+
+local function on_register_single(node, shaped_name)
 	i3.register_craft({
 		type = "stairsplus:circular_saw",
 		result = shaped_name,
 		items = {node},
 	})
-end)
+end
+
+for _, single in ipairs(api.registered_singles) do
+	local node, shaped_name = unpack(single)
+	on_register_single(node, shaped_name)
+end
+
+api.register_on_register_single(on_register_single)
 
 

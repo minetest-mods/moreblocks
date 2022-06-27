@@ -72,7 +72,7 @@ local function convert_schema_recipe_item(item)
 	end
 end
 
-api.register_on_register_craft_schema(function(schema)
+local function on_register_craft_schema(schema)
 	local recipe = table.copy(schema)
 
 	recipe.output = convert_schema_recipe_item(recipe.output)
@@ -104,9 +104,15 @@ api.register_on_register_craft_schema(function(schema)
 		items = recipe.recipe,
 		width = 3,
 	})
-end)
+end
 
-api.register_on_register_single(function(node, shaped_name)
+for _, schema in ipairs(api.registered_recipe_schemas) do
+	on_register_craft_schema(schema)
+end
+
+api.register_on_register_craft_schema(on_register_craft_schema)
+
+local function on_register_single(node, shaped_name)
 	unified_inventory.register_craft({
 		output = shaped_name,
 		type = "stairsplus:circular_saw",
@@ -116,6 +122,13 @@ api.register_on_register_single(function(node, shaped_name)
 
 	unified_inventory.add_category_item("stairsplus:cuttable", node)
 	unified_inventory.add_category_item("stairsplus:cut_node", shaped_name)
-end)
+end
+
+for _, single in ipairs(api.registered_singles) do
+	local node, shaped_name = unpack(single)
+	on_register_single(node, shaped_name)
+end
+
+api.register_on_register_single(on_register_single)
 
 

@@ -33,8 +33,6 @@ stairsplus.dofile("util")
 
 stairsplus.dofile("api", "init")
 
-stairsplus.dofile("compat1", "init")
-
 stairsplus.dofile("shapes", "init")
 stairsplus.dofile("groups", "init")
 stairsplus.dofile("craft_schemas", "init")
@@ -42,6 +40,6 @@ stairsplus.dofile("craft_schemas", "init")
 stairsplus.dofile("resources", "init")
 stairsplus.dofile("circular_saw")
 
-stairsplus.dofile("compat2", "init")
+stairsplus.dofile("compat", "init")
 
 stairsplus.dofile("aliases")

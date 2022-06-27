@@ -285,7 +285,14 @@ For the creation of crafting stations which can be used to transform nodes into 
     * `update_metadata = function(meta, inv)`
       A function which updates the node's metadata (optional)
 
-# legacy API
+## Compat API
+
+For compatability w/ other mods
+
+* `function stairsplus.compat.override_stairs(name, node, overrides, meta)`
+  Override stairs registered w/ the `stairs` mod, and replace them w/ stairsplus-compatible nodes.
+
+# Legacy API
 
 Methods from the previous "moreblocks" version of stairsplus which are still provided so as not to break
 compatability with older mods.
@@ -300,7 +307,25 @@ compatability with older mods.
     sounds = moreblocks.node_sound_wood_defaults(),
   })
   ```
+* `stairsplus:register_micro(modname, subname, recipeitem, fields)`
+* `stairsplus:register_panel(modname, subname, recipeitem, fields)`
+* `stairsplus:register_slab(modname, subname, recipeitem, fields)`
+* `stairsplus:register_slope(modname, subname, recipeitem, fields)`
+* `stairsplus:register_stair(modname, subname, recipeitem, fields)`
+* `stairsplus:register_custom_subset(subset, modname, subname, recipeitem, fields)`
 
 * `stairsplus:register_alias_all(modname_old, subname_old, modname_new, subname_new)`
+* `stairsplus:register_alias_micro(modname_old, subname_old, modname_new, subname_new)`
+* `stairsplus:register_alias_panel(modname_old, subname_old, modname_new, subname_new)`
+* `stairsplus:register_alias_slab(modname_old, subname_old, modname_new, subname_new)`
+* `stairsplus:register_alias_slope(modname_old, subname_old, modname_new, subname_new)`
+* `stairsplus:register_alias_stair(modname_old, subname_old, modname_new, subname_new)`
+* `stairsplus:register_custom_subset_alias(subset, modname_old, subname_old, modname_new, subname_new)`
 
 * `stairsplus:register_alias_force_all(modname_old, subname_old, modname_new, subname_new)`
+* `stairsplus:register_alias_force_micro(modname_old, subname_old, modname_new, subname_new)`
+* `stairsplus:register_alias_force_panel(modname_old, subname_old, modname_new, subname_new)`
+* `stairsplus:register_alias_force_slab(modname_old, subname_old, modname_new, subname_new)`
+* `stairsplus:register_alias_force_slope(modname_old, subname_old, modname_new, subname_new)`
+* `stairsplus:register_alias_force_stair(modname_old, subname_old, modname_new, subname_new)`
+* `stairsplus:register_custom_subset_alias(subset, modname_old, subname_old, modname_new, subname_new)`
