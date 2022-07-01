@@ -84,8 +84,10 @@ local default_nodes = { -- Default stairs/slabs/panels/microblocks:
 
 for _, name in ipairs(default_nodes) do
 	local node = ("default:%s"):format(name)
-	stairsplus_legacy.register_legacy(node)
-	stairsplus.api.register_alias_all(("moreblocks:%s"):format(name), node)
+	if minetest.registered_nodes[node] then
+		stairsplus_legacy.register_legacy(node)
+		stairsplus.api.register_alias_all(("moreblocks:%s"):format(name), node)
+	end
 end
 
 -- glass problems
@@ -96,33 +98,43 @@ local glass = {
 
 for _, name in ipairs(glass) do
 	local node = ("default:%s"):format(name)
-	stairsplus_legacy.register_legacy(node, nil, {ignore_paramtype2 = true})
-	stairsplus.api.register_alias_all(("moreblocks:%s"):format(name), node)
+	if minetest.registered_nodes[node] then
+		stairsplus_legacy.register_legacy(node, nil, {ignore_paramtype2 = true})
+		stairsplus.api.register_alias_all(("moreblocks:%s"):format(name), node)
+	end
 end
 
-stairsplus.api.register_crafts_for_shapes({
-        type = "cooking",
-        output = "default:glass",
-        recipe = "group:sand",
-})
+if minetest.registered_nodes["default:glass"] then
+	stairsplus.api.register_crafts_for_shapes({
+		type = "cooking",
+		output = "default:glass",
+		recipe = "group:sand",
+	})
+end
 
-stairsplus.api.register_crafts_for_shapes({
-        type = "cooking",
-        output = "default:stone",
-        recipe = "default:cobble",
-})
+if minetest.registered_nodes["default:stone"] and minetest.registered_nodes["default:cobble"] then
+	stairsplus.api.register_crafts_for_shapes({
+		type = "cooking",
+		output = "default:stone",
+		recipe = "default:cobble",
+	})
+end
 
-stairsplus.api.register_crafts_for_shapes({
-        type = "cooking",
-        output = "default:stone",
-        recipe = "default:mossycobble",
-})
+if minetest.registered_nodes["default:stone"] and minetest.registered_nodes["default:mossycobble"] then
+	stairsplus.api.register_crafts_for_shapes({
+		type = "cooking",
+		output = "default:stone",
+		recipe = "default:mossycobble",
+	})
+end
 
-stairsplus.api.register_crafts_for_shapes({
-        type = "cooking",
-        output = "default:desert_stone",
-        recipe = "default:desert_cobble",
-})
+if minetest.registered_nodes["default:desert_stone"] and minetest.registered_nodes["default:desert_cobble"] then
+	stairsplus.api.register_crafts_for_shapes({
+		type = "cooking",
+		output = "default:desert_stone",
+		recipe = "default:desert_cobble",
+	})
+end
 
 stairsplus.api.register_crafts_for_shapes({
         type = "fuel",
@@ -130,35 +142,45 @@ stairsplus.api.register_crafts_for_shapes({
         burntime = 30,
 })
 
-stairsplus.api.register_crafts_for_shapes({
-        type = "fuel",
-        recipe = "default:tree",
-        burntime = 30,
-})
+if minetest.registered_nodes["default:tree"] then
+	stairsplus.api.register_crafts_for_shapes({
+		type = "fuel",
+		recipe = "default:tree",
+		burntime = 30,
+	})
+end
 
-stairsplus.api.register_crafts_for_shapes({
-        type = "fuel",
-        recipe = "default:aspen_tree",
-        burntime = 22,
-})
+if minetest.registered_nodes["default:aspen_tree"] then
+	stairsplus.api.register_crafts_for_shapes({
+		type = "fuel",
+		recipe = "default:aspen_tree",
+		burntime = 22,
+	})
+end
 
-stairsplus.api.register_crafts_for_shapes({
-        type = "fuel",
-        recipe = "default:pine_tree",
-        burntime = 26,
-})
+if minetest.registered_nodes["default:pine_tree"] then
+	stairsplus.api.register_crafts_for_shapes({
+		type = "fuel",
+		recipe = "default:pine_tree",
+		burntime = 26,
+	})
+end
 
-stairsplus.api.register_crafts_for_shapes({
-        type = "fuel",
-        recipe = "default:acacia_tree",
-        burntime = 34,
-})
+if minetest.registered_nodes["default:acacia_tree"] then
+	stairsplus.api.register_crafts_for_shapes({
+		type = "fuel",
+		recipe = "default:acacia_tree",
+		burntime = 34,
+	})
+end
 
-stairsplus.api.register_crafts_for_shapes({
-        type = "fuel",
-        recipe = "default:jungletree",
-        burntime = 38,
-})
+if minetest.registered_nodes["default:jungletree"] then
+	stairsplus.api.register_crafts_for_shapes({
+		type = "fuel",
+		recipe = "default:jungletree",
+		burntime = 38,
+	})
+end
 
 stairsplus.api.register_crafts_for_shapes({
         type = "fuel",
@@ -166,32 +188,42 @@ stairsplus.api.register_crafts_for_shapes({
         burntime = 7,
 })
 
-stairsplus.api.register_crafts_for_shapes({
-        type = "fuel",
-        recipe = "default:wood",
-        burntime = 7,
-})
+if minetest.registered_nodes["default:wood"] then
+	stairsplus.api.register_crafts_for_shapes({
+		type = "fuel",
+		recipe = "default:wood",
+		burntime = 7,
+	})
+end
 
-stairsplus.api.register_crafts_for_shapes({
-        type = "fuel",
-        recipe = "default:aspen_wood",
-        burntime = 5,
-})
+if minetest.registered_nodes["default:aspen_wood"] then
+	stairsplus.api.register_crafts_for_shapes({
+		type = "fuel",
+		recipe = "default:aspen_wood",
+		burntime = 5,
+	})
+end
 
-stairsplus.api.register_crafts_for_shapes({
-        type = "fuel",
-        recipe = "default:pine_wood",
-        burntime = 6,
-})
+if minetest.registered_nodes["default:pine_wood"] then
+	stairsplus.api.register_crafts_for_shapes({
+		type = "fuel",
+		recipe = "default:pine_wood",
+		burntime = 6,
+	})
+end
 
-stairsplus.api.register_crafts_for_shapes({
-        type = "fuel",
-        recipe = "default:acacia_wood",
-        burntime = 8,
-})
+if minetest.registered_nodes["default:acacia_wood"] then
+	stairsplus.api.register_crafts_for_shapes({
+		type = "fuel",
+		recipe = "default:acacia_wood",
+		burntime = 8,
+	})
+end
 
-stairsplus.api.register_crafts_for_shapes({
-        type = "fuel",
-        recipe = "default:junglewood",
-        burntime = 9,
-})
+if minetest.registered_nodes["default:junglewood"] then
+	stairsplus.api.register_crafts_for_shapes({
+		type = "fuel",
+		recipe = "default:junglewood",
+		burntime = 9,
+	})
+end
