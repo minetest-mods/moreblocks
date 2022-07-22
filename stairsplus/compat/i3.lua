@@ -99,5 +99,3 @@ for _, single in ipairs(api.registered_singles) do
 end
 
 api.register_on_register_single(on_register_single)
-
-

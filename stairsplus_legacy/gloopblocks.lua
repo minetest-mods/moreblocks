@@ -5,4 +5,3 @@ if materials.cement_block and materials.cement_block ~= "gloopblocks:cement" the
 elseif minetest.registered_nodes["gloopblocks:cement"] then
 	stairsplus_legacy.register_legacy("gloopblocks:cement")
 end
-

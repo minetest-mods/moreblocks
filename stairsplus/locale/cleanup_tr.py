@@ -36,4 +36,3 @@ for tr in ourdir.glob('*.tr'):
         print(f'{key}={value}', file=fh)
       else:
         print(line, end='', file=fh)
-

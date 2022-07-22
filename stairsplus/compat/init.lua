@@ -22,4 +22,3 @@ stairsplus.dofile("compat", "unified_inventory")
 
 stairsplus.dofile("compat", "stairs")
 stairsplus.dofile("compat", "old_moreblocks")
-
