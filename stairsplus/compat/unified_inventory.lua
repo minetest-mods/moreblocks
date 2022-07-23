@@ -6,28 +6,21 @@ end
 
 local api = stairsplus.api
 
+-- TODO craft schema recipes don't show up correctly, which seems like a bug in unified_inventory
 unified_inventory.register_craft_type("stairsplus:craft_schema", {
-	-- ^ Unique identifier for `register_craft`
 	description = "Stairs+ craft schema",
-	-- ^ Text shown below the crafting arrow
 	icon = "stairsplus_saw_button.png",
-	-- ^ Image shown above the crafting arrow
 	width = 3,
 	height = 3,
-	-- ^ Maximal input dimensions of the recipes
 	uses_crafting_grid = true,
 })
 
 unified_inventory.register_craft_type("stairsplus:circular_saw", {
-	-- ^ Unique identifier for `register_craft`
 	description = "Stairs+ circular saw",
-	-- ^ Text shown below the crafting arrow
 	icon = "stairsplus_saw_button.png",
-	-- ^ Image shown above the crafting arrow
 	width = 1,
 	height = 1,
-	-- ^ Maximal input dimensions of the recipes
-	uses_crafting_grid = true,
+	uses_crafting_grid = false,
 })
 
 unified_inventory.register_category("stairsplus:cuttable", {
