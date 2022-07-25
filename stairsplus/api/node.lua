@@ -122,7 +122,7 @@ function api.register_single(node, shape, overrides, meta)
 		color = node_def.color,
 		palette = node_def.palette,  -- for coloredfacedir
 		stack_max = node_def.stack_max,
-		sound = node_def.sound,
+		sounds = node_def.sounds,
 		is_ground_content = node_def.is_ground_content,
 		walkable = node_def.walkable,
 		pointable = node_def.pointable,
