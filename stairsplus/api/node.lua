@@ -201,7 +201,7 @@ function api.register_single(node, shape, overrides, meta)
 	if def.overlay_tiles then
 		for i, tile in ipairs(def.overlay_tiles) do
 			if type(tile) == "string" then
-				def.tiles[i] = {
+				def.overlay_tiles[i] = {
 					name = tile,
 					backface_culling = true,
 					align_style = align_style,
