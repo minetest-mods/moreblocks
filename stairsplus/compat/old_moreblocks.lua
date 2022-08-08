@@ -35,9 +35,7 @@ local function clean_legacy_fields(fields)
 	fields.collision_box = nil
 	fields.legacy_facedir_simple = nil
 	fields.legacy_wallmounted = nil
-	if type(fields.drop) ~= "string" then
-		fields.drop = nil
-	end
+	fields.drop = nil
 	fields.on_construct = nil
 	fields.on_destruct = nil
 	fields.after_destruct = nil
@@ -49,21 +47,40 @@ local function clean_legacy_fields(fields)
 	fields.on_dig = nil
 	fields.on_timer = nil
 	fields.on_receive_fields = nil
+
 	return fields
+end
+
+local function handle_legacy_drop(modname, drop)
+	if not drop then
+		return
+	end
+
+	if type(drop) == "table" then
+		return drop
+	else
+		return ("%s:%s"):format(modname, drop)
+	end
 end
 
 local function register_group(modname, subname, recipeitem, fields, group)
 	if not minetest.registered_nodes[recipeitem] then
 		error(("cannot register stairs for %s before the node is defined"):format(recipeitem))
 	end
-	fields = clean_legacy_fields(fields)
+
 	local meta = {}
+
+	meta.legacy_drop = handle_legacy_drop(modname, fields.drop)
+
 	if is_legacy_drawtype(recipeitem) then
 		meta.ignore_drawtype = true
 	end
+
 	if is_legacy_paramtype2(recipeitem) then
 		meta.ignore_paramtype2 = true
 	end
+
+	fields = clean_legacy_fields(fields)
 
 	api.register_group(recipeitem, group, fields, meta)
 

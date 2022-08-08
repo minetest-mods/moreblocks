@@ -149,7 +149,15 @@ function api.register_single(node, shape, overrides, meta)
 	end
 
 	-- if there's a drop defined, and we can drop a shaped version, do so
-	if node_def.drop and type(node_def.drop) == "string" then
+	if meta.legacy_drop then
+		if type(meta.legacy_drop) == "string" then
+			local item = api.get_schema_recipe_item(meta.legacy_drop, shape)
+			if item then
+				def.drop = item
+			end
+		end
+
+	elseif node_def.drop and type(node_def.drop) == "string" then
 		local item = api.get_schema_recipe_item(node_def.drop, shape)
 		if item then
 			def.drop = item
