@@ -62,6 +62,9 @@ The 3.0.0 release of moreblocks introduces a "legacy" mode, which is on by defau
 allow new servers to not commit to creating as many nodes as older versions, while not breaking anything
 on existing servers. See `settingtypes.txt` for available settings.
 
+By defaulthe 3.0.0 release disables certain recipe overrides that were part of moreblocks 2.*. To re-enable
+them, set `moreblocks_legacy_recipes.enabled = true`.
+
 ### Settings
 
 See `settingtypes.txt` for available settings.

@@ -8,3 +8,36 @@ repos:
 
       - id: mixed-line-ending
         args: [ --fix=lf ]
+
+  - repo: local
+    hooks:
+      - id: luacheck_invsaw
+        name: luacheck_invsaw
+        language: system
+        entry: luacheck
+        pass_filenames: false
+        args: [--config,./invsaw/.luacheckrc,-q,./invsaw]
+      - id: luacheck_moreblocks
+        name: luacheck_moreblocks
+        language: system
+        entry: luacheck
+        pass_filenames: false
+        args: [--config,./moreblocks/.luacheckrc,-q,./moreblocks]
+      - id: luacheck_moreblocks_legacy_recipes
+        name: luacheck_moreblocks_legacy_recipes
+        language: system
+        entry: luacheck
+        pass_filenames: false
+        args: [--config,./moreblocks_legacy_recipes/.luacheckrc,-q,./moreblocks_legacy_recipes]
+      - id: luacheck_stairsplus
+        name: luacheck_stairsplus
+        language: system
+        entry: luacheck
+        pass_filenames: false
+        args: [--config,./stairsplus/.luacheckrc,-q,./stairsplus]
+      - id: luacheck_stairsplus_legacy
+        name: luacheck_stairsplus_legacy
+        language: system
+        entry: luacheck
+        pass_filenames: false
+        args: [--config,./stairsplus_legacy/.luacheckrc,-q,./stairsplus_legacy]

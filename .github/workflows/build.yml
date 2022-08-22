@@ -12,23 +12,11 @@ jobs:
       - name: Install pre-commit
         run: pip3 install pre-commit
 
-      - name: Run pre-commit
-        run: pre-commit run --all-files
-
       - name: install luarocks
         run: sudo apt-get install -qq luarocks
 
       - name: install luacheck via luarocks
         run: luarocks install --local luacheck
 
-      - name: luacheck invsaw
-        run: $HOME/.luarocks/bin/luacheck --config ./invsaw/.luacheckrc -q ./invsaw
-
-      - name: luacheck moreblocks
-        run: $HOME/.luarocks/bin/luacheck --config ./moreblocks/.luacheckrc -q ./moreblocks
-
-      - name: luacheck stairsplus
-        run: $HOME/.luarocks/bin/luacheck --config ./stairsplus/.luacheckrc  -q ./stairsplus
-
-      - name: luacheck stairsplus_legacy
-        run: $HOME/.luarocks/bin/luacheck --config ./stairsplus_legacy/.luacheckrc  -q ./stairsplus_legacy
+      - name: Run pre-commit
+        run: pre-commit run --all-files

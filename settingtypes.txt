@@ -7,6 +7,9 @@ invsaw.creative_priv (Priv to use the inventory saw w/out a saw item) string cre
 # The item that a normal player has to have to use the saw in inventory
 invsaw.saw_item (Saw item) string stairsplus:circular_saw
 
+# whether to increase the yield of certain crafting recipes as in moreblocks 2.*
+moreblocks_legacy_recipes.enabled (Enable legacy recipes) bool false
+
 # Add a yellow outline around trap nodes, to make them visibly distinct
 moreblocks.outline_trap_nodes (Outline trap nodes) bool true
 
