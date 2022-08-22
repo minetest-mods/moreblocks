@@ -18,5 +18,8 @@ jobs:
       - name: install luacheck via luarocks
         run: luarocks install --local luacheck
 
+      - name: add luacheck path
+        run: echo "$HOME/.luarocks/bin" >> $GITHUB_PATH
+
       - name: Run pre-commit
         run: pre-commit run --all-files
