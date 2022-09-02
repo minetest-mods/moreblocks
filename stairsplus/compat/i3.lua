@@ -1,4 +1,4 @@
--- luacheck: read globals i3
+-- luacheck: globals i3
 
 if not stairsplus.has.i3 then
 	return
@@ -91,6 +91,14 @@ local function on_register_single(node, shaped_name)
 		result = shaped_name,
 		items = {node},
 	})
+
+	local micronode = api.get_micronode(node)
+	if shaped_name ~= micronode then
+		local compress_groups = i3.compress_groups[micronode] or {}
+		table.insert(compress_groups, shaped_name)
+		i3.compress_groups[micronode] = compress_groups
+		i3.compressed[shaped_name] = true
+	end
 end
 
 for _, single in ipairs(api.registered_singles) do
