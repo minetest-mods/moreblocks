@@ -1,7 +1,6 @@
 local api = stairsplus.api
 local register_craft_schema = api.register_craft_schema
 
-
 ---- panel_8
 
 register_craft_schema({

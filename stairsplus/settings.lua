@@ -26,4 +26,6 @@ stairsplus.settings = {
 
 	legacy_mode = s:get_bool("stairsplus.legacy_mode", true),
 	legacy_place_mechanic = s:get_bool("stairsplus.legacy_place_mechanic", true),
+
+	crafting_schemata_enabled = s:get_bool("stairsplus.crafting_schemata_enabled", true),
 }

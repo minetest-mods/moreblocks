@@ -35,7 +35,10 @@ stairsplus.dofile("api", "init")
 
 stairsplus.dofile("shapes", "init")
 stairsplus.dofile("groups", "init")
-stairsplus.dofile("craft_schemas", "init")
+
+if stairsplus.settings.crafting_schemata_enabled then
+	stairsplus.dofile("craft_schemas", "init")
+end
 
 stairsplus.dofile("resources", "init")
 stairsplus.dofile("circular_saw")

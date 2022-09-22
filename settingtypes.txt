@@ -42,6 +42,9 @@ stairsplus.legacy_mode (legacy mode) bool true
 # automatically try to rotate nodes when placed. the mechanic is sometimes confusing.
 stairsplus.legacy_place_mechanic (use legacy place mecahnic) bool true
 
+# allows crafting shaped nodes in addition to cutting them
+stairsplus.crafting_schemata_enabled (enable crafting schemata) bool true
+
 # enable registering stairsplus nodes for basic_materials
 stairsplus_legacy.basic_materials () bool true
 
