@@ -9,7 +9,7 @@ stairsplus.settings = {
 	in_creative_inventory = s:get_bool("stairsplus.in_creative_inventory",
 		s:get_bool("moreblocks.stairsplus_in_creative_inventory", true)
 	),
-	in_craft_guide = s:get_bool("stairsplus.in_craft_guide", false),
+	in_craft_guide = s:get_bool("stairsplus.in_craft_guide", true),
 
 	default_align_style = s:get("stairsplus.default_align_style") or "user",
 

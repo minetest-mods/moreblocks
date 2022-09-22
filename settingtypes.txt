@@ -24,7 +24,7 @@ stairsplus.ex_nihilo (Saw gives infinite nodes) bool false
 stairsplus.in_creative_inventory (Display Stairs+ nodes in creative inventory) bool true
 
 # Whether to show crafting recipes involving Stairs+ nodes (in compatible inventory managers)
-stairsplus.in_craft_guide (Show crafting recipes) bool false
+stairsplus.in_craft_guide (Show crafting recipes) bool true
 
 # "user" or "world" cause things to look nicer in general, but some nodes look better w/ the "node" style
 stairsplus.default_align_style (World align style) enum user node,user,world
