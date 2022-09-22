@@ -4,6 +4,8 @@ local api = stairsplus.api
 api.registered_recipe_schemas = {}
 api.registered_on_register_craft_schemas = {}
 
+local registered_schemas_by_node = {}
+
 local function is_valid_output(item, shapes)
 	local item_name = item:match("^([^ ]+)")
 
@@ -57,26 +59,6 @@ local function verify_schema(schema)
 	end
 end
 
-function api.register_on_register_craft_schema(func)
-	table.insert(api.registered_on_register_craft_schemas, func)
-end
-
-function api.register_craft_schema(schema)
-	local problems = verify_schema(schema)
-
-	if problems then
-		error(problems)
-	end
-
-	stairsplus.log("info", "registering craft schema %s", minetest.write_json(schema))
-
-	table.insert(api.registered_recipe_schemas, schema)
-
-	for _, func in ipairs(api.registered_on_register_craft_schemas) do
-		func(schema)
-	end
-end
-
 local function has_the_right_shapes(schema, shapes)
 	if not is_valid_output(schema.output, shapes) then
 		return false
@@ -113,6 +95,8 @@ local function has_the_right_shapes(schema, shapes)
 end
 
 local function register_for_schema(node, schema)
+	stairsplus.log("verbose", "using schema %s w/ node %s", minetest.write_json(schema), node)
+
 	local recipe = table.copy(schema)
 
 	recipe.output = api.get_schema_recipe_item(node, recipe.output)
@@ -143,16 +127,52 @@ local function register_for_schema(node, schema)
 	minetest.register_craft(recipe)
 end
 
-function api.register_schema_crafts_for_node(node)
-	stairsplus.log("info", "registering schema crafts for %q", node)
-	local shapes = api.get_shapes_hash(node)
-	for _, schema in ipairs(api.registered_recipe_schemas) do
-		if has_the_right_shapes(schema, shapes) then
-			stairsplus.log("verbose", "using schema %s", minetest.write_json(schema))
+function api.register_on_register_craft_schema(func)
+	table.insert(api.registered_on_register_craft_schemas, func)
+end
+
+function api.register_craft_schema(schema)
+	local problems = verify_schema(schema)
+
+	if problems then
+		error(problems)
+	end
+
+	stairsplus.log("info", "registering craft schema %s", minetest.write_json(schema))
+
+	table.insert(api.registered_recipe_schemas, schema)
+
+	for node, shapes in pairs(api.shapes_by_node) do
+		local registered_schemas = registered_schemas_by_node[node] or {}
+
+		if has_the_right_shapes(schema, shapes) and not registered_schemas[schema] then
 			register_for_schema(node, schema)
+			registered_schemas[schema] = true
 		end
+
+		registered_schemas_by_node[node] = registered_schemas
+	end
+
+	for _, func in ipairs(api.registered_on_register_craft_schemas) do
+		func(schema)
 	end
 end
+
+function api.register_schema_crafts_for_node(node)
+	local registered_schemas = registered_schemas_by_node[node] or {}
+
+	local shapes = api.get_shapes_hash(node)
+	for _, schema in ipairs(api.registered_recipe_schemas) do
+		if has_the_right_shapes(schema, shapes) and not registered_schemas[schema] then
+			register_for_schema(node, schema)
+			registered_schemas[schema] = true
+		end
+	end
+
+	registered_schemas_by_node[node] = registered_schemas
+end
+
+api.register_on_register_single(api.register_schema_crafts_for_node)
 
 local function shapes_match(a, b)
 	local a_shapes = api.get_shapes(a)

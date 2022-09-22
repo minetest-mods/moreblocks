@@ -236,6 +236,12 @@ function api.register_single(node, shape, overrides, meta)
 	shapes[shape] = true
 	api.shapes_by_node[node] = shapes
 
+	api.node_by_shaped_node[shaped_name] = node
+	api.shape_by_shaped_node[shaped_name] = shape
+
+	api.node_by_shaped_node[node] = node
+	api.shape_by_shaped_node[node] = "node"
+
 	table.insert(api.registered_singles, {node, shaped_name})
 
 	for _, func in ipairs(api.registered_on_register_singles) do
@@ -314,24 +320,6 @@ end
 function api.get_micronode(node)
 	return api.get_schema_recipe_item(node, "micro_8")
 end
-
--- create some hashes for quickly looking things up at run-time (i.e. the circular saw)
--- register schema crafts once, after everything has been registered. otherwise, it's not clear when to do this
-minetest.register_on_mods_loaded(function()
-	stairsplus.log("info", "registering schema crafts")
-	for node, shapes in pairs(api.shapes_by_node) do
-		for shape in pairs(shapes) do
-			local shaped_node = api.format_name(node, shape)
-			api.node_by_shaped_node[shaped_node] = node
-			api.shape_by_shaped_node[shaped_node] = shape
-		end
-
-		api.node_by_shaped_node[node] = node
-		api.shape_by_shaped_node[node] = "node"
-
-		api.register_schema_crafts_for_node(node)
-	end
-end)
 
 function api.get_node_of_shaped_node(shaped_node)
 	return api.node_by_shaped_node[shaped_node]

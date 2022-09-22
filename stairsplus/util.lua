@@ -7,7 +7,7 @@ stairsplus.util = {
 	end,
 
 	table_is_empty = function(t)
-		return not next(t)
+		return next(t) == nil
 	end,
 
 	table_sort_keys = function(t, sort_function)
@@ -52,21 +52,6 @@ stairsplus.util = {
 		end
 
 		return true
-	end,
-
-	check_call = function(func)
-		-- wrap a function w/ logic to avoid crashing the game
-		local f = function(...)
-			local status, out = pcall(func, ...)
-			if status then
-				return out
-			else
-				local message = ("Error (func): %s %s"):format(out, dump({...}))
-				stairsplus.log("error", message)
-				error(message)
-			end
-		end
-		return f
 	end,
 
 	get_location_string = function(inv)

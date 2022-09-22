@@ -1,7 +1,12 @@
 local api = stairsplus.api
 
+api.registered_on_register_shapes = {}
 api.registered_shapes = {}
 api.shapes_by_group = {}
+
+function api.register_on_register_shape(func)
+	table.insert(api.registered_on_register_shapes, func)
+end
 
 function api.register_shape(name, def)
 	stairsplus.log("info", "registering shape %q", name)
@@ -12,6 +17,10 @@ function api.register_shape(name, def)
 		local shapes = api.shapes_by_group[group] or {}
 		table.insert(shapes, name)
 		api.shapes_by_group[group] = shapes
+	end
+
+	for _, func in ipairs(api.registered_on_register_shapes) do
+		func(name, def)
 	end
 end
 
