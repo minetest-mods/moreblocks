@@ -2,6 +2,7 @@
 
 local api = stairsplus.api
 
+local has_metadata = stairsplus.util.has_metadata
 local resolve_aliases = stairsplus.util.resolve_aliases
 
 local default_stack_max = tonumber(minetest.settings:get("default_stack_max")) or 99
@@ -168,6 +169,10 @@ end
 
 function station.allow_inventory_put(meta, inv, listname, index, stack, player)
 	if listname == "stairsplus:output" then
+		return 0
+	end
+
+	if has_metadata(stack) then
 		return 0
 	end
 
