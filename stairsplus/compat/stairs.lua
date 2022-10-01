@@ -13,6 +13,7 @@ local is_legacy_drawtype = stairsplus.compat.is_legacy_drawtype
 local is_legacy_paramtype2 = stairsplus.compat.is_legacy_paramtype2
 
 local default_align_style = stairsplus.settings.default_align_style
+local crafting_schemata_enabled = stairsplus.settings.crafting_schemata_enabled
 
 function stairs.register_stair(subname, node, groups, tiles, description, sounds, worldaligntex)
 	local meta = {
@@ -113,5 +114,53 @@ function stairsplus.compat.override_stairs(name, node, overrides, meta)
 			local shaped_name = api.format_name(node, shape)
 			minetest.register_alias_force(stair_name, shaped_name)
 		end
+	end
+
+	if not crafting_schemata_enabled then
+		local stair_name = stair_name_formats.stair:format(name)
+		local slab_name = stair_name_formats.slab_8:format(name)
+
+		minetest.clear_craft({
+			recipe = {
+				{ stair_name, stair_name },
+				{ stair_name, stair_name },
+			}
+		})
+
+		minetest.clear_craft({
+			recipe = {
+				{ slab_name },
+				{ slab_name },
+			}
+		})
+
+		minetest.clear_craft({
+			recipe = {
+				{"", "", node},
+				{"", node, node},
+				{node, node, node},
+			}
+		})
+
+		minetest.clear_craft({
+			recipe = {
+				{node, node, node},
+			}
+		})
+
+		minetest.clear_craft({
+			recipe = {
+				{"", node, ""},
+				{node, "", node},
+				{node, node, node},
+			}
+		})
+
+		minetest.clear_craft({
+			recipe = {
+				{"", node, ""},
+				{node, node, node},
+			}
+		})
 	end
 end
