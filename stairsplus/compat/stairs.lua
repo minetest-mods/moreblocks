@@ -5,6 +5,8 @@ if not stairsplus.has.stairs then
 	return
 end
 
+local f = string.format
+
 local api = stairsplus.api
 
 local S = stairsplus.S
@@ -19,6 +21,9 @@ function stairs.register_stair(subname, node, groups, tiles, description, sounds
 	local meta = {
 		align_style = worldaligntex and "world" or default_align_style
 	}
+	if not minetest.registered_nodes[node] then
+		error(f("cannot register stairs for unknown node %q", node))
+	end
 	if is_legacy_drawtype(node) then
 		meta.ignore_drawtype = true
 	end
