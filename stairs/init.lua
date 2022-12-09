@@ -27,6 +27,7 @@ stairs = {
 	end,
 }
 
+stairs.dofile("settings")
 stairs.dofile("util")
 stairs.dofile("legacy")
 stairs.dofile("api")
