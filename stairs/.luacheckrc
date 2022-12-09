@@ -1,4 +1,4 @@
-std = "lua51+luajit+minetest+stairsplus"
+std = "lua51+luajit+minetest+stairs"
 unused_args = false
 max_line_length = 120
 
@@ -21,11 +21,11 @@ stds.minetest = {
 	}
 }
 
-stds.stairsplus = {
+stds.stairs = {
 	globals = {
-		"stairsplus",
+		"stairs",
 	},
 	read_globals = {
-		"default",
+		"stairsplus",
 	},
 }

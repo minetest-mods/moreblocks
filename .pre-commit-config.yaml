@@ -29,6 +29,12 @@ repos:
         entry: luacheck
         pass_filenames: false
         args: [--config,./moreblocks_legacy_recipes/.luacheckrc,-q,./moreblocks_legacy_recipes]
+      - id: luacheck_stairs
+        name: luacheck_stairs
+        language: system
+        entry: luacheck
+        pass_filenames: false
+        args: [--config,./stairs/.luacheckrc,-q,./stairs]
       - id: luacheck_stairsplus
         name: luacheck_stairsplus
         language: system

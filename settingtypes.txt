@@ -13,6 +13,12 @@ moreblocks_legacy_recipes.enabled (Enable legacy recipes) bool false
 # Add a yellow outline around trap nodes, to make them visibly distinct
 moreblocks.outline_trap_nodes (Outline trap nodes) bool true
 
+# If true, registering stairs w/out a registered recipe item will still create the stair nodes.
+# This is how the stairs mod in minetest game works currently.
+# Unfortunately, they will not be craftable.
+# By default, trying to do this will create an error.
+stairs.legacy_stairs_without_recipeitem (Allow stairs without a base node) bool false
+
 # I guess if you want the saw to be creative-only?
 stairsplus.circular_saw_crafting (Allow crafting the circular saw) bool true
 
