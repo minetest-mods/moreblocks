@@ -4,6 +4,14 @@ if not stairsplus.has.i3 then
 	return
 end
 
+-- https://github.com/fluxionary/minetest-moreblocks/issues/13
+-- remove i3's assumption that it controls our compression groups
+for node in pairs(i3.compress_groups) do
+	if node:match("^moreblocks:slope_") or node:match("^wool:slope_") then
+		i3.compress_groups[node] = nil
+	end
+end
+
 local api = stairsplus.api
 
 i3.register_craft_type("stairsplus:circular_saw", {
