@@ -25,3 +25,6 @@ if minetest.get_modpath("default") then
     dofile(modpath .. "/crafting.lua")
     dofile(modpath .. "/aliases.lua")
 end
+
+-- print to log after mod was loaded successfully
+print ("[MOD] MoreOres loaded")
