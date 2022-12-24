@@ -1,0 +1,94 @@
+# textdomain: moreblocks
+
+# Portuguese_Brazil translation for More Blocks.
+# Copyright © 2011-2020 Hugo Locurcio and contributors
+# This file is distributed under the same license as the More Blocks package.
+# Jose Anastacio 2020.
+
+#: circular_saw.lua
+
+Circular Saw=Serra Circular
+Input material=Material de entrada
+Left-over=Sobra
+Max=Máximo
+Recycle output=Saida reciclagem
+Set=Defina
+owned by @1=propriedade de @1
+Circular Saw is empty=Serra Circular está vazia
+Circular Saw is working on @1=Serra Circular está trabalhando em @1
+
+#: nodes.lua
+
+Deprecated=Descontinuado
+All-faces Acacia Tree=Árvore de Acácia multifacetada
+All-faces Aspen Tree=Árvore Aspen multifacetada
+All-faces Jungle Tree=Árvore da Selva multifacetada
+All-faces Pine Tree=Pinheiro multifacetado
+All-faces Tree=Tronco de árvore
+Cactus Brick=Tijolos de Cacto
+Cactus Checker=Xadrez de Cacto
+Centered Wooden Tile=Tijolos Centrado de Madeira
+Checker Stone Tile=Xadrez Centrado de Pedra
+Circle Stone Bricks=Tijolos de Pedra Cricular
+Clean Glass=Vidro Limpo
+Coal Checker=Xadrez de Carvão
+Coal Glass=Vidro com Carvao
+Clean Super Glow Glass=Cristal Limpo Super brilhante
+Trap Clean Super Glow Glass=Vidro Limpo Super brilhante
+Trap Clean Glass=Cristal Falso Limpo
+Clean Glow Glass=Cristal Brillante Limpo
+Trap Clean Glow Glass=Cristal Brillante Limpo Falso
+Coal Stone=Pedra de carvão
+Coal Stone Bricks=Tijolos de Carvão
+Compressed Cobblestone=Pedregulho Comprimido
+Compressed Desert Cobblestone=Pedregulho do Deserto Comprimido
+Compressed Dirt=Terra Comprimida
+Copper Patina Block=Bloco pátina de cobre
+Empty Shelf=Prateleira Vazia
+Full Wooden Tile=Xadrez de Madeira completo
+Glow Glass=Vidro brilhante
+Iron Checker=Xadrez de Ferro
+Iron Glass=Cristal com ferro
+Iron Stone=Ferro e Pedra
+Iron Stone Bricks=Tijolos de Ferro
+Plankstone=Prancha de Pedra
+Rope=Corda
+Split Stone Tile=Xadrez de Pedra Dividido
+Stone Bricks=Tijolos de Pedra
+Stone Tile=Xadrez de Pedra
+Super Glow Glass=Cristal Súper Brillante
+Sweeper=Limpiador
+Tar=Alquitrán
+Trap Desert Stone=Pedra del Desierto Falsa
+Trap Glass=Cristal Falso
+Trap Glow Glass=Cristal Brillante Falso
+Trap Obsidian=Obsidiana Falsa
+Trap Obsidian Glass=Vidrio de Obsidiana Falso
+Trap Sandstone=Arenisca Falsa
+Trap Stone=Piedra Falsa
+Trap Super Glow Glass=Cristal Súper Brillante Falso
+Wooden Tile=Xadrez de Madeira
+Offset Wooden Tile=Xadrez de Madeira compensada
+Downwards Wooden Tile=Xadrez de Madeira para baixo
+Leftwards Wooden Tile=Xadrez de Madeira para a esquerda
+Rightwards Wooden Tile=Xadrez de Madeira para a direita
+
+
+#: ownership.lua
+
+Sorry, @1 owns that spot.=Desculpe, @1 é o dono desse lugar.
+someone=alguem
+
+#: stairsplus/common.lua
+
+@1 Microblock=Microbloco de @1
+@1 Slab=Laje de @1
+@1 Slope=Declive de @1
+@1 Painel=Panel de @1
+@1 Stairs=Escadas de @1
+
+#: stairsplus/registrations.lua
+
+Concrete=Concreto
+Cement=Cimento
+Brass Block=Bloco de latão
