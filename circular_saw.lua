@@ -161,15 +161,12 @@ function circular_saw:update_inventory(pos, amount)
 	end
 
 	local stack = inv:get_stack("input",  1)
-	-- At least one "normal" block is necessary to see what kind of stairs are requested.
+	local node_name = ""
 	if stack:is_empty() then
-		-- Any microblocks not taken out yet are now lost.
-		-- (covers material loss in the machine)
-		self:reset(pos)
-		return
-
+		node_name = inv:get_stack("micro", 1):get_name():gsub(":micro_", ":") or ""
+	else
+		node_name = stack:get_name() or ""
 	end
-	local node_name = stack:get_name() or ""
 	local node_def = stack:get_definition()
 	local name_parts = circular_saw.known_nodes[node_name] or ""
 	local modname  = name_parts[1] or ""
