@@ -159,6 +159,7 @@ function circular_saw:update_inventory(pos, amount)
 		self:reset(pos)
 		return
 	end
+
 	-- Determine the kind of stairs from either the normal block or micro block.
 	local stack = inv:get_stack("input",  1)
 	local node_name = ""
