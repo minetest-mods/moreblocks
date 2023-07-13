@@ -165,19 +165,19 @@ local nodes = {
 	},
 	["dirt_compressed"] = {
 		description = S("Compressed Dirt"),
-		groups = {crumbly=2},
+		groups = {crumbly=2, compressed = 1},
 		is_ground_content = false,
 		sounds = sound_dirt,
 	},
 	["cobble_compressed"] = {
 		description = S("Compressed Cobblestone"),
-		groups = {cracky = 1},
+		groups = {cracky = 1, compressed = 1},
 		is_ground_content = false,
 		sounds = sound_stone,
 	},
 	["desert_cobble_compressed"] = {
 		description = S("Compressed Desert Cobblestone"),
-		groups = {cracky = 1},
+		groups = {cracky = 1, compressed = 1},
 		is_ground_content = false,
 		sounds = sound_stone,
 	},
