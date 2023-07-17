@@ -172,7 +172,7 @@ stairsplus.register_single = function(category, alternate, info, modname, subnam
 		end
 	end
 
-	if fields.drop and not (type(fields.drop) == "table") then
+	if fields.drop and (type(fields.drop) ~= "table") then
 		def.drop = modname.. ":" .. category .. "_" .. fields.drop .. alternate
 	end
 
