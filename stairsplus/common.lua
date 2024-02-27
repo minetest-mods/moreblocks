@@ -133,6 +133,7 @@ stairsplus.register_single = function(category, alternate, info, modname, subnam
 		def[k] = v
 	end
 
+	def.is_ground_content = def.is_ground_content == true
 	def.drawtype = "nodebox"
 	def.paramtype = "light"
 	def.paramtype2 = def.paramtype2 or "facedir"
