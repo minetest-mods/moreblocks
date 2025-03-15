@@ -1,0 +1,92 @@
+# textdomain: moreblocks
+
+More Blocks=Більше Блоків
+Adds various miscellaneous blocks to the game.=Додає різноманітні нові блоки до гри.
+Adds various miscellaneous blocks.=Додає різноманітні нові блоки до гри.
+
+#: circular_saw.lua
+
+Circular Saw=Циркулярна пила
+Input material=Вхідний@nматеріал
+Left-over=Залишки
+Max=Кільк.
+Recycle output=Пере-@nобробка
+Set=Гаразд
+owned by @1=належить @1
+Circular Saw is empty=Циркулярна пила пуста
+Circular Saw is working on @1=Циркулярна пила працює над @1
+
+#: init.lua
+
+[MOD] moreblocks loaded.=[MOD] moreblocks завантажено.
+
+#: nodes.lua
+
+Deprecated=застарілий
+All-faces Acacia Tree=Всебічна колода акації
+All-faces Aspen Tree=Всебічна колода осики
+All-faces Jungle Tree=Всебічна джунглева колода
+All-faces Pine Tree=Всебічна колода сосни
+All-faces Tree=Всебічна колода яблуні
+Cactus Brick=Кактусова цегла
+Cactus Checker=Кактусова мозаїка
+Centered Wooden Tile=Дерев'яна мозаїка (центр)
+Checker Stone Tile=Кам'яна мозаїка
+Circle Stone Bricks=Кільцевий камінь
+Clean Glass=Чисте скло
+Coal Checker=Вугілляна мозаїка
+Coal Glass=Вугілляне скло
+Clean Super Glow Glass=Чисте супер-сяюче скло
+Trap Clean Super Glow Glass=Trap чисте супер-сяюче скло
+Trap Clean Glass=Trap чисте скло
+Clean Glow Glass=Чисте сяюче скло
+Trap Clean Glow Glass=Trap чисте сяюче скло
+Coal Stone=Вугілляний камінь
+Coal Stone Bricks=Вуглекам'яна цегла
+Compressed Cobblestone=Пресований кругляк
+Compressed Desert Cobblestone=Пресований пустельний кругляк
+Compressed Dirt=Пресований ґрунт
+Copper Patina Block=Блок мідного патину
+Empty Shelf=Пусті полиці
+Full Wooden Tile=Дерев'яна мозаїка
+Glow Glass=Сяюче скло
+Iron Checker=Сталева мозаїка
+Iron Glass=Металізоване скло
+Iron Stone=Залізний камінь
+Iron Stone Bricks=Залізокам'яна цегла
+Plankstone=Деревокам'яна мозаїка
+Rope=Мотузка
+Split Stone Tile=Кам'яна мозаїка
+Stone Bricks=Кам'яна цегла
+Stone Tile=Кам'яна плитка
+Super Glow Glass=Супер-сяюче скло
+Sweeper=Підмітальник
+Tar=Смола
+Trap Desert Stone=Уявний пустельний камінь
+Trap Glass=Уявне скло
+Trap Glow Glass=Уявне сяюче скло
+Trap Obsidian=Уявний обсидіан
+Trap Obsidian Glass=Уявне обсидіанове скло
+Trap Sandstone=Уявний пісковик
+Trap Stone=Уявний камінь
+Trap Super Glow Glass=Уявне супер-сяюче скло
+Wooden Tile=Дерев'яна мозаїка
+Offset Wooden Tile=Дерев'яна мозаїка (зверзу)
+# @deprecated
+Downwards Wooden Tile=Дерев'яна мозаїка (знизу)
+# @deprecated
+Leftwards Wooden Tile=Дерев'яна мозаїка (ліворуч)
+# @deprecated
+Rightwards Wooden Tile=Дерев'яна мозаїка (праворуч)
+
+#: ownership.lua
+Sorry, @1 owns that spot.=Вибачте, це належить @1.
+someone=комусь
+
+#: stairsplus/common.lua
+
+@1 Microblock=@1 (мікроблок)
+@1 Slab=@1 (плита)
+@1 Slope=@1 (схил)
+@1 Panel=@1 (панель)
+@1 Stairs=@1 (сходи)
