@@ -40,4 +40,5 @@ function stairsplus:register_micro(modname, subname, recipeitem, fields)
 	end
 
 	circular_saw.known_nodes[recipeitem] = {modname, subname}
+	circular_saw.microblocks[modname.. ":micro_" .. subname] = string.split(recipeitem, ":")
 end
