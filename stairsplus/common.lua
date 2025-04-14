@@ -146,11 +146,14 @@ stairsplus.register_single = function(category, alternate, info, modname, subnam
 
 	-- Darken light sources slightly to make up for their smaller visual size
 	def.light_source = math.max(0, (def.light_source or 0) - 1)
-
-	def.on_place = stairsplus.rotate_node_aux
 	def.groups = stairsplus:prepare_groups(fields.groups)
 
 	if category == "slab" then
+		if minetest.global_exists("place_rotated") then
+			def.on_place = place_rotated.slab
+		else
+			def.on_place = stairsplus.rotate_node_aux
+		end
 		if type(info) ~= "table" then
 			def.node_box = {
 				type = "fixed",
@@ -165,6 +168,7 @@ stairsplus.register_single = function(category, alternate, info, modname, subnam
 			def.description = desc_base .. alternate:gsub("_", " "):gsub("(%a)(%S*)", function(a, b) return a:upper() .. b end)
 		end
 	else
+		def.on_place = stairsplus.rotate_node_aux
 		def.description = desc_base
 		if category == "slope" then
 			def.drawtype = "mesh"
