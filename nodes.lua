@@ -499,17 +499,17 @@ for name, def in pairs(nodes) do
 	minetest.register_node("moreblocks:" ..name, def)
 	minetest.register_alias(name, "moreblocks:" ..name)
 
-	def_copy = table.copy(def)
+	local tiles = def.tiles
 
 	-- Use the primary tile for all sides of cut glasslike nodes.
 	-- This makes them easier to see
 	if
-		#def_copy.tiles > 1 and
-		def_copy.drawtype and
-		def_copy.drawtype == "glasslike_framed" or
-		def_copy.drawtype == "glasslike_framed_optional"
+		#tiles > 1 and
+		def.drawtype and
+		def.drawtype == "glasslike_framed" or
+		def.drawtype == "glasslike_framed_optional"
 	then
-		def.tiles = {def_copy.tiles[1]}
+		tiles = {def.tiles[1]}
 	end
 
 
@@ -519,7 +519,7 @@ for name, def in pairs(nodes) do
 		stairsplus:register_all("moreblocks", name, "moreblocks:" ..name, {
 			description = def.description,
 			groups = groups,
-			tiles = def.tiles,
+			tiles = tiles,
 			sunlight_propagates = def.sunlight_propagates,
 			light_source = def.light_source,
 			sounds = def.sounds,
