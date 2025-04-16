@@ -20,6 +20,9 @@ circular_saw.known_stairs = setmetatable({}, {
 -- This is populated by stairsplus:register_all:
 circular_saw.known_nodes = {}
 
+-- This is populated by stairsplus:register_micro:
+circular_saw.microblocks = {}
+
 -- How many microblocks does this shape at the output inventory cost:
 -- It may cause slight loss, but no gain.
 circular_saw.cost_in_microblocks = {
@@ -136,11 +139,14 @@ function circular_saw:reset(pos)
 	end
 
 	inv:set_list("input",  {})
-	inv:set_list("micro",  {})
-	inv:set_list("output", {})
+	--inv:set_list("micro",  {})
 
-	meta:set_int("anz", 0)
-	meta:set_string("infotext", S("Circular Saw is empty") .. owned_by)
+	local microblockcount = inv:get_stack("micro",1):get_count()
+	meta:set_int("anz", microblockcount)
+	if microblockcount == 0 then
+		meta:set_string("infotext", S("Circular Saw is empty") .. owned_by)
+		inv:set_list("output", {})
+	end
 end
 
 
@@ -161,19 +167,22 @@ function circular_saw:update_inventory(pos, amount)
 	end
 
 	local stack = inv:get_stack("input",  1)
+	local microstack = inv:get_stack("micro",1)
+
 	-- At least one "normal" block is necessary to see what kind of stairs are requested.
-	if stack:is_empty() then
+	if stack:is_empty() and microstack:is_empty() then
 		-- Any microblocks not taken out yet are now lost.
 		-- (covers material loss in the machine)
 		self:reset(pos)
 		return
 
 	end
-	local node_name = stack:get_name() or ""
+
+	local node_name = stack:get_name() or "" -- planned to extract from microblock TODO
 	local node_def = stack:get_definition()
 	local name_parts = circular_saw.known_nodes[node_name] or ""
-	local modname  = name_parts[1] or ""
-	local material = name_parts[2] or ""
+	local modname  = name_parts[1] or circular_saw.microblocks[microstack:get_name()][1]
+	local material = name_parts[2] or circular_saw.microblocks[microstack:get_name()][2]
 	local owned_by = meta:get_string("owner")
 
 	if owned_by and owned_by ~= "" then
@@ -197,6 +206,7 @@ function circular_saw:update_inventory(pos, amount)
 	inv:set_list("micro", {
 		modname .. ":micro_" .. material .. " " .. (amount % 8)
 	})
+
 	-- Display:
 	inv:set_list("output",
 		self:get_output_inv(modname, material, amount,
@@ -354,7 +364,6 @@ function circular_saw.on_metadata_inventory_take(
 		-- We do know how much each block at each position costs:
 		local cost = circular_saw.cost_in_microblocks[index]
 				* stack:get_count()
-
 		circular_saw:update_inventory(pos, -cost)
 	elseif listname == "micro" then
 		-- Each microblock costs 1 microblock:
