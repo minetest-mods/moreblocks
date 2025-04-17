@@ -31,4 +31,5 @@ read_globals = {
 	"HasOwner",
 	"getLastOwner",
 	"GetNodeOwnerName",
+	"place_rotated",
 }
