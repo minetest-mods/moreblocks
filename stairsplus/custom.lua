@@ -94,5 +94,5 @@ function stairsplus:register_custom_subset(subset, modname, subname, recipeitem,
 	end
 
 	circular_saw.known_nodes[recipeitem] = {modname, subname}
-	circular_saw.microblocks[modname.. ":micro_" .. subname] = {modname, subname}
+	circular_saw.microblocks[modname.. ":micro_" .. subname] = recipeitem
 end
