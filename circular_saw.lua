@@ -139,7 +139,7 @@ function circular_saw:reset(pos)
 	end
 
 	inv:set_list("input",  {})
-	--inv:set_list("micro",  {})
+	inv:set_list("micro",  {})
 
 	local microblockcount = inv:get_stack("micro",1):get_count()
 	meta:set_int("anz", microblockcount)
@@ -169,20 +169,19 @@ function circular_saw:update_inventory(pos, amount)
 	local stack = inv:get_stack("input",  1)
 	local microstack = inv:get_stack("micro",1)
 
-	-- At least one "normal" block is necessary to see what kind of stairs are requested.
+	-- At least one (micro)block is necessary to see what kind of stairs are requested.
 	if stack:is_empty() and microstack:is_empty() then
-		-- Any microblocks not taken out yet are now lost.
-		-- (covers material loss in the machine)
+
 		self:reset(pos)
 		return
 
 	end
 
-	local node_name = stack:get_name() or "" -- planned to extract from microblock TODO
+	local node_name = circular_saw.microblocks[microstack:get_name()] or stack:get_name() or ""
 	local node_def = stack:get_definition()
 	local name_parts = circular_saw.known_nodes[node_name] or ""
-	local modname  = name_parts[1] or circular_saw.microblocks[microstack:get_name()][1]
-	local material = name_parts[2] or circular_saw.microblocks[microstack:get_name()][2]
+	local modname  = name_parts[1]
+	local material = name_parts[2]
 	local owned_by = meta:get_string("owner")
 
 	if owned_by and owned_by ~= "" then
@@ -243,11 +242,11 @@ function circular_saw.allow_metadata_inventory_move(
 end
 
 
--- Only input- and recycle-slot are intended as input slots:
+-- Only input- and recycle-slot (and microblock slot when empty) are intended as input slots:
 function circular_saw.allow_metadata_inventory_put(
 		pos, listname, index, stack, player)
 	-- The player is not allowed to put something in there:
-	if listname == "output" or listname == "micro" then
+	if listname == "output" then
 		return 0
 	end
 
@@ -295,6 +294,16 @@ function circular_saw.allow_metadata_inventory_put(
 		end
 		return 0
 	end
+
+	if listname == "micro" then
+		if not (inv:is_empty("input") and inv:is_empty("micro")) then return 0 end
+		for name, t in pairs(circular_saw.microblocks) do
+			if name == stackname and inv:room_for_item("input", stack) then
+				return count
+			end
+		end
+		return 0
+	end
 end
 
 -- Taking is allowed from all slots (even the internal microblock slot).
@@ -314,6 +323,8 @@ function circular_saw.on_metadata_inventory_put(
 	if listname == "input" then
 		-- Each new block is worth 8 microblocks:
 		circular_saw:update_inventory(pos, 8 * count)
+	elseif listname == "micro" then
+		circular_saw:update_inventory(pos, count)
 	elseif listname == "recycle" then
 		-- Lets look which shape this represents:
 		local cost = circular_saw:get_cost(inv, stackname)
