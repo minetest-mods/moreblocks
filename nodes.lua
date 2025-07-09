@@ -496,8 +496,21 @@ local nodes = {
 for name, def in pairs(nodes) do
 	def.is_ground_content = def.is_ground_content == true
 	def.tiles = def.tiles or {"moreblocks_" ..name.. ".png"}
+
+	local burntime = def.furnace_burntime
+	def.furnace_burntime = nil -- deprecated node def field
+
 	minetest.register_node("moreblocks:" ..name, def)
 	minetest.register_alias(name, "moreblocks:" ..name)
+
+	-- Optional: register the node as fuel
+	if burntime then
+		core.register_craft({
+			type = "fuel",
+			recipe = "moreblocks:" .. name,
+			burntime = burntime,
+		})
+	end
 
 	local tiles = def.tiles
 
