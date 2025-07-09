@@ -66,7 +66,10 @@ stairsplus.rotate_node_aux = function(itemstack, placer, pointed_thing)
 	local wallmounted = minetest.dir_to_wallmounted(vector.subtract(pointed_thing.above, under))
 
 	if same_cat and not aux then
-		p2 = under_node.param2
+		-- param2 can be in the range [0, 31]. We assume that the stair nodes use the
+		-- drawtype "facedir". Wrap the value like done in Luanti `src/mapnode.cpp`.
+		p2 = under_node.param2 % 24
+
 		-- flip if placing above or below an upright or upside-down node
 		-- TODO should we also flip when placing next to a side-mounted node?
 		if wallmounted < 2 then
