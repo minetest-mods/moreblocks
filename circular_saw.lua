@@ -17,6 +17,12 @@ circular_saw.known_stairs = setmetatable({}, {
 	end,
 })
 
+if not core.features.physics_overrides_v2 then
+	-- Notable engine PR: #13919
+	core.log("warning", "[moreblocks] Detected Luanti/Minetest < 5.8.0. Inventory handling issues may occur.")
+end
+
+
 -- This is populated by stairsplus:register_all:
 circular_saw.known_nodes = {}
 
@@ -349,26 +355,6 @@ end
 
 function circular_saw.on_metadata_inventory_take(
 		pos, listname, index, stack, player)
-
-	-- Prevent (inbuilt) swapping between inventories with different blocks
-	-- corrupting player inventory or Saw with 'unknown' items.
-	local meta          = minetest.get_meta(pos)
-	local inv           = meta:get_inventory()
-	local input_stack = inv:get_stack(listname,  index)
-	if not input_stack:is_empty() and input_stack:get_name()~=stack:get_name() then
-		local player_inv = player:get_inventory()
-
-		-- Prevent arbitrary item duplication.
-		inv:remove_item(listname, input_stack)
-
-		if player_inv:room_for_item("main", input_stack) then
-			player_inv:add_item("main", input_stack)
-		end
-
-		circular_saw:reset(pos)
-		return
-	end
-
 	-- If it is one of the offered stairs: find out how many
 	-- microblocks have to be subtracted:
 	if listname == "output" then
