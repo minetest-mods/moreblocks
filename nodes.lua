@@ -493,6 +493,102 @@ local nodes = {
 	},
 }
 
+-- synthetic stone
+-- a 2nd comeback of baking gravel, now giving it a more realisitc result
+
+nodes["synthstone"] = {
+	description = S("Synthetic stone"),
+		groups = {synthstone = 1, cracky = 3},
+		is_ground_content = false,
+		sounds = sound_stone,
+		tiles = {"moreblocks_synthetic_stone.png"}
+}
+                                                                                                              
+local synthstone = {
+	["black"] = {
+		color = "292929",
+		color_alt = "1b1b1b"
+	},
+	["blue"] = {
+		color = "00519d",
+		color_alt = "003376"
+	},
+	["brown"] = {
+		color = "6c3800",
+		color_alt = "391a00"
+	},
+	["dark_grey"] = {
+		color = "494949",
+		color_alt = "222222"
+	},
+	["dark_green"] = {
+		color = "2b7b00",
+		color_alt = "154f00"
+	},
+	["cyan"] = {
+		color = "00959d",
+		color_alt = "00676f"
+	},
+	["green"] = {
+		color = "67eb1c",
+		color_alt = "4bb71c"
+	},
+	["white"] = {
+		color = "eeeeee",
+		color_alt = "b8b8b8"
+	},
+	["violet"] = {
+		color = "480680",
+		color_alt = "3b0367"
+	},
+	["red"] = {
+		color = "c91818",
+		color_alt = "730505"
+	},
+	["pink"] = {
+		color = "ffa5a5",
+		color_alt = "ff7272"
+	},
+	["orange"] = {
+		color = "e0601a",
+		color_alt = "b52607"
+	},
+	["magenta"] = {
+		color = "d80481",
+		color_alt = "a90145"
+	},
+	["grey"] = {
+		color = "9c9c9c",
+		color_alt = "5c5c5c"
+	},
+	["yellow"] = {
+		color = "fcf611",
+		color_alt = "ffc20b"
+	}
+}
+
+for ss, def in pairs(synthstone) do
+	local color = ss:gsub("^%l", string.upper)
+	color = color:gsub("_", " ")
+	nodes[ss .. "_synthstone"] = {
+		description = S(color .. " synthetic stone"),
+		groups = {synthstone = 1, cracky = 3},
+		is_ground_content = false,
+		sounds = sound_stone,
+		tiles = {"moreblocks_synthetic_stone.png^[colorize:#" .. def.color .. "77"},
+	}
+	nodes[ss .. "_synthstone_calcinated"] = {
+		description = S(color .. " calcinated synthetic stone"),
+		groups = {synthstone = 1, cracky = 3},
+		is_ground_content = false,
+		sounds = sound_stone,
+		tiles = {"moreblocks_synthetic_stone.png^[colorize:#" .. def.color_alt .. "AA"},
+	}
+end
+
+-- end of synthetic stone
+	                                               
+	                                               
 for name, def in pairs(nodes) do
 	def.is_ground_content = def.is_ground_content == true
 	def.tiles = def.tiles or {"moreblocks_" ..name.. ".png"}
