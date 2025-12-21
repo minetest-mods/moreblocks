@@ -157,17 +157,17 @@ stairsplus.register_single = function(category, alternate, info, modname, subnam
 		else
 			def.on_place = stairsplus.rotate_node_aux
 		end
-		if type(info) ~= "table" then
+		if info._circular_saw_cost then
+			def._circular_saw_cost = info._circular_saw_cost
+		end
+		if info.size then
 			def.node_box = {
 				type = "fixed",
-				fixed = {-0.5, -0.5, -0.5, 0.5, (info/16)-0.5, 0.5},
+				fixed = {-0.5, -0.5, -0.5, 0.5, (info.size/16)-0.5, 0.5},
 			}
-			def.description = ("%s (%d/16)"):format(desc_base, info)
+			def.description = ("%s (%d/16)"):format(desc_base, info.size)
 		else
-			def.node_box = {
-				type = "fixed",
-				fixed = info,
-			}
+			def.node_box = info.node_box
 			def.description = desc_base .. alternate:gsub("_", " "):gsub("(%a)(%S*)", function(a, b) return a:upper() .. b end)
 		end
 	else
