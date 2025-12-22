@@ -406,6 +406,7 @@ stairsplus.defs = {
 				},
 			},
 		},
+		-- TODO FIXME not included in circular_saw.names
 		["_right_half"] = {
 			node_box = {
 				type = "fixed",

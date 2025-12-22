@@ -110,8 +110,8 @@ function circular_saw:get_output_inv(modname, material, amount, max)
 	for i = 1, #circular_saw.names do
 		local t = circular_saw.names[i]
 		local nodename = modname .. ":" .. t[1] .. "_" .. material .. t[2]
-		if minetest.registered_nodes[nodename] then
-			local def = minetest.registered_nodes[nodename]
+		local def = minetest.registered_nodes[nodename]
+		if def then
 			local cost = def._circular_saw_cost
 			local balance = math.min(math.floor(amount/cost), max)
 			pos = pos + 1
