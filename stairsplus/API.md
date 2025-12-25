@@ -9,7 +9,7 @@
 	stairsplus:register_all("moreblocks", "wood", "default:wood", {
 		description = "Wooden",
 		tiles = {"default_wood.png"},
-		groups = {oddly_breakabe_by_hand=1},
+		groups = {oddly_breakable_by_hand=1},
 		sounds = moreblocks.node_sound_wood_defaults(),
 	})
 	```

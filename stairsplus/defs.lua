@@ -112,42 +112,49 @@ local box_slope_outer_half_raised = {
 stairsplus.defs = {
 	["micro"] = {
 		[""] = {
+			_circular_saw_cost = 1,
 			node_box = {
 				type = "fixed",
 				fixed = {-0.5, -0.5, 0, 0, 0, 0.5},
 			},
 		},
 		["_1"] = {
+			_circular_saw_cost = 1,
 			node_box = {
 				type = "fixed",
 				fixed = {-0.5, -0.5, 0, 0, -0.4375, 0.5},
 			},
 		},
 		["_2"] = {
+			_circular_saw_cost = 1,
 			node_box = {
 				type = "fixed",
 				fixed = {-0.5, -0.5, 0, 0, -0.375, 0.5},
 			},
 		},
 		["_4"] = {
+			_circular_saw_cost = 1,
 			node_box = {
 				type = "fixed",
 				fixed = {-0.5, -0.5, 0, 0, -0.25, 0.5},
 			},
 		},
 		["_12"] = {
+			_circular_saw_cost = 2,
 			node_box = {
 				type = "fixed",
 				fixed = {-0.5, -0.5, 0, 0, 0.25, 0.5},
 			},
 		},
 		["_14"] = {
+			_circular_saw_cost = 2,
 			node_box = {
 				type = "fixed",
 				fixed = {-0.5, -0.5, 0, 0, 0.375, 0.5},
 			},
 		},
 		["_15"] = {
+			_circular_saw_cost = 2,
 			node_box = {
 				type = "fixed",
 				fixed = {-0.5, -0.5, 0, 0, 0.4375, 0.5},
@@ -156,42 +163,49 @@ stairsplus.defs = {
 	},
 	["panel"] = {
 		[""] = {
+			_circular_saw_cost = 2,
 			node_box = {
 				type = "fixed",
 				fixed = {-0.5, -0.5, 0, 0.5, 0, 0.5},
 			},
 		},
 		["_1"] = {
+			_circular_saw_cost = 1,
 			node_box = {
 				type = "fixed",
 				fixed = {-0.5, -0.5, 0, 0.5, -0.4375, 0.5},
 			},
 		},
 		["_2"] = {
+			_circular_saw_cost = 1,
 			node_box = {
 				type = "fixed",
 				fixed = {-0.5, -0.5, 0, 0.5, -0.375, 0.5},
 			},
 		},
 		["_4"] = {
+			_circular_saw_cost = 1,
 			node_box = {
 				type = "fixed",
 				fixed = {-0.5, -0.5, 0, 0.5, -0.25, 0.5},
 			},
 		},
 		["_12"] = {
+			_circular_saw_cost = 3,
 			node_box = {
 				type = "fixed",
 				fixed = {-0.5, -0.5, 0, 0.5, 0.25, 0.5},
 			},
 		},
 		["_14"] = {
+			_circular_saw_cost = 4,
 			node_box = {
 				type = "fixed",
 				fixed = {-0.5, -0.5, 0, 0.5, 0.375, 0.5},
 			},
 		},
 		["_15"] = {
+			_circular_saw_cost = 4,
 			node_box = {
 				type = "fixed",
 				fixed = {-0.5, -0.5, 0, 0.5, 0.4375, 0.5},
@@ -199,41 +213,83 @@ stairsplus.defs = {
 		}
 	},
 	["slab"] = {
-		[""] = 8,
-		["_quarter"] = 4,
-		["_three_quarter"] = 12,
-		["_1"] = 1,
-		["_2"] = 2,
-		["_14"] = 14,
-		["_15"] = 15,
+		[""] = {
+			_circular_saw_cost = 4,
+			size = 8
+		},
+		["_quarter"] = {
+			_circular_saw_cost = 2,
+			size = 4
+		},
+		["_three_quarter"] = {
+			_circular_saw_cost = 6,
+			size = 12
+		},
+		["_1"] = {
+			_circular_saw_cost = 1,
+			size = 1
+		},
+		["_2"] = {
+			_circular_saw_cost = 1,
+			size = 2
+		},
+		["_14"] = {
+			_circular_saw_cost = 7,
+			size = 14
+		},
+		["_15"] = {
+			_circular_saw_cost = 8,
+			size = 15;
+		},
 		["_two_sides"] = {
-			{ -0.5, -0.5, -0.5, 0.5, -7/16, 7/16 },
-			{ -0.5, -0.5, 7/16, 0.5, 0.5, 0.5 }
+			_circular_saw_cost = 1,
+			node_box = {
+				type = "fixed",
+				fixed = {
+					{ -0.5, -0.5, -0.5, 0.5, -7/16, 7/16 },
+					{ -0.5, -0.5, 7/16, 0.5, 0.5, 0.5 }
+				}
+			};
 		},
 		["_three_sides"] = {
-			{ -7/16, -0.5, -0.5, 0.5, -7/16, 7/16 },
-			{ -7/16, -0.5, 7/16, 0.5, 0.5, 0.5 },
-			{ -0.5, -0.5, -0.5, -7/16, 0.5, 0.5 }
+			_circular_saw_cost = 2,
+			node_box = {
+				type = "fixed",
+				fixed = {
+					{ -7/16, -0.5, -0.5, 0.5, -7/16, 7/16 },
+					{ -7/16, -0.5, 7/16, 0.5, 0.5, 0.5 },
+					{ -0.5, -0.5, -0.5, -7/16, 0.5, 0.5 }
+				}
+			}
 		},
 		["_three_sides_u"] = {
-			{ -0.5, -0.5, -0.5, 0.5, 0.5, -7/16 },
-			{ -0.5, -0.5, -7/16, 0.5, -7/16, 7/16 },
-			{ -0.5, -0.5, 7/16, 0.5, 0.5, 0.5 }
+			_circular_saw_cost = 2,
+			node_box = {
+				type = "fixed",
+				fixed = {
+					{ -0.5, -0.5, -0.5, 0.5, 0.5, -7/16 },
+					{ -0.5, -0.5, -7/16, 0.5, -7/16, 7/16 },
+					{ -0.5, -0.5, 7/16, 0.5, 0.5, 0.5 }
+				}
+			}
 		}
 	},
 	["slope"] = {
 		[""] = {
+			_circular_saw_cost = 4,
 			mesh = "moreblocks_slope.obj",
 			collision_box = box_slope,
 			selection_box = box_slope,
 
 		},
 		["_half"] = {
+			_circular_saw_cost = 2,
 			mesh = "moreblocks_slope_half.obj",
 			collision_box = box_slope_half,
 			selection_box = box_slope_half,
 		},
 		["_half_raised"] = {
+			_circular_saw_cost = 6,
 			mesh = "moreblocks_slope_half_raised.obj",
 			collision_box = box_slope_half_raised,
 			selection_box = box_slope_half_raised,
@@ -242,16 +298,19 @@ stairsplus.defs = {
 		--==============================================================
 
 		["_inner"] = {
+			_circular_saw_cost = 7,
 			mesh = "moreblocks_slope_inner.obj",
 			collision_box = box_slope_inner,
 			selection_box = box_slope_inner,
 		},
 		["_inner_half"] = {
+			_circular_saw_cost = 3,
 			mesh = "moreblocks_slope_inner_half.obj",
 			collision_box = box_slope_inner_half,
 			selection_box = box_slope_inner_half,
 		},
 		["_inner_half_raised"] = {
+			_circular_saw_cost = 7,
 			mesh = "moreblocks_slope_inner_half_raised.obj",
 			collision_box = box_slope_inner_half_raised,
 			selection_box = box_slope_inner_half_raised,
@@ -260,16 +319,19 @@ stairsplus.defs = {
 		--==============================================================
 
 		["_inner_cut"] = {
+			_circular_saw_cost = 7,
 			mesh = "moreblocks_slope_inner_cut.obj",
 			collision_box = box_slope_inner,
 			selection_box = box_slope_inner,
 		},
 		["_inner_cut_half"] = {
+			_circular_saw_cost = 4,
 			mesh = "moreblocks_slope_inner_cut_half.obj",
 			collision_box = box_slope_inner_half,
 			selection_box = box_slope_inner_half,
 		},
 		["_inner_cut_half_raised"] = {
+			_circular_saw_cost = 8,
 			mesh = "moreblocks_slope_inner_cut_half_raised.obj",
 			collision_box = box_slope_inner_half_raised,
 			selection_box = box_slope_inner_half_raised,
@@ -278,16 +340,19 @@ stairsplus.defs = {
 		--==============================================================
 
 		["_outer"] = {
+			_circular_saw_cost = 3,
 			mesh = "moreblocks_slope_outer.obj",
 			collision_box = box_slope_outer,
 			selection_box = box_slope_outer,
 		},
 		["_outer_half"] = {
+			_circular_saw_cost = 2,
 			mesh = "moreblocks_slope_outer_half.obj",
 			collision_box = box_slope_outer_half,
 			selection_box = box_slope_outer_half,
 		},
 		["_outer_half_raised"] = {
+			_circular_saw_cost = 6,
 			mesh = "moreblocks_slope_outer_half_raised.obj",
 			collision_box = box_slope_outer_half_raised,
 			selection_box = box_slope_outer_half_raised,
@@ -296,21 +361,25 @@ stairsplus.defs = {
 		--==============================================================
 
 		["_outer_cut"] = {
+			_circular_saw_cost = 2,
 			mesh = "moreblocks_slope_outer_cut.obj",
 			collision_box = box_slope_outer,
 			selection_box = box_slope_outer,
 		},
 		["_outer_cut_half"] = {
+			_circular_saw_cost = 1,
 			mesh = "moreblocks_slope_outer_cut_half.obj",
 			collision_box = box_slope_outer_half,
 			selection_box = box_slope_outer_half,
 		},
 		["_outer_cut_half_raised"] = {
+			_circular_saw_cost = 3,
 			mesh = "moreblocks_slope_outer_cut_half_raised.obj",
 			collision_box = box_slope_outer_half_raised,
 			selection_box = box_slope_outer_half_raised,
 		},
 		["_cut"] = {
+			_circular_saw_cost = 4,
 			mesh = "moreblocks_slope_cut.obj",
 			collision_box = box_slope_outer,
 			selection_box = box_slope_outer,
@@ -318,6 +387,7 @@ stairsplus.defs = {
 	},
 	["stair"] = {
 		[""] = {
+			_circular_saw_cost = 6,
 			node_box = {
 				type = "fixed",
 				fixed = {
@@ -327,6 +397,7 @@ stairsplus.defs = {
 			},
 		},
 		["_half"] = {
+			_circular_saw_cost = 3,
 			node_box = {
 				type = "fixed",
 				fixed = {
@@ -335,6 +406,7 @@ stairsplus.defs = {
 				},
 			},
 		},
+		-- TODO FIXME not included in circular_saw.names
 		["_right_half"] = {
 			node_box = {
 				type = "fixed",
@@ -345,6 +417,7 @@ stairsplus.defs = {
 			},
 		},
 		["_inner"] = {
+			_circular_saw_cost = 7,
 			node_box = {
 				type = "fixed",
 				fixed = {
@@ -355,6 +428,7 @@ stairsplus.defs = {
 			},
 		},
 		["_outer"] = {
+			_circular_saw_cost = 5,
 			node_box = {
 				type = "fixed",
 				fixed = {
@@ -364,6 +438,7 @@ stairsplus.defs = {
 			},
 		},
 		["_alt"] = {
+			_circular_saw_cost = 4,
 			node_box = {
 				type = "fixed",
 				fixed = {
@@ -373,6 +448,7 @@ stairsplus.defs = {
 			},
 		},
 		["_alt_1"] = {
+			_circular_saw_cost = 1,
 			node_box = {
 				type = "fixed",
 				fixed = {
@@ -382,6 +458,7 @@ stairsplus.defs = {
 			},
 		},
 		["_alt_2"] = {
+			_circular_saw_cost = 1,
 			node_box = {
 				type = "fixed",
 				fixed = {
@@ -391,6 +468,7 @@ stairsplus.defs = {
 			},
 		},
 		["_alt_4"] = {
+			_circular_saw_cost = 2,
 			node_box = {
 				type = "fixed",
 				fixed = {
