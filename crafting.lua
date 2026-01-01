@@ -646,3 +646,39 @@ if minetest.settings:get_bool("moreblocks.circular_saw_crafting") ~= false then 
 		}
 	})
 end
+
+-- synthetic stone recipes
+
+-- the basic synthetic stone is reusing the deprecated "gravel cooking" recipe
+-- the output is a block which isn't visually appealing by itself, but
+-- offers a colorful palette of stone-like building materials: the synthetic stones
+-- are colored with regular dyes, and the color can be made deeper by cooking
+-- a colored synthetic stone.
+
+minetest.register_craft({
+	recipe = {
+			{ "",  "default:gravel",  "" },
+			{ "default:gravel",  "",  "default:gravel"},
+			{ "",  "default:gravel",  ""},
+		},
+	output = "moreblocks:synthstone"
+})
+
+local synthstone_recipes = {
+	"black", "blue", "brown", "dark_grey", "dark_green", "cyan", "green", 
+	"white", "violet", "red", "pink", "orange", "magenta", "grey", "yellow"
+}
+
+for _,color in ipairs(synthstone_recipes) do
+	minetest.register_craft({
+		type = "shapeless",
+		recipe = {"dye:" .. color, "moreblocks:synthstone"},
+		output = "moreblocks:" .. color .. "_synthstone"
+	})
+	
+	minetest.register_craft({
+		type = "cooking", 
+		recipe = "moreblocks:" .. color .. "_synthstone",
+		output = "moreblocks:" .. color .. "_synthstone_calcinated"
+	})
+end
