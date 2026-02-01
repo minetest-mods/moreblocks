@@ -147,6 +147,9 @@ stairsplus.register_single = function(category, alternate, info, modname, subnam
 	-- This makes node rotation work on placement
 	def.place_param2 = nil
 
+	-- This strips palettes from respective nodes to prevent warnings
+	def.palette = nil
+
 	-- Darken light sources slightly to make up for their smaller visual size
 	def.light_source = math.max(0, (def.light_source or 0) - 1)
 	def.groups = stairsplus:prepare_groups(fields.groups)
