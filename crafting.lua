@@ -6,7 +6,7 @@ Licensed under the zlib license. See LICENSE.md for more information.
 --]]
 
 minetest.register_craft({
-	output = "default:stick",
+	output = "default:stick 2",
 	recipe = {{"default:dry_shrub"}, {"default:dry_shrub"}}
 })
 
