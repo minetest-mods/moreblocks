@@ -6,13 +6,13 @@ Licensed under the zlib license. See LICENSE.md for more information.
 --]]
 
 minetest.register_craft({
-	output = "default:stick",
-	recipe = {{"default:dry_shrub"},}
+	output = "default:stick 2",
+	recipe = {{"default:dry_shrub"}, {"default:dry_shrub"}}
 })
 
 minetest.register_craft({
 	output = "default:stick",
-	recipe = {{"group:sapling"},}
+	recipe = {{"group:sapling"}}
 })
 
 minetest.register_craft({
@@ -621,18 +621,14 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	type = "shapeless",
-	output = "moreblocks:copperpatina",
-	recipe = {"group:water_bucket", "default:copperblock"},
+	output = "moreblocks:copperpatina 4",
+	recipe = {
+		{"", "default:copperblock", ""},
+		{"default:copperblock", "group:water_bucket", "default:copperblock"},
+		{"", "default:copperblock", ""}
+	},
 	replacements = {
 		{"group:water_bucket", "bucket:bucket_empty"}
-	}
-})
-
-minetest.register_craft({
-	output = "default:copper_ingot 9",
-	recipe = {
-		{"moreblocks:copperpatina"},
 	}
 })
 
