@@ -6,13 +6,13 @@ Licensed under the zlib license. See LICENSE.md for more information.
 --]]
 
 local S = moreblocks.S
-local F = minetest.formspec_escape
+local F = core.formspec_escape
 
 circular_saw = {}
 
 circular_saw.known_stairs = setmetatable({}, {
 	__newindex = function(k, v)
-		local modname = minetest.get_current_modname()
+		local modname = core.get_current_modname()
 		print(("WARNING: mod %s tried to add node %s to the circular saw manually."):format(modname, v))
 	end,
 })
@@ -88,7 +88,7 @@ circular_saw.names = {
 -- How many microblocks does this shape at the output inventory cost:
 -- It may cause slight loss, but no gain.
 function circular_saw:get_cost(inv, stackname)
-	local name = minetest.registered_aliases[stackname] or stackname
+	local name = core.registered_aliases[stackname] or stackname
 	for i, item in pairs(inv:get_list("output")) do
 		if item:get_name() == name then
 			return item:get_definition()._circular_saw_cost
@@ -110,7 +110,7 @@ function circular_saw:get_output_inv(modname, material, amount, max)
 	for i = 1, #circular_saw.names do
 		local t = circular_saw.names[i]
 		local nodename = modname .. ":" .. t[1] .. "_" .. material .. t[2]
-		local def = minetest.registered_nodes[nodename]
+		local def = core.registered_nodes[nodename]
 		if def then
 			local cost = def._circular_saw_cost
 			local balance = math.min(math.floor(amount/cost), max)
@@ -126,7 +126,7 @@ end
 -- (or the circular_saw has been placed the first time)
 -- Note: max_offered is not reset:
 function circular_saw:reset(pos)
-	local meta = minetest.get_meta(pos)
+	local meta = core.get_meta(pos)
 	local inv  = meta:get_inventory()
 	local owned_by = meta:get_string("owner")
 
@@ -151,7 +151,7 @@ end
 -- Player has taken something out of the box or placed something inside
 -- that amounts to count microblocks:
 function circular_saw:update_inventory(pos, amount)
-	local meta          = minetest.get_meta(pos)
+	local meta          = core.get_meta(pos)
 	local inv           = meta:get_inventory()
 
 	amount = meta:get_int("anz") + amount
@@ -221,7 +221,7 @@ end
 
 -- The amount of items offered per shape can be configured:
 function circular_saw.on_receive_fields(pos, formname, fields, sender)
-	local meta = minetest.get_meta(pos)
+	local meta = core.get_meta(pos)
 	local max = tonumber(fields.max_offered)
 	if max and max > 0 then
 		meta:set_string("max_offered",  max)
@@ -248,7 +248,7 @@ function circular_saw.allow_metadata_inventory_put(
 		return 0
 	end
 
-	local meta = minetest.get_meta(pos)
+	local meta = core.get_meta(pos)
 	local inv  = meta:get_inventory()
 	local stackname = stack:get_name()
 	local count = stack:get_count()
@@ -311,7 +311,7 @@ function circular_saw.on_metadata_inventory_put(
 		pos, listname, index, stack, player)
 	-- We need to find out if the circular_saw is already set to a
 	-- specific material or not:
-	local meta = minetest.get_meta(pos)
+	local meta = core.get_meta(pos)
 	local inv  = meta:get_inventory()
 	local stackname = stack:get_name()
 	local count = stack:get_count()
@@ -335,7 +335,7 @@ function circular_saw.on_metadata_inventory_put(
 end
 
 function circular_saw.allow_metadata_inventory_take(pos, listname, index, stack, player)
-	local meta          = minetest.get_meta(pos)
+	local meta          = core.get_meta(pos)
 	local inv           = meta:get_inventory()
 	local input_stack = inv:get_stack(listname,  index)
 	local player_inv = player:get_inventory()
@@ -365,17 +365,17 @@ function circular_saw.on_metadata_inventory_take(
 	-- The recycle field plays no role here since it is processed immediately.
 end
 
-local has_default_mod = minetest.get_modpath("default")
+local has_default_mod = core.get_modpath("default")
 
 function circular_saw.on_construct(pos)
-	local meta = minetest.get_meta(pos)
+	local meta = core.get_meta(pos)
 	local fancy_inv = ""
 	if has_default_mod then
 		-- prepend background and slot styles from default if available
 		fancy_inv = default.gui_bg..default.gui_bg_img..default.gui_slots
 	end
 	meta:set_string(
-		--FIXME Not work with @n in this part bug in minetest/minetest#7450.
+		--FIXME Not work with @n in this part bug in luanti-org/luanti#7450.
 		"formspec", "size[11,10]"..fancy_inv..
 		"label[0,0;" ..S("Input material").. "]" ..
 		"list[current_name;input;1.7,0;1,1;]" ..
@@ -412,7 +412,7 @@ end
 
 
 function circular_saw.can_dig(pos,player)
-	local meta = minetest.get_meta(pos)
+	local meta = core.get_meta(pos)
 	local inv = meta:get_inventory()
 	if not inv:is_empty("input") or
 	   not inv:is_empty("micro") or
@@ -423,7 +423,7 @@ function circular_saw.can_dig(pos,player)
 	return true
 end
 
-minetest.register_node("moreblocks:circular_saw",  {
+core.register_node("moreblocks:circular_saw",  {
 	description = S("Circular Saw"),
 	drawtype = "nodebox",
 	node_box = {
@@ -452,7 +452,7 @@ minetest.register_node("moreblocks:circular_saw",  {
 	can_dig = circular_saw.can_dig,
 	-- Set the owner of this circular saw.
 	after_place_node = function(pos, placer)
-		local meta = minetest.get_meta(pos)
+		local meta = core.get_meta(pos)
 		local owner = placer and placer:get_player_name() or ""
 		local owned_by = owner
 

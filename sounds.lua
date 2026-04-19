@@ -5,7 +5,7 @@ Copyright © 2011-2021 Hugo Locurcio and contributors.
 Licensed under the zlib license. See LICENSE.md for more information.
 --]]
 
-local has_default_mod = minetest.get_modpath("default")
+local has_default_mod = core.get_modpath("default")
 for _, sound in ipairs({"dirt", "wood", "stone", "metal", "glass", "leaves"}) do
     -- use sound-function from default if available
     -- otherwise fall back to a no-op function (no sounds)

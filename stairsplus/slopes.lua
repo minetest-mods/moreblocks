@@ -22,14 +22,14 @@ end
 function stairsplus:register_slope_alias(modname_old, subname_old, modname_new, subname_new)
 	local defs = table.copy(stairsplus.defs["slope"])
 	for alternate, def in pairs(defs) do
-		minetest.register_alias(modname_old .. ":slope_" .. subname_old .. alternate, modname_new .. ":slope_" .. subname_new .. alternate)
+		core.register_alias(modname_old .. ":slope_" .. subname_old .. alternate, modname_new .. ":slope_" .. subname_new .. alternate)
 	end
 end
 
 function stairsplus:register_slope_alias_force(modname_old, subname_old, modname_new, subname_new)
 	local defs = table.copy(stairsplus.defs["slope"])
 	for alternate, def in pairs(defs) do
-		minetest.register_alias_force(modname_old .. ":slope_" .. subname_old .. alternate, modname_new .. ":slope_" .. subname_new .. alternate)
+		core.register_alias_force(modname_old .. ":slope_" .. subname_old .. alternate, modname_new .. ":slope_" .. subname_new .. alternate)
 	end
 end
 

@@ -29,7 +29,7 @@ local function wood_tile_replace(itemstack, placer, pointed_thing)
 	else -- right, left, and down variants
 		substack = ItemStack("moreblocks:wood_tile_offset")
 	end
-	local _, success = minetest.item_place(substack, placer, pointed_thing)
+	local _, success = core.item_place(substack, placer, pointed_thing)
 	if success then
 		itemstack:take_item()
 	end
@@ -500,8 +500,8 @@ for name, def in pairs(nodes) do
 	local burntime = def.furnace_burntime
 	def.furnace_burntime = nil -- deprecated node def field
 
-	minetest.register_node("moreblocks:" ..name, def)
-	minetest.register_alias(name, "moreblocks:" ..name)
+	core.register_node("moreblocks:" ..name, def)
+	core.register_alias(name, "moreblocks:" ..name)
 
 	-- Optional: register the node as fuel
 	if burntime then
@@ -542,7 +542,7 @@ end
 
 -- Items
 
-minetest.register_craftitem("moreblocks:sweeper", {
+core.register_craftitem("moreblocks:sweeper", {
 	description = S("Sweeper"),
 	inventory_image = "moreblocks_sweeper.png",
 })

@@ -22,14 +22,14 @@ end
 function stairsplus:register_slab_alias(modname_old, subname_old, modname_new, subname_new)
 	local defs = table.copy(stairsplus.defs["slab"])
 	for alternate, def in pairs(defs) do
-		minetest.register_alias(modname_old .. ":slab_" .. subname_old .. alternate, modname_new .. ":slab_" .. subname_new .. alternate)
+		core.register_alias(modname_old .. ":slab_" .. subname_old .. alternate, modname_new .. ":slab_" .. subname_new .. alternate)
 	end
 end
 
 function stairsplus:register_slab_alias_force(modname_old, subname_old, modname_new, subname_new)
 	local defs = table.copy(stairsplus.defs["slab"])
 	for alternate, def in pairs(defs) do
-		minetest.register_alias_force(modname_old .. ":slab_" .. subname_old .. alternate, modname_new .. ":slab_" .. subname_new .. alternate)
+		core.register_alias_force(modname_old .. ":slab_" .. subname_old .. alternate, modname_new .. ":slab_" .. subname_new .. alternate)
 	end
 end
 

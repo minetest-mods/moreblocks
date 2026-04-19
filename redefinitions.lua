@@ -5,7 +5,7 @@ Copyright © 2011-2020 Hugo Locurcio and contributors.
 Licensed under the zlib license. See LICENSE.md for more information.
 --]]
 
-local modname = minetest.get_current_modname()
+local modname = core.get_current_modname()
 
 -- Redefine some of the default crafting recipes to be more productive
 
@@ -44,17 +44,17 @@ local change_recipe_amount = function(product, recipe, func)
 	if shapeless then
 		redo.type = "shapeless"
 	end
-	minetest.clear_craft(redo)
+	core.clear_craft(redo)
 
 	-- new output
 	redo.output = ("%s %d"):format(product, newamount)
-	minetest.register_craft(redo)
+	core.register_craft(redo)
 
-	minetest.log("action", ("[MOD]%s: recipe for %s production: %d => %d"):format(modname, product, oldamount, newamount))
+	core.log("action", ("[MOD]%s: recipe for %s production: %d => %d"):format(modname, product, oldamount, newamount))
 end
 
 local increase_craft_production = function(product, func)
-	local recipes = minetest.get_all_craft_recipes(product)
+	local recipes = core.get_all_craft_recipes(product)
 	for _, r in pairs(recipes) do
 		if r.type == "normal" or r.method == "normal" then
 			change_recipe_amount(product, r, func)
@@ -69,7 +69,7 @@ end
 -- }
 -- TODO: consider exporting this function to other mods
 local increase_craft_production_table = function(map_table)
-	for product, _ in pairs(minetest.registered_items) do
+	for product, _ in pairs(core.registered_items) do
 		for _, tab in pairs(map_table) do
 			local detector = tab[1]
 			local func = tab[2]
@@ -88,7 +88,7 @@ increase_craft_production_table({
 	{ function(n) return n:match('^carts:.*rail$') or n:match('^default:.*rail$') end, function(old) return old + old/2 end },
 })
 
-minetest.register_craft({
+core.register_craft({
 	type = "toolrepair",
 	additional_wear = -0.10, -- Tool repair buff (10% bonus instead of 2%).
 })
