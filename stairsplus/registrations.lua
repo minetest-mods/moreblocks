@@ -6,7 +6,7 @@ Licensed under the zlib license. See LICENSE.md for more information.
 --]]
 local S = moreblocks.S
 -- default registrations
-if minetest.get_modpath("default") then
+if core.get_modpath("default") then
 	local default_nodes = { -- Default stairs/slabs/panels/microblocks:
 		"stone",
 		"stone_block",
@@ -56,7 +56,7 @@ if minetest.get_modpath("default") then
 	for _, name in pairs(default_nodes) do
 		local mod = "default"
 		local nodename = mod .. ":" .. name
-		local ndef = table.copy(minetest.registered_nodes[nodename])
+		local ndef = table.copy(core.registered_nodes[nodename])
 		ndef.sunlight_propagates = true
 
 		-- Stone and desert_stone drop cobble and desert_cobble respectively.
@@ -72,40 +72,40 @@ if minetest.get_modpath("default") then
 
 		mod = "moreblocks"
 		stairsplus:register_all(mod, name, nodename, ndef)
-		minetest.register_alias_force("stairs:stair_" .. name, mod .. ":stair_" .. name)
-		minetest.register_alias_force("stairs:stair_outer_" .. name, mod .. ":stair_" .. name .. "_outer")
-		minetest.register_alias_force("stairs:stair_inner_" .. name, mod .. ":stair_" .. name .. "_inner")
-		minetest.register_alias_force("stairs:slab_"  .. name, mod .. ":slab_"  .. name)
+		core.register_alias_force("stairs:stair_" .. name, mod .. ":stair_" .. name)
+		core.register_alias_force("stairs:stair_outer_" .. name, mod .. ":stair_" .. name .. "_outer")
+		core.register_alias_force("stairs:stair_inner_" .. name, mod .. ":stair_" .. name .. "_inner")
+		core.register_alias_force("stairs:slab_"  .. name, mod .. ":slab_"  .. name)
 	end
 end
 
 -- farming registrations
-if minetest.get_modpath("farming") then
+if core.get_modpath("farming") then
 	local farming_nodes = {"straw"}
 	for _, name in pairs(farming_nodes) do
 		local mod = "farming"
 		local nodename = mod .. ":" .. name
-		local ndef = table.copy(minetest.registered_nodes[nodename])
+		local ndef = table.copy(core.registered_nodes[nodename])
 		ndef.sunlight_propagates = true
 
 		mod = "moreblocks"
 		stairsplus:register_all(mod, name, nodename, ndef)
-		minetest.register_alias_force("stairs:stair_" .. name, mod .. ":stair_" .. name)
-		minetest.register_alias_force("stairs:stair_outer_" .. name, mod .. ":stair_" .. name .. "_outer")
-		minetest.register_alias_force("stairs:stair_inner_" .. name, mod .. ":stair_" .. name .. "_inner")
-		minetest.register_alias_force("stairs:slab_"  .. name, mod .. ":slab_"  .. name)
+		core.register_alias_force("stairs:stair_" .. name, mod .. ":stair_" .. name)
+		core.register_alias_force("stairs:stair_outer_" .. name, mod .. ":stair_" .. name .. "_outer")
+		core.register_alias_force("stairs:stair_inner_" .. name, mod .. ":stair_" .. name .. "_inner")
+		core.register_alias_force("stairs:slab_"  .. name, mod .. ":slab_"  .. name)
 	end
 end
 
 -- wool registrations
-if minetest.get_modpath("wool") then
+if core.get_modpath("wool") then
 	local dyes = {"white", "grey", "black", "red", "yellow", "green", "cyan",
 	              "blue", "magenta", "orange", "violet", "brown", "pink",
 	              "dark_grey", "dark_green"}
 	for _, name in pairs(dyes) do
 		local mod = "wool"
 		local nodename = mod .. ":" .. name
-		local ndef = table.copy(minetest.registered_nodes[nodename])
+		local ndef = table.copy(core.registered_nodes[nodename])
 		ndef.sunlight_propagates = true
 
 		stairsplus:register_all(mod, name, nodename, ndef)
@@ -115,7 +115,7 @@ end
 -- basic_materials, keeping the original other-mod-oriented names
 -- for backwards compatibility
 
-if minetest.get_modpath("basic_materials") then
+if core.get_modpath("basic_materials") then
 	stairsplus:register_all("technic","concrete","basic_materials:concrete_block",{
 		description = S("Concrete"),
 		tiles = {"basic_materials_concrete_block.png",},
@@ -123,8 +123,8 @@ if minetest.get_modpath("basic_materials") then
 		sounds = moreblocks.node_sound_stone_defaults(),
 	})
 
-	minetest.register_alias("prefab:concrete_stair","technic:stair_concrete")
-	minetest.register_alias("prefab:concrete_slab","technic:slab_concrete")
+	core.register_alias("prefab:concrete_stair","technic:stair_concrete")
+	core.register_alias("prefab:concrete_slab","technic:slab_concrete")
 
 	stairsplus:register_all("gloopblocks", "cement", "basic_materials:cement_block", {
 		description = S("Cement"),
@@ -148,16 +148,16 @@ stairsplus:register_alias_all("moreblocks", "split_stone_tile_alt", "moreblocks"
 -- The following LBM is necessary because the name stair_split_stone_tile_alt
 -- conflicts with another node and so the alias for that specific node gets
 -- ignored.
-minetest.register_lbm({
+core.register_lbm({
 	name = "moreblocks:fix_split_stone_tile_alt_name_collision",
 	nodenames = {"moreblocks:stair_split_stone_tile_alt"},
 	action = function(pos, node)
-		minetest.set_node(pos, {
+		core.set_node(pos, {
 			name = "moreblocks:stair_checker_stone_tile",
-			param2 = minetest.get_node(pos).param2
+			param2 = core.get_node(pos).param2
 
 		})
-		minetest.log('action', "LBM replaced " .. node.name ..
-				" at " .. minetest.pos_to_string(pos))
+		core.log('action', "LBM replaced " .. node.name ..
+				" at " .. core.pos_to_string(pos))
 	end,
 })

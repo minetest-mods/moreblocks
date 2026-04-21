@@ -10,16 +10,16 @@ Licensed under the zlib license. See LICENSE.md for more information.
 
 moreblocks = {}
 
-local modpath = minetest.get_modpath("moreblocks")
+local modpath = core.get_modpath("moreblocks")
 
-moreblocks.S = minetest.get_translator("moreblocks")
+moreblocks.S = core.get_translator("moreblocks")
 
 dofile(modpath .. "/config.lua")
 dofile(modpath .. "/sounds.lua")
 dofile(modpath .. "/circular_saw.lua")
 dofile(modpath .. "/stairsplus/init.lua")
 
-if minetest.get_modpath("default") then
+if core.get_modpath("default") then
     dofile(modpath .. "/nodes.lua")
     dofile(modpath .. "/redefinitions.lua")
     dofile(modpath .. "/crafting.lua")

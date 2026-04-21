@@ -76,14 +76,14 @@ end
 function stairsplus:register_custom_subset_alias(subset, modname_old, subname_old, modname_new, subname_new)
 	local subset_copy = table.copy(subset)
 	for k, v in pairs(subset_copy) do
-		minetest.register_alias(modname_old .. ":" .. v[1] .. "_" .. subname_old .. v[2], modname_new .. ":" .. v[1] .. "_" .. subname_new .. v[2])
+		core.register_alias(modname_old .. ":" .. v[1] .. "_" .. subname_old .. v[2], modname_new .. ":" .. v[1] .. "_" .. subname_new .. v[2])
 	end
 end
 
 function stairsplus:register_custom_subset_alias_force(subset, modname_old, subname_old, modname_new, subname_new)
 	local subset_copy = table.copy(subset)
 	for k, v in pairs(subset_copy) do
-		minetest.register_alias_force(modname_old .. ":" .. v[1] .. "_" .. subname_old .. v[2], modname_new .. ":" .. v[1] .. "_" .. subname_new .. v[2])
+		core.register_alias_force(modname_old .. ":" .. v[1] .. "_" .. subname_old .. v[2], modname_new .. ":" .. v[1] .. "_" .. subname_new .. v[2])
 	end
 end
 
