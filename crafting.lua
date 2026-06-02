@@ -632,6 +632,10 @@ core.register_craft({
 	}
 })
 
+minetest.register_craft({
+	type = "cooking", output = "default:copperblock", recipe = "moreblocks:copperpatina",
+})
+
 if core.settings:get_bool("moreblocks.circular_saw_crafting") ~= false then -- “If nil or true then”
 	core.register_craft({
 		output = "moreblocks:circular_saw",
