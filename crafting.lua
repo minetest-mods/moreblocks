@@ -632,7 +632,7 @@ core.register_craft({
 	}
 })
 
-minetest.register_craft({
+core.register_craft({
 	type = "cooking", output = "default:copperblock", recipe = "moreblocks:copperpatina",
 })
 
